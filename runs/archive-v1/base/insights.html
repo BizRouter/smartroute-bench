@@ -1,0 +1,46 @@
+<div class="note" style="border-left:3px solid #2e9e5b;padding:12px 16px;background:var(--surface2);border-radius:0 8px 8px 0;font-size:13.5px;margin:16px 0">
+<b>SmartRoute-Bench base suite (English) — run base-v1.</b>
+57 English real-work tasks across 12 categories, run identically for three
+pinned frontier models and one smart-routing virtual model. The routing arm
+used an unmodified cost-quality-balanced policy over a 4-model pool. Costs are
+gateway-side metered sale prices; the KRW figures in the tables convert at the
+gateway billing rate on the measurement date (₩1,504/USD).
+</div>
+
+<div class="card">
+<h3><span class="sev info">Result</span>Lowest total cost, 32/32 objective checks — the routing arm and GPT-5.6 Sol are the only two at a perfect check score</h3>
+<ul>
+<li><b>Overall (57 tasks)</b> — smart routing had the <b>lowest total cost</b>
+(₩4,622 / ~$3.07), 76% of GPT-5.6 Sol, 61% of Opus, 34% of Fable 5, while
+scoring a chat judge mean of 9.19 (97.6% of Sol's 9.417) and passing
+<b>32/32 objective checks</b>, matched only by Sol (Opus 31/32, Fable 5 23/32).</li>
+<li><b>Structured tasks at frontier parity</b> — on extraction, JSON generation,
+and reasoning the routed low-cost model scored 10.0, level with the pinned
+frontier models. Deterministic-answer workloads route to cheap models with
+no measurable quality loss.</li>
+<li><b>Where the gap remains</b> — summarization (9.54 vs 9.81) and translation
+(9.53 vs 9.64) trail the best pinned arm by a few tenths. Long-form generation
+is where a capability-profile-aware policy has the most to gain.</li>
+<li><b>Delivery</b> — Fable 5 had 8 undelivered responses (safety-classifier
+false-positive refusals, listed in the delivery-failure table). Excluding
+undelivered, Fable 5's chat judge is 9.51 — the shortfall is delivery
+reliability, not capability.</li>
+<li><b>Routing distribution</b> — every one of the 59 chat routing decisions
+selected <code>google/gemini-3.5-flash</code>: with the balanced strategy the
+pool's cheapest, fastest model wins across categories. This is a property of
+the policy under test, not of the benchmark.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3><span class="sev info">Judge panel</span>Three independent providers, blind, self-bias audited</h3>
+<ul>
+<li>Three judge models from different providers (Claude Fable 5, GPT-5.6 Sol,
+Gemini 3.1 Pro) score each response blind; the mean is the headline. The
+per-judge × per-arm table below exposes any same-vendor preference, and
+pairwise agreement is reported alongside.</li>
+<li>Objective categories (coding, extraction, JSON generation, reasoning,
+agentic) do not depend on the panel at all — they pass or fail deterministic
+checks run in a sandbox.</li>
+</ul>
+</div>

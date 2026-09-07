@@ -1,0 +1,134 @@
+{
+  "spec_version": "2.0-draft",
+  "note": "Machine-readable form of docs/DESIGN_v2.md. Enforced by tools/validate_suite.py. Counts are per language suite (tasks/k and tasks/base each).",
+
+  "tasks_per_language": 300,
+
+  "composition": {
+    "work": {
+      "code": {
+        "code-write": 26,
+        "code-debug": 12,
+        "code-review-refactor": 8,
+        "code-longcontext": 6,
+        "tool-use": 10,
+        "agentic-coding": 12,
+        "agentic-artifact": 6
+      },
+      "writing": {
+        "business-writing": 18,
+        "summarization": 10,
+        "translation": 8,
+        "research-analysis": 8,
+        "daily-chat": 8,
+        "character-multiturn": 8
+      },
+      "structured": {
+        "extraction": 12,
+        "json-schema-gen": 10,
+        "instruction-following": 10
+      },
+      "judgment": {
+        "safety-boundary": 4,
+        "ambiguity-clarify": 4
+      }
+    },
+    "capability": {
+      "capability": {
+        "knowledge-mcq": 40,
+        "math": 25,
+        "code-exec": 15,
+        "logic-commonsense": 20,
+        "domain-pro": 10,
+        "longcontext-qa": 10
+      }
+    }
+  },
+
+  "category_tolerance": 0.25,
+
+  "legacy_category_map": {
+    "note": "v1 category -> the v2 categories it splits into. Used by the validator to show migration progress honestly, and by analyze.py to bridge v1..v10 runs.",
+    "coding": ["code-write", "code-debug", "code-review-refactor", "code-longcontext"],
+    "business": ["business-writing"],
+    "daily": ["daily-chat"],
+    "character": ["character-multiturn"],
+    "research": ["research-analysis"],
+    "json-gen": ["json-schema-gen"],
+    "reasoning": ["math", "logic-commonsense"],
+    "extraction": ["extraction"],
+    "summarization": ["summarization"],
+    "translation": ["translation"],
+    "agentic-coding": ["agentic-coding"],
+    "agentic-artifact": ["agentic-artifact"]
+  },
+
+  "bias_budget": {
+    "B1_scoring": {
+      "rule": "deterministically scored share of the suite",
+      "min_deterministic_share": 0.70
+    },
+    "B2_ceiling": {
+      "rule": "empirical difficulty bands from the score matrix",
+      "min_discriminative_share": 0.40,
+      "max_unsolved_share": 0.05,
+      "requires_calibration": true
+    },
+    "B6_domain": {
+      "rule": "no category may dominate; the code block is a declared exception",
+      "max_category_share": 0.15,
+      "max_block_share": {"code": 0.35}
+    },
+    "B7_length": {
+      "rule": "input length bands",
+      "target_shares": {"short": 0.55, "mid": 0.33, "long": 0.12},
+      "tolerance": 0.07
+    },
+    "B8_format": {
+      "rule": "answer formats mixed. Multiple choice hands out free points — a model that knows nothing scores 1/options — so its share of the whole suite is capped, and every MCQ item must offer at least 3 options (two-choice items make a coin flip look like 50% capability, which cannot separate a cheap model from a capable one).",
+      "max_mcq_share_of_suite": 0.30,
+      "min_mcq_options": 3
+    },
+    "B4_language": {
+      "rule": "KO/EN twins share a pair_id; the rest is a deliberate native-only slice. Scoped per track: the work track is where language actually changes the task and where the English suite rotted, so it must be effectively fully paired. The capability track draws part of its items from language-native sources (KMMLU law, KoBEST, MedMCQA) that have no honest translation, so forcing pairs there would either fabricate translations or duplicate identical English prompts across both suites for no information.",
+      "min_paired_share_work": 0.90,
+      "min_paired_share_overall": 0.70,
+      "twin_must_match": ["mode", "max_tokens", "turn_count", "check_type", "track", "block", "category", "scoring", "split"]
+    },
+    "B9_tuning": {
+      "rule": "held-out split; router tuning may use dev only",
+      "test_share": 0.30,
+      "tolerance": 0.05
+    }
+  },
+
+  "length_bands": {
+    "short": {"max_input_chars": 4000},
+    "mid": {"max_input_chars": 32000},
+    "long": {"max_input_chars": 260000}
+  },
+
+  "tiers": {
+    "smoke": {"tasks_per_language": 30, "when": "every deploy"},
+    "core": {"tasks_per_language": 100, "when": "every router change"},
+    "full": {"tasks_per_language": 300, "when": "every release"},
+    "matrix": {"scope": "all non-agentic tasks x full candidate pool", "when": "model pool changes"}
+  },
+
+  "required_fields_v2": [
+    "track", "block", "category", "length_band", "scoring", "split",
+    "source", "difficulty_prior"
+  ],
+  "optional_fields_v2_note": "pair_id is deliberately absent from the required list: a native-only capability item (KMMLU law, KoBEST, MedMCQA) has no twin to point at, and inventing one would mean fabricating a translation. B4 measures the paired share instead.",
+
+  "enums": {
+    "track": ["work", "capability"],
+    "block": ["code", "writing", "structured", "judgment", "capability"],
+    "length_band": ["short", "mid", "long"],
+    "scoring": ["deterministic", "judge", "both"],
+    "split": ["dev", "test"],
+    "difficulty": ["easy", "medium", "hard"],
+    "difficulty_prior": ["easy", "medium", "hard"],
+    "difficulty_band": ["cheap-sufficient", "discriminative", "frontier-only", "unsolved"]
+  }
+}

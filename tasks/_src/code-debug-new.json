@@ -1,0 +1,312 @@
+[
+  {
+    "id": "dbg-py-page-01",
+    "pair_id": "dbg-py-page-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "off-by-one",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import paginate\n\nclass T(unittest.TestCase):\n    def test_first_page(self):\n        self.assertEqual(paginate(list(range(1, 11)), 1, 3), [1, 2, 3])\n    def test_second_page(self):\n        self.assertEqual(paginate(list(range(1, 11)), 2, 3), [4, 5, 6])\n    def test_last_partial_page(self):\n        self.assertEqual(paginate(list(range(1, 11)), 4, 3), [10])\n    def test_page_past_end(self):\n        self.assertEqual(paginate(list(range(1, 11)), 9, 3), [])\n    def test_single_per_page(self):\n        self.assertEqual(paginate([\"a\", \"b\"], 2, 1), [\"b\"])\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\npage=1 을 넣으면 첫 페이지가 아니라 두 번째 페이지가 나와. 마지막 페이지도 어긋나.\n\n```python\ndef paginate(items, page, per_page):\n    start = page * per_page\n    end = start + per_page\n    return items[start:end]\n```\n\n고친 전체 코드를 python 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nPassing page=1 returns the second page, not the first. The last page is off too.\n\n```python\ndef paginate(items, page, per_page):\n    start = page * per_page\n    end = start + per_page\n    return items[start:end]\n```\n\nReturn the whole fixed code as a single python code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-py-cart-01",
+    "pair_id": "dbg-py-cart-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "mutable-default",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import add_item\n\nclass T(unittest.TestCase):\n    def test_adds(self):\n        self.assertEqual(add_item(\"apple\"), [\"apple\"])\n    def test_does_not_leak_between_calls(self):\n        add_item(\"apple\")\n        self.assertEqual(add_item(\"pear\"), [\"pear\"])\n    def test_explicit_cart(self):\n        c = [\"x\"]\n        self.assertEqual(add_item(\"y\", c), [\"x\", \"y\"])\n        self.assertEqual(c, [\"x\", \"y\"])\n    def test_repeated_default_calls(self):\n        for _ in range(3):\n            self.assertEqual(len(add_item(\"z\")), 1)\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n장바구니를 안 넘기고 부르면, 앞에서 담은 물건이 다음 호출에도 남아 있어.\n\n```python\ndef add_item(name, cart=[]):\n    cart.append(name)\n    return cart\n```\n\n고친 전체 코드를 python 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nWhen called without a cart, items from an earlier call are still there on the next call.\n\n```python\ndef add_item(name, cart=[]):\n    cart.append(name)\n    return cart\n```\n\nReturn the whole fixed code as a single python code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-py-money-01",
+    "pair_id": "dbg-py-money-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "float-money",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import total_with_vat\n\nclass T(unittest.TestCase):\n    def test_simple(self):\n        self.assertEqual(total_with_vat([1000, 2000]), 3300)\n    def test_half_rounds_up(self):\n        # 15 * 1.1 lands exactly on .5 -> 17, not 16\n        self.assertEqual(total_with_vat([15]), 17)\n    def test_half_rounds_up_multi(self):\n        self.assertEqual(total_with_vat([10, 25]), 39)\n    def test_third_half_case(self):\n        self.assertEqual(total_with_vat([70, 5]), 83)\n    def test_empty(self):\n        self.assertEqual(total_with_vat([]), 0)\n    def test_returns_int(self):\n        self.assertIsInstance(total_with_vat([999]), int)\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n부가세를 더한 합계가 1원씩 틀리는 경우가 있어. 반올림은 항상 올림(0.5 는 위로)이어야 하고, 결과는 원 단위 정수여야 해.\n\n```python\ndef total_with_vat(amounts):\n    subtotal = sum(amounts)\n    return round(subtotal * 1.1)\n```\n\n고친 전체 코드를 python 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nThe VAT total is sometimes off by one minor unit. Rounding must always be half-up (.5 goes up) and the result must be an integer.\n\n```python\ndef total_with_vat(amounts):\n    subtotal = sum(amounts)\n    return round(subtotal * 1.1)\n```\n\nReturn the whole fixed code as a single python code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-py-expire-01",
+    "pair_id": "dbg-py-expire-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "timezone",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom datetime import datetime, timezone, timedelta\nfrom solution import is_expired\n\nNOW = datetime(2026, 7, 1, 12, 0, tzinfo=timezone.utc)\n\nclass T(unittest.TestCase):\n    def test_past_aware(self):\n        self.assertTrue(is_expired(NOW - timedelta(hours=1), NOW))\n    def test_future_aware(self):\n        self.assertFalse(is_expired(NOW + timedelta(hours=1), NOW))\n    def test_naive_is_treated_as_utc(self):\n        self.assertTrue(is_expired(datetime(2026, 7, 1, 11, 0), NOW))\n        self.assertFalse(is_expired(datetime(2026, 7, 1, 13, 0), NOW))\n    def test_other_offset(self):\n        kst = timezone(timedelta(hours=9))\n        self.assertFalse(is_expired(datetime(2026, 7, 1, 22, 0, tzinfo=kst), NOW))\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n시간대 정보가 없는 datetime 이 들어오면 TypeError 로 죽어. 그런 값은 UTC 로 보면 돼.\n\n```python\ndef is_expired(expires_at, now):\n    return expires_at < now\n```\n\n고친 전체 코드를 python 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nIt raises TypeError when a naive datetime comes in. Treat a naive value as UTC.\n\n```python\ndef is_expired(expires_at, now):\n    return expires_at < now\n```\n\nReturn the whole fixed code as a single python code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-py-prune-01",
+    "pair_id": "dbg-py-prune-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "mutate-while-iterating",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import prune_empty\n\nclass T(unittest.TestCase):\n    def test_removes_empty(self):\n        self.assertEqual(prune_empty({\"a\": 1, \"b\": None, \"c\": \"\", \"d\": 0}),\n                         {\"a\": 1, \"d\": 0})\n    def test_all_empty(self):\n        self.assertEqual(prune_empty({\"a\": None, \"b\": \"\"}), {})\n    def test_does_not_mutate_input(self):\n        src = {\"a\": None, \"b\": 2}\n        prune_empty(src)\n        self.assertEqual(src, {\"a\": None, \"b\": 2})\n    def test_many_keys(self):\n        src = {str(i): (None if i % 2 else i) for i in range(50)}\n        self.assertEqual(len(prune_empty(src)), 25)\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\nRuntimeError: dictionary changed size during iteration 가 나. 그리고 넘긴 원본이 바뀌면 안 돼.\n\n```python\ndef prune_empty(d):\n    for k, v in d.items():\n        if v is None or v == \"\":\n            del d[k]\n    return d\n```\n\n고친 전체 코드를 python 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nIt raises RuntimeError: dictionary changed size during iteration. Also, the caller's dict must not change.\n\n```python\ndef prune_empty(d):\n    for k, v in d.items():\n        if v is None or v == \"\":\n            del d[k]\n    return d\n```\n\nReturn the whole fixed code as a single python code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-py-regex-01",
+    "pair_id": "dbg-py-regex-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "greedy-regex",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import extract_codes\n\nclass T(unittest.TestCase):\n    def test_two_codes(self):\n        self.assertEqual(extract_codes(\"[A-01] hello [B-22] world\"), [\"A-01\", \"B-22\"])\n    def test_single(self):\n        self.assertEqual(extract_codes(\"start [Z-99] end\"), [\"Z-99\"])\n    def test_none(self):\n        self.assertEqual(extract_codes(\"nothing here\"), [])\n    def test_adjacent(self):\n        self.assertEqual(extract_codes(\"[A-1][B-2]\"), [\"A-1\", \"B-2\"])\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n대괄호 코드가 두 개 이상 있으면 하나로 뭉쳐서 뽑혀.\n\n```python\nimport re\n\ndef extract_codes(text):\n    m = re.findall(r\"\\[(.+)\\]\", text)\n    return m\n```\n\n고친 전체 코드를 python 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nWhen there are two or more bracketed codes, they come back merged into one.\n\n```python\nimport re\n\ndef extract_codes(text):\n    m = re.findall(r\"\\[(.+)\\]\", text)\n    return m\n```\n\nReturn the whole fixed code as a single python code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-js-sort-01",
+    "pair_id": "dbg-js-sort-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "sort-mutates",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "node_tests",
+      "tests": "const assert = require(\"assert\");\nconst { sortByAmount } = require(\"./solution.js\");\nassert.deepStrictEqual(\n  sortByAmount([{amount: 9}, {amount: 100}, {amount: 25}]).map(o => o.amount),\n  [9, 25, 100]);\nassert.deepStrictEqual(\n  sortByAmount([{amount: 2}, {amount: 10}]).map(o => o.amount), [2, 10]);\nassert.deepStrictEqual(sortByAmount([]).map(o => o.amount), []);\nconst input = [{amount: 5}, {amount: 1}];\nsortByAmount(input);\nassert.deepStrictEqual(input.map(o => o.amount), [5, 1], \"must not mutate input\");\nconsole.log(\"ok\");\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n정렬은 맞는데, 넘긴 배열 자체가 정렬돼서 호출한 쪽 데이터가 바뀌어 버려.\n\n```javascript\nfunction sortByAmount(rows) {\n  return rows.sort((a, b) => a.amount - b.amount);\n}\nmodule.exports = { sortByAmount };\n```\n\n고친 전체 코드를 javascript 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nThe ordering is right, but the caller's array gets sorted in place and their data changes.\n\n```javascript\nfunction sortByAmount(rows) {\n  return rows.sort((a, b) => a.amount - b.amount);\n}\nmodule.exports = { sortByAmount };\n```\n\nReturn the whole fixed code as a single javascript code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-js-clone-01",
+    "pair_id": "dbg-js-clone-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "shallow-copy",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "node_tests",
+      "tests": "const assert = require(\"assert\");\nconst { withDefaults } = require(\"./solution.js\");\nconst base = { theme: { dark: false }, tags: [\"a\"] };\nconst out = withDefaults(base, { theme: { dark: true } });\nassert.strictEqual(out.theme.dark, true);\nassert.strictEqual(base.theme.dark, false, \"source must not change\");\nout.tags.push(\"b\");\nassert.deepStrictEqual(base.tags, [\"a\"], \"arrays must not be shared\");\nconst two = withDefaults(base, {});\ntwo.theme.dark = true;\nassert.strictEqual(base.theme.dark, false);\nconsole.log(\"ok\");\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n반환된 객체의 중첩 값을 바꾸면 원본까지 같이 바뀌어.\n\n```javascript\nfunction withDefaults(base, overrides) {\n  return { ...base, ...overrides };\n}\nmodule.exports = { withDefaults };\n```\n\n고친 전체 코드를 javascript 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nChanging a nested value on the returned object also changes the source.\n\n```javascript\nfunction withDefaults(base, overrides) {\n  return { ...base, ...overrides };\n}\nmodule.exports = { withDefaults };\n```\n\nReturn the whole fixed code as a single javascript code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-js-async-01",
+    "pair_id": "dbg-js-async-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "serial-await",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "node_tests",
+      "tests": "const assert = require(\"assert\");\nconst { fetchAllInOrder } = require(\"./solution.js\");\n// each call sleeps; run serially this totals ~400ms, concurrently ~160ms\nconst fake = (id) => new Promise(r => setTimeout(() => r(`v${id}`), (5 - id) * 40));\n(async () => {\n  assert.deepStrictEqual(await fetchAllInOrder([1,2,3,4], fake),\n                         [\"v1\",\"v2\",\"v3\",\"v4\"]);\n  assert.deepStrictEqual(await fetchAllInOrder([], fake), []);\n  const t0 = Date.now();\n  await fetchAllInOrder([1,2,3,4], fake);\n  const took = Date.now() - t0;\n  assert.ok(took < 260, `must run concurrently, not one after another (took ${took}ms)`);\n  console.log(\"ok\");\n})().catch(e => { console.error(e.message); process.exit(1); });\n"
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n결과 순서는 맞는데 너무 느려. 4건이면 네 번을 차례로 기다려.\n\n```javascript\nasync function fetchAllInOrder(ids, fetchOne) {\n  const out = [];\n  for (const id of ids) {\n    out.push(await fetchOne(id));\n  }\n  return out;\n}\nmodule.exports = { fetchAllInOrder };\n```\n\n고친 전체 코드를 javascript 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nThe order is right but it is far too slow: four ids mean four sequential waits.\n\n```javascript\nasync function fetchAllInOrder(ids, fetchOne) {\n  const out = [];\n  for (const id of ids) {\n    out.push(await fetchOne(id));\n  }\n  return out;\n}\nmodule.exports = { fetchAllInOrder };\n```\n\nReturn the whole fixed code as a single javascript code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  },
+  {
+    "id": "dbg-sql-join-01",
+    "pair_id": "dbg-sql-join-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-debug",
+    "subcategory": "join-fanout",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "sql",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "sql_result",
+      "setup": "CREATE TABLE orders (id INTEGER, customer TEXT, amount INTEGER);CREATE TABLE items (id INTEGER, order_id INTEGER, sku TEXT);INSERT INTO orders VALUES (1,'acme',1000),(2,'acme',2000),(3,'globex',500);INSERT INTO items VALUES (1,1,'a'),(2,1,'b'),(3,1,'c'),(4,2,'d'),(5,3,'e');",
+      "expected": [
+        [
+          "acme",
+          3000
+        ],
+        [
+          "globex",
+          500
+        ]
+      ]
+    },
+    "ko": {
+      "turns": [
+        "아래 코드에 버그가 있어. 증상은 이거야.\n\n고객별 주문 합계를 내는데 금액이 부풀어. acme 는 3000 이어야 하는데 더 크게 나와.\n테이블: orders(id, customer, amount), items(id, order_id, sku)\n\n```sql\nSELECT o.customer, SUM(o.amount) AS total\nFROM orders o\nJOIN items i ON i.order_id = o.id\nGROUP BY o.customer\nORDER BY o.customer\n```\n\n고친 전체 코드를 sql 코드블록 하나로 다시 줘. 함수 이름과 시그니처는 그대로 두고, 왜 그랬는지 두 문장 안으로 덧붙여 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "The code below has a bug. The symptom:\n\nThe per-customer order total comes out inflated. acme should be 3000 but is larger.\nTables: orders(id, customer, amount), items(id, order_id, sku)\n\n```sql\nSELECT o.customer, SUM(o.amount) AS total\nFROM orders o\nJOIN items i ON i.order_id = o.id\nGROUP BY o.customer\nORDER BY o.customer\n```\n\nReturn the whole fixed code as a single sql code block. Keep the function name and signature, and add at most two sentences on what was wrong."
+      ]
+    }
+  }
+]

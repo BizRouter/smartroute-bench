@@ -1,0 +1,162 @@
+[
+  {
+    "id": "reason-cal-01",
+    "pair_id": "reason-cal-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "math",
+    "subcategory": "calendar",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "reasoning",
+    "ko": {
+      "turns": [
+        "달력 문제 하나 풀어줘.\n\n어느 달의 1일이 수요일이야. 그 달의 세 번째 금요일은 며칠일까?\n\n풀이 과정을 보여주고, 마지막 줄에 정확히 이 형식으로 답해줘:\n정답: N일"
+      ],
+      "rubric": [
+        {
+          "name": "정답",
+          "desc": "최종 답이 정확한가",
+          "weight": 0.5
+        },
+        {
+          "name": "추론 과정",
+          "desc": "풀이 과정이 논리적으로 타당하고 검증 가능한가",
+          "weight": 0.35
+        },
+        {
+          "name": "명료성",
+          "desc": "불필요한 우회 없이 깔끔하게 설명했는가",
+          "weight": 0.15
+        }
+      ],
+      "check": {
+        "type": "answer_match",
+        "expected": [
+          "17일",
+          "17"
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Solve this calendar problem.\n\nThe 1st of a certain month falls on a Wednesday. On what date is the third Friday of that month?\n\nShow your work, then end with exactly this format on the last line:\nAnswer: <date number>"
+      ],
+      "rubric": [
+        {
+          "name": "Correct answer",
+          "desc": "Is the final answer correct?",
+          "weight": 0.5
+        },
+        {
+          "name": "Reasoning",
+          "desc": "Is the solution process logically sound and verifiable?",
+          "weight": 0.35
+        },
+        {
+          "name": "Clarity",
+          "desc": "Is the explanation clean, without unnecessary detours?",
+          "weight": 0.15
+        }
+      ],
+      "check": {
+        "type": "answer_match",
+        "pattern": "Answer\\s*[::]\\s*(.+)",
+        "expected": [
+          "17",
+          "17th",
+          "the 17th"
+        ]
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "reason-price-01",
+    "pair_id": "reason-price-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "math",
+    "subcategory": "arithmetic",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "reasoning",
+    "ko": {
+      "turns": [
+        "가격 계산 문제야. 단계별로 정확히 계산해줘.\n\n정가 55,000원짜리 상품이 시즌 세일로 20% 할인 중이야. 나는 멤버십 회원이라\n할인된 가격에서 다시 5%를 추가 할인받아. 그런데 이 가격은 부가세 별도라서,\n최종 결제 금액에는 부가세 10%가 붙어.\n\n내가 실제로 결제하는 금액은 얼마일까?\n\n풀이 과정을 보여주고, 마지막 줄에 정확히 이 형식으로 답해줘:\n정답: N원"
+      ],
+      "rubric": [
+        {
+          "name": "정답",
+          "desc": "최종 답이 정확한가",
+          "weight": 0.5
+        },
+        {
+          "name": "추론 과정",
+          "desc": "풀이 과정이 논리적으로 타당하고 검증 가능한가",
+          "weight": 0.35
+        },
+        {
+          "name": "명료성",
+          "desc": "불필요한 우회 없이 깔끔하게 설명했는가",
+          "weight": 0.15
+        }
+      ],
+      "check": {
+        "type": "answer_match",
+        "expected": [
+          "45,980원",
+          "45980원",
+          "45980"
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "A price calculation problem. Work through it step by step, exactly.\n\nAn item has a list price of $80.00 and is on seasonal sale at 25% off. Because I am\na membership holder, I get an additional 5% off the already-discounted price. This\nprice excludes sales tax, so a 10% sales tax is added to the final amount I pay.\n\nHow much do I actually pay?\n\nShow your work, then end with exactly this format on the last line:\nAnswer: $X.XX"
+      ],
+      "rubric": [
+        {
+          "name": "Correct answer",
+          "desc": "Is the final answer correct?",
+          "weight": 0.5
+        },
+        {
+          "name": "Reasoning",
+          "desc": "Is the solution process logically sound and verifiable?",
+          "weight": 0.35
+        },
+        {
+          "name": "Clarity",
+          "desc": "Is the explanation clean, without unnecessary detours?",
+          "weight": 0.15
+        }
+      ],
+      "check": {
+        "type": "answer_match",
+        "pattern": "Answer\\s*[::]\\s*(.+)",
+        "expected": [
+          "$62.70",
+          "62.70",
+          "$62.7",
+          "62.7"
+        ]
+      },
+      "locale": "en"
+    }
+  }
+]

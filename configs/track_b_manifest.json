@@ -1,0 +1,98 @@
+{
+  "manifest_version": "1.0",
+  "note": "Track B (capability) sourcing. This repository ships pointers and adapters, never third-party rows — tools/fetch_track_b.py materialises tasks/{k,base}/capability/*.jsonl locally, and those files are gitignored. configs/track_b_lock.json records the exact sampled indices so a re-fetch reproduces the same suite.",
+  "seed": 20260805,
+
+  "overlap_guard": {
+    "note": "RouterArena is evaluation-only: fitting a router on its data disqualifies a submission. Our own bench feeds router fixes, so any item we share with RouterArena becomes an item we tune against. Sampling therefore rejects every question whose normalised text collides with the RouterArena set.",
+    "routerarena_dataset_dirs": [
+      "../routerarena-bizrouter/dataset/routerarena",
+      "~/projects/routerarena-bizrouter/dataset/routerarena"
+    ],
+    "required": true,
+    "positive_control": true
+  },
+
+  "prompt_templates": {
+    "mcq": {
+      "ko": "다음 객관식 문제를 풀어 줘.\n\n문제: {question}\n\n보기:\n{options}\n\n간단히 근거를 3문장 안으로 적고, 마지막 줄에 정확히 이 형식으로 답해 줘:\n정답: X",
+      "en": "Answer the following multiple-choice question.\n\nQuestion: {question}\n\nOptions:\n{options}\n\nKeep any explanation within 3 sentences, then answer on the last line in exactly this format:\nAnswer: X"
+    },
+    "numeric": {
+      "ko": "다음 문제를 풀어 줘.\n\n{question}\n\n풀이 과정을 간단히 보여주고, 마지막 줄에 정확히 이 형식으로 답해 줘 (숫자만):\n정답: N",
+      "en": "Solve the following problem.\n\n{question}\n\nShow your working briefly, then answer on the last line in exactly this format (number only):\nAnswer: N"
+    }
+  },
+
+  "slices": [
+    {
+      "category": "knowledge-mcq",
+      "n": 40,
+      "kind": "parallel",
+      "format": "mcq",
+      "align": "index",
+      "align_check": ["answer", "subject"],
+      "max_tokens": 1024,
+      "license": "MIT (MMMLU) · MIT (MMLU)",
+      "ko": {"dataset": "openai/MMMLU", "config": "KO_KR", "split": "test"},
+      "en": {"dataset": "cais/mmlu", "config": "all", "split": "test"},
+      "note": "MMMLU KO_KR is a professional translation of the MMLU test split and aligns to it row for row; alignment is asserted on answer letter + subject for every sampled index, so a future reordering upstream fails loudly instead of pairing the wrong twins."
+    },
+    {
+      "category": "math",
+      "n": 15,
+      "kind": "parallel",
+      "format": "numeric",
+      "align": "row",
+      "max_tokens": 2048,
+      "license": "MIT (GSM8K) · derived translation",
+      "ko": {"dataset": "kuotient/gsm8k-ko", "split": "test", "field": "question"},
+      "en": {"dataset": "kuotient/gsm8k-ko", "split": "test", "field": "question_en"},
+      "note": "This dataset carries the Korean and English text of the same GSM8K item in one row, so the pair is parallel by construction — no cross-dataset index alignment to get wrong."
+    },
+    {
+      "category": "math",
+      "n": 10,
+      "kind": "native",
+      "format": "numeric",
+      "max_tokens": 4096,
+      "license": "MIT (MATH-500) · CC-BY-SA (KMMLU)",
+      "ko": {"dataset": "HAERAE-HUB/KMMLU", "config": "Math", "split": "test", "format": "mcq"},
+      "en": {"dataset": "HuggingFaceH4/MATH-500", "split": "test"},
+      "note": "The hard-math tier has no parallel Korean source, so each language uses its own — a declared native slice, not an accident. Difficulty comes out of the score matrix either way."
+    },
+    {
+      "category": "logic-commonsense",
+      "n": 20,
+      "kind": "native",
+      "format": "mcq",
+      "max_tokens": 1024,
+      "license": "CC-BY-SA (KoBEST) · CC-BY-SA (ARC)",
+      "ko": {"dataset": "skt/kobest_v1", "config": "hellaswag", "split": "test"},
+      "en": {"dataset": "allenai/ai2_arc", "config": "ARC-Challenge", "split": "test"},
+      "note": "KoBEST HellaSwag over COPA: COPA is two-choice, so a coin flip scores 50% and the slice cannot separate a cheap model from a capable one. Four options put the guessing floor at 25%, same as ARC on the English side."
+    },
+    {
+      "category": "domain-pro",
+      "n": 10,
+      "kind": "native",
+      "format": "mcq",
+      "max_tokens": 1024,
+      "license": "CC-BY-SA (KMMLU) · Apache-2.0 (MedMCQA)",
+      "ko": {"dataset": "HAERAE-HUB/KMMLU", "config": "Law", "split": "test"},
+      "en": {"dataset": "openlifescienceai/medmcqa", "split": "validation"},
+      "note": "Professional-domain knowledge is where a cheap model is most likely to be confidently wrong, which is exactly the routing decision we want measured."
+    }
+  ],
+
+  "not_yet_sourced": {
+    "code-exec": {
+      "n": 15,
+      "why": "LiveCodeBench needs the execution harness wired in before its items mean anything; a fetched prompt with no runner would score as a silent miss. Tracked as its own step rather than shipped half-done."
+    },
+    "longcontext-qa": {
+      "n": 10,
+      "why": "Needs 8-64k inputs authored or assembled — the length band v1 has none of. Authored rather than sampled, so it lands with the Track A long-context work."
+    }
+  }
+}

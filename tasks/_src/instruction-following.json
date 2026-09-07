@@ -1,0 +1,768 @@
+[
+  {
+    "id": "if-slack-01",
+    "pair_id": "if-slack-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "plain-text",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "팀 채널에 붙일 공지를 써 줘.\n\n내용: 8월 12일(수) 오후 2시부터 4시까지 결제 서버 점검이라 결제가 안 됨.\n\n규칙 (전부 지켜야 해):\n- 마크다운 문법 금지 (제목·불릿·굵게·코드블록 전부 안 됨). 그냥 문장으로만.\n- 전체 3줄 이하.\n- \"8월 12일\", \"오후 2시\", \"결제\" 이 세 표현은 반드시 들어가야 해.\n- 사과 문구를 넣지 말 것 (\"죄송\", \"불편\" 같은 말 금지)."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_lines",
+            "n": 3
+          },
+          {
+            "kind": "require",
+            "values": [
+              "8월 12일",
+              "오후 2시",
+              "결제"
+            ]
+          },
+          {
+            "kind": "forbid",
+            "values": [
+              "죄송",
+              "불편"
+            ]
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Write an announcement to paste into a team channel.\n\nContent: payments will be unavailable Wednesday August 12, 2pm to 4pm, for payment-server maintenance.\n\nRules (all of them):\n- No markdown syntax at all (no headings, bullets, bold, or code blocks). Plain sentences only.\n- Three lines or fewer in total.\n- Must contain these exact strings: \"August 12\", \"2pm\", \"payments\".\n- Do not apologise (the words \"sorry\" and \"inconvenience\" are not allowed)."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_lines",
+            "n": 3
+          },
+          {
+            "kind": "require",
+            "values": [
+              "August 12",
+              "2pm",
+              "payments"
+            ]
+          },
+          {
+            "kind": "forbid",
+            "values": [
+              "sorry",
+              "inconvenience"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-jsononly-01",
+    "pair_id": "if-jsononly-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "bare-json",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "test",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "아래 문의를 분류해서 결과를 JSON 으로 줘.\n\n문의: \"어제 결제했는데 영수증 메일이 안 왔어요. 사업자 정보도 바꿔야 하고요.\"\n\n출력 규칙:\n- 응답 전체가 JSON 값 하나여야 해. 앞뒤 설명·인사·코드블록 표시 전부 금지.\n- 키는 정확히 category, urgency, needs_human 세 개.\n- category 는 \"billing\" 또는 \"technical\" 또는 \"account\" 중 하나.\n- urgency 는 1~5 정수, needs_human 은 true/false."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "json_only"
+          },
+          {
+            "kind": "regex",
+            "pattern": "\"category\"\\s*:\\s*\"(billing|technical|account)\""
+          },
+          {
+            "kind": "regex",
+            "pattern": "\"urgency\"\\s*:\\s*[1-5]"
+          },
+          {
+            "kind": "regex",
+            "pattern": "\"needs_human\"\\s*:\\s*(true|false)"
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Classify the support message below and return the result as JSON.\n\nMessage: \"I paid yesterday but never got the receipt email. I also need to change my business details.\"\n\nOutput rules:\n- The entire response must be a single JSON value. No surrounding prose, greeting, or code fence.\n- Exactly three keys: category, urgency, needs_human.\n- category is one of \"billing\", \"technical\", \"account\".\n- urgency is an integer 1-5; needs_human is true/false."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "json_only"
+          },
+          {
+            "kind": "regex",
+            "pattern": "\"category\"\\s*:\\s*\"(billing|technical|account)\""
+          },
+          {
+            "kind": "regex",
+            "pattern": "\"urgency\"\\s*:\\s*[1-5]"
+          },
+          {
+            "kind": "regex",
+            "pattern": "\"needs_human\"\\s*:\\s*(true|false)"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-numbered-01",
+    "pair_id": "if-numbered-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "exact-format",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "신규 입사자 온보딩 체크리스트를 만들어 줘.\n\n형식 규칙 (하나도 어기면 안 돼):\n- 정확히 5줄. 빈 줄도 넣지 마.\n- 각 줄은 \"1. \" \"2. \" 처럼 번호와 점, 공백 하나로 시작해.\n- 각 줄은 반드시 \"완료\" 로 끝나야 해.\n- 제목·머리말·마무리 문장 금지. 5줄이 응답 전체야."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 5
+          },
+          {
+            "kind": "regex",
+            "pattern": "^1\\. .*완료$"
+          },
+          {
+            "kind": "regex",
+            "pattern": "^5\\. .*완료$"
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "^(?![1-5]\\. ).+$"
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Write an onboarding checklist for a new hire.\n\nFormat rules (break none of them):\n- Exactly 5 lines. No blank lines either.\n- Each line starts with a number, a period, and one space: \"1. \", \"2. \", and so on.\n- Each line must end with the word \"done\".\n- No title, preamble, or closing sentence. The 5 lines are the entire response."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 5
+          },
+          {
+            "kind": "regex",
+            "pattern": "^1\\. .*done$"
+          },
+          {
+            "kind": "regex",
+            "pattern": "^5\\. .*done$"
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "^(?![1-5]\\. ).+$"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-tone-ban-01",
+    "pair_id": "if-tone-ban-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "banned-vocabulary",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "구독 요금제 인상을 알리는 안내문을 써 줘. 3~5문장.\n\n용어 규칙 (우리 회사 스타일 가이드야):\n- \"고객님\" 이라는 말은 쓰지 말고 \"회원님\" 으로만 불러.\n- \"인상\"·\"값\"·\"비용\" 대신 \"요금 조정\" 이라는 표현을 반드시 한 번 이상 써.\n- 느낌표(!)를 쓰지 마.\n- 마크다운 금지, 그냥 문장으로."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "forbid",
+            "values": [
+              "고객님",
+              "인상",
+              "!"
+            ]
+          },
+          {
+            "kind": "require",
+            "values": [
+              "회원님",
+              "요금 조정"
+            ]
+          },
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_words",
+            "n": 120
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Write a notice announcing a subscription price change. Three to five sentences.\n\nVocabulary rules (our style guide):\n- Never say \"customer\" — address the reader as \"member\".\n- Do not use the words \"increase\", \"hike\", or \"expensive\"; use the phrase \"price adjustment\" at least once.\n- No exclamation marks.\n- No markdown; plain sentences."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "forbid",
+            "values": [
+              "customer",
+              "increase",
+              "hike",
+              "expensive",
+              "!"
+            ]
+          },
+          {
+            "kind": "require",
+            "values": [
+              "member",
+              "price adjustment"
+            ]
+          },
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_words",
+            "n": 120
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-ending-01",
+    "pair_id": "if-ending-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "fixed-closing",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "환불 요청을 받아들이는 답장을 써 줘. 두 문장으로.\n\n규칙:\n- 첫 문장은 \"환불\" 로 시작해.\n- 응답의 마지막은 반드시 이 문구로 끝나야 해 (마침표까지 그대로): 처리 상황은 마이페이지에서 확인할 수 있어요.\n- 마크다운 금지."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "starts_with",
+            "value": "환불"
+          },
+          {
+            "kind": "ends_with",
+            "value": "처리 상황은 마이페이지에서 확인할 수 있어요."
+          },
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_words",
+            "n": 60
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Write a reply approving a refund request. Two sentences.\n\nRules:\n- The first sentence must start with the word \"Refund\".\n- The response must end with exactly this sentence, period included: You can track the status in your account page.\n- No markdown."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "starts_with",
+            "value": "Refund"
+          },
+          {
+            "kind": "ends_with",
+            "value": "You can track the status in your account page."
+          },
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_words",
+            "n": 60
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-nodigits-01",
+    "pair_id": "if-nodigits-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "negative-constraint",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "test",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "우리 서비스 무료 체험 기간이 2주이고, 카드 등록 없이 시작할 수 있고, 체험이 끝나면 자동 결제가 되지 않는다는 걸 설명해 줘.\n\n제약:\n- 아라비아 숫자(0~9)를 한 글자도 쓰지 마. 필요하면 한글로 풀어 써.\n- 4문장 이하.\n- 마크다운 금지."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "forbid_regex",
+            "pattern": "[0-9]"
+          },
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_words",
+            "n": 90
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Explain that our free trial lasts two weeks, needs no card to start, and does not auto-charge when it ends.\n\nConstraints:\n- Do not use any Arabic digit (0-9) anywhere. Spell numbers out as words if you need them.\n- Four sentences or fewer.\n- No markdown."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "forbid_regex",
+            "pattern": "[0-9]"
+          },
+          {
+            "kind": "no_markdown"
+          },
+          {
+            "kind": "max_words",
+            "n": 90
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-table-01",
+    "pair_id": "if-table-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "table-only",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "요금제 세 가지를 비교하는 표를 만들어 줘.\n\n요금제: 무료 / 프로(월 19,000원) / 팀(1인당 월 15,000원)\n비교 항목: 월 요금, 사용자 수, 지원 방식\n\n규칙:\n- 마크다운 표만 출력해. 표 앞뒤에 문장을 붙이지 마.\n- 헤더 1줄 + 구분선 1줄 + 데이터 3줄 = 정확히 5줄.\n- 첫 열은 요금제 이름."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 5
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "^\\s*(?!\\|).+$"
+          },
+          {
+            "kind": "require",
+            "values": [
+              "무료",
+              "프로",
+              "팀"
+            ]
+          },
+          {
+            "kind": "regex",
+            "pattern": "^\\|[\\s:|-]+\\|$"
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Build a table comparing our three plans.\n\nPlans: Free / Pro ($19 per month) / Team ($15 per user per month)\nColumns: monthly price, seats, support channel\n\nRules:\n- Output the markdown table only. No sentence before or after it.\n- One header row + one separator row + three data rows = exactly 5 lines.\n- The first column is the plan name."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 5
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "^\\s*(?!\\|).+$"
+          },
+          {
+            "kind": "require",
+            "values": [
+              "Free",
+              "Pro",
+              "Team"
+            ]
+          },
+          {
+            "kind": "regex",
+            "pattern": "^\\|[\\s:|-]+\\|$"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-wordrange-01",
+    "pair_id": "if-wordrange-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "length-window",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "사내 뉴스레터에 실을 제품 업데이트 소개를 써 줘. 내용은 「검색 속도가 빨라졌고, 대화 기록을 폴더로 정리할 수 있게 됐다」 두 가지.\n\n분량 규칙 — 이게 제일 중요해:\n- 어절(띄어쓰기 기준 단어) 수가 60개 이상 80개 이하여야 해. 세어 보고 맞춰.\n- 첫 줄은 제목, 그 아래 본문. 총 2줄.\n- 마크다운 금지."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "min_words",
+            "n": 60
+          },
+          {
+            "kind": "max_words",
+            "n": 80
+          },
+          {
+            "kind": "line_count",
+            "n": 2
+          },
+          {
+            "kind": "no_markdown"
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Write a product-update blurb for the internal newsletter. Cover two things: search got faster, and chat history can now be organised into folders.\n\nLength rule — this is the important part:\n- Between 70 and 95 words. Count them and hit the window.\n- First line is the headline, the body goes underneath. Two lines total.\n- No markdown."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "min_words",
+            "n": 70
+          },
+          {
+            "kind": "max_words",
+            "n": 95
+          },
+          {
+            "kind": "line_count",
+            "n": 2
+          },
+          {
+            "kind": "no_markdown"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-csv-01",
+    "pair_id": "if-csv-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "delimited-output",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "아래 주문 세 건을 CSV 로 정리해 줘.\n\n- 3월 2일, 김민수, 노트북 거치대 2개, 46,000원\n- 3월 2일, 이서연, USB 허브 1개, 23,500원\n- 3월 5일, 박도윤, 무선 키보드 1개, 89,000원\n\n규칙:\n- 첫 줄은 헤더: date,name,item,qty,amount\n- 총 4줄(헤더 1 + 데이터 3). 다른 줄 추가 금지.\n- 금액은 숫자만 (쉼표·원 표시 없이).\n- 날짜는 2026-03-02 형식."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 4
+          },
+          {
+            "kind": "starts_with",
+            "value": "date,name,item,qty,amount"
+          },
+          {
+            "kind": "require",
+            "values": [
+              "2026-03-02",
+              "2026-03-05",
+              "46000",
+              "23500",
+              "89000"
+            ]
+          },
+          {
+            "kind": "forbid",
+            "values": [
+              "원"
+            ]
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "^(?:[^,\\n]*,){5}"
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Turn the three orders below into CSV.\n\n- March 2, Alex Reed, laptop stand x2, $46.00\n- March 2, Sam Cole, USB hub x1, $23.50\n- March 5, Dana Woo, wireless keyboard x1, $89.00\n\nRules:\n- First line is the header: date,name,item,qty,amount\n- Four lines total (1 header + 3 data). No extra lines.\n- Amounts as bare numbers (no currency symbol, no thousands separator).\n- Dates in 2026-03-02 form."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 4
+          },
+          {
+            "kind": "starts_with",
+            "value": "date,name,item,qty,amount"
+          },
+          {
+            "kind": "require",
+            "values": [
+              "2026-03-02",
+              "2026-03-05",
+              "46.00",
+              "23.50",
+              "89.00"
+            ]
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "[$₩]"
+          },
+          {
+            "kind": "forbid_regex",
+            "pattern": "^(?:[^,\\n]*,){5}"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "if-stacked-01",
+    "pair_id": "if-stacked-01",
+    "track": "work",
+    "block": "structured",
+    "category": "instruction-following",
+    "subcategory": "many-constraints",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "test",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "장애 보고서를 써 줘.\n\n상황: 8월 3일 오전 9시 12분부터 9시 41분까지 로그인 API 오류율이 올라가 일부 사용자가 로그인 못 함. 원인은 배포된 설정값 오류. 설정을 되돌려 복구.\n\n규칙 (여섯 개 전부):\n- 정확히 3줄. 각 줄은 \"상황:\", \"원인:\", \"조치:\" 로 시작.\n- 전체 어절 60개 이하.\n- \"9시 12분\", \"9시 41분\" 두 시각이 들어가야 해.\n- \"죄송\"·\"최선\"·\"노력\" 이라는 말 금지.\n- 물음표 금지.\n- 마크다운 금지."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 3
+          },
+          {
+            "kind": "regex",
+            "pattern": "^상황:"
+          },
+          {
+            "kind": "regex",
+            "pattern": "^원인:"
+          },
+          {
+            "kind": "regex",
+            "pattern": "^조치:"
+          },
+          {
+            "kind": "max_words",
+            "n": 60
+          },
+          {
+            "kind": "require",
+            "values": [
+              "9시 12분",
+              "9시 41분"
+            ]
+          },
+          {
+            "kind": "forbid",
+            "values": [
+              "죄송",
+              "최선",
+              "노력",
+              "?"
+            ]
+          },
+          {
+            "kind": "no_markdown"
+          }
+        ]
+      }
+    },
+    "en": {
+      "turns": [
+        "Write an incident report.\n\nSituation: from 9:12am to 9:41am on August 3, the login API error rate rose and some users could not sign in. Cause was a bad config value in a deploy. Recovered by rolling the config back.\n\nRules (all six):\n- Exactly 3 lines, each starting with \"Impact:\", \"Cause:\", \"Action:\".\n- 70 words or fewer in total.\n- Must include both times, \"9:12am\" and \"9:41am\".\n- The words \"sorry\", \"utmost\", and \"strive\" are not allowed.\n- No question marks.\n- No markdown."
+      ],
+      "check": {
+        "type": "constraints",
+        "rules": [
+          {
+            "kind": "line_count",
+            "n": 3
+          },
+          {
+            "kind": "regex",
+            "pattern": "^Impact:"
+          },
+          {
+            "kind": "regex",
+            "pattern": "^Cause:"
+          },
+          {
+            "kind": "regex",
+            "pattern": "^Action:"
+          },
+          {
+            "kind": "max_words",
+            "n": 70
+          },
+          {
+            "kind": "require",
+            "values": [
+              "9:12am",
+              "9:41am"
+            ]
+          },
+          {
+            "kind": "forbid",
+            "values": [
+              "sorry",
+              "utmost",
+              "strive",
+              "?"
+            ]
+          },
+          {
+            "kind": "no_markdown"
+          }
+        ]
+      }
+    }
+  }
+]

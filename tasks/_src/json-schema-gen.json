@@ -1,0 +1,239 @@
+[
+  {
+    "id": "json-billing-01",
+    "pair_id": "json-billing-01",
+    "track": "work",
+    "block": "structured",
+    "category": "json-schema-gen",
+    "subcategory": "computed",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "json-gen",
+    "ko": {
+      "turns": [
+        "사용량 기반 요금 청구서 JSON을 만들어줘. 요금 규칙과 사용량을 보고 각 항목을 직접 계산해야 해.\n\n요금 규칙:\n- 기본료 30,000원 (월 1,000건 포함)\n- 1,001건부터 3,000건까지: 초과 1건당 15원\n- 3,001건부터: 1건당 12원\n\n이번 달 사용량: 4,200건\n\n키 이름과 규칙 (그대로 지켜, 값은 모두 숫자):\n- usage: 사용량(건)\n- base_fee: 기본료\n- tier1_fee: 1,001~3,000건 구간 요금\n- tier2_fee: 3,001건 이후 구간 요금\n- subtotal: 위 세 요금의 합\n- vat: 부가세 (subtotal의 10%)\n- total: subtotal + vat\n\n다른 키는 추가하지 말고, 마지막에 ```json 블록 하나로 답해줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 필드와 값이 원문/요구사항과 정확히 일치하는가",
+          "weight": 0.6
+        },
+        {
+          "name": "형식 준수",
+          "desc": "지정한 JSON 스키마·키 이름·값 형식을 그대로 지켰는가",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "usage": 4200,
+          "base_fee": 30000,
+          "tier1_fee": 30000,
+          "tier2_fee": 14400,
+          "subtotal": 74400,
+          "vat": 7440,
+          "total": 81840
+        }
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Create a usage-based billing invoice JSON. Read the pricing rules and the usage figure, and compute every line item yourself. All amounts are in cents, as integers.\n\nPricing rules:\n- Base fee: 4,000 cents (covers the first 1,000 calls of the month)\n- Calls 1,001 through 3,000: 2 cents per call\n- Calls 3,001 and above: 1 cent per call\n\nThis month's usage: 4,500 calls\n\nKey names and rules (use exactly these; every value is a number):\n- usage: number of calls\n- base_fee: the base fee\n- tier1_fee: the charge for the 1,001-3,000 range\n- tier2_fee: the charge for calls 3,001 and beyond\n- subtotal: sum of the three fees above\n- vat: 10% tax on the subtotal (key name: vat)\n- total: subtotal + vat\n\nDo not add any other keys, and end your answer with a single ```json block."
+      ],
+      "rubric": [
+        {
+          "name": "Accuracy",
+          "desc": "Do the requested fields and values exactly match the source text and requirements?",
+          "weight": 0.6
+        },
+        {
+          "name": "Format compliance",
+          "desc": "Does the answer follow the specified JSON schema, key names, and value formats exactly?",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "usage": 4500,
+          "base_fee": 4000,
+          "tier1_fee": 4000,
+          "tier2_fee": 1500,
+          "subtotal": 9500,
+          "vat": 950,
+          "total": 10450
+        }
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "json-config-01",
+    "pair_id": "json-config-01",
+    "track": "work",
+    "block": "structured",
+    "category": "json-schema-gen",
+    "subcategory": "config",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "json-gen",
+    "ko": {
+      "turns": [
+        "다음 요구사항대로 서버 설정 JSON을 만들어줘.\n\n- 포트는 8080 (키: port)\n- 로그 레벨은 warn (키: log_level)\n- 재시도 정책 (키: retry): 최대 3회 시도 (키: max_attempts), 시도 간격 500ms (키: backoff_ms)\n- 허용 오리진 (키: allowed_origins): https://app.example.com 과 https://admin.example.com 두 개, 이 순서로\n\n위에 적힌 키 이름을 그대로 쓰고, 다른 키는 추가하지 마.\n마지막에 ```json 블록 하나로 답해줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 필드와 값이 원문/요구사항과 정확히 일치하는가",
+          "weight": 0.6
+        },
+        {
+          "name": "형식 준수",
+          "desc": "지정한 JSON 스키마·키 이름·값 형식을 그대로 지켰는가",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "port": 8080,
+          "log_level": "warn",
+          "retry": {
+            "max_attempts": 3,
+            "backoff_ms": 500
+          },
+          "allowed_origins": [
+            "https://app.example.com",
+            "https://admin.example.com"
+          ]
+        }
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Create a server configuration JSON that meets the following requirements.\n\n- Port is 8080 (key: port)\n- Log level is warn (key: log_level)\n- Retry policy (key: retry): at most 3 attempts (key: max_attempts), 500ms between attempts (key: backoff_ms)\n- Allowed origins (key: allowed_origins): https://app.example.com and https://admin.example.com, both, in this order\n\nUse exactly the key names written above and do not add any other keys.\nEnd your answer with a single ```json block."
+      ],
+      "rubric": [
+        {
+          "name": "Accuracy",
+          "desc": "Do the requested fields and values exactly match the source text and requirements?",
+          "weight": 0.6
+        },
+        {
+          "name": "Format compliance",
+          "desc": "Does the answer follow the specified JSON schema, key names, and value formats exactly?",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "port": 8080,
+          "log_level": "warn",
+          "retry": {
+            "max_attempts": 3,
+            "backoff_ms": 500
+          },
+          "allowed_origins": [
+            "https://app.example.com",
+            "https://admin.example.com"
+          ]
+        }
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "json-page-01",
+    "pair_id": "json-page-01",
+    "track": "work",
+    "block": "structured",
+    "category": "json-schema-gen",
+    "subcategory": "api-response",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "json-gen",
+    "ko": {
+      "turns": [
+        "목록 API의 페이지네이션 응답 예시 JSON을 만들어줘.\n\n상황: 전체 항목 142개, 페이지당 20개, 현재 3페이지를 조회한 응답.\n\n키 이름과 규칙 (그대로 지켜):\n- page: 현재 페이지 번호\n- per_page: 페이지당 개수\n- total: 전체 항목 수\n- total_pages: 전체 페이지 수 (올림 계산)\n- has_next / has_prev: 다음/이전 페이지 존재 여부 (boolean)\n- items: 이 예시에서는 빈 배열\n\n다른 키는 추가하지 말고, 마지막에 ```json 블록 하나로 답해줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 필드와 값이 원문/요구사항과 정확히 일치하는가",
+          "weight": 0.6
+        },
+        {
+          "name": "형식 준수",
+          "desc": "지정한 JSON 스키마·키 이름·값 형식을 그대로 지켰는가",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "page": 3,
+          "per_page": 20,
+          "total": 142,
+          "total_pages": 8,
+          "has_next": true,
+          "has_prev": true,
+          "items": []
+        }
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Create an example pagination response JSON for a list API.\n\nScenario: 142 items in total, 20 items per page, and this is the response for page 3.\n\nKey names and rules (follow them exactly):\n- page: current page number\n- per_page: items per page\n- total: total number of items\n- total_pages: total number of pages (rounded up)\n- has_next / has_prev: whether a next/previous page exists (boolean)\n- items: an empty array in this example\n\nDo not add any other keys, and end your answer with a single ```json block."
+      ],
+      "rubric": [
+        {
+          "name": "Accuracy",
+          "desc": "Do the requested fields and values exactly match the source text and requirements?",
+          "weight": 0.6
+        },
+        {
+          "name": "Format compliance",
+          "desc": "Does the answer follow the specified JSON schema, key names, and value formats exactly?",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "page": 3,
+          "per_page": 20,
+          "total": 142,
+          "total_pages": 8,
+          "has_next": true,
+          "has_prev": true,
+          "items": []
+        }
+      },
+      "locale": "en"
+    }
+  }
+]

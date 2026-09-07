@@ -1,0 +1,235 @@
+[
+  {
+    "id": "agent-html-01",
+    "pair_id": "agent-html-01",
+    "track": "work",
+    "block": "code",
+    "category": "agentic-artifact",
+    "subcategory": "html",
+    "difficulty_prior": "medium",
+    "mode": "agentic",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "agentic-artifact",
+    "ko": {
+      "turns": [
+        "'그린루프'라는 가상의 사무실 화분 정기구독 서비스의 소개 원페이지를\n`index.html` 단일 파일로 만들어줘 (외부 CDN·이미지 없이 인라인 CSS만).\n\n포함: 히어로(서비스명+한줄 소개+CTA 버튼), 특징 3가지 카드, 요금제 2종\n(스타터 월 29,000원 / 오피스 월 79,000원) 비교, 자주 묻는 질문 3개, 푸터.\n모바일(375px)에서도 깨지지 않게. 디자인은 식물 느낌의 차분한 그린 톤."
+      ],
+      "rubric": [
+        {
+          "name": "완성도",
+          "desc": "요구 섹션 전부, 실서비스 페이지 수준의 구성",
+          "weight": 0.4
+        },
+        {
+          "name": "디자인 품질",
+          "desc": "타이포·여백·색 사용이 촌스럽지 않음",
+          "weight": 0.35
+        },
+        {
+          "name": "기술 품질",
+          "desc": "단일 파일·반응형·시맨틱 마크업",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "agentic_file",
+        "fixture": "_empty",
+        "output": "index.html",
+        "must_contain": [
+          "그린루프",
+          "29,000",
+          "79,000"
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Build a one-page introduction site for 'GreenLoop', a fictional office plant subscription\nservice, as a single `index.html` file (no external CDNs or images; inline CSS only).\n\nInclude: a hero (service name + one-line tagline + CTA button), 3 feature cards, a comparison\nof 2 pricing plans (Starter at $29/month / Office at $79/month — show the prices exactly as\n\"$29\" and \"$79\"), 3 FAQs, and a footer.\nIt must not break on mobile (375px). Design: a calm, plant-inspired green palette."
+      ],
+      "rubric": [
+        {
+          "name": "Completeness",
+          "desc": "Every required section present, composed to the standard of a real service page",
+          "weight": 0.4
+        },
+        {
+          "name": "Design quality",
+          "desc": "Typography, spacing, and color use that doesn't look amateurish",
+          "weight": 0.35
+        },
+        {
+          "name": "Technical quality",
+          "desc": "Single file, responsive, semantic markup",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "agentic_file",
+        "fixture": "_empty",
+        "output": "index.html",
+        "must_contain": [
+          "GreenLoop",
+          "$29",
+          "$79"
+        ]
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "agent-pdf-01",
+    "pair_id": "agent-pdf-01",
+    "track": "work",
+    "block": "code",
+    "category": "agentic-artifact",
+    "subcategory": "pdf",
+    "difficulty_prior": "hard",
+    "mode": "agentic",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "agentic-artifact",
+    "ko": {
+      "turns": [
+        "월간 운영 리포트 PDF를 만들어줘. 파일명 `report.pdf`.\n\n방법은 자유 (reportlab, weasyprint+HTML 등 필요한 건 pip로 설치).\n내용: 가상의 온라인 쇼핑몰 '데일리굿즈' 2026년 6월 리포트.\n- 1페이지: 제목, 요약 지표 4개(월 매출 3.2억(+12%), 주문 18,400건, 객단가 17,400원, 재구매율 31%)\n- 2페이지: 카테고리별 매출 표 5행 + 막대 차트 이미지 1개(matplotlib로 생성해 삽입)\n- 3페이지: 다음 달 액션 아이템 5개\n\n한글이 깨지지 않아야 해 (폰트 임베딩 주의). 완성 후 페이지 수를 확인해서 알려줘."
+      ],
+      "rubric": [
+        {
+          "name": "산출물 완성",
+          "desc": "3페이지 구성·지표·표·차트 포함",
+          "weight": 0.4
+        },
+        {
+          "name": "한글 처리",
+          "desc": "한글 폰트가 깨지지 않음",
+          "weight": 0.3
+        },
+        {
+          "name": "품질",
+          "desc": "리포트다운 레이아웃·차트 가독성",
+          "weight": 0.3
+        }
+      ],
+      "check": {
+        "type": "agentic_pdf",
+        "fixture": "_empty",
+        "output": "report.pdf",
+        "min_pages": 3
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Create a monthly operations report PDF. Filename `report.pdf`.\n\nAny approach works (reportlab, weasyprint+HTML, etc. — pip install whatever you need).\nContent: the June 2026 report for 'DailyGoods', a fictional online store.\n- Page 1: title plus 4 summary metrics (monthly revenue $320K (+12%), 18,400 orders, average order value $17.40, repeat purchase rate 31%)\n- Page 2: a 5-row revenue-by-category table + 1 bar chart image (generate it with matplotlib and embed it)\n- Page 3: 5 action items for next month\n\nWhen it's done, verify the page count and report it."
+      ],
+      "rubric": [
+        {
+          "name": "Deliverable completeness",
+          "desc": "3-page structure with the metrics, table, and chart included",
+          "weight": 0.4
+        },
+        {
+          "name": "Text rendering",
+          "desc": "No garbled or missing text; fonts render cleanly",
+          "weight": 0.3
+        },
+        {
+          "name": "Quality",
+          "desc": "Report-grade layout and chart readability",
+          "weight": 0.3
+        }
+      ],
+      "check": {
+        "type": "agentic_pdf",
+        "fixture": "_empty",
+        "output": "report.pdf",
+        "min_pages": 3
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "agent-pptx-01",
+    "pair_id": "agent-pptx-01",
+    "track": "work",
+    "block": "code",
+    "category": "agentic-artifact",
+    "subcategory": "pptx",
+    "difficulty_prior": "hard",
+    "mode": "agentic",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "agentic-artifact",
+    "ko": {
+      "turns": [
+        "'카페 창업 사업계획' 발표용 PPTX를 파이썬으로 생성해줘 (python-pptx 사용,\n필요하면 pip로 설치). 파일명 `pitch.pptx`, 정확히 6장:\n\n1. 표지 — 제목 '동네 스페셜티 카페 「원두상점」 사업계획', 부제에 날짜\n2. 시장 기회 — 불릿 3개\n3. 컨셉 — 차별점 3가지\n4. 손익 계획 — 표(항목/1년차/2년차: 매출·원가·임대료·인건비·영업이익 5행)\n5. 실행 일정 — 개업까지 4단계 타임라인\n6. 마무리 — 투자 요청 금액과 연락처(가상의 값)\n\n전 슬라이드 일관된 폰트 크기 체계로, 본문 텍스트가 슬라이드를 넘치지 않게."
+      ],
+      "rubric": [
+        {
+          "name": "구성 충족",
+          "desc": "6장 구성·각 장 요구 요소 충족",
+          "weight": 0.4
+        },
+        {
+          "name": "내용 품질",
+          "desc": "사업계획으로서 그럴듯한 실질 내용",
+          "weight": 0.35
+        },
+        {
+          "name": "제작 품질",
+          "desc": "넘침·겹침 없이 깔끔한 레이아웃",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "agentic_pptx",
+        "fixture": "_empty",
+        "output": "pitch.pptx",
+        "slides": 6
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Generate a pitch PPTX for a 'coffee shop startup business plan' with Python (use python-pptx;\npip install it if needed). Filename `pitch.pptx`, exactly 6 slides:\n\n1. Cover — title 'Business Plan: \"The Bean Counter\" Neighborhood Specialty Cafe', subtitle with a date\n2. Market opportunity — 3 bullets\n3. Concept — 3 differentiators\n4. P&L plan — a table (item / year 1 / year 2, with 5 rows: revenue, COGS, rent, labor, operating profit)\n5. Execution timeline — a 4-step timeline to opening day\n6. Closing — investment ask amount and contact info (fictional values)\n\nUse a consistent font-size hierarchy across all slides, and make sure body text doesn't overflow any slide."
+      ],
+      "rubric": [
+        {
+          "name": "Structure compliance",
+          "desc": "6-slide structure with each slide's required elements",
+          "weight": 0.4
+        },
+        {
+          "name": "Content quality",
+          "desc": "Substantive content plausible as a business plan",
+          "weight": 0.35
+        },
+        {
+          "name": "Production quality",
+          "desc": "Clean layout with no overflow or overlap",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "agentic_pptx",
+        "fixture": "_empty",
+        "output": "pitch.pptx",
+        "slides": 6
+      },
+      "locale": "en"
+    }
+  }
+]

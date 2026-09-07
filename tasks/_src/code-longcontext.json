@@ -1,0 +1,206 @@
+[
+  {
+    "id": "clc-repo-dup-01",
+    "pair_id": "clc-repo-dup-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-longcontext",
+    "subcategory": "duplicate-def",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 3,
+        "modules": 20,
+        "functions_per_module": 5,
+        "question": "duplicate_definition"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 3,
+        "modules": 20,
+        "functions_per_module": 5,
+        "question": "duplicate_definition"
+      }
+    }
+  },
+  {
+    "id": "clc-repo-dup-02",
+    "pair_id": "clc-repo-dup-02",
+    "track": "work",
+    "block": "code",
+    "category": "code-longcontext",
+    "subcategory": "duplicate-def",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 17,
+        "modules": 50,
+        "functions_per_module": 8,
+        "question": "duplicate_definition"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 17,
+        "modules": 50,
+        "functions_per_module": 8,
+        "question": "duplicate_definition"
+      }
+    }
+  },
+  {
+    "id": "clc-repo-count-01",
+    "pair_id": "clc-repo-count-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-longcontext",
+    "subcategory": "count",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 5,
+        "modules": 22,
+        "functions_per_module": 6,
+        "question": "function_count"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 5,
+        "modules": 22,
+        "functions_per_module": 6,
+        "question": "function_count"
+      }
+    }
+  },
+  {
+    "id": "clc-repo-count-02",
+    "pair_id": "clc-repo-count-02",
+    "track": "work",
+    "block": "code",
+    "category": "code-longcontext",
+    "subcategory": "count",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 4,
+        "modules": 50,
+        "functions_per_module": 8,
+        "question": "function_count"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 4,
+        "modules": 50,
+        "functions_per_module": 8,
+        "question": "function_count"
+      }
+    }
+  },
+  {
+    "id": "clc-repo-where-01",
+    "pair_id": "clc-repo-where-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-longcontext",
+    "subcategory": "locate-file",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 8,
+        "modules": 24,
+        "functions_per_module": 5,
+        "question": "module_of_duplicate"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 8,
+        "modules": 24,
+        "functions_per_module": 5,
+        "question": "module_of_duplicate"
+      }
+    }
+  },
+  {
+    "id": "clc-repo-where-02",
+    "pair_id": "clc-repo-where-02",
+    "track": "work",
+    "block": "code",
+    "category": "code-longcontext",
+    "subcategory": "locate-file",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 12,
+        "modules": 48,
+        "functions_per_module": 8,
+        "question": "module_of_duplicate"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "repo_qa",
+        "seed": 12,
+        "modules": 48,
+        "functions_per_module": 8,
+        "question": "module_of_duplicate"
+      }
+    }
+  }
+]

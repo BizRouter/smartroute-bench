@@ -1,0 +1,788 @@
+[
+  {
+    "id": "code-go-med-01",
+    "pair_id": "code-go-med-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "concurrency",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "go",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "Go로 워커 풀 함수를 작성해줘.\n\n```go\npackage pool\n\n// ProcessAll: jobs의 각 정수에 fn을 적용한 결과를 '입력 순서대로' 반환.\n// workers 개의 고루틴으로 병렬 처리. workers <= 0 이면 1로 취급.\nfunc ProcessAll(jobs []int, workers int, fn func(int) int) []int\n```\n\n- 결과 순서는 반드시 입력 순서와 같아야 함\n- 데이터 레이스 없어야 함 (go test -race 통과)\n- 표준 라이브러리만\n\n```go 블록 하나로 완성본 (package pool 포함)."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "go_tests",
+        "package": "pool",
+        "tests": "package pool\n\nimport (\n\t\"reflect\"\n\t\"sync/atomic\"\n\t\"testing\"\n)\n\nfunc TestOrder(t *testing.T) {\n\tjobs := make([]int, 100)\n\tfor i := range jobs {\n\t\tjobs[i] = i\n\t}\n\tgot := ProcessAll(jobs, 8, func(x int) int { return x * 2 })\n\twant := make([]int, 100)\n\tfor i := range want {\n\t\twant[i] = i * 2\n\t}\n\tif !reflect.DeepEqual(got, want) {\n\t\tt.Fatalf(\"order broken: %v\", got[:10])\n\t}\n}\n\nfunc TestParallel(t *testing.T) {\n\tvar cnt int64\n\tProcessAll([]int{1, 2, 3, 4}, 0, func(x int) int {\n\t\tatomic.AddInt64(&cnt, 1)\n\t\treturn x\n\t})\n\tif cnt != 4 {\n\t\tt.Fatalf(\"fn not applied to all: %d\", cnt)\n\t}\n}\n\nfunc TestEmpty(t *testing.T) {\n\tgot := ProcessAll(nil, 4, func(x int) int { return x })\n\tif len(got) != 0 {\n\t\tt.Fatalf(\"want empty\")\n\t}\n}\n"
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Write a worker pool function in Go.\n\n```go\npackage pool\n\n// ProcessAll applies fn to each integer in jobs and returns the results\n// in the original input order. Processes jobs in parallel using `workers`\n// goroutines. If workers <= 0, treat it as 1.\nfunc ProcessAll(jobs []int, workers int, fn func(int) int) []int\n```\n\n- The result order must exactly match the input order\n- No data races (must pass go test -race)\n- Standard library only\n\nReply with the complete solution (including package pool) in a single ```go code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "go_tests",
+        "package": "pool",
+        "tests": "package pool\n\nimport (\n\t\"reflect\"\n\t\"sync/atomic\"\n\t\"testing\"\n)\n\nfunc TestOrder(t *testing.T) {\n\tjobs := make([]int, 100)\n\tfor i := range jobs {\n\t\tjobs[i] = i\n\t}\n\tgot := ProcessAll(jobs, 8, func(x int) int { return x * 2 })\n\twant := make([]int, 100)\n\tfor i := range want {\n\t\twant[i] = i * 2\n\t}\n\tif !reflect.DeepEqual(got, want) {\n\t\tt.Fatalf(\"order broken: %v\", got[:10])\n\t}\n}\n\nfunc TestParallel(t *testing.T) {\n\tvar cnt int64\n\tProcessAll([]int{1, 2, 3, 4}, 0, func(x int) int {\n\t\tatomic.AddInt64(&cnt, 1)\n\t\treturn x\n\t})\n\tif cnt != 4 {\n\t\tt.Fatalf(\"fn not applied to all: %d\", cnt)\n\t}\n}\n\nfunc TestEmpty(t *testing.T) {\n\tgot := ProcessAll(nil, 4, func(x int) int { return x })\n\tif len(got) != 0 {\n\t\tt.Fatalf(\"want empty\")\n\t}\n}\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-js-easy-01",
+    "pair_id": "code-js-easy-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "implementation",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "자바스크립트(Node, CommonJS)로 유틸 함수를 작성해줘.\n\n- `groupBy(arr, keyFn)`: 배열을 keyFn(item) 반환값 기준으로 묶어\n  `{ key: [items...] }` 객체로 반환\n- `module.exports = { groupBy }` 로 내보내기\n- 외부 패키지 금지\n\n```js 블록 하나로 완성본."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "node_tests",
+        "tests": "const assert = require('assert');\nconst { groupBy } = require('./solution.js');\n\nassert.deepStrictEqual(\n  groupBy([1,2,3,4,5], x => x % 2 === 0 ? 'even' : 'odd'),\n  { odd: [1,3,5], even: [2,4] }\n);\nassert.deepStrictEqual(groupBy([], x => x), {});\nassert.deepStrictEqual(\n  groupBy(['aa','ab','ba'], s => s[0]),\n  { a: ['aa','ab'], b: ['ba'] }\n);\nconsole.log('OK');\n"
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Write a utility function in JavaScript (Node, CommonJS).\n\n- `groupBy(arr, keyFn)`: group the array elements by the return value of\n  keyFn(item) and return an object of the form `{ key: [items...] }`\n- Export it with `module.exports = { groupBy }`\n- No external packages\n\nReply with the complete solution in a single ```js code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "node_tests",
+        "tests": "const assert = require('assert');\nconst { groupBy } = require('./solution.js');\n\nassert.deepStrictEqual(\n  groupBy([1,2,3,4,5], x => x % 2 === 0 ? 'even' : 'odd'),\n  { odd: [1,3,5], even: [2,4] }\n);\nassert.deepStrictEqual(groupBy([], x => x), {});\nassert.deepStrictEqual(\n  groupBy(['aa','ab','ba'], s => s[0]),\n  { a: ['aa','ab'], b: ['ba'] }\n);\nconsole.log('OK');\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-js-med-01",
+    "pair_id": "code-js-med-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "implementation",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "Node(CommonJS)로 간단한 이벤트 이미터 클래스를 구현해줘.\n\n```js\nclass Emitter {\n  on(event, fn)      // 구독, this 반환(체이닝)\n  off(event, fn)     // 해당 핸들러 제거 (fn 생략 시 이벤트 전체 제거)\n  once(event, fn)    // 1회만 실행\n  emit(event, ...args) // 등록 순서대로 호출, 리스너 수 반환\n}\nmodule.exports = { Emitter };\n```\n\n주의: emit 중에 off가 호출돼도 안전해야 하고(스냅샷 순회), once 핸들러는\n실행 전에 제거되어 재진입 emit에서 두 번 실행되면 안 돼.\n```js 블록 하나로 완성본."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "node_tests",
+        "tests": "const assert = require('assert');\nconst { Emitter } = require('./solution.js');\n\nconst e = new Emitter();\nconst seen = [];\nconst h1 = (x) => seen.push('h1:' + x);\ne.on('a', h1).on('a', (x) => seen.push('h2:' + x));\nassert.strictEqual(e.emit('a', 1), 2);\nassert.deepStrictEqual(seen, ['h1:1', 'h2:1']);\n\ne.off('a', h1);\nseen.length = 0;\ne.emit('a', 2);\nassert.deepStrictEqual(seen, ['h2:2']);\n\n// once + reentrant emit\nconst e2 = new Emitter();\nlet count = 0;\ne2.once('t', () => { count++; e2.emit('t'); });\ne2.emit('t');\nassert.strictEqual(count, 1);\n\n// off during emit (snapshot semantics)\nconst e3 = new Emitter();\nconst out = [];\nconst a = () => { out.push('a'); e3.off('x', b); };\nconst b = () => out.push('b');\ne3.on('x', a); e3.on('x', b);\ne3.emit('x');\nassert.deepStrictEqual(out, ['a', 'b']);\ne3.emit('x');\nassert.deepStrictEqual(out, ['a', 'b', 'a']);\nconsole.log('OK');\n"
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Implement a simple event emitter class in Node (CommonJS).\n\n```js\nclass Emitter {\n  on(event, fn)      // subscribe, returns this (for chaining)\n  off(event, fn)     // remove that handler (if fn is omitted, remove all handlers for the event)\n  once(event, fn)    // run only once\n  emit(event, ...args) // call handlers in registration order, return the listener count\n}\nmodule.exports = { Emitter };\n```\n\nNote: emit must be safe even if off is called during it (iterate over a snapshot),\nand a once handler must be removed before it runs so that a re-entrant emit\ncannot fire it twice.\nReply with the complete solution in a single ```js code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "node_tests",
+        "tests": "const assert = require('assert');\nconst { Emitter } = require('./solution.js');\n\nconst e = new Emitter();\nconst seen = [];\nconst h1 = (x) => seen.push('h1:' + x);\ne.on('a', h1).on('a', (x) => seen.push('h2:' + x));\nassert.strictEqual(e.emit('a', 1), 2);\nassert.deepStrictEqual(seen, ['h1:1', 'h2:1']);\n\ne.off('a', h1);\nseen.length = 0;\ne.emit('a', 2);\nassert.deepStrictEqual(seen, ['h2:2']);\n\n// once + reentrant emit\nconst e2 = new Emitter();\nlet count = 0;\ne2.once('t', () => { count++; e2.emit('t'); });\ne2.emit('t');\nassert.strictEqual(count, 1);\n\n// off during emit (snapshot semantics)\nconst e3 = new Emitter();\nconst out = [];\nconst a = () => { out.push('a'); e3.off('x', b); };\nconst b = () => out.push('b');\ne3.on('x', a); e3.on('x', b);\ne3.emit('x');\nassert.deepStrictEqual(out, ['a', 'b']);\ne3.emit('x');\nassert.deepStrictEqual(out, ['a', 'b', 'a']);\nconsole.log('OK');\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-py-easy-01",
+    "pair_id": "code-py-easy-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "implementation",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "파이썬 함수 하나 작성해줘.\n\n요구사항:\n- 함수명: `mask_rrn(text: str) -> str`\n- 입력 문자열에서 한국 주민등록번호 패턴(6자리-7자리, 예: 900101-1234567)을 찾아\n  뒤 7자리 중 첫 자리(성별)만 남기고 나머지 6자리를 `*`로 바꿔줘.\n  예: \"900101-1234567\" → \"900101-1******\"\n- 숫자 13자리가 붙어 있어도(하이픈 없이 9001011234567) 같은 규칙으로 마스킹.\n  단, 앞뒤에 다른 숫자가 더 붙은 경우(전화번호 등 더 긴 숫자열)는 건드리면 안 됨.\n- 표준 라이브러리만 사용.\n\n코드는 ```python 블록 하나로 완성본을 줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import mask_rrn\n\nclass T(unittest.TestCase):\n    def test_hyphen(self):\n        self.assertEqual(mask_rrn(\"주민번호 900101-1234567 입니다\"), \"주민번호 900101-1****** 입니다\")\n    def test_plain(self):\n        m = mask_rrn(\"9001011234567\")\n        self.assertIn(m, (\"9001011******\", \"900101-1******\"))\n    def test_no_touch_longer(self):\n        self.assertEqual(mask_rrn(\"01012345678901\"), \"01012345678901\")\n    def test_multiple(self):\n        out = mask_rrn(\"a 900101-1234567 b 991231-2765432 c\")\n        self.assertEqual(out, \"a 900101-1****** b 991231-2****** c\")\n    def test_no_match(self):\n        self.assertEqual(mask_rrn(\"no numbers here\"), \"no numbers here\")\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Write a Python function.\n\nRequirements:\n- Function name: `mask_rrn(text: str) -> str`\n- In the input string, find Korean resident registration number (RRN) patterns\n  (6 digits, a hyphen, then 7 digits — e.g. 900101-1234567) and mask each match\n  so that of the trailing 7 digits only the first digit (the gender digit) is kept,\n  replacing the remaining 6 digits with `*`.\n  e.g. \"900101-1234567\" → \"900101-1******\"\n- Apply the same masking rule when the 13 digits appear without a hyphen\n  (9001011234567). However, if extra digits are attached before or after\n  (a longer digit run such as a phone number), leave it untouched.\n- Standard library only.\n\nReply with the complete solution in a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import mask_rrn\n\nclass T(unittest.TestCase):\n    def test_hyphen(self):\n        self.assertEqual(mask_rrn(\"주민번호 900101-1234567 입니다\"), \"주민번호 900101-1****** 입니다\")\n    def test_plain(self):\n        m = mask_rrn(\"9001011234567\")\n        self.assertIn(m, (\"9001011******\", \"900101-1******\"))\n    def test_no_touch_longer(self):\n        self.assertEqual(mask_rrn(\"01012345678901\"), \"01012345678901\")\n    def test_multiple(self):\n        out = mask_rrn(\"a 900101-1234567 b 991231-2765432 c\")\n        self.assertEqual(out, \"a 900101-1****** b 991231-2****** c\")\n    def test_no_match(self):\n        self.assertEqual(mask_rrn(\"no numbers here\"), \"no numbers here\")\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-py-easy-02",
+    "pair_id": "code-py-easy-02",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "implementation",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "Write a Python function `chunk(seq, n)` that splits a sequence into\nconsecutive chunks of size `n` (the last chunk may be shorter). It must:\n- return a list of lists\n- raise ValueError if n <= 0\n- work with any sequence (list, tuple, string) and return list chunks for\n  list/tuple input, string chunks for string input\n\nReply with a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import chunk\n\nclass T(unittest.TestCase):\n    def test_list(self):\n        self.assertEqual(chunk([1,2,3,4,5], 2), [[1,2],[3,4],[5]])\n    def test_exact(self):\n        self.assertEqual(chunk([1,2,3,4], 2), [[1,2],[3,4]])\n    def test_string(self):\n        self.assertEqual(chunk(\"abcde\", 3), [\"abc\", \"de\"])\n    def test_empty(self):\n        self.assertEqual(chunk([], 3), [])\n    def test_value_error(self):\n        with self.assertRaises(ValueError):\n            chunk([1,2], 0)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    },
+    "en": {
+      "turns": [
+        "Write a Python function `chunk(seq, n)` that splits a sequence into\nconsecutive chunks of size `n` (the last chunk may be shorter). It must:\n- return a list of lists\n- raise ValueError if n <= 0\n- work with any sequence (list, tuple, string) and return list chunks for\n  list/tuple input, string chunks for string input\n\nReply with a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import chunk\n\nclass T(unittest.TestCase):\n    def test_list(self):\n        self.assertEqual(chunk([1,2,3,4,5], 2), [[1,2],[3,4],[5]])\n    def test_exact(self):\n        self.assertEqual(chunk([1,2,3,4], 2), [[1,2],[3,4]])\n    def test_string(self):\n        self.assertEqual(chunk(\"abcde\", 3), [\"abc\", \"de\"])\n    def test_empty(self):\n        self.assertEqual(chunk([], 3), [])\n    def test_value_error(self):\n        with self.assertRaises(ValueError):\n            chunk([1,2], 0)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-py-hard-01",
+    "pair_id": "code-py-hard-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "implementation",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "TTL이 있는 LRU 캐시를 파이썬 클래스로 구현해줘.\n\n```python\nclass TTLCache:\n    def __init__(self, capacity: int, ttl: float, clock=None): ...\n    def get(self, key): ...        # 없거나 만료면 None\n    def put(self, key, value): ...\n    def __len__(self): ...          # 만료 항목 제외한 유효 항목 수\n```\n\n요구사항:\n- capacity 초과 시 '가장 오래 사용되지 않은'(LRU) 항목 제거. get도 사용으로 침.\n- ttl(초) 지나면 만료. 만료 항목은 get에서 None, __len__에서 제외.\n- `clock`: 테스트용 주입 가능한 현재 시각 함수 (기본 time.monotonic).\n- get/put은 평균 O(1)이어야 함 (만료 정리를 위해 __len__은 O(n) 허용).\n- 표준 라이브러리만.\n\n```python 블록 하나로 완성본."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import TTLCache\n\nclass FakeClock:\n    def __init__(self): self.t = 0.0\n    def __call__(self): return self.t\n\nclass T(unittest.TestCase):\n    def test_lru_evict(self):\n        c = TTLCache(2, ttl=100)\n        c.put(\"a\", 1); c.put(\"b\", 2)\n        c.get(\"a\")            # a 를 최근 사용으로\n        c.put(\"c\", 3)         # b 가 밀려남\n        self.assertEqual(c.get(\"a\"), 1)\n        self.assertIsNone(c.get(\"b\"))\n        self.assertEqual(c.get(\"c\"), 3)\n    def test_ttl_expiry(self):\n        clk = FakeClock()\n        c = TTLCache(10, ttl=5, clock=clk)\n        c.put(\"a\", 1)\n        clk.t = 4.9\n        self.assertEqual(c.get(\"a\"), 1)\n        clk.t = 5.1\n        self.assertIsNone(c.get(\"a\"))\n    def test_len_excludes_expired(self):\n        clk = FakeClock()\n        c = TTLCache(10, ttl=5, clock=clk)\n        c.put(\"a\", 1); clk.t = 3; c.put(\"b\", 2)\n        clk.t = 6\n        self.assertEqual(len(c), 1)\n    def test_update_refreshes(self):\n        clk = FakeClock()\n        c = TTLCache(10, ttl=5, clock=clk)\n        c.put(\"a\", 1); clk.t = 4; c.put(\"a\", 9)\n        clk.t = 8\n        self.assertEqual(c.get(\"a\"), 9)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Implement an LRU cache with TTL as a Python class.\n\n```python\nclass TTLCache:\n    def __init__(self, capacity: int, ttl: float, clock=None): ...\n    def get(self, key): ...        # None if missing or expired\n    def put(self, key, value): ...\n    def __len__(self): ...          # number of valid (non-expired) entries\n```\n\nRequirements:\n- When capacity is exceeded, evict the least recently used (LRU) entry.\n  A get also counts as a use.\n- Entries expire after ttl (seconds). Expired entries return None from get\n  and are excluded from __len__.\n- `clock`: an injectable current-time function for testing (defaults to time.monotonic).\n- get/put must be average O(1) (__len__ may be O(n) to allow expiry cleanup).\n- Standard library only.\n\nReply with the complete solution in a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import TTLCache\n\nclass FakeClock:\n    def __init__(self): self.t = 0.0\n    def __call__(self): return self.t\n\nclass T(unittest.TestCase):\n    def test_lru_evict(self):\n        c = TTLCache(2, ttl=100)\n        c.put(\"a\", 1); c.put(\"b\", 2)\n        c.get(\"a\")            # a 를 최근 사용으로\n        c.put(\"c\", 3)         # b 가 밀려남\n        self.assertEqual(c.get(\"a\"), 1)\n        self.assertIsNone(c.get(\"b\"))\n        self.assertEqual(c.get(\"c\"), 3)\n    def test_ttl_expiry(self):\n        clk = FakeClock()\n        c = TTLCache(10, ttl=5, clock=clk)\n        c.put(\"a\", 1)\n        clk.t = 4.9\n        self.assertEqual(c.get(\"a\"), 1)\n        clk.t = 5.1\n        self.assertIsNone(c.get(\"a\"))\n    def test_len_excludes_expired(self):\n        clk = FakeClock()\n        c = TTLCache(10, ttl=5, clock=clk)\n        c.put(\"a\", 1); clk.t = 3; c.put(\"b\", 2)\n        clk.t = 6\n        self.assertEqual(len(c), 1)\n    def test_update_refreshes(self):\n        clk = FakeClock()\n        c = TTLCache(10, ttl=5, clock=clk)\n        c.put(\"a\", 1); clk.t = 4; c.put(\"a\", 9)\n        clk.t = 8\n        self.assertEqual(c.get(\"a\"), 9)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-py-hard-02",
+    "pair_id": "code-py-hard-02",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "algorithm",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "Solve this with an efficient algorithm in Python.\n\nYou are given meetings as `(start, end, value)` tuples (0 <= start < end).\nSelect a subset of non-overlapping meetings maximizing total value.\nMeetings touching at endpoints (end == start of next) do NOT overlap.\n\nWrite `def best_schedule(meetings: list[tuple[int,int,int]]) -> int` returning\nthe maximum total value. It must handle 10^5 meetings fast enough\n(O(n log n) — weighted interval scheduling with binary search).\n\nReply with a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest, random, time\nfrom solution import best_schedule\n\nclass T(unittest.TestCase):\n    def test_basic(self):\n        self.assertEqual(best_schedule([(0,3,3),(2,5,4),(4,7,3)]), 6)\n    def test_touching_ok(self):\n        self.assertEqual(best_schedule([(0,3,3),(3,5,4)]), 7)\n    def test_pick_one_big(self):\n        self.assertEqual(best_schedule([(0,10,10),(0,3,3),(4,6,3),(7,9,3)]), 10)\n    def test_empty(self):\n        self.assertEqual(best_schedule([]), 0)\n    def test_perf(self):\n        random.seed(7)\n        ms = []\n        for _ in range(100000):\n            s = random.randint(0, 10**7); d = random.randint(1, 1000)\n            ms.append((s, s+d, random.randint(1, 100)))\n        t0 = time.time()\n        v = best_schedule(ms)\n        self.assertLess(time.time() - t0, 10.0)\n        self.assertGreater(v, 0)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    },
+    "en": {
+      "turns": [
+        "Solve this with an efficient algorithm in Python.\n\nYou are given meetings as `(start, end, value)` tuples (0 <= start < end).\nSelect a subset of non-overlapping meetings maximizing total value.\nMeetings touching at endpoints (end == start of next) do NOT overlap.\n\nWrite `def best_schedule(meetings: list[tuple[int,int,int]]) -> int` returning\nthe maximum total value. It must handle 10^5 meetings fast enough\n(O(n log n) — weighted interval scheduling with binary search).\n\nReply with a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest, random, time\nfrom solution import best_schedule\n\nclass T(unittest.TestCase):\n    def test_basic(self):\n        self.assertEqual(best_schedule([(0,3,3),(2,5,4),(4,7,3)]), 6)\n    def test_touching_ok(self):\n        self.assertEqual(best_schedule([(0,3,3),(3,5,4)]), 7)\n    def test_pick_one_big(self):\n        self.assertEqual(best_schedule([(0,10,10),(0,3,3),(4,6,3),(7,9,3)]), 10)\n    def test_empty(self):\n        self.assertEqual(best_schedule([]), 0)\n    def test_perf(self):\n        random.seed(7)\n        ms = []\n        for _ in range(100000):\n            s = random.randint(0, 10**7); d = random.randint(1, 1000)\n            ms.append((s, s+d, random.randint(1, 100)))\n        t0 = time.time()\n        v = best_schedule(ms)\n        self.assertLess(time.time() - t0, 10.0)\n        self.assertGreater(v, 0)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-py-med-01",
+    "pair_id": "code-py-med-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "implementation",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "웹서버 액세스 로그를 집계하는 파이썬 함수를 작성해줘.\n\n로그 한 줄 형식(공백 구분):\n`2026-07-20T10:31:02Z GET /api/users 200 34ms`\n(타임스탬프, 메서드, 경로, 상태코드, 응답시간)\n\n함수: `summarize(lines: list[str]) -> dict`\n반환 dict 구조:\n- `\"total\"`: 전체 요청 수\n- `\"by_status\"`: 상태코드(int) → 건수 dict\n- `\"slowest_path\"`: 평균 응답시간(ms)이 가장 느린 경로 (동률이면 사전순 첫 번째)\n- `\"error_rate\"`: 5xx 비율 (소수점 4자리 반올림, 요청 0건이면 0.0)\n\n형식이 깨진 줄(필드 5개 미만, 상태코드/시간이 숫자 아님)은 무시하되 total에도 세지 마.\n```python 블록 하나로 완성본."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import summarize\n\nLINES = [\n    \"2026-07-20T10:00:00Z GET /a 200 10ms\",\n    \"2026-07-20T10:00:01Z GET /a 200 30ms\",\n    \"2026-07-20T10:00:02Z GET /b 500 100ms\",\n    \"2026-07-20T10:00:03Z POST /b 200 100ms\",\n    \"broken line\",\n    \"2026-07-20T10:00:04Z GET /c abc 10ms\",\n]\n\nclass T(unittest.TestCase):\n    def setUp(self):\n        self.s = summarize(LINES)\n    def test_total(self):\n        self.assertEqual(self.s[\"total\"], 4)\n    def test_by_status(self):\n        self.assertEqual(self.s[\"by_status\"], {200: 3, 500: 1})\n    def test_slowest(self):\n        self.assertEqual(self.s[\"slowest_path\"], \"/b\")\n    def test_error_rate(self):\n        self.assertEqual(self.s[\"error_rate\"], 0.25)\n    def test_empty(self):\n        s = summarize([])\n        self.assertEqual(s[\"total\"], 0)\n        self.assertEqual(s[\"error_rate\"], 0.0)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Write a Python function that aggregates web server access logs.\n\nLog line format (space-separated):\n`2026-07-20T10:31:02Z GET /api/users 200 34ms`\n(timestamp, method, path, status code, response time)\n\nFunction: `summarize(lines: list[str]) -> dict`\nStructure of the returned dict:\n- `\"total\"`: total number of requests\n- `\"by_status\"`: dict mapping status code (int) → count\n- `\"slowest_path\"`: the path with the highest average response time in ms\n  (on a tie, the lexicographically first path)\n- `\"error_rate\"`: ratio of 5xx responses (rounded to 4 decimal places; 0.0 if there are no requests)\n\nMalformed lines (fewer than 5 fields, or status code / response time not numeric)\nmust be ignored and must not be counted in total either.\nReply with the complete solution in a single ```python code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "python_tests",
+        "tests": "import unittest\nfrom solution import summarize\n\nLINES = [\n    \"2026-07-20T10:00:00Z GET /a 200 10ms\",\n    \"2026-07-20T10:00:01Z GET /a 200 30ms\",\n    \"2026-07-20T10:00:02Z GET /b 500 100ms\",\n    \"2026-07-20T10:00:03Z POST /b 200 100ms\",\n    \"broken line\",\n    \"2026-07-20T10:00:04Z GET /c abc 10ms\",\n]\n\nclass T(unittest.TestCase):\n    def setUp(self):\n        self.s = summarize(LINES)\n    def test_total(self):\n        self.assertEqual(self.s[\"total\"], 4)\n    def test_by_status(self):\n        self.assertEqual(self.s[\"by_status\"], {200: 3, 500: 1})\n    def test_slowest(self):\n        self.assertEqual(self.s[\"slowest_path\"], \"/b\")\n    def test_error_rate(self):\n        self.assertEqual(self.s[\"error_rate\"], 0.25)\n    def test_empty(self):\n        s = summarize([])\n        self.assertEqual(s[\"total\"], 0)\n        self.assertEqual(s[\"error_rate\"], 0.0)\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-sql-easy-01",
+    "pair_id": "code-sql-easy-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "query",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "sql",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "SQLite 쿼리를 작성해줘.\n\n테이블:\n- `orders(id INTEGER, customer TEXT, amount INTEGER, created_at TEXT)`  -- created_at은 'YYYY-MM-DD'\n\n'2026-01-01' 이후(포함) 주문을 월('YYYY-MM')별로 집계해서\n`month, order_count, total_amount` 3개 컬럼을 월 오름차순으로 반환하는\nSELECT 쿼리 하나를 ```sql 블록으로 줘. (주문이 없는 달은 없어도 됨)"
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "sql_result",
+        "setup": "CREATE TABLE orders(id INTEGER, customer TEXT, amount INTEGER, created_at TEXT);\nINSERT INTO orders VALUES\n (1,'a',100,'2025-12-30'),\n (2,'b',200,'2026-01-05'),\n (3,'a',300,'2026-01-31'),\n (4,'c',150,'2026-02-10'),\n (5,'b',50,'2026-02-11'),\n (6,'a',500,'2026-03-01');",
+        "expected": [
+          [
+            "2026-01",
+            2,
+            500
+          ],
+          [
+            "2026-02",
+            2,
+            200
+          ],
+          [
+            "2026-03",
+            1,
+            500
+          ]
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Write a SQLite query.\n\nTable:\n- `orders(id INTEGER, customer TEXT, amount INTEGER, created_at TEXT)`  -- created_at is 'YYYY-MM-DD'\n\nAggregate orders placed on or after '2026-01-01' (inclusive) by month ('YYYY-MM')\nand return the 3 columns `month, order_count, total_amount`, sorted by month\nascending. Provide a single SELECT query in a ```sql code block.\n(Months with no orders may be omitted.)"
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "sql_result",
+        "setup": "CREATE TABLE orders(id INTEGER, customer TEXT, amount INTEGER, created_at TEXT);\nINSERT INTO orders VALUES\n (1,'a',100,'2025-12-30'),\n (2,'b',200,'2026-01-05'),\n (3,'a',300,'2026-01-31'),\n (4,'c',150,'2026-02-10'),\n (5,'b',50,'2026-02-11'),\n (6,'a',500,'2026-03-01');",
+        "expected": [
+          [
+            "2026-01",
+            2,
+            500
+          ],
+          [
+            "2026-02",
+            2,
+            200
+          ],
+          [
+            "2026-03",
+            1,
+            500
+          ]
+        ]
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "code-sql-hard-01",
+    "pair_id": "code-sql-hard-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "query",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "sql",
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "coding",
+    "ko": {
+      "turns": [
+        "SQLite 윈도우 함수 문제야.\n\n테이블:\n- `payments(user_id INTEGER, paid_at TEXT, amount INTEGER)`  -- paid_at은 'YYYY-MM-DD'\n\n각 유저의 '첫 결제일'과 '두 번째 결제일 사이 간격(일수)'을 구하고 싶어.\n결과 컬럼: `user_id, first_date, second_date, gap_days`\n- 결제가 1건뿐인 유저는 second_date와 gap_days가 NULL\n- user_id 오름차순 정렬\n- gap_days는 julianday 차이를 정수(INTEGER)로\n\nSELECT 쿼리 하나를 ```sql 블록으로 줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 동작을 정확히 구현했는가 (엣지 케이스 포함)",
+          "weight": 0.5
+        },
+        {
+          "name": "코드 품질",
+          "desc": "가독성·네이밍·불필요한 복잡성 없음",
+          "weight": 0.25
+        },
+        {
+          "name": "설명",
+          "desc": "핵심 결정에 대한 간결하고 정확한 설명",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "sql_result",
+        "setup": "CREATE TABLE payments(user_id INTEGER, paid_at TEXT, amount INTEGER);\nINSERT INTO payments VALUES\n (1,'2026-01-01',10),(1,'2026-01-15',20),(1,'2026-02-01',30),\n (2,'2026-03-05',40),\n (3,'2026-02-10',5),(3,'2026-02-11',5);",
+        "expected": [
+          [
+            1,
+            "2026-01-01",
+            "2026-01-15",
+            14
+          ],
+          [
+            2,
+            "2026-03-05",
+            null,
+            null
+          ],
+          [
+            3,
+            "2026-02-10",
+            "2026-02-11",
+            1
+          ]
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "This is a SQLite window function problem.\n\nTable:\n- `payments(user_id INTEGER, paid_at TEXT, amount INTEGER)`  -- paid_at is 'YYYY-MM-DD'\n\nFor each user, I want their first payment date and the gap in days between the\nfirst and second payment dates.\nResult columns: `user_id, first_date, second_date, gap_days`\n- For users with only one payment, second_date and gap_days must be NULL\n- Sort by user_id ascending\n- gap_days must be the julianday difference as an INTEGER\n\nProvide a single SELECT query in a ```sql code block."
+      ],
+      "rubric": [
+        {
+          "name": "Correctness",
+          "desc": "Implements the required behavior exactly (including edge cases)",
+          "weight": 0.5
+        },
+        {
+          "name": "Code Quality",
+          "desc": "Readability, good naming, no unnecessary complexity",
+          "weight": 0.25
+        },
+        {
+          "name": "Explanation",
+          "desc": "Concise and accurate explanation of the key decisions",
+          "weight": 0.25
+        }
+      ],
+      "check": {
+        "type": "sql_result",
+        "setup": "CREATE TABLE payments(user_id INTEGER, paid_at TEXT, amount INTEGER);\nINSERT INTO payments VALUES\n (1,'2026-01-01',10),(1,'2026-01-15',20),(1,'2026-02-01',30),\n (2,'2026-03-05',40),\n (3,'2026-02-10',5),(3,'2026-02-11',5);",
+        "expected": [
+          [
+            1,
+            "2026-01-01",
+            "2026-01-15",
+            14
+          ],
+          [
+            2,
+            "2026-03-05",
+            null,
+            null
+          ],
+          [
+            3,
+            "2026-02-10",
+            "2026-02-11",
+            1
+          ]
+        ]
+      },
+      "locale": "en"
+    }
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "benchmark": "smartroute-bench",
+  "run_id": "base-v1",
+  "measured_at": "2026-07-21",
+  "models": [
+    {
+      "model_code": "google/gemini-3.5-flash",
+      "task_affinities": {
+        "chat": 0.91,
+        "coding": 0.89,
+        "analysis": 0.89,
+        "extraction": 1.0,
+        "json_generation": 1.0,
+        "translation": 0.95,
+        "summarization": 0.95,
+        "reasoning": 1.0,
+        "tool_use": 0.95
+      },
+      "confidence": 0.8,
+      "rationale": [
+        "smartroute-bench base-v1(57과제·3사 블라인드 심사 평균·2026-07-21) 실측 점수를 10점 만점 기준 0~1로 정규화했습니다.",
+        "스마트 라우팅 arm 이 google/gemini-3.5-flash 로 사실상 전량 라우팅되어 해당 모델의 실측으로 귀속했습니다.",
+        "complexity_capacity 는 hard 난이도 judge 평균(9.10/10)입니다.",
+        "tool_use 는 에이전틱 8/8 완주율입니다."
+      ],
+      "complexity_capacity": 0.91
+    },
+    {
+      "model_code": "openai/gpt-5.6-sol",
+      "task_affinities": {
+        "chat": 0.94,
+        "coding": 0.88,
+        "analysis": 0.95,
+        "extraction": 1.0,
+        "json_generation": 1.0,
+        "translation": 0.96,
+        "summarization": 0.97,
+        "reasoning": 1.0,
+        "tool_use": 0.95
+      },
+      "confidence": 0.8,
+      "rationale": [
+        "smartroute-bench base-v1(57과제·3사 블라인드 심사 평균·2026-07-21) 실측 점수를 10점 만점 기준 0~1로 정규화했습니다.",
+        "고정 arm 직접 실측입니다.",
+        "complexity_capacity 는 hard 난이도 judge 평균(9.30/10)입니다.",
+        "tool_use 는 에이전틱 8/8 완주율입니다."
+      ],
+      "complexity_capacity": 0.93
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+[
+  {
+    "id": "ext-meet-01",
+    "pair_id": "ext-meet-01",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 58,
+        "actions": 10,
+        "noise_lines": 120,
+        "cancelled": 2
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 58,
+        "actions": 10,
+        "noise_lines": 120,
+        "cancelled": 2
+      }
+    }
+  },
+  {
+    "id": "ext-meet-02",
+    "pair_id": "ext-meet-02",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 62,
+        "actions": 12,
+        "noise_lines": 180,
+        "cancelled": 2
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 62,
+        "actions": 12,
+        "noise_lines": 180,
+        "cancelled": 2
+      }
+    }
+  },
+  {
+    "id": "ext-meet-03",
+    "pair_id": "ext-meet-03",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 64,
+        "actions": 14,
+        "noise_lines": 260,
+        "cancelled": 2
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 64,
+        "actions": 14,
+        "noise_lines": 260,
+        "cancelled": 2
+      }
+    }
+  },
+  {
+    "id": "ext-meet-04",
+    "pair_id": "ext-meet-04",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 66,
+        "actions": 16,
+        "noise_lines": 340,
+        "cancelled": 3
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 66,
+        "actions": 16,
+        "noise_lines": 340,
+        "cancelled": 3
+      }
+    }
+  },
+  {
+    "id": "ext-meet-05",
+    "pair_id": "ext-meet-05",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 68,
+        "actions": 11,
+        "noise_lines": 150,
+        "cancelled": 1
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 68,
+        "actions": 11,
+        "noise_lines": 150,
+        "cancelled": 1
+      }
+    }
+  },
+  {
+    "id": "ext-meet-06",
+    "pair_id": "ext-meet-06",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 70,
+        "actions": 13,
+        "noise_lines": 220,
+        "cancelled": 3
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 70,
+        "actions": 13,
+        "noise_lines": 220,
+        "cancelled": 3
+      }
+    }
+  },
+  {
+    "id": "ext-meet-07",
+    "pair_id": "ext-meet-07",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 72,
+        "actions": 10,
+        "noise_lines": 130,
+        "cancelled": 2
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 72,
+        "actions": 10,
+        "noise_lines": 130,
+        "cancelled": 2
+      }
+    }
+  },
+  {
+    "id": "ext-meet-08",
+    "pair_id": "ext-meet-08",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 74,
+        "actions": 26,
+        "noise_lines": 900,
+        "cancelled": 3
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 74,
+        "actions": 26,
+        "noise_lines": 900,
+        "cancelled": 3
+      }
+    }
+  },
+  {
+    "id": "ext-meet-09",
+    "pair_id": "ext-meet-09",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-actions",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 76,
+        "actions": 12,
+        "noise_lines": 170,
+        "cancelled": 2
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "meeting_actions",
+        "seed": 76,
+        "actions": 12,
+        "noise_lines": 170,
+        "cancelled": 2
+      }
+    }
+  }
+]

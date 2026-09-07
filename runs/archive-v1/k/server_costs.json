@@ -1,0 +1,5992 @@
+{
+ "srb-v7-biz-plan-01-route": {
+  "cost_krw": 8.6614,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 212,
+    "out": 1924,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.6614,
+    "ts": "2026-07-30 18:44:50.14847+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-ir-01-gpt56sol": {
+  "cost_krw": 30.5234,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 225,
+    "out": 535,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 30.5234,
+    "ts": "2026-07-30 18:44:59.68463+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-ir-01-fable5": {
+  "cost_krw": 131.2462,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 355,
+    "out": 1406,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 131.2462,
+    "ts": "2026-07-30 18:45:26.804982+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-plan-01-opus48": {
+  "cost_krw": 118.2815,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 336,
+    "out": 2595,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 118.2815,
+    "ts": "2026-07-30 18:45:29.3606+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-ir-01-route": {
+  "cost_krw": 3.4856,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 221,
+    "out": 758,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 3.4856,
+    "ts": "2026-07-30 18:45:33.314447+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-report-01-gpt56sol": {
+  "cost_krw": 19.7447,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 254,
+    "out": 328,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 19.7447,
+    "ts": "2026-07-30 18:45:38.581031+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-plan-01-fable5": {
+  "cost_krw": 316.626,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 336,
+    "out": 3496,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 316.626,
+    "ts": "2026-07-30 18:45:40.455754+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-ir-01-opus48": {
+  "cost_krw": 35.9883,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 355,
+    "out": 739,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 35.9883,
+    "ts": "2026-07-30 18:45:41.689732+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-report-01-route": {
+  "cost_krw": 1.2515,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 239,
+    "out": 253,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.2515,
+    "ts": "2026-07-30 18:45:43.434786+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-plan-01-gpt56sol": {
+  "cost_krw": 205.5598,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 219,
+    "out": 3819,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 205.5598,
+    "ts": "2026-07-30 18:45:45.699694+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-report-01-opus48": {
+  "cost_krw": 22.8459,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 391,
+    "out": 436,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 22.8459,
+    "ts": "2026-07-30 18:45:47.65569+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-email-01-gpt56sol": {
+  "cost_krw": 15.7904,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 151,
+    "out": 271,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 15.7904,
+    "ts": "2026-07-30 18:45:48.439502+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-report-01-fable5": {
+  "cost_krw": 55.4664,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 391,
+    "out": 546,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 55.4664,
+    "ts": "2026-07-30 18:45:49.248932+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-email-01-route": {
+  "cost_krw": 1.0969,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 149,
+    "out": 229,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.0969,
+    "ts": "2026-07-30 18:45:50.249897+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-email-01-opus48": {
+  "cost_krw": 19.718,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 244,
+    "out": 395,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 19.718,
+    "ts": "2026-07-30 18:45:54.862045+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-email-01-fable5": {
+  "cost_krw": 49.1218,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 244,
+    "out": 504,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 49.1218,
+    "ts": "2026-07-30 18:45:56.559262+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-minutes-01-route": {
+  "cost_krw": 1.3295,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 302,
+    "out": 263,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3295,
+    "ts": "2026-07-30 18:45:58.245068+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-minutes-01-fable5": {
+  "cost_krw": 45.3719,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 498,
+    "out": 411,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 45.3719,
+    "ts": "2026-07-30 18:45:58.769106+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-minutes-01-gpt56sol": {
+  "cost_krw": 33.8201,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 326,
+    "out": 580,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 33.8201,
+    "ts": "2026-07-30 18:45:58.826755+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-minutes-01-opus48": {
+  "cost_krw": 24.241,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 498,
+    "out": 446,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 24.241,
+    "ts": "2026-07-30 18:46:01.519029+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-strategy-01-route": {
+  "cost_krw": 6.3416,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 236,
+    "out": 1399,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.3416,
+    "ts": "2026-07-30 18:46:09.148376+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-copy-01-gpt56sol": {
+  "cost_krw": 39.8715,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 185,
+    "out": 717,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 39.8715,
+    "ts": "2026-07-30 18:46:21.907796+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-copy-01-fable5": {
+  "cost_krw": 58.4521,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 269,
+    "out": 604,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 58.4521,
+    "ts": "2026-07-30 18:46:33.396055+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-copy-01-opus48": {
+  "cost_krw": 19.9402,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 269,
+    "out": 395,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 19.9402,
+    "ts": "2026-07-30 18:46:40.867936+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-copy-01-route": {
+  "cost_krw": 2.0104,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 179,
+    "out": 431,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.0104,
+    "ts": "2026-07-30 18:46:43.354199+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-strategy-01-opus48": {
+  "cost_krw": 119.2323,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 388,
+    "out": 2606,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 119.2323,
+    "ts": "2026-07-30 18:46:44.931531+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-finance-01-gpt56sol": {
+  "cost_krw": 36.2104,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 217,
+    "out": 643,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 36.2104,
+    "ts": "2026-07-30 18:46:53.491594+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-finance-01-fable5": {
+  "cost_krw": 74.3936,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 321,
+    "out": 773,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 74.3936,
+    "ts": "2026-07-30 18:46:57.698858+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-finance-01-route": {
+  "cost_krw": 3.9381,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 228,
+    "out": 859,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 3.9381,
+    "ts": "2026-07-30 18:47:00.908312+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-strategy-01-fable5": {
+  "cost_krw": 321.1934,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 388,
+    "out": 3537,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 321.1934,
+    "ts": "2026-07-30 18:47:02.538692+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-finance-01-opus48": {
+  "cost_krw": 51.5477,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 321,
+    "out": 1096,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 51.5477,
+    "ts": "2026-07-30 18:47:07.910551+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-biz-strategy-01-gpt56sol": {
+  "cost_krw": 195.5364,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 249,
+    "out": 3626,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 195.5364,
+    "ts": "2026-07-30 18:47:12.34362+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-detective-01-gpt56sol": {
+  "cost_krw": 79.192,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 148,
+    "out": 416,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 23.4946,
+    "ts": "2026-07-30 18:47:12.362923+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 512,
+    "out": 598,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 36.4326,
+    "ts": "2026-07-30 18:47:30.544441+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 1082,
+    "out": 181,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 19.2648,
+    "ts": "2026-07-30 18:47:35.993176+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-detective-01-route": {
+  "cost_krw": 4.7476,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 129,
+    "out": 277,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.2995,
+    "ts": "2026-07-30 18:47:14.759921+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 448,
+    "out": 395,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.9938,
+    "ts": "2026-07-30 18:47:17.967978+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 861,
+    "out": 224,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.4543,
+    "ts": "2026-07-30 18:47:20.273003+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-detective-01-fable5": {
+  "cost_krw": 311.4009,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 216,
+    "out": 891,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 83.013,
+    "ts": "2026-07-30 18:47:23.687098+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 1184,
+    "out": 1220,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 129.4512,
+    "ts": "2026-07-30 18:47:53.503598+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 2312,
+    "out": 651,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 98.9367,
+    "ts": "2026-07-30 18:48:12.123646+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-detective-01-opus48": {
+  "cost_krw": 122.0314,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 216,
+    "out": 645,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 30.5767,
+    "ts": "2026-07-30 18:47:24.881119+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 938,
+    "out": 975,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 51.6543,
+    "ts": "2026-07-30 18:47:48.483398+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 1949,
+    "out": 506,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 39.8004,
+    "ts": "2026-07-30 18:48:01.902848+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-sejong-01-gpt56sol": {
+  "cost_krw": 82.8442,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 176,
+    "out": 355,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 20.4911,
+    "ts": "2026-07-30 18:47:31.413388+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 494,
+    "out": 531,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 32.7005,
+    "ts": "2026-07-30 18:47:46.720832+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 883,
+    "out": 409,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 29.6526,
+    "ts": "2026-07-30 18:48:00.513621+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-sejong-01-fable5": {
+  "cost_krw": 365.5167,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 273,
+    "out": 894,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 84.2926,
+    "ts": "2026-07-30 18:47:58.363618+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 1154,
+    "out": 1127,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 120.6541,
+    "ts": "2026-07-30 18:48:26.916227+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 2275,
+    "out": 1352,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 160.57,
+    "ts": "2026-07-30 18:48:59.607426+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-sejong-01-route": {
+  "cost_krw": 8.1474,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 174,
+    "out": 514,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.3765,
+    "ts": "2026-07-30 18:48:05.849907+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 729,
+    "out": 569,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.9167,
+    "ts": "2026-07-30 18:48:09.739638+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 1320,
+    "out": 484,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.8542,
+    "ts": "2026-07-30 18:48:13.273969+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-npc-01-gpt56sol": {
+  "cost_krw": 22.0728,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 140,
+    "out": 98,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.469,
+    "ts": "2026-07-30 18:48:15.72882+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 245,
+    "out": 81,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.4957,
+    "ts": "2026-07-30 18:48:18.594294+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 335,
+    "out": 115,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.1081,
+    "ts": "2026-07-30 18:48:22.830687+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-sejong-01-opus48": {
+  "cost_krw": 114.7716,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 273,
+    "out": 601,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 29.1283,
+    "ts": "2026-07-30 18:48:17.120586+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 949,
+    "out": 633,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 36.557,
+    "ts": "2026-07-30 18:48:35.121608+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 1629,
+    "out": 779,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 49.0863,
+    "ts": "2026-07-30 18:48:54.589103+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-npc-01-fable5": {
+  "cost_krw": 68.6177,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 207,
+    "out": 154,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 17.3632,
+    "ts": "2026-07-30 18:48:21.979152+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 394,
+    "out": 190,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 23.8856,
+    "ts": "2026-07-30 18:48:29.406068+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 575,
+    "out": 193,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 27.3689,
+    "ts": "2026-07-30 18:48:36.621263+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-npc-01-opus48": {
+  "cost_krw": 37.0812,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 207,
+    "out": 297,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 15.0351,
+    "ts": "2026-07-30 18:48:33.053791+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 537,
+    "out": 122,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 10.1922,
+    "ts": "2026-07-30 18:48:38.071556+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 694,
+    "out": 128,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.8539,
+    "ts": "2026-07-30 18:48:42.88227+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-npc-01-route": {
+  "cost_krw": 1.9722,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 120,
+    "out": 130,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.6416,
+    "ts": "2026-07-30 18:48:38.385979+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 275,
+    "out": 109,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.6309,
+    "ts": "2026-07-30 18:48:40.150609+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 404,
+    "out": 109,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.6997,
+    "ts": "2026-07-30 18:48:41.659917+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-teacher-01-gpt56sol": {
+  "cost_krw": 89.0288,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 152,
+    "out": 521,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 29.1283,
+    "ts": "2026-07-30 18:48:51.879186+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 639,
+    "out": 415,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 27.8043,
+    "ts": "2026-07-30 18:48:58.456614+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 1044,
+    "out": 428,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 32.0962,
+    "ts": "2026-07-30 18:49:08.0904+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-teacher-01-route": {
+  "cost_krw": 9.0903,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 129,
+    "out": 533,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.4369,
+    "ts": "2026-07-30 18:49:03.509289+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 678,
+    "out": 634,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 3.1783,
+    "ts": "2026-07-30 18:49:07.35115+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 1343,
+    "out": 621,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 3.4751,
+    "ts": "2026-07-30 18:49:12.235158+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-teacher-01-fable5": {
+  "cost_krw": 368.6802,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 216,
+    "out": 1044,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 96.6086,
+    "ts": "2026-07-30 18:49:05.736932+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 1203,
+    "out": 1031,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 112.9944,
+    "ts": "2026-07-30 18:49:27.226033+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 2191,
+    "out": 1352,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 159.0772,
+    "ts": "2026-07-30 18:49:59.230406+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-char-teacher-01-opus48": {
+  "cost_krw": 115.1714,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 216,
+    "out": 648,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 30.71,
+    "ts": "2026-07-30 18:49:10.100294+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 891,
+    "out": 693,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 38.7074,
+    "ts": "2026-07-30 18:49:24.181119+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 1639,
+    "out": 702,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 45.754,
+    "ts": "2026-07-30 18:49:41.081022+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-01-gpt56sol": {
+  "cost_krw": 20.1979,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 203,
+    "out": 345,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 20.1979,
+    "ts": "2026-07-30 18:49:18.058002+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-01-opus48": {
+  "cost_krw": 38.2276,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 317,
+    "out": 797,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 38.2276,
+    "ts": "2026-07-30 18:49:29.420748+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-01-fable5": {
+  "cost_krw": 136.3468,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 317,
+    "out": 1471,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 136.3468,
+    "ts": "2026-07-30 18:49:31.969935+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-01-route": {
+  "cost_krw": 2.9151,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 226,
+    "out": 629,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.9151,
+    "ts": "2026-07-30 18:49:32.095721+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-02-gpt56sol": {
+  "cost_krw": 10.7787,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 97,
+    "out": 186,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 10.7787,
+    "ts": "2026-07-30 18:49:36.261664+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-02-fable5": {
+  "cost_krw": 27.3511,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 134,
+    "out": 281,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 27.3511,
+    "ts": "2026-07-30 18:49:39.487169+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-02-opus48": {
+  "cost_krw": 11.9428,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 134,
+    "out": 242,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.9428,
+    "ts": "2026-07-30 18:49:40.486346+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-easy-02-route": {
+  "cost_krw": 0.565,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 93,
+    "out": 116,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.565,
+    "ts": "2026-07-30 18:49:40.634082+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-01-gpt56sol": {
+  "cost_krw": 39.8981,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 236,
+    "out": 709,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 39.8981,
+    "ts": "2026-07-30 18:49:53.728713+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-01-opus48": {
+  "cost_krw": 53.8847,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 354,
+    "out": 1142,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 53.8847,
+    "ts": "2026-07-30 18:49:56.183265+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-01-fable5": {
+  "cost_krw": 115.2336,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 354,
+    "out": 1226,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 115.2336,
+    "ts": "2026-07-30 18:49:56.501789+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-01-route": {
+  "cost_krw": 3.1952,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 243,
+    "out": 690,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 3.1952,
+    "ts": "2026-07-30 18:49:56.569821+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-02-route": {
+  "cost_krw": 1.1212,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 153,
+    "out": 234,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.1212,
+    "ts": "2026-07-30 18:50:00.886776+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-02-gpt56sol": {
+  "cost_krw": 13.5956,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 150,
+    "out": 230,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 13.5956,
+    "ts": "2026-07-30 18:50:01.417336+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-02-opus48": {
+  "cost_krw": 27.0401,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 228,
+    "out": 563,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 27.0401,
+    "ts": "2026-07-30 18:50:05.950557+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-med-02-fable5": {
+  "cost_krw": 58.5232,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 228,
+    "out": 613,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 58.5232,
+    "ts": "2026-07-30 18:50:07.656574+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-01-route": {
+  "cost_krw": 2.3425,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 227,
+    "out": 500,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.3425,
+    "ts": "2026-07-30 18:50:09.93463+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-02-gpt56sol": {
+  "cost_krw": 8.7616,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 122,
+    "out": 144,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.7616,
+    "ts": "2026-07-30 18:50:13.579012+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-02-fable5": {
+  "cost_krw": 12.2094,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 197,
+    "out": 98,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 12.2094,
+    "ts": "2026-07-30 18:50:17.652452+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-02-opus48": {
+  "cost_krw": 16.7235,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 197,
+    "out": 337,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 16.7235,
+    "ts": "2026-07-30 18:50:22.339566+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-02-route": {
+  "cost_krw": 1.3967,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 128,
+    "out": 299,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3967,
+    "ts": "2026-07-30 18:50:24.193332+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-01-opus48": {
+  "cost_krw": 74.4825,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 352,
+    "out": 1606,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 74.4825,
+    "ts": "2026-07-30 18:50:25.219715+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-01-gpt56sol": {
+  "cost_krw": 76.5884,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 225,
+    "out": 1399,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 76.5884,
+    "ts": "2026-07-30 18:50:26.815871+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-py-hard-01-fable5": {
+  "cost_krw": 195.9718,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 352,
+    "out": 2135,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 195.9718,
+    "ts": "2026-07-30 18:50:28.526595+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-easy-01-gpt56sol": {
+  "cost_krw": 17.3988,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 98,
+    "out": 310,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 17.3988,
+    "ts": "2026-07-30 18:50:29.462926+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-easy-01-route": {
+  "cost_krw": 0.9042,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 96,
+    "out": 192,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.9042,
+    "ts": "2026-07-30 18:50:29.859977+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-easy-01-fable5": {
+  "cost_krw": 86.9939,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 150,
+    "out": 949,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 86.9939,
+    "ts": "2026-07-30 18:50:37.091206+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-easy-01-opus48": {
+  "cost_krw": 47.2291,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 150,
+    "out": 1033,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 47.2291,
+    "ts": "2026-07-30 18:50:39.511058+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-med-01-route": {
+  "cost_krw": 2.2915,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 173,
+    "out": 495,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.2915,
+    "ts": "2026-07-30 18:50:41.7277+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-easy-01-gpt56sol": {
+  "cost_krw": 4.8073,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 121,
+    "out": 70,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 4.8073,
+    "ts": "2026-07-30 18:50:43.624929+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-med-01-gpt56sol": {
+  "cost_krw": 57.2525,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 173,
+    "out": 1045,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 57.2525,
+    "ts": "2026-07-30 18:50:48.712718+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-easy-01-fable5": {
+  "cost_krw": 31.9896,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 205,
+    "out": 319,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 31.9896,
+    "ts": "2026-07-30 18:50:50.203055+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-easy-01-route": {
+  "cost_krw": 0.4425,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 130,
+    "out": 84,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.4425,
+    "ts": "2026-07-30 18:50:51.183059+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-easy-01-opus48": {
+  "cost_krw": 17.6387,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 205,
+    "out": 356,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 17.6387,
+    "ts": "2026-07-30 18:50:53.858162+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-med-01-opus48": {
+  "cost_krw": 81.1647,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 279,
+    "out": 1771,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 81.1647,
+    "ts": "2026-07-30 18:50:58.821152+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-hard-01-gpt56sol": {
+  "cost_krw": 21.6907,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 149,
+    "out": 382,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 21.6907,
+    "ts": "2026-07-30 18:50:59.465592+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-js-med-01-fable5": {
+  "cost_krw": 246.3021,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 279,
+    "out": 2716,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 246.3021,
+    "ts": "2026-07-30 18:51:00.792472+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-hard-01-route": {
+  "cost_krw": 1.0322,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 161,
+    "out": 213,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.0322,
+    "ts": "2026-07-30 18:51:00.912747+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-hard-01-fable5": {
+  "cost_krw": 98.5635,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 256,
+    "out": 1058,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 98.5635,
+    "ts": "2026-07-30 18:51:06.871837+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-sql-hard-01-opus48": {
+  "cost_krw": 33.3758,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 256,
+    "out": 700,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 33.3758,
+    "ts": "2026-07-30 18:51:07.94304+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-go-med-01-route": {
+  "cost_krw": 2.1812,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 141,
+    "out": 474,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.1812,
+    "ts": "2026-07-30 18:51:10.202284+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-go-med-01-gpt56sol": {
+  "cost_krw": 23.8411,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 145,
+    "out": 423,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 23.8411,
+    "ts": "2026-07-30 18:51:10.885827+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-go-med-01-fable5": {
+  "cost_krw": 79.5119,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 234,
+    "out": 848,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 79.5119,
+    "ts": "2026-07-30 18:51:12.395607+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-rust-med-01-gpt56sol": {
+  "cost_krw": 14.9551,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 159,
+    "out": 254,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 14.9551,
+    "ts": "2026-07-30 18:51:15.961963+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-rust-med-01-route": {
+  "cost_krw": 2.6736,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 173,
+    "out": 581,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.6736,
+    "ts": "2026-07-30 18:51:18.604131+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-go-med-01-opus48": {
+  "cost_krw": 50.7746,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 234,
+    "out": 1096,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 50.7746,
+    "ts": "2026-07-30 18:51:20.412837+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-chat-01-gpt56sol": {
+  "cost_krw": 13.1957,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 23,
+    "out": 59,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 3.35,
+    "ts": "2026-07-30 18:51:21.126567+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 130,
+    "out": 163,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.8457,
+    "ts": "2026-07-30 18:51:26.908244+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-rust-med-01-fable5": {
+  "cost_krw": 106.9697,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 259,
+    "out": 1152,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 106.9697,
+    "ts": "2026-07-30 18:51:26.883259+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-chat-01-fable5": {
+  "cost_krw": 51.8942,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 37,
+    "out": 154,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 14.342,
+    "ts": "2026-07-30 18:51:27.379797+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 273,
+    "out": 368,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 37.5522,
+    "ts": "2026-07-30 18:51:36.689877+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-chat-01-route": {
+  "cost_krw": 1.3789,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 17,
+    "out": 82,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.3734,
+    "ts": "2026-07-30 18:51:28.27996+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 136,
+    "out": 210,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.0055,
+    "ts": "2026-07-30 18:51:30.466542+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-code-rust-med-01-opus48": {
+  "cost_krw": 56.5505,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 259,
+    "out": 1221,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 56.5505,
+    "ts": "2026-07-30 18:51:30.565986+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-chat-01-opus48": {
+  "cost_krw": 25.9383,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 37,
+    "out": 163,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 7.5709,
+    "ts": "2026-07-30 18:51:31.849704+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 282,
+    "out": 357,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 18.3674,
+    "ts": "2026-07-30 18:51:41.13621+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-recipe-01-gpt56sol": {
+  "cost_krw": 35.3396,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 71,
+    "out": 651,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 35.3396,
+    "ts": "2026-07-30 18:51:42.450176+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-recipe-01-route": {
+  "cost_krw": 4.3138,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 66,
+    "out": 963,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 4.3138,
+    "ts": "2026-07-30 18:51:45.96789+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-recipe-01-fable5": {
+  "cost_krw": 87.8292,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 117,
+    "out": 965,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 87.8292,
+    "ts": "2026-07-30 18:51:49.149505+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-recipe-01-opus48": {
+  "cost_krw": 40.5824,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 117,
+    "out": 890,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 40.5824,
+    "ts": "2026-07-30 18:51:53.909632+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-travel-01-route": {
+  "cost_krw": 6.59,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 127,
+    "out": 1468,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.59,
+    "ts": "2026-07-30 18:52:00.554963+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-advice-01-gpt56sol": {
+  "cost_krw": 130.5175,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 109,
+    "out": 842,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 45.8606,
+    "ts": "2026-07-30 18:52:19.896113+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 935,
+    "out": 1432,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 84.6569,
+    "ts": "2026-07-30 18:52:48.487475+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-travel-01-fable5": {
+  "cost_krw": 180.1548,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 197,
+    "out": 1988,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 180.1548,
+    "ts": "2026-07-30 18:52:22.731625+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-travel-01-opus48": {
+  "cost_krw": 75.5043,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 197,
+    "out": 1660,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 75.5043,
+    "ts": "2026-07-30 18:52:22.893555+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-advice-01-fable5": {
+  "cost_krw": 245.1648,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 191,
+    "out": 972,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 89.7664,
+    "ts": "2026-07-30 18:52:42.579313+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 1144,
+    "out": 1520,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 155.3984,
+    "ts": "2026-07-30 18:53:17.272565+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-advice-01-opus48": {
+  "cost_krw": 112.3813,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 191,
+    "out": 1001,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 46.1717,
+    "ts": "2026-07-30 18:52:43.984115+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 1256,
+    "out": 1239,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 66.2096,
+    "ts": "2026-07-30 18:53:07.637497+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-advice-01-route": {
+  "cost_krw": 11.2895,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 96,
+    "out": 1256,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 5.6316,
+    "ts": "2026-07-30 18:52:55.823337+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 1387,
+    "out": 1107,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 5.6579,
+    "ts": "2026-07-30 18:53:02.04863+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-travel-01-gpt56sol": {
+  "cost_krw": 185.8951,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 130,
+    "out": 3465,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 185.8951,
+    "ts": "2026-07-30 18:53:00.372595+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-translate-01-gpt56sol": {
+  "cost_krw": 6.2646,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 159,
+    "out": 91,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.2646,
+    "ts": "2026-07-30 18:53:02.530939+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-translate-01-route": {
+  "cost_krw": 1.7004,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 156,
+    "out": 364,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.7004,
+    "ts": "2026-07-30 18:53:09.854644+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-translate-01-opus48": {
+  "cost_krw": 26.187,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 277,
+    "out": 534,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 26.187,
+    "ts": "2026-07-30 18:53:11.600337+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-translate-01-fable5": {
+  "cost_krw": 51.6632,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 277,
+    "out": 526,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 51.6632,
+    "ts": "2026-07-30 18:53:13.408957+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-explain-01-gpt56sol": {
+  "cost_krw": 11.3652,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 85,
+    "out": 199,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.3652,
+    "ts": "2026-07-30 18:53:14.835773+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-explain-01-route": {
+  "cost_krw": 0.857,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 74,
+    "out": 184,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.857,
+    "ts": "2026-07-30 18:53:16.768929+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-invoice-01-gpt56sol": {
+  "cost_krw": 5.0206,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 247,
+    "out": 53,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 5.0206,
+    "ts": "2026-07-30 18:53:18.429744+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-explain-01-fable5": {
+  "cost_krw": 23.4057,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 137,
+    "out": 236,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 23.4057,
+    "ts": "2026-07-30 18:53:18.676837+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-daily-explain-01-opus48": {
+  "cost_krw": 12.6359,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 137,
+    "out": 257,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 12.6359,
+    "ts": "2026-07-30 18:53:19.418744+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-invoice-01-route": {
+  "cost_krw": 0.4381,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 280,
+    "out": 65,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.4381,
+    "ts": "2026-07-30 18:53:19.774595+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-invoice-01-opus48": {
+  "cost_krw": 6.549,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 332,
+    "out": 81,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.549,
+    "ts": "2026-07-30 18:53:20.843061+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-invoice-01-fable5": {
+  "cost_krw": 12.3871,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 332,
+    "out": 73,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 12.3871,
+    "ts": "2026-07-30 18:53:21.597752+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-actions-01-gpt56sol": {
+  "cost_krw": 6.4423,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 227,
+    "out": 83,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.4423,
+    "ts": "2026-07-30 18:53:22.027958+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-actions-01-route": {
+  "cost_krw": 0.5984,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 239,
+    "out": 106,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.5984,
+    "ts": "2026-07-30 18:53:22.765874+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-actions-01-fable5": {
+  "cost_krw": 14.1998,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 379,
+    "out": 84,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 14.1998,
+    "ts": "2026-07-30 18:53:23.918177+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-log-01-gpt56sol": {
+  "cost_krw": 9.3658,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 304,
+    "out": 125,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.3658,
+    "ts": "2026-07-30 18:53:24.57065+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-actions-01-opus48": {
+  "cost_krw": 14.653,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 379,
+    "out": 254,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 14.653,
+    "ts": "2026-07-30 18:53:24.946205+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-config-01-gpt56sol": {
+  "cost_krw": 5.2605,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 142,
+    "out": 75,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 5.2605,
+    "ts": "2026-07-30 18:53:26.646434+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-log-01-opus48": {
+  "cost_krw": 20.4378,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 415,
+    "out": 377,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 20.4378,
+    "ts": "2026-07-30 18:53:29.304229+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-log-01-fable5": {
+  "cost_krw": 43.9857,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 415,
+    "out": 412,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 43.9857,
+    "ts": "2026-07-30 18:53:29.801995+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-ext-log-01-route": {
+  "cost_krw": 15.9388,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 394,
+    "out": 95,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 15.9388,
+    "ts": "2026-07-30 18:53:30.078691+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-config-01-route": {
+  "cost_krw": 0.4916,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 147,
+    "out": 93,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.4916,
+    "ts": "2026-07-30 18:53:30.831914+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-config-01-fable5": {
+  "cost_krw": 13.1691,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 231,
+    "out": 102,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 13.1691,
+    "ts": "2026-07-30 18:53:31.365071+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-config-01-opus48": {
+  "cost_krw": 7.6953,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 231,
+    "out": 127,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 7.6953,
+    "ts": "2026-07-30 18:53:31.452251+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-page-01-gpt56sol": {
+  "cost_krw": 4.363,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 143,
+    "out": 58,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 4.363,
+    "ts": "2026-07-30 18:53:32.190238+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-page-01-route": {
+  "cost_krw": 0.3938,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 147,
+    "out": 71,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.3938,
+    "ts": "2026-07-30 18:53:32.559173+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-billing-01-gpt56sol": {
+  "cost_krw": 8.8949,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 227,
+    "out": 129,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.8949,
+    "ts": "2026-07-30 18:53:34.407953+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-page-01-fable5": {
+  "cost_krw": 13.9155,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 248,
+    "out": 107,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 13.9155,
+    "ts": "2026-07-30 18:53:34.764098+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-page-01-opus48": {
+  "cost_krw": 8.8682,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 248,
+    "out": 150,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.8682,
+    "ts": "2026-07-30 18:53:36.076832+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-billing-01-route": {
+  "cost_krw": 1.6062,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 246,
+    "out": 332,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.6062,
+    "ts": "2026-07-30 18:53:36.41108+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-cal-01-gpt56sol": {
+  "cost_krw": 5.7137,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 67,
+    "out": 96,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 5.7137,
+    "ts": "2026-07-30 18:53:38.32538+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-billing-01-fable5": {
+  "cost_krw": 38.1209,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 340,
+    "out": 361,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 38.1209,
+    "ts": "2026-07-30 18:53:38.327671+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-json-billing-01-opus48": {
+  "cost_krw": 17.5054,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 340,
+    "out": 326,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 17.5054,
+    "ts": "2026-07-30 18:53:38.64976+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-cal-01-route": {
+  "cost_krw": 0.8984,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 60,
+    "out": 195,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.8984,
+    "ts": "2026-07-30 18:53:39.747309+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-cal-01-opus48": {
+  "cost_krw": 8.0418,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 105,
+    "out": 160,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.0418,
+    "ts": "2026-07-30 18:53:41.888358+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-price-01-gpt56sol": {
+  "cost_krw": 8.9837,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 135,
+    "out": 146,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.9837,
+    "ts": "2026-07-30 18:53:42.278581+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-cal-01-fable5": {
+  "cost_krw": 22.5704,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 105,
+    "out": 233,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 22.5704,
+    "ts": "2026-07-30 18:53:42.391673+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-price-01-route": {
+  "cost_krw": 1.8949,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 129,
+    "out": 411,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.8949,
+    "ts": "2026-07-30 18:53:44.069473+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-price-01-fable5": {
+  "cost_krw": 30.6745,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 216,
+    "out": 302,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 30.6745,
+    "ts": "2026-07-30 18:53:45.795716+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-price-01-opus48": {
+  "cost_krw": 15.2039,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 216,
+    "out": 299,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 15.2039,
+    "ts": "2026-07-30 18:53:45.990108+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-order-01-gpt56sol": {
+  "cost_krw": 16.1281,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 189,
+    "out": 271,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 16.1281,
+    "ts": "2026-07-30 18:53:47.973789+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-order-01-route": {
+  "cost_krw": 2.5521,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 195,
+    "out": 551,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.5521,
+    "ts": "2026-07-30 18:53:48.383749+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-order-01-opus48": {
+  "cost_krw": 31.5275,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 348,
+    "out": 640,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 31.5275,
+    "ts": "2026-07-30 18:53:53.806736+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-reason-order-01-fable5": {
+  "cost_krw": 75.6732,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 348,
+    "out": 782,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 75.6732,
+    "ts": "2026-07-30 18:53:56.282208+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-compare-01-route": {
+  "cost_krw": 7.5785,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 181,
+    "out": 1684,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 7.5785,
+    "ts": "2026-07-30 18:54:03.435306+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-compare-01-gpt56sol": {
+  "cost_krw": 114.194,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 191,
+    "out": 2110,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 114.194,
+    "ts": "2026-07-30 18:54:20.345982+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-compare-01-opus48": {
+  "cost_krw": 102.2512,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 287,
+    "out": 2244,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 102.2512,
+    "ts": "2026-07-30 18:54:28.9078+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-compare-01-fable5": {
+  "cost_krw": 327.9289,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 287,
+    "out": 3633,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 327.9289,
+    "ts": "2026-07-30 18:54:46.702956+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-market-01-gpt56sol": {
+  "cost_krw": 138.3461,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 155,
+    "out": 2569,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 138.3461,
+    "ts": "2026-07-30 18:54:47.045341+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-market-01-route": {
+  "cost_krw": 9.0856,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 141,
+    "out": 2028,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.0856,
+    "ts": "2026-07-30 18:54:54.87925+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-market-01-fable5": {
+  "cost_krw": 185.5752,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 242,
+    "out": 2040,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 185.5752,
+    "ts": "2026-07-30 18:54:54.910318+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-market-01-opus48": {
+  "cost_krw": 89.3665,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 242,
+    "out": 1963,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 89.3665,
+    "ts": "2026-07-30 18:55:02.101609+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-tech-01-route": {
+  "cost_krw": 6.598,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 192,
+    "out": 1462,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.598,
+    "ts": "2026-07-30 18:55:09.386794+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-summary-01-gpt56sol": {
+  "cost_krw": 19.1404,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 306,
+    "out": 308,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 19.1404,
+    "ts": "2026-07-30 18:55:14.626068+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-summary-01-fable5": {
+  "cost_krw": 86.3897,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 511,
+    "out": 870,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 86.3897,
+    "ts": "2026-07-30 18:55:30.151118+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-tech-01-opus48": {
+  "cost_krw": 132.3214,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 291,
+    "out": 2920,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 132.3214,
+    "ts": "2026-07-30 18:55:40.544974+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-tech-01-gpt56sol": {
+  "cost_krw": 162.0984,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 188,
+    "out": 3009,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 162.0984,
+    "ts": "2026-07-30 18:55:40.907323+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-summary-01-opus48": {
+  "cost_krw": 39.8626,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 511,
+    "out": 795,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 39.8626,
+    "ts": "2026-07-30 18:55:42.960525+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-summary-01-route": {
+  "cost_krw": 2.2162,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 290,
+    "out": 464,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 2.2162,
+    "ts": "2026-07-30 18:55:43.077126+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-news-01-gpt56sol": {
+  "cost_krw": 9.9168,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 216,
+    "out": 150,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.9168,
+    "ts": "2026-07-30 18:55:43.852447+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-news-01-route": {
+  "cost_krw": 0.5369,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 207,
+    "out": 96,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.5369,
+    "ts": "2026-07-30 18:55:44.929832+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-news-01-opus48": {
+  "cost_krw": 11.6051,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 346,
+    "out": 192,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.6051,
+    "ts": "2026-07-30 18:55:46.370672+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-res-tech-01-fable5": {
+  "cost_krw": 308.4508,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 291,
+    "out": 3413,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 308.4508,
+    "ts": "2026-07-30 18:55:48.855327+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-earnings-01-gpt56sol": {
+  "cost_krw": 13.5778,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 238,
+    "out": 215,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 13.5778,
+    "ts": "2026-07-30 18:55:49.422081+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-news-01-fable5": {
+  "cost_krw": 23.7434,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 346,
+    "out": 198,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 23.7434,
+    "ts": "2026-07-30 18:55:50.146106+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-earnings-01-route": {
+  "cost_krw": 1.0349,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 241,
+    "out": 204,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.0349,
+    "ts": "2026-07-30 18:55:50.817901+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-earnings-01-fable5": {
+  "cost_krw": 31.0832,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 374,
+    "out": 275,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 31.0832,
+    "ts": "2026-07-30 18:55:52.420488+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-earnings-01-opus48": {
+  "cost_krw": 14.342,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 374,
+    "out": 248,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 14.342,
+    "ts": "2026-07-30 18:55:53.159638+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-cs-01-gpt56sol": {
+  "cost_krw": 11.8984,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 373,
+    "out": 161,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.8984,
+    "ts": "2026-07-30 18:55:53.474716+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-cs-01-route": {
+  "cost_krw": 0.7933,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 388,
+    "out": 132,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.7933,
+    "ts": "2026-07-30 18:55:54.479402+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-01-gpt56sol": {
+  "cost_krw": 6.2291,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 155,
+    "out": 91,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.2291,
+    "ts": "2026-07-30 18:55:55.837527+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-cs-01-fable5": {
+  "cost_krw": 39.8093,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 595,
+    "out": 329,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 39.8093,
+    "ts": "2026-07-30 18:55:56.800759+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-sum-cs-01-opus48": {
+  "cost_krw": 17.5054,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 595,
+    "out": 275,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 17.5054,
+    "ts": "2026-07-30 18:55:57.638773+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-01-route": {
+  "cost_krw": 0.4686,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 154,
+    "out": 87,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.4686,
+    "ts": "2026-07-30 18:55:57.968344+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-01-opus48": {
+  "cost_krw": 8.8771,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 269,
+    "out": 146,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 8.8771,
+    "ts": "2026-07-30 18:55:59.145055+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-01-fable5": {
+  "cost_krw": 21.3086,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 269,
+    "out": 186,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 21.3086,
+    "ts": "2026-07-30 18:55:59.537359+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-enko-01-route": {
+  "cost_krw": 0.959,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 182,
+    "out": 194,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.959,
+    "ts": "2026-07-30 18:56:00.94314+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-enko-01-gpt56sol": {
+  "cost_krw": 11.7828,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 186,
+    "out": 190,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.7828,
+    "ts": "2026-07-30 18:56:03.35562+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-enko-01-opus48": {
+  "cost_krw": 16.8834,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 310,
+    "out": 318,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 16.8834,
+    "ts": "2026-07-30 18:56:05.017888+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-enko-01-fable5": {
+  "cost_krw": 36.3437,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 310,
+    "out": 347,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 36.3437,
+    "ts": "2026-07-30 18:56:05.488999+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-02-route": {
+  "cost_krw": 0.4327,
+  "calls": [
+   {
+    "model": "bizrouter/route",
+    "in": 170,
+    "out": 77,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 0.4327,
+    "ts": "2026-07-30 18:56:06.572738+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-02-opus48": {
+  "cost_krw": 6.7089,
+  "calls": [
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 305,
+    "out": 90,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 6.7089,
+    "ts": "2026-07-30 18:56:07.473271+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-02-gpt56sol": {
+  "cost_krw": 14.1021,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 183,
+    "out": 234,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 14.1021,
+    "ts": "2026-07-30 18:56:07.581386+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "srb-v7-trans-koen-02-fable5": {
+  "cost_krw": 43.8968,
+  "calls": [
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 305,
+    "out": 433,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 43.8968,
+    "ts": "2026-07-30 18:56:10.31459+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b9d7b03ffetAFOwsWfMU3g08": {
+  "cost_krw": 1020.4008,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 666,
+    "out": 18,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3756,
+    "ts": "2026-07-30 18:56:24.877959+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15494,
+    "out": 147,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 145.5171,
+    "ts": "2026-07-30 18:56:29.663951+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15702,
+    "out": 9526,
+    "cache_read": 15491,
+    "cache_write": 0,
+    "cost_krw": 523.5285,
+    "ts": "2026-07-30 18:58:05.77633+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 25254,
+    "out": 356,
+    "cache_read": 15699,
+    "cache_write": 0,
+    "cost_krw": 117.8364,
+    "ts": "2026-07-30 18:58:13.04172+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 26147,
+    "out": 349,
+    "cache_read": 25251,
+    "cache_write": 0,
+    "cost_krw": 49.0072,
+    "ts": "2026-07-30 18:58:18.570295+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 26977,
+    "out": 581,
+    "cache_read": 26144,
+    "cache_write": 0,
+    "cost_krw": 61.6102,
+    "ts": "2026-07-30 18:58:32.746406+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 27608,
+    "out": 336,
+    "cache_read": 26974,
+    "cache_write": 0,
+    "cost_krw": 47.517,
+    "ts": "2026-07-30 18:58:40.466422+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 27965,
+    "out": 195,
+    "cache_read": 27605,
+    "cache_write": 0,
+    "cost_krw": 38.1254,
+    "ts": "2026-07-30 18:58:46.264763+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 28316,
+    "out": 148,
+    "cache_read": 27962,
+    "cache_write": 0,
+    "cost_krw": 35.8834,
+    "ts": "2026-07-30 18:58:51.015622+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b9b3675ffekTuZkqyN3LJ7A8": {
+  "cost_krw": 1235.8898,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 666,
+    "out": 18,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3756,
+    "ts": "2026-07-30 18:58:53.066046+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26427,
+    "out": 5119,
+    "cache_read": 0,
+    "cache_write": 26425,
+    "cost_krw": 1041.9413,
+    "ts": "2026-07-30 18:59:47.184232+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 31560,
+    "out": 355,
+    "cache_read": 26425,
+    "cache_write": 5133,
+    "cost_krw": 192.5729,
+    "ts": "2026-07-30 19:00:05.215744+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b99c75effezUjuN8T5QHYTS6": {
+  "cost_krw": 963.1904,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 666,
+    "out": 20,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3969,
+    "ts": "2026-07-30 19:00:31.566369+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26431,
+    "out": 10425,
+    "cache_read": 0,
+    "cache_write": 26429,
+    "cost_krw": 756.7606,
+    "ts": "2026-07-30 19:02:23.115122+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 36870,
+    "out": 68,
+    "cache_read": 26429,
+    "cache_write": 10439,
+    "cost_krw": 142.475,
+    "ts": "2026-07-30 19:02:25.960204+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 36947,
+    "out": 651,
+    "cache_read": 36868,
+    "cache_write": 77,
+    "cost_krw": 62.5579,
+    "ts": "2026-07-30 19:02:39.657732+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b97b98bffevju7BarDFqNbbV": {
+  "cost_krw": 31.2574,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 666,
+    "out": 18,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3756,
+    "ts": "2026-07-30 19:02:41.963512+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17021,
+    "out": 3769,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 25.8206,
+    "ts": "2026-07-30 19:02:51.825634+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 20806,
+    "out": 177,
+    "cache_read": 16293,
+    "cache_write": 0,
+    "cost_krw": 4.0612,
+    "ts": "2026-07-30 19:02:53.823076+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b97827fffeaT2BSh32iAGYhd": {
+  "cost_krw": 1491.963,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 735,
+    "out": 19,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.5088,
+    "ts": "2026-07-30 19:02:55.741536+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15569,
+    "out": 125,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 145.0106,
+    "ts": "2026-07-30 19:03:00.197916+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 23049,
+    "out": 182,
+    "cache_read": 15566,
+    "cache_write": 0,
+    "cost_krw": 90.0294,
+    "ts": "2026-07-30 19:03:03.788454+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 23446,
+    "out": 172,
+    "cache_read": 23046,
+    "cache_write": 0,
+    "cost_krw": 33.2034,
+    "ts": "2026-07-30 19:03:06.450737+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 23712,
+    "out": 479,
+    "cache_read": 23443,
+    "cache_write": 0,
+    "cost_krw": 48.7601,
+    "ts": "2026-07-30 19:03:15.934965+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 24406,
+    "out": 4900,
+    "cache_read": 23709,
+    "cache_write": 0,
+    "cost_krw": 288.5098,
+    "ts": "2026-07-30 19:04:11.917269+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 29328,
+    "out": 54,
+    "cache_read": 24403,
+    "cache_write": 0,
+    "cost_krw": 68.3271,
+    "ts": "2026-07-30 19:04:14.75278+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 29403,
+    "out": 264,
+    "cache_read": 29325,
+    "cache_write": 0,
+    "cost_krw": 40.8267,
+    "ts": "2026-07-30 19:04:19.223911+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 29882,
+    "out": 385,
+    "cache_read": 29400,
+    "cache_write": 0,
+    "cost_krw": 50.9346,
+    "ts": "2026-07-30 19:04:24.438223+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 31057,
+    "out": 272,
+    "cache_read": 29879,
+    "cache_write": 0,
+    "cost_krw": 51.5201,
+    "ts": "2026-07-30 19:04:29.451463+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 31446,
+    "out": 149,
+    "cache_read": 31054,
+    "cache_write": 0,
+    "cost_krw": 39.022,
+    "ts": "2026-07-30 19:04:34.281817+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 31690,
+    "out": 69,
+    "cache_read": 31443,
+    "cache_write": 0,
+    "cost_krw": 33.8139,
+    "ts": "2026-07-30 19:04:37.11951+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 31813,
+    "out": 61,
+    "cache_read": 31687,
+    "cache_write": 0,
+    "cost_krw": 32.529,
+    "ts": "2026-07-30 19:04:40.090573+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 33628,
+    "out": 110,
+    "cache_read": 31810,
+    "cache_write": 0,
+    "cost_krw": 50.2859,
+    "ts": "2026-07-30 19:04:46.636517+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 33797,
+    "out": 534,
+    "cache_read": 33335,
+    "cache_write": 0,
+    "cost_krw": 62.1976,
+    "ts": "2026-07-30 19:04:54.976775+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 34650,
+    "out": 497,
+    "cache_read": 33504,
+    "cache_write": 0,
+    "cost_krw": 66.4531,
+    "ts": "2026-07-30 19:05:02.399367+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 35607,
+    "out": 464,
+    "cache_read": 34357,
+    "cache_write": 0,
+    "cost_krw": 66.3758,
+    "ts": "2026-07-30 19:05:12.481148+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 36521,
+    "out": 427,
+    "cache_read": 35314,
+    "cache_write": 0,
+    "cost_krw": 64.8714,
+    "ts": "2026-07-30 19:05:17.642884+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 36975,
+    "out": 236,
+    "cache_read": 36228,
+    "cache_write": 0,
+    "cost_krw": 51.4126,
+    "ts": "2026-07-30 19:05:23.129044+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 37426,
+    "out": 433,
+    "cache_read": 36682,
+    "cache_write": 0,
+    "cost_krw": 62.2926,
+    "ts": "2026-07-30 19:05:31.624917+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 37914,
+    "out": 193,
+    "cache_read": 37133,
+    "cache_write": 0,
+    "cost_krw": 50.2263,
+    "ts": "2026-07-30 19:05:37.587495+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 38160,
+    "out": 155,
+    "cache_read": 37621,
+    "cache_write": 0,
+    "cost_krw": 46.4836,
+    "ts": "2026-07-30 19:05:43.931112+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 38529,
+    "out": 147,
+    "cache_read": 37867,
+    "cache_write": 0,
+    "cost_krw": 47.3686,
+    "ts": "2026-07-30 19:05:48.229488+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b94d921ffeFD3mieaezJr5g4": {
+  "cost_krw": 1623.3184,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 735,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.4662,
+    "ts": "2026-07-30 19:05:50.515686+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26526,
+    "out": 84,
+    "cache_read": 0,
+    "cache_write": 26524,
+    "cost_krw": 596.7304,
+    "ts": "2026-07-30 19:05:53.794005+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26621,
+    "out": 5497,
+    "cache_read": 26524,
+    "cache_write": 95,
+    "cost_krw": 537.7478,
+    "ts": "2026-07-30 19:06:52.233334+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 32132,
+    "out": 55,
+    "cache_read": 26619,
+    "cache_write": 5511,
+    "cost_krw": 174.657,
+    "ts": "2026-07-30 19:06:55.935924+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 32208,
+    "out": 442,
+    "cache_read": 32130,
+    "cache_write": 76,
+    "cost_krw": 98.1014,
+    "ts": "2026-07-30 19:07:03.39752+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 32979,
+    "out": 258,
+    "cache_read": 32206,
+    "cache_write": 771,
+    "cost_krw": 97.3257,
+    "ts": "2026-07-30 19:07:08.963471+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 33247,
+    "out": 593,
+    "cache_read": 32977,
+    "cache_write": 268,
+    "cost_krw": 117.2899,
+    "ts": "2026-07-30 19:07:21.977747+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b936af1ffevOCO27IAgxfY7P": {
+  "cost_krw": 865.4564,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 735,
+    "out": 18,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.4982,
+    "ts": "2026-07-30 19:07:24.239666+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26530,
+    "out": 158,
+    "cache_read": 0,
+    "cache_write": 26528,
+    "cost_krw": 301.6975,
+    "ts": "2026-07-30 19:07:26.907145+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26703,
+    "out": 5919,
+    "cache_read": 26528,
+    "cache_write": 173,
+    "cost_krw": 288.4933,
+    "ts": "2026-07-30 19:08:31.717735+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 32636,
+    "out": 55,
+    "cache_read": 26701,
+    "cache_write": 5933,
+    "cost_krw": 92.0887,
+    "ts": "2026-07-30 19:08:35.24139+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 32712,
+    "out": 657,
+    "cache_read": 32634,
+    "cache_write": 76,
+    "cost_krw": 59.051,
+    "ts": "2026-07-30 19:08:44.483507+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 34728,
+    "out": 231,
+    "cache_read": 32710,
+    "cache_write": 2016,
+    "cost_krw": 61.7399,
+    "ts": "2026-07-30 19:08:50.27846+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 35002,
+    "out": 607,
+    "cache_read": 34726,
+    "cache_write": 274,
+    "cost_krw": 60.8878,
+    "ts": "2026-07-30 19:09:02.27777+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b91e25fffe94cQjxsKkvAwig": {
+  "cost_krw": 47.981,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 735,
+    "out": 18,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.4982,
+    "ts": "2026-07-30 19:09:04.994054+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17086,
+    "out": 35,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.2651,
+    "ts": "2026-07-30 19:09:05.596919+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17143,
+    "out": 42,
+    "cache_read": 12206,
+    "cache_write": 0,
+    "cost_krw": 3.4696,
+    "ts": "2026-07-30 19:09:06.801694+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17200,
+    "out": 4827,
+    "cache_read": 12199,
+    "cache_write": 0,
+    "cost_krw": 24.7631,
+    "ts": "2026-07-30 19:09:19.834793+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 22043,
+    "out": 20,
+    "cache_read": 16284,
+    "cache_write": 0,
+    "cost_krw": 4.0275,
+    "ts": "2026-07-30 19:09:21.172653+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 22081,
+    "out": 224,
+    "cache_read": 16277,
+    "cache_write": 0,
+    "cost_krw": 4.9575,
+    "ts": "2026-07-30 19:09:23.394626+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b919088ffeQQv83naOw3NEII": {
+  "cost_krw": 916.8449,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 715,
+    "out": 23,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.516,
+    "ts": "2026-07-30 19:09:25.540717+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15546,
+    "out": 262,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 152.1105,
+    "ts": "2026-07-30 19:09:30.808405+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15979,
+    "out": 195,
+    "cache_read": 15543,
+    "cache_write": 0,
+    "cost_krw": 28.0824,
+    "ts": "2026-07-30 19:09:33.712172+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 16257,
+    "out": 168,
+    "cache_read": 15976,
+    "cache_write": 0,
+    "cost_krw": 25.6503,
+    "ts": "2026-07-30 19:09:38.549193+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 16998,
+    "out": 575,
+    "cache_read": 16254,
+    "cache_write": 0,
+    "cost_krw": 51.7112,
+    "ts": "2026-07-30 19:09:49.545827+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17744,
+    "out": 3409,
+    "cache_read": 16995,
+    "cache_write": 0,
+    "cost_krw": 203.5116,
+    "ts": "2026-07-30 19:10:28.397389+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 21175,
+    "out": 58,
+    "cache_read": 17741,
+    "cache_write": 0,
+    "cost_krw": 49.3715,
+    "ts": "2026-07-30 19:10:32.025968+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 21275,
+    "out": 321,
+    "cache_read": 21172,
+    "cache_write": 0,
+    "cost_krw": 36.8431,
+    "ts": "2026-07-30 19:10:42.35728+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 21767,
+    "out": 343,
+    "cache_read": 21272,
+    "cache_write": 0,
+    "cost_krw": 41.5883,
+    "ts": "2026-07-30 19:10:47.327293+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 22359,
+    "out": 174,
+    "cache_read": 21764,
+    "cache_write": 0,
+    "cost_krw": 33.9036,
+    "ts": "2026-07-30 19:10:53.535375+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 22547,
+    "out": 58,
+    "cache_read": 22356,
+    "cache_write": 0,
+    "cost_krw": 24.6551,
+    "ts": "2026-07-30 19:10:58.102074+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 22740,
+    "out": 182,
+    "cache_read": 22544,
+    "cache_write": 0,
+    "cost_krw": 31.4778,
+    "ts": "2026-07-30 19:11:02.306471+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 27238,
+    "out": 140,
+    "cache_read": 22737,
+    "cache_write": 0,
+    "cost_krw": 67.6642,
+    "ts": "2026-07-30 19:11:06.028011+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 27503,
+    "out": 372,
+    "cache_read": 26524,
+    "cache_write": 0,
+    "cost_krw": 52.1022,
+    "ts": "2026-07-30 19:11:13.937872+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 27931,
+    "out": 101,
+    "cache_read": 26789,
+    "cache_write": 0,
+    "cost_krw": 39.3374,
+    "ts": "2026-07-30 19:11:19.068584+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 28070,
+    "out": 127,
+    "cache_read": 27217,
+    "cache_write": 0,
+    "cost_krw": 38.5359,
+    "ts": "2026-07-30 19:11:26.039081+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 28367,
+    "out": 103,
+    "cache_read": 27356,
+    "cache_write": 0,
+    "cost_krw": 38.7838,
+    "ts": "2026-07-30 19:11:31.027829+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8f87f4ffeggvPp0vw2aMpd5": {
+  "cost_krw": 1839.6901,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 715,
+    "out": 23,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.516,
+    "ts": "2026-07-30 19:11:40.04438+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26518,
+    "out": 357,
+    "cache_read": 0,
+    "cache_write": 26516,
+    "cost_krw": 620.8115,
+    "ts": "2026-07-30 19:11:49.347544+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27430,
+    "out": 164,
+    "cache_read": 26516,
+    "cache_write": 912,
+    "cost_krw": 81.9929,
+    "ts": "2026-07-30 19:11:53.951891+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27664,
+    "out": 4681,
+    "cache_read": 27428,
+    "cache_write": 234,
+    "cost_krw": 469.9326,
+    "ts": "2026-07-30 19:12:46.133931+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 32359,
+    "out": 288,
+    "cache_read": 27662,
+    "cache_write": 4695,
+    "cost_krw": 179.0876,
+    "ts": "2026-07-30 19:12:51.689588+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 33824,
+    "out": 280,
+    "cache_read": 32357,
+    "cache_write": 1465,
+    "cost_krw": 114.9662,
+    "ts": "2026-07-30 19:13:00.232457+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 39711,
+    "out": 593,
+    "cache_read": 33822,
+    "cache_write": 5887,
+    "cost_krw": 243.6177,
+    "ts": "2026-07-30 19:13:12.32945+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 40596,
+    "out": 422,
+    "cache_read": 39709,
+    "cache_write": 885,
+    "cost_krw": 127.7656,
+    "ts": "2026-07-30 19:13:24.143981+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8de2aaffeF9WBA2vrnWoGRU": {
+  "cost_krw": 1153.5607,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 715,
+    "out": 23,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.516,
+    "ts": "2026-07-30 19:13:27.377197+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26522,
+    "out": 367,
+    "cache_read": 0,
+    "cache_write": 26520,
+    "cost_krw": 310.8945,
+    "ts": "2026-07-30 19:13:31.920266+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27541,
+    "out": 213,
+    "cache_read": 26520,
+    "cache_write": 1019,
+    "cost_krw": 44.3656,
+    "ts": "2026-07-30 19:13:35.785041+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27844,
+    "out": 252,
+    "cache_read": 27539,
+    "cache_write": 303,
+    "cost_krw": 39.0509,
+    "ts": "2026-07-30 19:13:40.305222+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28189,
+    "out": 587,
+    "cache_read": 27842,
+    "cache_write": 345,
+    "cost_krw": 54.6707,
+    "ts": "2026-07-30 19:13:51.701895+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 29036,
+    "out": 4884,
+    "cache_read": 28187,
+    "cache_write": 847,
+    "cost_krw": 251.4689,
+    "ts": "2026-07-30 19:14:43.519601+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 33934,
+    "out": 118,
+    "cache_read": 29034,
+    "cache_write": 4898,
+    "cost_krw": 85.4647,
+    "ts": "2026-07-30 19:14:46.422603+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 34108,
+    "out": 558,
+    "cache_read": 33932,
+    "cache_write": 174,
+    "cost_krw": 56.8944,
+    "ts": "2026-07-30 19:14:58.326781+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 34926,
+    "out": 657,
+    "cache_read": 34106,
+    "cache_write": 818,
+    "cost_krw": 68.6008,
+    "ts": "2026-07-30 19:15:05.670707+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 35870,
+    "out": 250,
+    "cache_read": 34924,
+    "cache_write": 944,
+    "cost_krw": 52.6442,
+    "ts": "2026-07-30 19:15:11.654545+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 36965,
+    "out": 265,
+    "cache_read": 35868,
+    "cache_write": 1095,
+    "cost_krw": 55.8267,
+    "ts": "2026-07-30 19:15:17.990242+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 37306,
+    "out": 507,
+    "cache_read": 36963,
+    "cache_write": 341,
+    "cost_krw": 59.1768,
+    "ts": "2026-07-30 19:15:27.971001+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 38071,
+    "out": 705,
+    "cache_read": 37304,
+    "cache_write": 765,
+    "cost_krw": 72.9865,
+    "ts": "2026-07-30 19:15:40.453433+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8bcf5cffe3VqqMu7MJ3WOAA": {
+  "cost_krw": 140.3893,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 715,
+    "out": 23,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.516,
+    "ts": "2026-07-30 19:15:42.996166+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17073,
+    "out": 42,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.2892,
+    "ts": "2026-07-30 19:15:43.490516+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17130,
+    "out": 29,
+    "cache_read": 12206,
+    "cache_write": 0,
+    "cost_krw": 3.4049,
+    "ts": "2026-07-30 19:15:44.703915+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17172,
+    "out": 37,
+    "cache_read": 12199,
+    "cache_write": 0,
+    "cost_krw": 3.4662,
+    "ts": "2026-07-30 19:15:46.212449+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 28837,
+    "out": 74,
+    "cache_read": 16307,
+    "cache_write": 0,
+    "cost_krw": 7.8787,
+    "ts": "2026-07-30 19:15:47.625712+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 10130,
+    "out": 21,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 18.227,
+    "ts": "2026-07-30 19:15:49.028242+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 29033,
+    "out": 72,
+    "cache_read": 16302,
+    "cache_write": 0,
+    "cost_krw": 7.9767,
+    "ts": "2026-07-30 19:15:49.131717+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17917,
+    "out": 4028,
+    "cache_read": 12182,
+    "cache_write": 0,
+    "cost_krw": 21.6036,
+    "ts": "2026-07-30 19:16:00.823797+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 28248,
+    "out": 85,
+    "cache_read": 16288,
+    "cache_write": 0,
+    "cost_krw": 7.6227,
+    "ts": "2026-07-30 19:16:02.895641+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 6456,
+    "out": 13,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 11.6122,
+    "ts": "2026-07-30 19:16:04.331102+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 28574,
+    "out": 130,
+    "cache_read": 16284,
+    "cache_write": 0,
+    "cost_krw": 7.9983,
+    "ts": "2026-07-30 19:16:04.576274+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 28717,
+    "out": 3946,
+    "cache_read": 16279,
+    "cache_write": 0,
+    "cost_krw": 25.0315,
+    "ts": "2026-07-30 19:16:15.160023+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 32680,
+    "out": 54,
+    "cache_read": 16286,
+    "cache_write": 0,
+    "cost_krw": 9.8489,
+    "ts": "2026-07-30 19:16:16.91463+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 32751,
+    "out": 253,
+    "cache_read": 28493,
+    "cache_write": 0,
+    "cost_krw": 4.9134,
+    "ts": "2026-07-30 19:16:18.926839+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8b3984ffeFARZ7BWY2Q7kQz": {
+  "cost_krw": 265.6682,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 572,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.1765,
+    "ts": "2026-07-30 19:16:20.824945+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15412,
+    "out": 119,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 143.2956,
+    "ts": "2026-07-30 19:16:22.926716+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15869,
+    "out": 266,
+    "cache_read": 15409,
+    "cache_write": 0,
+    "cost_krw": 31.9621,
+    "ts": "2026-07-30 19:16:28.386444+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17274,
+    "out": 232,
+    "cache_read": 15866,
+    "cache_write": 0,
+    "cost_krw": 38.9793,
+    "ts": "2026-07-30 19:16:33.546988+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17527,
+    "out": 145,
+    "cache_read": 17271,
+    "cache_write": 0,
+    "cost_krw": 25.3526,
+    "ts": "2026-07-30 19:16:38.344189+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17854,
+    "out": 120,
+    "cache_read": 17524,
+    "cache_write": 0,
+    "cost_krw": 24.9021,
+    "ts": "2026-07-30 19:16:42.612764+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8add0fffeP0Gcs6VAloPn3u": {
+  "cost_krw": 873.2049,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 572,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.1658,
+    "ts": "2026-07-30 19:16:44.534484+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26307,
+    "out": 78,
+    "cache_read": 0,
+    "cache_write": 26305,
+    "cost_krw": 591.3322,
+    "ts": "2026-07-30 19:16:48.251693+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26989,
+    "out": 93,
+    "cache_read": 26305,
+    "cache_write": 682,
+    "cost_krw": 70.1994,
+    "ts": "2026-07-30 19:16:51.578859+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27502,
+    "out": 188,
+    "cache_read": 26987,
+    "cache_write": 513,
+    "cost_krw": 76.0988,
+    "ts": "2026-07-30 19:16:56.605891+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27704,
+    "out": 66,
+    "cache_read": 27500,
+    "cache_write": 202,
+    "cost_krw": 59.2607,
+    "ts": "2026-07-30 19:17:05.086947+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28061,
+    "out": 202,
+    "cache_read": 27702,
+    "cache_write": 357,
+    "cost_krw": 75.148,
+    "ts": "2026-07-30 19:17:12.784336+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8a6721ffe77dL5qEzSyLqSO": {
+  "cost_krw": 457.6329,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 572,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.1658,
+    "ts": "2026-07-30 19:17:14.699967+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26311,
+    "out": 94,
+    "cache_read": 0,
+    "cache_write": 26309,
+    "cost_krw": 296.4214,
+    "ts": "2026-07-30 19:17:17.371667+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27009,
+    "out": 188,
+    "cache_read": 26309,
+    "cache_write": 698,
+    "cost_krw": 39.5018,
+    "ts": "2026-07-30 19:17:20.458442+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28195,
+    "out": 239,
+    "cache_read": 27007,
+    "cache_write": 1186,
+    "cost_krw": 47.8085,
+    "ts": "2026-07-30 19:17:24.468232+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28448,
+    "out": 66,
+    "cache_read": 28193,
+    "cache_write": 253,
+    "cost_krw": 30.8126,
+    "ts": "2026-07-30 19:17:26.856+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28805,
+    "out": 285,
+    "cache_read": 28446,
+    "cache_write": 357,
+    "cost_krw": 41.9228,
+    "ts": "2026-07-30 19:17:33.181871+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8a176fffechEngyOD5yflOL": {
+  "cost_krw": 28.4585,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 572,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.1765,
+    "ts": "2026-07-30 19:17:35.31575+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 16933,
+    "out": 24,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.1346,
+    "ts": "2026-07-30 19:17:35.873666+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17374,
+    "out": 16,
+    "cache_read": 12207,
+    "cache_write": 0,
+    "cost_krw": 3.4768,
+    "ts": "2026-07-30 19:17:37.162754+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17544,
+    "out": 46,
+    "cache_read": 12201,
+    "cache_write": 0,
+    "cost_krw": 3.7036,
+    "ts": "2026-07-30 19:17:38.704994+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17927,
+    "out": 50,
+    "cache_read": 12196,
+    "cache_write": 0,
+    "cost_krw": 3.9279,
+    "ts": "2026-07-30 19:17:40.001844+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18426,
+    "out": 76,
+    "cache_read": 16256,
+    "cache_write": 0,
+    "cost_krw": 2.3613,
+    "ts": "2026-07-30 19:17:41.149795+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18517,
+    "out": 24,
+    "cache_read": 16247,
+    "cache_write": 0,
+    "cost_krw": 2.1831,
+    "ts": "2026-07-30 19:17:42.60805+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18746,
+    "out": 66,
+    "cache_read": 16241,
+    "cache_write": 0,
+    "cost_krw": 2.4947,
+    "ts": "2026-07-30 19:17:44.26207+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b89ec2fffe1dfyWd8LnTNqWq": {
+  "cost_krw": 273.2792,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 689,
+    "out": 16,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3951,
+    "ts": "2026-07-30 19:17:46.237257+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15520,
+    "out": 280,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 152.8392,
+    "ts": "2026-07-30 19:17:50.428529+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 16819,
+    "out": 762,
+    "cache_read": 15517,
+    "cache_write": 0,
+    "cost_krw": 65.9848,
+    "ts": "2026-07-30 19:18:00.31213+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17639,
+    "out": 113,
+    "cache_read": 16816,
+    "cache_write": 0,
+    "cost_krw": 28.2806,
+    "ts": "2026-07-30 19:18:02.988312+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17917,
+    "out": 124,
+    "cache_read": 17636,
+    "cache_write": 0,
+    "cost_krw": 24.7795,
+    "ts": "2026-07-30 19:18:06.23045+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b899601ffeE9YNDhV4pnF3CM": {
+  "cost_krw": 857.9788,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 689,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3844,
+    "ts": "2026-07-30 19:18:08.298133+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26497,
+    "out": 185,
+    "cache_read": 0,
+    "cache_write": 26495,
+    "cost_krw": 605.0611,
+    "ts": "2026-07-30 19:18:12.509389+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27851,
+    "out": 429,
+    "cache_read": 26495,
+    "cache_write": 1354,
+    "cost_krw": 115.3225,
+    "ts": "2026-07-30 19:18:18.869818+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28294,
+    "out": 48,
+    "cache_read": 27849,
+    "cache_write": 443,
+    "cost_krw": 63.6353,
+    "ts": "2026-07-30 19:18:23.661752+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28592,
+    "out": 176,
+    "cache_read": 28292,
+    "cache_write": 298,
+    "cost_krw": 72.5755,
+    "ts": "2026-07-30 19:18:28.986553+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b893d41ffe9h0osjYVBAwJIG": {
+  "cost_krw": 446.2598,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 689,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3844,
+    "ts": "2026-07-30 19:18:33.836131+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26501,
+    "out": 208,
+    "cache_read": 0,
+    "cache_write": 26499,
+    "cost_krw": 303.5969,
+    "ts": "2026-07-30 19:18:34.484261+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27878,
+    "out": 540,
+    "cache_read": 26499,
+    "cache_write": 1377,
+    "cost_krw": 62.852,
+    "ts": "2026-07-30 19:18:40.912244+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28432,
+    "out": 109,
+    "cache_read": 27876,
+    "cache_write": 554,
+    "cost_krw": 35.7848,
+    "ts": "2026-07-30 19:18:43.403871+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28791,
+    "out": 301,
+    "cache_read": 28430,
+    "cache_write": 359,
+    "cost_krw": 42.6417,
+    "ts": "2026-07-30 19:18:48.947483+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b88ef41ffelHCSZFlX5ng4a8": {
+  "cost_krw": 32.8874,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 689,
+    "out": 16,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3951,
+    "ts": "2026-07-30 19:18:50.839687+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17059,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.1574,
+    "ts": "2026-07-30 19:18:51.722393+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17188,
+    "out": 118,
+    "cache_read": 12206,
+    "cache_write": 0,
+    "cost_krw": 3.8313,
+    "ts": "2026-07-30 19:18:52.981683+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18273,
+    "out": 92,
+    "cache_read": 12199,
+    "cache_write": 0,
+    "cost_krw": 4.2976,
+    "ts": "2026-07-30 19:18:54.234837+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18455,
+    "out": 327,
+    "cache_read": 16258,
+    "cache_write": 0,
+    "cost_krw": 3.491,
+    "ts": "2026-07-30 19:18:56.030263+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18797,
+    "out": 92,
+    "cache_read": 16251,
+    "cache_write": 0,
+    "cost_krw": 2.6326,
+    "ts": "2026-07-30 19:18:57.278621+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18979,
+    "out": 16,
+    "cache_read": 16244,
+    "cache_write": 0,
+    "cost_krw": 2.3953,
+    "ts": "2026-07-30 19:18:58.415164+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 19192,
+    "out": 48,
+    "cache_read": 16237,
+    "cache_write": 0,
+    "cost_krw": 2.6544,
+    "ts": "2026-07-30 19:18:59.680127+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 19286,
+    "out": 121,
+    "cache_read": 16229,
+    "cache_write": 0,
+    "cost_krw": 3.0327,
+    "ts": "2026-07-30 19:19:01.023133+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b88c010ffeVOdLWl5qoMk4lv": {
+  "cost_krw": 376.9194,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 641,
+    "out": 16,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3098,
+    "ts": "2026-07-30 19:19:03.228183+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15478,
+    "out": 216,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 149.0538,
+    "ts": "2026-07-30 19:19:07.489573+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 16311,
+    "out": 161,
+    "cache_read": 15475,
+    "cache_write": 0,
+    "cost_krw": 29.7637,
+    "ts": "2026-07-30 19:19:09.992776+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17061,
+    "out": 814,
+    "cache_read": 16308,
+    "cache_write": 0,
+    "cost_krw": 64.5817,
+    "ts": "2026-07-30 19:19:22.695015+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17896,
+    "out": 197,
+    "cache_read": 17058,
+    "cache_write": 0,
+    "cost_krw": 33.1075,
+    "ts": "2026-07-30 19:19:26.848122+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18132,
+    "out": 441,
+    "cache_read": 17893,
+    "cache_write": 0,
+    "cost_krw": 41.5358,
+    "ts": "2026-07-30 19:19:35.566091+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18628,
+    "out": 177,
+    "cache_read": 18129,
+    "cache_write": 0,
+    "cost_krw": 29.9805,
+    "ts": "2026-07-30 19:19:40.909288+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 19159,
+    "out": 118,
+    "cache_read": 18625,
+    "cache_write": 0,
+    "cost_krw": 27.5866,
+    "ts": "2026-07-30 19:19:43.787738+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b88194fffe562OZZEI0a97Oy": {
+  "cost_krw": 934.8241,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 641,
+    "out": 19,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3418,
+    "ts": "2026-07-30 19:19:46.389383+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26424,
+    "out": 149,
+    "cache_read": 0,
+    "cache_write": 26422,
+    "cost_krw": 600.2404,
+    "ts": "2026-07-30 19:19:50.102602+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27357,
+    "out": 95,
+    "cache_read": 26422,
+    "cache_write": 933,
+    "cost_krw": 76.161,
+    "ts": "2026-07-30 19:19:54.256473+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28085,
+    "out": 535,
+    "cache_read": 27355,
+    "cache_write": 728,
+    "cost_krw": 112.3635,
+    "ts": "2026-07-30 19:20:03.672127+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28634,
+    "out": 59,
+    "cache_read": 28083,
+    "cache_write": 549,
+    "cost_krw": 67.3834,
+    "ts": "2026-07-30 19:20:08.178563+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28731,
+    "out": 273,
+    "cache_read": 28632,
+    "cache_write": 97,
+    "cost_krw": 77.334,
+    "ts": "2026-07-30 19:20:15.611909+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b879cfdffe2jh6ESYMPKUluK": {
+  "cost_krw": 516.3735,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 641,
+    "out": 17,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3205,
+    "ts": "2026-07-30 19:20:17.521869+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26428,
+    "out": 108,
+    "cache_read": 0,
+    "cache_write": 26426,
+    "cost_krw": 298.343,
+    "ts": "2026-07-30 19:20:20.289515+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27249,
+    "out": 89,
+    "cache_read": 26426,
+    "cache_write": 821,
+    "cost_krw": 36.5734,
+    "ts": "2026-07-30 19:20:23.305548+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27431,
+    "out": 95,
+    "cache_read": 27247,
+    "cache_write": 182,
+    "cost_krw": 30.4719,
+    "ts": "2026-07-30 19:20:25.534128+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28159,
+    "out": 748,
+    "cache_read": 27429,
+    "cache_write": 728,
+    "cost_krw": 65.7111,
+    "ts": "2026-07-30 19:20:34.917504+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28921,
+    "out": 121,
+    "cache_read": 28157,
+    "cache_write": 762,
+    "cost_krw": 38.878,
+    "ts": "2026-07-30 19:20:37.708208+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 29080,
+    "out": 396,
+    "cache_read": 28919,
+    "cache_write": 159,
+    "cost_krw": 45.0756,
+    "ts": "2026-07-30 19:20:44.795532+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b872aebffewohkagE8envQD3": {
+  "cost_krw": 30.2944,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 641,
+    "out": 19,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.3418,
+    "ts": "2026-07-30 19:20:47.37689+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17008,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.1302,
+    "ts": "2026-07-30 19:20:47.557155+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17198,
+    "out": 118,
+    "cache_read": 12206,
+    "cache_write": 0,
+    "cost_krw": 3.8366,
+    "ts": "2026-07-30 19:20:48.73845+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18444,
+    "out": 22,
+    "cache_read": 16266,
+    "cache_write": 0,
+    "cost_krw": 2.1262,
+    "ts": "2026-07-30 19:20:49.958649+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18500,
+    "out": 322,
+    "cache_read": 16258,
+    "cache_write": 0,
+    "cost_krw": 3.4928,
+    "ts": "2026-07-30 19:20:51.865233+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18838,
+    "out": 22,
+    "cache_read": 16252,
+    "cache_write": 0,
+    "cost_krw": 2.343,
+    "ts": "2026-07-30 19:20:53.751541+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18894,
+    "out": 15,
+    "cache_read": 16243,
+    "cache_write": 0,
+    "cost_krw": 2.3461,
+    "ts": "2026-07-30 19:20:55.514614+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18924,
+    "out": 41,
+    "cache_read": 16235,
+    "cache_write": 0,
+    "cost_krw": 2.4814,
+    "ts": "2026-07-30 19:20:56.780233+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18991,
+    "out": 193,
+    "cache_read": 16227,
+    "cache_write": 0,
+    "cost_krw": 3.1963,
+    "ts": "2026-07-30 19:20:59.029201+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b86ed46ffeDMVfgvmPt1FQOn": {
+  "cost_krw": 471.5738,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 797,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.5764,
+    "ts": "2026-07-30 19:21:03.269722+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15631,
+    "out": 158,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 147.321,
+    "ts": "2026-07-30 19:21:06.556039+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 16869,
+    "out": 296,
+    "cache_read": 15628,
+    "cache_write": 0,
+    "cost_krw": 40.6961,
+    "ts": "2026-07-30 19:21:13.419706+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17314,
+    "out": 1150,
+    "cache_read": 16866,
+    "cache_write": 0,
+    "cost_krw": 80.2815,
+    "ts": "2026-07-30 19:21:23.64265+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18490,
+    "out": 106,
+    "cache_read": 17311,
+    "cache_write": 0,
+    "cost_krw": 31.5106,
+    "ts": "2026-07-30 19:21:26.617619+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18745,
+    "out": 191,
+    "cache_read": 18487,
+    "cache_write": 0,
+    "cost_krw": 28.9035,
+    "ts": "2026-07-30 19:21:31.870894+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18988,
+    "out": 227,
+    "cache_read": 18742,
+    "cache_write": 0,
+    "cost_krw": 30.9428,
+    "ts": "2026-07-30 19:21:37.768584+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 19364,
+    "out": 70,
+    "cache_read": 18985,
+    "cache_write": 0,
+    "cost_krw": 23.97,
+    "ts": "2026-07-30 19:21:39.804753+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 19446,
+    "out": 294,
+    "cache_read": 19361,
+    "cache_write": 0,
+    "cost_krw": 33.6344,
+    "ts": "2026-07-30 19:21:44.396174+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 19789,
+    "out": 105,
+    "cache_read": 19443,
+    "cache_write": 0,
+    "cost_krw": 25.9498,
+    "ts": "2026-07-30 19:21:48.170122+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 20042,
+    "out": 130,
+    "cache_read": 19786,
+    "cache_write": 0,
+    "cost_krw": 26.7877,
+    "ts": "2026-07-30 19:21:51.840582+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b862288ffeHEi2aiRrdU7d6d": {
+  "cost_krw": 956.8205,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 797,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.5764,
+    "ts": "2026-07-30 19:21:54.414881+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26659,
+    "out": 151,
+    "cache_read": 0,
+    "cache_write": 26657,
+    "cost_krw": 605.6387,
+    "ts": "2026-07-30 19:22:00.144+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28486,
+    "out": 1143,
+    "cache_read": 26657,
+    "cache_write": 1827,
+    "cost_krw": 189.5641,
+    "ts": "2026-07-30 19:22:14.151954+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 29643,
+    "out": 59,
+    "cache_read": 28484,
+    "cache_write": 1157,
+    "cost_krw": 81.6028,
+    "ts": "2026-07-30 19:22:18.329109+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 29741,
+    "out": 265,
+    "cache_read": 29641,
+    "cache_write": 98,
+    "cost_krw": 78.4385,
+    "ts": "2026-07-30 19:22:26.083502+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8592e9ffe9D5VEQFqpmyXlG": {
+  "cost_krw": 499.016,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 797,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.5764,
+    "ts": "2026-07-30 19:22:32.419633+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26663,
+    "out": 182,
+    "cache_read": 0,
+    "cache_write": 26661,
+    "cost_krw": 304.2411,
+    "ts": "2026-07-30 19:22:37.54994+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28521,
+    "out": 1371,
+    "cache_read": 26661,
+    "cache_write": 1858,
+    "cost_krw": 105.26,
+    "ts": "2026-07-30 19:22:53.412765+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 29906,
+    "out": 61,
+    "cache_read": 28519,
+    "cache_write": 1385,
+    "cost_krw": 43.4539,
+    "ts": "2026-07-30 19:22:57.244541+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 30237,
+    "out": 320,
+    "cache_read": 29904,
+    "cache_write": 331,
+    "cost_krw": 44.4846,
+    "ts": "2026-07-30 19:23:05.912493+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b84f23cffeYxxZX71ohZK93y": {
+  "cost_krw": 25.4598,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 797,
+    "out": 15,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.5764,
+    "ts": "2026-07-30 19:23:13.814374+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17158,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.2102,
+    "ts": "2026-07-30 19:23:16.807343+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17252,
+    "out": 49,
+    "cache_read": 12206,
+    "cache_write": 0,
+    "cost_krw": 3.5588,
+    "ts": "2026-07-30 19:23:18.30759+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18491,
+    "out": 784,
+    "cache_read": 16273,
+    "cache_write": 0,
+    "cost_krw": 5.5335,
+    "ts": "2026-07-30 19:23:21.609003+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 19291,
+    "out": 22,
+    "cache_read": 16270,
+    "cache_write": 0,
+    "cost_krw": 2.5759,
+    "ts": "2026-07-30 19:23:23.559714+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 19347,
+    "out": 111,
+    "cache_read": 16262,
+    "cache_write": 0,
+    "cost_krw": 3.005,
+    "ts": "2026-07-30 19:23:27.002666+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b84a1feffeZooJoHx86zvxxo": {
+  "cost_krw": 345.9382,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 751,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.484,
+    "ts": "2026-07-30 19:23:34.532161+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 15585,
+    "out": 205,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 149.4181,
+    "ts": "2026-07-30 19:23:39.699944+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 16401,
+    "out": 906,
+    "cache_read": 15582,
+    "cache_write": 0,
+    "cost_krw": 69.4281,
+    "ts": "2026-07-30 19:23:50.535526+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17328,
+    "out": 77,
+    "cache_read": 16398,
+    "cache_write": 0,
+    "cost_krw": 26.9406,
+    "ts": "2026-07-30 19:23:55.457115+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17423,
+    "out": 120,
+    "cache_read": 17325,
+    "cache_write": 0,
+    "cost_krw": 22.6637,
+    "ts": "2026-07-30 19:23:59.927798+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 17951,
+    "out": 217,
+    "cache_read": 17420,
+    "cache_write": 0,
+    "cost_krw": 31.7674,
+    "ts": "2026-07-30 19:24:04.714352+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18217,
+    "out": 88,
+    "cache_read": 17948,
+    "cache_write": 0,
+    "cost_krw": 23.0307,
+    "ts": "2026-07-30 19:24:08.57252+00",
+    "latency_ms": null
+   },
+   {
+    "model": "openai/gpt-5.6-sol",
+    "in": 18323,
+    "out": 76,
+    "cache_read": 18214,
+    "cache_write": 0,
+    "cost_krw": 21.2056,
+    "ts": "2026-07-30 19:24:13.668918+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b83eef5ffewLt5gJ5HIpJ6NB": {
+  "cost_krw": 952.8708,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 751,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.484,
+    "ts": "2026-07-30 19:24:20.28839+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 26568,
+    "out": 107,
+    "cache_read": 0,
+    "cache_write": 26566,
+    "cost_krw": 599.7073,
+    "ts": "2026-07-30 19:24:27.516196+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 27282,
+    "out": 814,
+    "cache_read": 26566,
+    "cache_write": 714,
+    "cost_krw": 135.4422,
+    "ts": "2026-07-30 19:24:38.591233+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28110,
+    "out": 52,
+    "cache_read": 27280,
+    "cache_write": 828,
+    "cost_krw": 71.5323,
+    "ts": "2026-07-30 19:24:43.691829+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28177,
+    "out": 95,
+    "cache_read": 28108,
+    "cache_write": 67,
+    "cost_krw": 59.9192,
+    "ts": "2026-07-30 19:24:48.866911+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-fable-5",
+    "in": 28714,
+    "out": 256,
+    "cache_read": 28175,
+    "cache_write": 537,
+    "cost_krw": 84.7858,
+    "ts": "2026-07-30 19:24:56.748081+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b8341dcffeKpsnZqIDDToY2q": {
+  "cost_krw": 505.8561,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 751,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.484,
+    "ts": "2026-07-30 19:25:05.056793+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 26572,
+    "out": 108,
+    "cache_read": 0,
+    "cache_write": 26570,
+    "cost_krw": 299.9425,
+    "ts": "2026-07-30 19:25:10.670882+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 27287,
+    "out": 1199,
+    "cache_read": 26570,
+    "cache_write": 715,
+    "cost_krw": 84.8413,
+    "ts": "2026-07-30 19:25:25.276425+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28500,
+    "out": 112,
+    "cache_read": 27285,
+    "cache_write": 1213,
+    "cost_krw": 42.7128,
+    "ts": "2026-07-30 19:25:29.728467+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 28627,
+    "out": 95,
+    "cache_read": 28498,
+    "cache_write": 127,
+    "cost_krw": 30.9726,
+    "ts": "2026-07-30 19:25:34.098622+00",
+    "latency_ms": null
+   },
+   {
+    "model": "anthropic/claude-opus-4.8",
+    "in": 29164,
+    "out": 326,
+    "cache_read": 28625,
+    "cache_write": 537,
+    "cost_krw": 45.9029,
+    "ts": "2026-07-30 19:25:40.899742+00",
+    "latency_ms": null
+   }
+  ]
+ },
+ "ses_04b829829ffeownmSovdgoP0d9": {
+  "cost_krw": 32.254,
+  "calls": [
+   {
+    "model": "openai/gpt-5.6-luna",
+    "in": 751,
+    "out": 11,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 1.452,
+    "ts": "2026-07-30 19:25:48.131505+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17134,
+    "out": 14,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_krw": 9.1974,
+    "ts": "2026-07-30 19:25:50.452583+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17195,
+    "out": 54,
+    "cache_read": 12206,
+    "cache_write": 0,
+    "cost_krw": 3.5506,
+    "ts": "2026-07-30 19:25:52.274534+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 17826,
+    "out": 59,
+    "cache_read": 12202,
+    "cache_write": 0,
+    "cost_krw": 3.9112,
+    "ts": "2026-07-30 19:25:53.984778+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18089,
+    "out": 641,
+    "cache_read": 12196,
+    "cache_write": 0,
+    "cost_krw": 6.6401,
+    "ts": "2026-07-30 19:25:57.099837+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18746,
+    "out": 18,
+    "cache_read": 16258,
+    "cache_write": 0,
+    "cost_krw": 2.2733,
+    "ts": "2026-07-30 19:25:59.311574+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 18782,
+    "out": 54,
+    "cache_read": 16249,
+    "cache_write": 0,
+    "cost_krw": 2.4567,
+    "ts": "2026-07-30 19:26:01.630945+00",
+    "latency_ms": null
+   },
+   {
+    "model": "bizrouter/route",
+    "in": 19346,
+    "out": 57,
+    "cache_read": 16245,
+    "cache_write": 0,
+    "cost_krw": 2.7727,
+    "ts": "2026-07-30 19:26:03.459764+00",
+    "latency_ms": null
+   }
+  ]
+ }
+}

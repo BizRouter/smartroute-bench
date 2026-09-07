@@ -1,0 +1,231 @@
+[
+  {
+    "id": "ext-actions-01",
+    "pair_id": "ext-actions-01",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "meeting-notes",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "extraction",
+    "ko": {
+      "turns": [
+        "아래 회의록에서 액션 아이템만 추출해줘.\n\n---\n[제품 주간회의 2026-07-15]\n- 지난주 가입 전환율 3.1% → 3.4% 개선 공유 (박세훈)\n- 온보딩 가이드가 없어 신규 고객 문의가 반복됨. 김지원이 초안을 7월 24일까지 작성하기로.\n- 요금제 페이지 A/B 테스트: 박세훈이 7월 22일까지 실험 셋업.\n- 지난번 액션이었던 FAQ 정리(이하늘)는 완료되어 오늘 공유함.\n- 고객 인터뷰가 부족하다는 지적 → 이하늘이 8월 1일까지 3건 진행하기로.\n---\n\n규칙:\n- 이미 완료된 항목은 제외\n- 각 항목은 {\"owner\": 담당자 이름, \"due\": \"YYYY-MM-DD\"} 두 키만\n- due 오름차순으로 정렬한 JSON 배열\n\n마지막에 ```json 블록 하나로 답해줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 필드와 값이 원문/요구사항과 정확히 일치하는가",
+          "weight": 0.6
+        },
+        {
+          "name": "형식 준수",
+          "desc": "지정한 JSON 스키마·키 이름·값 형식을 그대로 지켰는가",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": [
+          {
+            "owner": "박세훈",
+            "due": "2026-07-22"
+          },
+          {
+            "owner": "김지원",
+            "due": "2026-07-24"
+          },
+          {
+            "owner": "이하늘",
+            "due": "2026-08-01"
+          }
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Extract only the action items from the meeting notes below.\n\n---\n[Product Weekly 2026-07-15]\n- Shared last week's signup conversion improvement, 3.1% -> 3.4% (Sam Park)\n- New customers keep asking the same questions because there is no onboarding guide. Jamie Kim will write a draft by July 24.\n- Pricing page A/B test: Sam Park will set up the experiment by July 22.\n- The FAQ cleanup (Riley Cho) from last week's action items is complete and was shared today.\n- We still lack customer interviews -> Riley Cho will run 3 interviews by August 1.\n---\n\nRules:\n- Exclude items that are already completed\n- Each item has exactly two keys: {\"owner\": person's name, \"due\": \"YYYY-MM-DD\"}\n- Return a JSON array sorted by due date, ascending\n\nEnd your answer with a single ```json block."
+      ],
+      "rubric": [
+        {
+          "name": "Accuracy",
+          "desc": "Do the requested fields and values exactly match the source text and requirements?",
+          "weight": 0.6
+        },
+        {
+          "name": "Format compliance",
+          "desc": "Does the answer follow the specified JSON schema, key names, and value formats exactly?",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": [
+          {
+            "owner": "Sam Park",
+            "due": "2026-07-22"
+          },
+          {
+            "owner": "Jamie Kim",
+            "due": "2026-07-24"
+          },
+          {
+            "owner": "Riley Cho",
+            "due": "2026-08-01"
+          }
+        ]
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "ext-invoice-01",
+    "pair_id": "ext-invoice-01",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "document-fields",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "extraction",
+    "ko": {
+      "turns": [
+        "아래 거래명세서에서 정보를 추출해 JSON으로 만들어줘.\n\n---\n거 래 명 세 서\n\n공급자: (주)한빛물산  (사업자 123-45-67890)\n공급받는자: 카페 모하비\n발행일: 2026년 6월 30일\n\n품목\n1. 복사용지 A4 (80g)   20박스 × 18,000원 = 360,000원\n2. 토너 카트리지 TN-2450   3개 × 95,000원 = 285,000원\n\n배송비: 15,000원\n합계(부가세 포함): 660,000원\n---\n\n요구 형식 (키 이름·형식 그대로, 값만 채워서):\n- supplier: 공급자 상호\n- issued_date: 발행일, YYYY-MM-DD\n- item_count: 품목 수 (배송비는 품목이 아님)\n- total_krw: 합계 금액, 숫자만\n\n마지막에 ```json 블록 하나로 답해줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 필드와 값이 원문/요구사항과 정확히 일치하는가",
+          "weight": 0.6
+        },
+        {
+          "name": "형식 준수",
+          "desc": "지정한 JSON 스키마·키 이름·값 형식을 그대로 지켰는가",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "supplier": "(주)한빛물산",
+          "issued_date": "2026-06-30",
+          "item_count": 2,
+          "total_krw": 660000
+        }
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Extract the information from the invoice below and return it as JSON.\n\n---\nI N V O I C E\n\nSupplier: Brightline Supplies Inc.  (Tax ID 84-1234567)\nBill To: Cafe Mojave\nIssue Date: June 30, 2026\n\nItems\n1. Copy Paper A4 (80g)   20 boxes × $18.00 = $360.00\n2. Toner Cartridge TN-2450   3 units × $95.00 = $285.00\n\nShipping: $15.00\nTotal (tax included): $660.00\n---\n\nRequired format (use these exact key names and formats, just fill in the values):\n- supplier: the supplier company name\n- issued_date: the issue date, YYYY-MM-DD\n- item_count: number of line items (shipping is not a line item)\n- total_usd: the total amount in USD, number only (no $ sign, no commas)\n\nEnd your answer with a single ```json block."
+      ],
+      "rubric": [
+        {
+          "name": "Accuracy",
+          "desc": "Do the requested fields and values exactly match the source text and requirements?",
+          "weight": 0.6
+        },
+        {
+          "name": "Format compliance",
+          "desc": "Does the answer follow the specified JSON schema, key names, and value formats exactly?",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "supplier": "Brightline Supplies Inc.",
+          "issued_date": "2026-06-30",
+          "item_count": 2,
+          "total_usd": 660
+        }
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "ext-log-01",
+    "pair_id": "ext-log-01",
+    "track": "work",
+    "block": "structured",
+    "category": "extraction",
+    "subcategory": "log-analysis",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "extraction",
+    "ko": {
+      "turns": [
+        "아래 접근 로그를 분석해서 JSON으로 요약해줘.\n\n```\n2026-07-14T09:12:01Z GET /api/items 200 34ms\n2026-07-14T09:12:03Z GET /api/items 200 28ms\n2026-07-14T09:12:05Z POST /api/orders 500 120ms\n2026-07-14T09:12:07Z GET /api/items 500 15ms\n2026-07-14T09:12:09Z GET /api/users 404 9ms\n2026-07-14T09:12:11Z POST /api/orders 500 132ms\n2026-07-14T09:12:14Z GET /api/items 200 31ms\n2026-07-14T09:12:18Z POST /api/orders 201 88ms\n```\n\n요구 형식 (키 이름 그대로):\n- error_5xx_count: 5xx 응답 수\n- most_requested_path: 요청 수가 가장 많은 경로\n- first_5xx_at: 첫 5xx 발생 타임스탬프 (로그의 표기 그대로)\n- avg_latency_ms_5xx: 5xx 응답들의 평균 지연(ms), 정수\n\n마지막에 ```json 블록 하나로 답해줘."
+      ],
+      "rubric": [
+        {
+          "name": "정확성",
+          "desc": "요구한 필드와 값이 원문/요구사항과 정확히 일치하는가",
+          "weight": 0.6
+        },
+        {
+          "name": "형식 준수",
+          "desc": "지정한 JSON 스키마·키 이름·값 형식을 그대로 지켰는가",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "error_5xx_count": 3,
+          "most_requested_path": "/api/items",
+          "first_5xx_at": "2026-07-14T09:12:05Z",
+          "avg_latency_ms_5xx": 89
+        }
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Analyze the access log below and summarize it as JSON.\n\n```\n2026-07-14T09:12:01Z GET /api/items 200 34ms\n2026-07-14T09:12:03Z GET /api/items 200 28ms\n2026-07-14T09:12:05Z POST /api/orders 500 120ms\n2026-07-14T09:12:07Z GET /api/items 500 15ms\n2026-07-14T09:12:09Z GET /api/users 404 9ms\n2026-07-14T09:12:11Z POST /api/orders 500 132ms\n2026-07-14T09:12:14Z GET /api/items 200 31ms\n2026-07-14T09:12:18Z POST /api/orders 201 88ms\n```\n\nRequired format (use these exact key names):\n- error_5xx_count: number of 5xx responses\n- most_requested_path: the path with the most requests\n- first_5xx_at: timestamp of the first 5xx (exactly as written in the log)\n- avg_latency_ms_5xx: average latency of the 5xx responses in ms, as an integer\n\nEnd your answer with a single ```json block."
+      ],
+      "rubric": [
+        {
+          "name": "Accuracy",
+          "desc": "Do the requested fields and values exactly match the source text and requirements?",
+          "weight": 0.6
+        },
+        {
+          "name": "Format compliance",
+          "desc": "Does the answer follow the specified JSON schema, key names, and value formats exactly?",
+          "weight": 0.4
+        }
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "error_5xx_count": 3,
+          "most_requested_path": "/api/items",
+          "first_5xx_at": "2026-07-14T09:12:05Z",
+          "avg_latency_ms_5xx": 89
+        }
+      },
+      "locale": "en"
+    }
+  }
+]

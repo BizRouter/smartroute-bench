@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+results/
+sandbox/
+.DS_Store
+
+# Track B is sampled from third-party datasets. The repo ships pointers
+# (configs/track_b_manifest.json + track_b_lock.json) and the adapter, never
+# the rows — rebuild with tools/fetch_track_b.py.
+tasks/*/capability/

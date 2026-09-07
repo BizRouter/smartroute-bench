@@ -1,0 +1,100 @@
+{
+  "schema_version": 2,
+  "benchmark": "smartroute-bench",
+  "run_id": "v7",
+  "measured_at": "2026-07-31",
+  "attempt_accounting": {
+    "deduplication": "none",
+    "failed_attempts_included": true,
+    "failed_attempt_costs_included": true
+  },
+  "models": [
+    {
+      "model_code": "openai/gpt-5.6-sol",
+      "task_affinities": {
+        "chat": 0.94,
+        "coding": 0.87,
+        "analysis": 0.94,
+        "extraction": 1.0,
+        "json_generation": 1.0,
+        "translation": 0.97,
+        "summarization": 0.97,
+        "reasoning": 1.0,
+        "tool_use": 0.95
+      },
+      "task_evidence": {
+        "chat": {
+          "attempt_count": 10,
+          "failed_attempt_count": 0,
+          "score_input_count": 10,
+          "concrete_model_attributed_count": 10,
+          "attribution_method": "fixed_model"
+        },
+        "coding": {
+          "attempt_count": 12,
+          "failed_attempt_count": 0,
+          "score_input_count": 12,
+          "concrete_model_attributed_count": 12,
+          "attribution_method": "fixed_model"
+        },
+        "analysis": {
+          "attempt_count": 12,
+          "failed_attempt_count": 0,
+          "score_input_count": 12,
+          "concrete_model_attributed_count": 12,
+          "attribution_method": "fixed_model"
+        },
+        "extraction": {
+          "attempt_count": 3,
+          "failed_attempt_count": 0,
+          "score_input_count": 3,
+          "concrete_model_attributed_count": 3,
+          "attribution_method": "fixed_model"
+        },
+        "json_generation": {
+          "attempt_count": 3,
+          "failed_attempt_count": 0,
+          "score_input_count": 3,
+          "concrete_model_attributed_count": 3,
+          "attribution_method": "fixed_model"
+        },
+        "translation": {
+          "attempt_count": 3,
+          "failed_attempt_count": 0,
+          "score_input_count": 3,
+          "concrete_model_attributed_count": 3,
+          "attribution_method": "fixed_model"
+        },
+        "summarization": {
+          "attempt_count": 3,
+          "failed_attempt_count": 0,
+          "score_input_count": 3,
+          "concrete_model_attributed_count": 3,
+          "attribution_method": "fixed_model"
+        },
+        "reasoning": {
+          "attempt_count": 3,
+          "failed_attempt_count": 0,
+          "score_input_count": 3,
+          "concrete_model_attributed_count": 3,
+          "attribution_method": "fixed_model"
+        },
+        "tool_use": {
+          "attempt_count": 8,
+          "failed_attempt_count": 0,
+          "score_input_count": 8,
+          "concrete_model_attributed_count": 8,
+          "attribution_method": "fixed_model"
+        }
+      },
+      "confidence": 0.8,
+      "complexity_capacity": 0.94,
+      "rationale": [
+        "smartroute-bench v7(57과제·3사 블라인드 심사 평균·2026-07-31) 실측 점수를 실패·재시도 시도까지 포함해 10점 만점 기준 0~1로 정규화했습니다.",
+        "고정 arm 직접 실측입니다(요청에 모델을 고정해 전 시도 귀속).",
+        "complexity_capacity 는 hard 난이도 전체 시도 포함 judge 평균(9.40/10)입니다.",
+        "tool_use 는 min(에이전틱 전 시도 완주·체크 통과율, 0.95) — 시도 8회(실패 0회 포함) 중 8회 통과(1.00)이며, 소표본 이진 지표 보수 상한이 적용됩니다."
+      ]
+    }
+  ]
+}

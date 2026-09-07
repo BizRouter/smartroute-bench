@@ -1,0 +1,330 @@
+[
+  {
+    "id": "lcq-log-top5xx-01",
+    "pair_id": "lcq-log-top5xx-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "log-aggregate",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 11,
+        "lines": 420,
+        "question": "top_5xx_service_in_hour",
+        "hour": 9
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 11,
+        "lines": 420,
+        "question": "top_5xx_service_in_hour",
+        "hour": 9
+      }
+    }
+  },
+  {
+    "id": "lcq-log-count-01",
+    "pair_id": "lcq-log-count-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "log-count",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 21,
+        "lines": 140,
+        "question": "error_count_total"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 21,
+        "lines": 140,
+        "question": "error_count_total"
+      }
+    }
+  },
+  {
+    "id": "lcq-log-count-02",
+    "pair_id": "lcq-log-count-02",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "log-count",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 31,
+        "lines": 430,
+        "question": "error_count_total"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 31,
+        "lines": 430,
+        "question": "error_count_total"
+      }
+    }
+  },
+  {
+    "id": "lcq-log-slow-01",
+    "pair_id": "lcq-log-slow-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "log-max",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 14,
+        "lines": 380,
+        "question": "slowest_path_p_max"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 14,
+        "lines": 380,
+        "question": "slowest_path_p_max"
+      }
+    }
+  },
+  {
+    "id": "lcq-log-trace-01",
+    "pair_id": "lcq-log-trace-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "log-needle",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 2,
+        "lines": 140,
+        "question": "trace_of_first_5xx"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 2,
+        "lines": 140,
+        "question": "trace_of_first_5xx"
+      }
+    }
+  },
+  {
+    "id": "lcq-log-clean-01",
+    "pair_id": "lcq-log-clean-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "log-absence",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 9,
+        "lines": 140,
+        "question": "service_with_no_errors"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "log_analysis",
+        "seed": 9,
+        "lines": 140,
+        "question": "service_with_no_errors"
+      }
+    }
+  },
+  {
+    "id": "lcq-csv-rev-01",
+    "pair_id": "lcq-csv-rev-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "csv-sum",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 7,
+        "rows": 500,
+        "question": "revenue_for_region_paid",
+        "region_idx": 0
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 7,
+        "rows": 500,
+        "question": "revenue_for_region_paid",
+        "region_idx": 0
+      }
+    }
+  },
+  {
+    "id": "lcq-csv-rev-02",
+    "pair_id": "lcq-csv-rev-02",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "csv-sum",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 19,
+        "rows": 1000,
+        "question": "revenue_for_region_paid",
+        "region_idx": 3
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 19,
+        "rows": 1000,
+        "question": "revenue_for_region_paid",
+        "region_idx": 3
+      }
+    }
+  },
+  {
+    "id": "lcq-csv-refund-01",
+    "pair_id": "lcq-csv-refund-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "csv-count",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "long",
+    "ko": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 9,
+        "rows": 1000,
+        "question": "refund_count_in_month",
+        "month": "2026-03"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 9,
+        "rows": 1000,
+        "question": "refund_count_in_month",
+        "month": "2026-03"
+      }
+    }
+  },
+  {
+    "id": "lcq-csv-max-01",
+    "pair_id": "lcq-csv-max-01",
+    "track": "capability",
+    "block": "capability",
+    "category": "longcontext-qa",
+    "subcategory": "csv-max",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "mid",
+    "ko": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 23,
+        "rows": 520,
+        "question": "largest_single_order"
+      }
+    },
+    "en": {
+      "generate": {
+        "kind": "csv_aggregate",
+        "seed": 23,
+        "rows": 520,
+        "question": "largest_single_order"
+      }
+    }
+  }
+]

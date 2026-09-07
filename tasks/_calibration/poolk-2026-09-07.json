@@ -1,0 +1,3696 @@
+{
+ "suite": "tasks/k",
+ "measured_on": "2026-08-05 (pool run) + 2026-09-07 (evolved tasks)",
+ "models": [
+  "google/gemini-3.5-flash-lite",
+  "google/gemini-3.5-flash",
+  "google/gemini-3.1-pro-preview",
+  "openai/gpt-5.6-luna",
+  "openai/gpt-5.4",
+  "openai/gpt-5.6-sol",
+  "anthropic/claude-fable-5",
+  "anthropic/claude-opus-4.8"
+ ],
+ "band_rule": "src/smartroute_bench/oracle.py difficulty_band — cheap-sufficient if the cheapest scored model passes; discriminative if some pass and some fail; frontier-only if only the pricier half passes; unsolved if none pass",
+ "summary": {
+  "cheap-sufficient": 163,
+  "discriminative": 42,
+  "unsolved": 7,
+  "frontier-only": 4
+ },
+ "n_measured": 216,
+ "tasks": {
+  "amb-clear-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "amb-referent-01": {
+   "band": "discriminative",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "amb-scope-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-001": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-domain-pro-4-ko-002": {
+   "band": "discriminative",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "anthropic/claude-opus-4.8"
+  },
+  "cap-domain-pro-4-ko-003": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-004": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-005": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-006": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-007": {
+   "band": "cheap-sufficient",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-008": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-009": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-domain-pro-4-ko-010": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-001": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-002": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-003": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-004": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-005": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "cap-knowledge-mcq-0-006": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-007": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-008": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-009": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-010": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-011": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-012": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-013": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": null
+  },
+  "cap-knowledge-mcq-0-014": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-015": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-016": {
+   "band": "discriminative",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "cap-knowledge-mcq-0-017": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-018": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "cap-knowledge-mcq-0-019": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-020": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-021": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-022": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-023": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-024": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-025": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-026": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-027": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-028": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "anthropic/claude-opus-4.8"
+  },
+  "cap-knowledge-mcq-0-029": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": null
+  },
+  "cap-knowledge-mcq-0-030": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-031": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-032": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-033": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-034": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-035": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-036": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-037": {
+   "band": "discriminative",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "anthropic/claude-opus-4.8"
+  },
+  "cap-knowledge-mcq-0-038": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-039": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-knowledge-mcq-0-040": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-001": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-002": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-003": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-004": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-005": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-006": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-007": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-008": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "cap-logic-commonsense-3-ko-009": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-010": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-011": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-012": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-013": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-014": {
+   "band": "discriminative",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-logic-commonsense-3-ko-015": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-016": {
+   "band": "frontier-only",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.1-pro-preview"
+  },
+  "cap-logic-commonsense-3-ko-017": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-logic-commonsense-3-ko-018": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-019": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-logic-commonsense-3-ko-020": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-math-1-001": {
+   "band": "discriminative",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-math-1-002": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "anthropic/claude-opus-4.8"
+  },
+  "cap-math-1-003": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-004": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-005": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-006": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-007": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-008": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-009": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-010": {
+   "band": "discriminative",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-math-1-011": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-012": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-013": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-014": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-1-015": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-001": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-002": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-003": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-004": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-005": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-006": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-007": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-008": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cap-math-2-ko-009": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "cap-math-2-ko-010": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "clc-repo-count-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "clc-repo-count-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "clc-repo-dup-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "clc-repo-dup-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "clc-repo-where-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "clc-repo-where-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-go-med-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-js-easy-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-js-med-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-easy-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-easy-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-easy-02-g1": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-hard-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-hard-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-med-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-med-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-py-med-02-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-rust-med-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-rust-med-01-g2": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "code-sql-easy-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-sql-hard-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "code-sql-hard-01-g4": {
+   "band": "cheap-sufficient",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-go-pool-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-js-currency-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-js-currency-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-js-cursor-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-js-cursor-01-g1": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "cw-js-diff-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-dedupe-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-dedupe-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-retry-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-roman-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-roman-01-g2": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-slot-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-py-slot-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-sql-gap-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-sql-gap-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-sql-topn-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "cw-sql-topn-01-g1": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "dbg-js-async-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-js-async-01-g1": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-js-clone-01": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-js-sort-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-js-sort-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-cart-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-cart-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "dbg-py-expire-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-expire-01-g1": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-money-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-money-01-g1": {
+   "band": "discriminative",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-page-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-page-01-g2": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-prune-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-prune-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "dbg-py-regex-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-py-regex-01-g2": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-sql-join-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "dbg-sql-join-01-g1": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "ext-actions-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "ext-actions-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "ext-invoice-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "ext-invoice-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "ext-log-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "ext-log-01-g1": {
+   "band": "discriminative",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "ext-meet-01": {
+   "band": "discriminative",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "ext-meet-02": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "ext-meet-03": {
+   "band": "discriminative",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "ext-meet-04": {
+   "band": "frontier-only",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "ext-meet-05": {
+   "band": "discriminative",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "ext-meet-06": {
+   "band": "discriminative",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "ext-meet-07": {
+   "band": "discriminative",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "ext-meet-08": {
+   "band": "frontier-only",
+   "n_pass": 2,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "ext-meet-09": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": null
+  },
+  "if-csv-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-csv-01-g1": {
+   "band": "discriminative",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "if-ending-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-numbered-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-numbered-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-slack-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-slack-01-g2": {
+   "band": "frontier-only",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "if-table-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-table-01-g1": {
+   "band": "discriminative",
+   "n_pass": 1,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-sol"
+  },
+  "if-tone-ban-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "if-tone-ban-01-g2": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": null
+  },
+  "if-wordrange-01": {
+   "band": "discriminative",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "json-billing-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "json-billing-01-g2": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "json-config-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "json-config-01-g2": {
+   "band": "discriminative",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "json-page-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-csv-max-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 6,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-csv-refund-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-csv-rev-01": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": null
+  },
+  "lcq-csv-rev-02": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": null
+  },
+  "lcq-log-clean-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-log-count-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-log-count-02": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-log-slow-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 3,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "lcq-log-top5xx-01": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.4"
+  },
+  "lcq-log-trace-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "reason-cal-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "reason-order-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "reason-price-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "sum-cs-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "sum-earnings-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "sum-news-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-choose-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-choose-01-g2": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "google/gemini-3.5-flash-lite"
+  },
+  "tool-date-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-date-01-g2": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-enum-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-firststep-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-firststep-01-g1": {
+   "band": "unsolved",
+   "n_pass": 0,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": false,
+    "openai/gpt-5.4": false,
+    "openai/gpt-5.6-sol": false,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": null
+  },
+  "tool-missing-arg-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-missing-arg-01-g4": {
+   "band": "discriminative",
+   "n_pass": 4,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": false
+   },
+   "cheapest_scored": "google/gemini-3.5-flash-lite",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-optional-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 7,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": false,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-optional-01-g1": {
+   "band": "cheap-sufficient",
+   "n_pass": 5,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": false,
+    "google/gemini-3.5-flash": false,
+    "google/gemini-3.1-pro-preview": false,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  },
+  "tool-single-01": {
+   "band": "cheap-sufficient",
+   "n_pass": 8,
+   "n_scored": 8,
+   "pass": {
+    "google/gemini-3.5-flash-lite": true,
+    "google/gemini-3.5-flash": true,
+    "google/gemini-3.1-pro-preview": true,
+    "openai/gpt-5.6-luna": true,
+    "openai/gpt-5.4": true,
+    "openai/gpt-5.6-sol": true,
+    "anthropic/claude-fable-5": true,
+    "anthropic/claude-opus-4.8": true
+   },
+   "cheapest_scored": "openai/gpt-5.6-luna",
+   "oracle_model": "openai/gpt-5.6-luna"
+  }
+ }
+}

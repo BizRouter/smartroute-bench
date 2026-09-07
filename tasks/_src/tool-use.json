@@ -1,0 +1,492 @@
+[
+  {
+    "id": "tool-single-01",
+    "pair_id": "tool-single-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "single-tool",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- get_order(order_id: string) — 주문 한 건을 조회한다\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "주문번호 A-10482 상태 좀 봐 줘."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "get_order",
+          "arguments": {
+            "order_id": "A-10482"
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- get_order(order_id: string) — look up a single order\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Can you check the status of order A-10482?"
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "get_order",
+          "arguments": {
+            "order_id": "A-10482"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-choose-01",
+    "pair_id": "tool-choose-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "tool-selection",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- get_order(order_id: string) — 주문 조회\n- refund_order(order_id: string, reason: string) — 주문 환불\n- cancel_subscription(user_id: string, at_period_end: boolean) — 구독 해지\n- search_orders(user_id: string, status: string) — 주문 목록 검색\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "회원 U-771 구독을 해지해 줘. 이번 결제 주기 끝날 때까지는 쓰게 해 주고."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "cancel_subscription",
+          "arguments": {
+            "user_id": "U-771",
+            "at_period_end": true
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- get_order(order_id: string) — look up an order\n- refund_order(order_id: string, reason: string) — refund an order\n- cancel_subscription(user_id: string, at_period_end: boolean) — cancel a subscription\n- search_orders(user_id: string, status: string) — search a user's orders\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Cancel the subscription for member U-771, but let them keep access until the current billing period ends."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "cancel_subscription",
+          "arguments": {
+            "user_id": "U-771",
+            "at_period_end": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-none-01",
+    "pair_id": "tool-none-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "no-applicable-tool",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "test",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- get_order(order_id: string) — 주문 조회\n- refund_order(order_id: string, reason: string) — 주문 환불\n- search_orders(user_id: string, status: string) — 주문 목록 검색\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "우리 회사 사업자등록증 사본 좀 메일로 보내 줘."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": null
+        },
+        "subset": true
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- get_order(order_id: string) — look up an order\n- refund_order(order_id: string, reason: string) — refund an order\n- search_orders(user_id: string, status: string) — search a user's orders\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Please email me a copy of your company's business registration certificate."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": null
+        },
+        "subset": true
+      }
+    }
+  },
+  {
+    "id": "tool-enum-01",
+    "pair_id": "tool-enum-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "enum-argument",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- search_orders(user_id: string, status: string) — status 는 반드시 \"paid\" | \"shipped\" | \"delivered\" | \"refunded\" 중 하나\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "U-2044 회원이 돈 돌려받은 주문들만 뽑아 줘."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "search_orders",
+          "arguments": {
+            "user_id": "U-2044",
+            "status": "refunded"
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- search_orders(user_id: string, status: string) — status must be one of \"paid\" | \"shipped\" | \"delivered\" | \"refunded\"\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Pull up just the orders where member U-2044 got their money back."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "search_orders",
+          "arguments": {
+            "user_id": "U-2044",
+            "status": "refunded"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-date-01",
+    "pair_id": "tool-date-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "date-normalisation",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 오늘은 2026년 3월 12일 목요일이야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- create_reminder(text: string, date: string) — date 는 YYYY-MM-DD 형식\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "다음 주 월요일에 세금계산서 발행하라고 알림 걸어 줘. 알림 내용은 \"세금계산서 발행\" 으로."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "create_reminder",
+          "arguments": {
+            "text": "세금계산서 발행",
+            "date": "2026-03-16"
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Today is Thursday 12 March 2026. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- create_reminder(text: string, date: string) — date in YYYY-MM-DD form\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Set a reminder for next Monday to issue the tax invoice. Use \"Issue tax invoice\" as the reminder text."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "create_reminder",
+          "arguments": {
+            "text": "Issue tax invoice",
+            "date": "2026-03-16"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-optional-01",
+    "pair_id": "tool-optional-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "optional-arguments",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- send_invoice(order_id: string, email: string, cc?: string, memo?: string)\n  — cc 와 memo 는 선택 항목이다. 사용자가 값을 주지 않았으면 키 자체를 넣지 마.\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "주문 B-559 청구서를 finance@acme.co.kr 로 보내 줘."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "send_invoice",
+          "arguments": {
+            "order_id": "B-559",
+            "email": "finance@acme.co.kr"
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- send_invoice(order_id: string, email: string, cc?: string, memo?: string)\n  — cc and memo are optional. If the user did not give a value, omit the key entirely.\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Send the invoice for order B-559 to finance@acme.co.kr."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "send_invoice",
+          "arguments": {
+            "order_id": "B-559",
+            "email": "finance@acme.co.kr"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-nested-01",
+    "pair_id": "tool-nested-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "nested-argument",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "test",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- create_shipment(order_id: string, address: {zip: string, line1: string}, items: [{sku: string, qty: number}])\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "주문 C-31 배송 넣어 줘. 우편번호 06236, 주소는 서울 강남구 테헤란로 152. 품목은 SKU-9 두 개랑 SKU-4 한 개."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "create_shipment",
+          "arguments": {
+            "order_id": "C-31",
+            "address": {
+              "zip": "06236",
+              "line1": "서울 강남구 테헤란로 152"
+            },
+            "items": [
+              {
+                "sku": "SKU-9",
+                "qty": 2
+              },
+              {
+                "sku": "SKU-4",
+                "qty": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- create_shipment(order_id: string, address: {zip: string, line1: string}, items: [{sku: string, qty: number}])\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Create the shipment for order C-31. Zip 94107, address 300 Brannan St. Items are two of SKU-9 and one SKU-4."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "create_shipment",
+          "arguments": {
+            "order_id": "C-31",
+            "address": {
+              "zip": "94107",
+              "line1": "300 Brannan St"
+            },
+            "items": [
+              {
+                "sku": "SKU-9",
+                "qty": 2
+              },
+              {
+                "sku": "SKU-4",
+                "qty": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-missing-arg-01",
+    "pair_id": "tool-missing-arg-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "insufficient-information",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- refund_order(order_id: string, reason: string) — order_id 는 필수이고 추측해서는 안 된다\n\n필수 값이 없으면 도구를 부르지 말고 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "환불해 주세요. 물건이 깨져서 왔어요."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": null
+        },
+        "subset": true
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- refund_order(order_id: string, reason: string) — order_id is required and must never be guessed\n\nIf a required value is missing, do not call the tool; output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "I'd like a refund please. The item arrived broken."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": null
+        },
+        "subset": true
+      }
+    }
+  },
+  {
+    "id": "tool-firststep-01",
+    "pair_id": "tool-firststep-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "sequencing",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 한 번에 도구 하나만 부를 수 있어. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- find_user(email: string) — 이메일로 회원을 찾아 user_id 를 돌려준다\n- cancel_subscription(user_id: string, at_period_end: boolean) — user_id 가 필요하다\n\n지금 당장 실행해야 할 첫 도구 하나만 출력해.",
+      "turns": [
+        "kim@acme.co.kr 이 사람 구독 지금 바로 끊어 줘."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "find_user",
+          "arguments": {
+            "email": "kim@acme.co.kr"
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. You may call only one tool at a time. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- find_user(email: string) — resolve a member by email and return their user_id\n- cancel_subscription(user_id: string, at_period_end: boolean) — needs a user_id\n\nOutput only the first tool to run right now.",
+      "turns": [
+        "Cancel kim@acme.co.kr's subscription immediately."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "find_user",
+          "arguments": {
+            "email": "kim@acme.co.kr"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tool-units-01",
+    "pair_id": "tool-units-01",
+    "track": "work",
+    "block": "code",
+    "category": "tool-use",
+    "subcategory": "unit-conversion",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "deterministic",
+    "split": "test",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "system": "너는 도구를 호출하는 에이전트야. 응답은 JSON 객체 하나만 출력해. 형식은 {\"tool\": 도구이름 또는 null, \"arguments\": {…}}. 설명·인사·코드블록 표시 금지.\n\n쓸 수 있는 도구:\n- set_budget(campaign_id: string, daily_budget_minor: number)\n  — daily_budget_minor 는 최소 화폐 단위(원) 정수로 넣는다\n\n요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해.",
+      "turns": [
+        "캠페인 CMP-7 하루 예산을 12만 5천 원으로 맞춰 줘."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "set_budget",
+          "arguments": {
+            "campaign_id": "CMP-7",
+            "daily_budget_minor": 125000
+          }
+        }
+      }
+    },
+    "en": {
+      "system": "You are a tool-calling agent. Output exactly one JSON object and nothing else, shaped {\"tool\": <name or null>, \"arguments\": {…}}. No prose, greeting, or code fence.\n\nAvailable tools:\n- set_budget(campaign_id: string, daily_budget_minor: number)\n  — daily_budget_minor is an integer in the currency's minor unit (cents)\n\nIf no tool can serve the request, output {\"tool\": null, \"arguments\": {}}.",
+      "turns": [
+        "Set the daily budget for campaign CMP-7 to $1,250."
+      ],
+      "check": {
+        "type": "json_match",
+        "expected": {
+          "tool": "set_budget",
+          "arguments": {
+            "campaign_id": "CMP-7",
+            "daily_budget_minor": 125000
+          }
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,235 @@
+[
+  {
+    "id": "sum-cs-01",
+    "pair_id": "sum-cs-01",
+    "track": "work",
+    "block": "writing",
+    "category": "summarization",
+    "subcategory": "thread",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "summarization",
+    "ko": {
+      "turns": [
+        "아래 고객 응대 스레드를, 다음 근무자가 이어받을 수 있게 인수인계 요약으로 정리해줘.\n5줄 이내로: 상황 → 합의된 내용 → 남은 할 일 순서. 주문번호와 금액은 반드시 포함.\n\n---\n[7/18 14:02 고객 이도윤] 주문번호 A-30217인데요, 15일 도착 예정이던 상품이 아직도 안 왔어요.\n선물용이라 날짜가 중요했는데 이미 지나버렸습니다. 환불해 주세요.\n\n[7/18 14:31 상담원 정민아] 불편을 드려 죄송합니다. 확인해 보니 물류센터 이관 중 누락으로\n배송이 지연됐습니다. 전액 환불 또는 재발송+부분 보상 중 선택하실 수 있습니다.\n\n[7/18 15:10 고객] 물건 자체는 필요해서요. 재발송으로 할게요. 보상은 어떻게 되나요?\n\n[7/18 15:22 상담원] 재발송은 최우선 출고로 처리하고, 배송비 환급 포함 12,000원을\n결제 수단으로 환급드리겠습니다. 환급은 영업일 2~3일 내 처리됩니다.\n\n[7/18 15:30 고객] 네 알겠습니다. 다음 주 금요일(7/25) 전에는 꼭 받아야 해요.\n\n[7/18 15:33 상담원] 7/23 도착 예정으로 출고 걸어두었습니다. 송장 등록되면 문자로\n안내드릴게요. (환급 처리는 아직 미실행 — 재무팀 승인 대기)\n---"
+      ],
+      "rubric": [
+        {
+          "name": "사실 충실",
+          "desc": "원문에 없는 내용을 추가하지 않고 핵심 사실·수치를 보존했는가",
+          "weight": 0.45
+        },
+        {
+          "name": "압축력",
+          "desc": "요청한 분량 안에서 가장 중요한 내용을 선별했는가",
+          "weight": 0.35
+        },
+        {
+          "name": "가독성",
+          "desc": "요약만 읽어도 상황이 파악되는 명료한 문장인가",
+          "weight": 0.2
+        }
+      ],
+      "check": {
+        "type": "contains_all",
+        "required": [
+          "A-30217",
+          "12,000"
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Turn the customer-support thread below into a handover summary the next agent on shift can pick up from.\n5 lines max, in this order: situation → what was agreed → what's still pending. The order number and the amount must be included.\n\n---\n[Jul 18, 2:02 PM — Customer, Dana Whitfield] This is about order B-77401. The package that was supposed to arrive on the 15th still isn't here. It was a gift and the date mattered — it's already passed. I'd like a refund.\n\n[Jul 18, 2:31 PM — Agent, Priya Raman] I'm sorry for the trouble. I checked, and the shipment was delayed because it was missed during a warehouse transfer. You can choose either a full refund or a reshipment plus partial compensation.\n\n[Jul 18, 3:10 PM — Customer] I do still need the item, so let's do the reshipment. What does the compensation look like?\n\n[Jul 18, 3:22 PM — Agent] We'll send the reshipment out with priority handling, and we'll credit $18.50 back to your payment method, which includes the shipping fee. The credit posts within 2–3 business days.\n\n[Jul 18, 3:30 PM — Customer] Okay. I absolutely need it before next Friday (the 25th).\n\n[Jul 18, 3:33 PM — Agent] I've scheduled the shipment for delivery on the 23rd. You'll get a text as soon as the tracking number is registered. (Credit not yet issued — awaiting finance-team approval.)\n---"
+      ],
+      "rubric": [
+        {
+          "name": "Factual fidelity",
+          "desc": "Preserves the key facts and figures without adding anything not in the source",
+          "weight": 0.45
+        },
+        {
+          "name": "Compression",
+          "desc": "Selects the most important content within the requested length",
+          "weight": 0.35
+        },
+        {
+          "name": "Readability",
+          "desc": "Clear sentences — the summary alone is enough to grasp the situation",
+          "weight": 0.2
+        }
+      ],
+      "check": {
+        "type": "contains_all",
+        "required": [
+          "B-77401",
+          "18.50"
+        ]
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "sum-earnings-01",
+    "pair_id": "sum-earnings-01",
+    "track": "work",
+    "block": "writing",
+    "category": "summarization",
+    "subcategory": "report",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "summarization",
+    "ko": {
+      "turns": [
+        "아래 분기 실적 공유 글을 경영진 보고용 불릿 5개 이하로 요약해줘.\n수치가 핵심이니 정확히 옮겨야 해.\n\n---\n2분기 매출은 128억 원으로 전년 동기 대비 18% 성장했습니다. 특히 엔터프라이즈 플랜이\n전체 매출의 61%를 차지하며 처음으로 과반을 넘겼습니다. 영업이익은 9.4억 원으로\n창사 이래 첫 분기 흑자전환에 성공했습니다.\n\n신규 고객은 214곳이 늘었고, 이 중 42곳이 직원 500명 이상 기업입니다. 월간 해지율은\n1분기 3.4%에서 2.1%로 개선됐습니다. 다만 신규 고객의 온보딩 완료까지 걸리는 시간이\n평균 19일로 목표(14일)를 여전히 웃돌고 있어, 3분기에는 온보딩 자동화에 개발 리소스를\n우선 배정할 계획입니다.\n---"
+      ],
+      "rubric": [
+        {
+          "name": "사실 충실",
+          "desc": "원문에 없는 내용을 추가하지 않고 핵심 사실·수치를 보존했는가",
+          "weight": 0.45
+        },
+        {
+          "name": "압축력",
+          "desc": "요청한 분량 안에서 가장 중요한 내용을 선별했는가",
+          "weight": 0.35
+        },
+        {
+          "name": "가독성",
+          "desc": "요약만 읽어도 상황이 파악되는 명료한 문장인가",
+          "weight": 0.2
+        }
+      ],
+      "check": {
+        "type": "contains_all",
+        "required": [
+          "128억",
+          "9.4억",
+          "214"
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Summarize the quarterly update below into 5 bullets or fewer for an executive readout.\nThe numbers are the point — carry them over exactly.\n\n---\nQ2 revenue came in at $128 million, up 18% year over year. Enterprise plans accounted for 61% of total revenue, crossing the halfway mark for the first time. Operating profit was $9.4 million — our first profitable quarter since founding.\n\nWe added 214 new customers, 42 of which are companies with more than 500 employees. Monthly churn improved from 3.4% in Q1 to 2.1%. However, new customers still take an average of 19 days to complete onboarding, above our 14-day target, so in Q3 we plan to prioritize engineering resources toward onboarding automation.\n---"
+      ],
+      "rubric": [
+        {
+          "name": "Factual fidelity",
+          "desc": "Preserves the key facts and figures without adding anything not in the source",
+          "weight": 0.45
+        },
+        {
+          "name": "Compression",
+          "desc": "Selects the most important content within the requested length",
+          "weight": 0.35
+        },
+        {
+          "name": "Readability",
+          "desc": "Clear sentences — the summary alone is enough to grasp the situation",
+          "weight": 0.2
+        }
+      ],
+      "check": {
+        "type": "contains_all",
+        "required": [
+          "$128",
+          "$9.4",
+          "214"
+        ]
+      },
+      "locale": "en"
+    }
+  },
+  {
+    "id": "sum-news-01",
+    "pair_id": "sum-news-01",
+    "track": "work",
+    "block": "writing",
+    "category": "summarization",
+    "subcategory": "news",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "both",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "summarization",
+    "ko": {
+      "turns": [
+        "아래 기사를 딱 3문장으로 요약해줘. 핵심 수치는 요약에 반드시 포함해야 해.\n\n---\n국내 전기차 급속충전 인프라가 빠르게 늘고 있다. 환경부가 발표한 상반기 집계에 따르면\n전국에 설치된 급속충전기는 3,200기로 전년 동기 대비 41% 증가했다. 고속도로 휴게소와\n대형마트 주차장을 중심으로 설치가 집중됐고, 수도권 비중은 전체의 38%였다.\n\n다만 이용률은 평균 27%에 그쳐 \"설치 위치가 수요와 어긋난다\"는 지적도 나온다.\n업계 관계자는 \"아파트 밀집 지역과 구도심의 심야 수요를 반영한 재배치가 필요하다\"고\n말했다. 환경부는 하반기부터 이용률 데이터를 설치 심사에 반영하겠다고 밝혔다.\n---"
+      ],
+      "rubric": [
+        {
+          "name": "사실 충실",
+          "desc": "원문에 없는 내용을 추가하지 않고 핵심 사실·수치를 보존했는가",
+          "weight": 0.45
+        },
+        {
+          "name": "압축력",
+          "desc": "요청한 분량 안에서 가장 중요한 내용을 선별했는가",
+          "weight": 0.35
+        },
+        {
+          "name": "가독성",
+          "desc": "요약만 읽어도 상황이 파악되는 명료한 문장인가",
+          "weight": 0.2
+        }
+      ],
+      "check": {
+        "type": "contains_all",
+        "required": [
+          "3,200",
+          "41%"
+        ]
+      },
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Summarize the article below in exactly 3 sentences. The key figures must appear in the summary.\n\n---\nThe buildout of public fast-charging infrastructure for electric vehicles is accelerating. According to the Department of Transportation's mid-year tally, 3,200 DC fast chargers were in operation nationwide, a 41% increase over the same period last year. Installations were concentrated at highway rest stops and big-box store parking lots, and 38% of the total sits in major metro areas.\n\nAverage utilization, however, came in at just 27%, prompting criticism that \"placement is out of step with demand.\" An industry representative said chargers should be redeployed to reflect overnight demand in dense apartment districts and older downtown neighborhoods. The department said it will start factoring utilization data into siting approvals in the second half of the year.\n---"
+      ],
+      "rubric": [
+        {
+          "name": "Factual fidelity",
+          "desc": "Preserves the key facts and figures without adding anything not in the source",
+          "weight": 0.45
+        },
+        {
+          "name": "Compression",
+          "desc": "Selects the most important content within the requested length",
+          "weight": 0.35
+        },
+        {
+          "name": "Readability",
+          "desc": "Clear sentences — the summary alone is enough to grasp the situation",
+          "weight": 0.2
+        }
+      ],
+      "check": {
+        "type": "contains_all",
+        "required": [
+          "3,200",
+          "41%"
+        ]
+      },
+      "locale": "en"
+    }
+  }
+]

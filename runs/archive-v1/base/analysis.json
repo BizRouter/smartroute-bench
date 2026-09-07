@@ -1,0 +1,7738 @@
+{
+ "run_id": "base-v1",
+ "arms": [
+  {
+   "id": "gpt56sol",
+   "label": "GPT-5.6 Sol (고정)",
+   "model": "openai/gpt-5.6-sol",
+   "wire": "chat"
+  },
+  {
+   "id": "fable5",
+   "label": "Claude Fable 5 (고정)",
+   "model": "anthropic/claude-fable-5",
+   "wire": "messages"
+  },
+  {
+   "id": "opus48",
+   "label": "Claude Opus 4.8 (고정)",
+   "model": "anthropic/claude-opus-4.8",
+   "wire": "messages"
+  },
+  {
+   "id": "route",
+   "label": "BizRouter 스마트 라우팅",
+   "model": "bizrouter/route",
+   "wire": "chat"
+  }
+ ],
+ "overall": {
+  "gpt56sol": {
+   "judge_by": {
+    "j-fable": 9.129,
+    "j-sol": 9.438,
+    "j-gemini": 9.685
+   },
+   "n": 57,
+   "cost_total": 5840.0,
+   "cost_mean": 102.456,
+   "judge_mean": 9.417,
+   "judge_mean_delivered": 9.417,
+   "delivery_fail_n": 0,
+   "check_pass": 1.0,
+   "check_n": 32,
+   "latency_mean_ms": 26677,
+   "fail_n": 0
+  },
+  "fable5": {
+   "judge_by": {
+    "j-sol": 8.948,
+    "j-fable": 9.326,
+    "j-gemini": 9.674
+   },
+   "n": 57,
+   "cost_total": 13421.65,
+   "cost_mean": 235.468,
+   "judge_mean": 9.316,
+   "judge_mean_delivered": 9.507,
+   "delivery_fail_n": 8,
+   "check_pass": 0.719,
+   "check_n": 32,
+   "latency_mean_ms": 21493,
+   "fail_n": 0
+  },
+  "opus48": {
+   "judge_by": {
+    "j-fable": 9.169,
+    "j-sol": 9.156,
+    "j-gemini": 9.563
+   },
+   "n": 57,
+   "cost_total": 7613.22,
+   "cost_mean": 133.565,
+   "judge_mean": 9.296,
+   "judge_mean_delivered": 9.296,
+   "delivery_fail_n": 0,
+   "check_pass": 0.969,
+   "check_n": 32,
+   "latency_mean_ms": 18219,
+   "fail_n": 0
+  },
+  "route": {
+   "judge_by": {
+    "j-fable": 9.106,
+    "j-sol": 8.737,
+    "j-gemini": 9.746
+   },
+   "n": 57,
+   "cost_total": 4622.12,
+   "cost_mean": 81.09,
+   "judge_mean": 9.19,
+   "judge_mean_delivered": 9.19,
+   "delivery_fail_n": 0,
+   "check_pass": 1.0,
+   "check_n": 32,
+   "latency_mean_ms": 18446,
+   "fail_n": 0
+  }
+ },
+ "delivery_failures": [
+  {
+   "task_id": "code-js-easy-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "code-js-med-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "code-py-hard-02",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "code-py-med-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "ext-log-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "reason-order-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "sum-cs-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  },
+  {
+   "task_id": "trans-enko-01",
+   "arm_id": "fable5",
+   "kind": "refusal"
+  }
+ ],
+ "by_category": {
+  "agentic-artifact": {
+   "gpt56sol": {
+    "judge_by": {},
+    "n": 3,
+    "cost_total": 2127.4,
+    "cost_mean": 709.134,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 119762,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {},
+    "n": 3,
+    "cost_total": 3982.95,
+    "cost_mean": 1327.649,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 68875,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {},
+    "n": 3,
+    "cost_total": 3538.78,
+    "cost_mean": 1179.592,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 110224,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {},
+    "n": 3,
+    "cost_total": 1694.04,
+    "cost_mean": 564.682,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 140888,
+    "fail_n": 0
+   }
+  },
+  "agentic-coding": {
+   "gpt56sol": {
+    "judge_by": {},
+    "n": 5,
+    "cost_total": 1745.37,
+    "cost_mean": 349.074,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 5,
+    "latency_mean_ms": 45610,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {},
+    "n": 5,
+    "cost_total": 4453.14,
+    "cost_mean": 890.628,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 5,
+    "latency_mean_ms": 35983,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {},
+    "n": 5,
+    "cost_total": 2445.75,
+    "cost_mean": 489.151,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 5,
+    "latency_mean_ms": 26838,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {},
+    "n": 5,
+    "cost_total": 1607.18,
+    "cost_mean": 321.435,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 5,
+    "latency_mean_ms": 45559,
+    "fail_n": 0
+   }
+  },
+  "business": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 9.119,
+     "j-sol": 9.225,
+     "j-gemini": 9.931
+    },
+    "n": 8,
+    "cost_total": 497.3,
+    "cost_mean": 62.163,
+    "judge_mean": 9.425,
+    "judge_mean_delivered": 9.425,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 27929,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 8.988,
+     "j-fable": 9.287,
+     "j-gemini": 9.956
+    },
+    "n": 8,
+    "cost_total": 1556.42,
+    "cost_mean": 194.553,
+    "judge_mean": 9.41,
+    "judge_mean_delivered": 9.41,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 21819,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 9.281,
+     "j-sol": 9.144,
+     "j-gemini": 9.95
+    },
+    "n": 8,
+    "cost_total": 325.26,
+    "cost_mean": 40.658,
+    "judge_mean": 9.458,
+    "judge_mean_delivered": 9.458,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 13301,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-fable": 8.536,
+     "j-sol": 8.094,
+     "j-gemini": 9.7
+    },
+    "n": 8,
+    "cost_total": 245.23,
+    "cost_mean": 30.654,
+    "judge_mean": 8.827,
+    "judge_mean_delivered": 8.827,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 8960,
+    "fail_n": 0
+   }
+  },
+  "character": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 9.312,
+     "j-fable": 8.988,
+     "j-gemini": 9.838
+    },
+    "n": 4,
+    "cost_total": 225.88,
+    "cost_mean": 56.47,
+    "judge_mean": 9.379,
+    "judge_mean_delivered": 9.379,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 29263,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 9.662,
+     "j-gemini": 9.887,
+     "j-fable": 9.8
+    },
+    "n": 4,
+    "cost_total": 891.52,
+    "cost_mean": 222.879,
+    "judge_mean": 9.784,
+    "judge_mean_delivered": 9.784,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 46688,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 9.312,
+     "j-sol": 9.463,
+     "j-gemini": 9.887
+    },
+    "n": 4,
+    "cost_total": 325.5,
+    "cost_mean": 81.374,
+    "judge_mean": 9.555,
+    "judge_mean_delivered": 9.555,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 33168,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 9.45,
+     "j-fable": 9.275,
+     "j-gemini": 10.0
+    },
+    "n": 4,
+    "cost_total": 200.67,
+    "cost_mean": 50.167,
+    "judge_mean": 9.575,
+    "judge_mean_delivered": 9.575,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 18614,
+    "fail_n": 0
+   }
+  },
+  "coding": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 8.417,
+     "j-sol": 9.062,
+     "j-gemini": 8.812
+    },
+    "n": 12,
+    "cost_total": 339.6,
+    "cost_mean": 28.3,
+    "judge_mean": 8.764,
+    "judge_mean_delivered": 8.764,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 12,
+    "latency_mean_ms": 12277,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-fable": 9.312,
+     "j-sol": 8.688,
+     "j-gemini": 9.562
+    },
+    "n": 12,
+    "cost_total": 630.06,
+    "cost_mean": 52.505,
+    "judge_mean": 9.188,
+    "judge_mean_delivered": 9.188,
+    "delivery_fail_n": 4,
+    "check_pass": 0.5,
+    "check_n": 12,
+    "latency_mean_ms": 9463,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 8.625,
+     "j-sol": 8.854,
+     "j-gemini": 8.708
+    },
+    "n": 12,
+    "cost_total": 275.05,
+    "cost_mean": 22.921,
+    "judge_mean": 8.729,
+    "judge_mean_delivered": 8.729,
+    "delivery_fail_n": 0,
+    "check_pass": 0.917,
+    "check_n": 12,
+    "latency_mean_ms": 6303,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-fable": 8.886,
+     "j-sol": 8.562,
+     "j-gemini": 9.312
+    },
+    "n": 12,
+    "cost_total": 267.18,
+    "cost_mean": 22.265,
+    "judge_mean": 8.882,
+    "judge_mean_delivered": 8.882,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 12,
+    "latency_mean_ms": 5905,
+    "fail_n": 0
+   }
+  },
+  "daily": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 9.392,
+     "j-fable": 9.042,
+     "j-gemini": 10.0
+    },
+    "n": 6,
+    "cost_total": 328.68,
+    "cost_mean": 54.78,
+    "judge_mean": 9.478,
+    "judge_mean_delivered": 9.478,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 30252,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 8.908,
+     "j-fable": 9.325,
+     "j-gemini": 10.0
+    },
+    "n": 6,
+    "cost_total": 764.15,
+    "cost_mean": 127.359,
+    "judge_mean": 9.411,
+    "judge_mean_delivered": 9.411,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 24871,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-sol": 8.692,
+     "j-fable": 8.85,
+     "j-gemini": 9.883
+    },
+    "n": 6,
+    "cost_total": 233.23,
+    "cost_mean": 38.872,
+    "judge_mean": 9.142,
+    "judge_mean_delivered": 9.142,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 15688,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 7.875,
+     "j-fable": 8.425,
+     "j-gemini": 9.7
+    },
+    "n": 6,
+    "cost_total": 168.85,
+    "cost_mean": 28.141,
+    "judge_mean": 8.666,
+    "judge_mean_delivered": 8.666,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 9523,
+    "fail_n": 0
+   }
+  },
+  "extraction": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 20.23,
+    "cost_mean": 6.744,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 2470,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 8.8,
+     "j-fable": 10.0,
+     "j-gemini": 9.8
+    },
+    "n": 3,
+    "cost_total": 56.04,
+    "cost_mean": 18.68,
+    "judge_mean": 9.533,
+    "judge_mean_delivered": 9.533,
+    "delivery_fail_n": 1,
+    "check_pass": 0.667,
+    "check_n": 3,
+    "latency_mean_ms": 4780,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 31.09,
+    "cost_mean": 10.363,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 3313,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 39.87,
+    "cost_mean": 13.291,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 3171,
+    "fail_n": 0
+   }
+  },
+  "json-gen": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-gemini": 10.0,
+     "j-fable": 10.0
+    },
+    "n": 3,
+    "cost_total": 18.22,
+    "cost_mean": 6.073,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 2181,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-fable": 10.0,
+     "j-sol": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 63.42,
+    "cost_mean": 21.14,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 5388,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 10.0,
+     "j-sol": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 33.06,
+    "cost_mean": 11.021,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 4271,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 30.5,
+    "cost_mean": 10.168,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 3076,
+    "fail_n": 0
+   }
+  },
+  "reasoning": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 29.2,
+    "cost_mean": 9.734,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 4198,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 7.317,
+     "j-fable": 7.167,
+     "j-gemini": 7.0
+    },
+    "n": 3,
+    "cost_total": 76.58,
+    "cost_mean": 25.526,
+    "judge_mean": 7.161,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 1,
+    "check_pass": 0.667,
+    "check_n": 3,
+    "latency_mean_ms": 5581,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 42.26,
+    "cost_mean": 14.086,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 6705,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 10.0,
+     "j-fable": 10.0,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 35.47,
+    "cost_mean": 11.823,
+    "judge_mean": 10.0,
+    "judge_mean_delivered": 10.0,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 3337,
+    "fail_n": 0
+   }
+  },
+  "research": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 9.113,
+     "j-sol": 9.725,
+     "j-gemini": 10.0
+    },
+    "n": 4,
+    "cost_total": 439.22,
+    "cost_mean": 109.804,
+    "judge_mean": 9.613,
+    "judge_mean_delivered": 9.613,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 52349,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-fable": 9.4,
+     "j-sol": 8.838,
+     "j-gemini": 10.0
+    },
+    "n": 4,
+    "cost_total": 806.22,
+    "cost_mean": 201.556,
+    "judge_mean": 9.412,
+    "judge_mean_delivered": 9.412,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 33140,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 9.25,
+     "j-sol": 8.537,
+     "j-gemini": 10.0
+    },
+    "n": 4,
+    "cost_total": 298.88,
+    "cost_mean": 74.721,
+    "judge_mean": 9.262,
+    "judge_mean_delivered": 9.262,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 24719,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-fable": 9.1,
+     "j-sol": 7.6,
+     "j-gemini": 10.0
+    },
+    "n": 4,
+    "cost_total": 233.58,
+    "cost_mean": 58.394,
+    "judge_mean": 8.9,
+    "judge_mean_delivered": 8.9,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 17422,
+    "fail_n": 0
+   }
+  },
+  "summarization": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 9.417,
+     "j-sol": 9.7,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 25.95,
+    "cost_mean": 8.651,
+    "judge_mean": 9.706,
+    "judge_mean_delivered": 9.706,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 3343,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-fable": 9.825,
+     "j-sol": 9.55,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 63.53,
+    "cost_mean": 21.176,
+    "judge_mean": 9.791,
+    "judge_mean_delivered": 9.791,
+    "delivery_fail_n": 1,
+    "check_pass": 0.667,
+    "check_n": 3,
+    "latency_mean_ms": 6054,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-sol": 9.783,
+     "j-fable": 9.633,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 33.07,
+    "cost_mean": 11.024,
+    "judge_mean": 9.806,
+    "judge_mean_delivered": 9.806,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 3544,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 9.283,
+     "j-fable": 9.333,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 43.5,
+    "cost_mean": 14.5,
+    "judge_mean": 9.539,
+    "judge_mean_delivered": 9.539,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 3,
+    "latency_mean_ms": 4555,
+    "fail_n": 0
+   }
+  },
+  "translation": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 9.433,
+     "j-fable": 9.483,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 42.94,
+    "cost_mean": 14.312,
+    "judge_mean": 9.639,
+    "judge_mean_delivered": 9.639,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 5997,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 9.15,
+     "j-fable": 9.5,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 77.62,
+    "cost_mean": 25.875,
+    "judge_mean": 9.55,
+    "judge_mean_delivered": 9.55,
+    "delivery_fail_n": 1,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 5497,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-sol": 8.583,
+     "j-fable": 8.433,
+     "j-gemini": 8.55
+    },
+    "n": 3,
+    "cost_total": 31.28,
+    "cost_mean": 10.426,
+    "judge_mean": 8.522,
+    "judge_mean_delivered": 8.522,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 4127,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 9.1,
+     "j-fable": 9.483,
+     "j-gemini": 10.0
+    },
+    "n": 3,
+    "cost_total": 56.05,
+    "cost_mean": 18.682,
+    "judge_mean": 9.528,
+    "judge_mean_delivered": 9.528,
+    "delivery_fail_n": 0,
+    "check_pass": null,
+    "check_n": 0,
+    "latency_mean_ms": 4905,
+    "fail_n": 0
+   }
+  }
+ },
+ "by_difficulty": {
+  "easy": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-sol": 9.556,
+     "j-fable": 9.024,
+     "j-gemini": 9.579
+    },
+    "n": 18,
+    "cost_total": 546.3,
+    "cost_mean": 30.35,
+    "judge_mean": 9.386,
+    "judge_mean_delivered": 9.386,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 9,
+    "latency_mean_ms": 8519,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 9.319,
+     "j-fable": 9.478,
+     "j-gemini": 9.731
+    },
+    "n": 18,
+    "cost_total": 1550.63,
+    "cost_mean": 86.146,
+    "judge_mean": 9.509,
+    "judge_mean_delivered": 9.509,
+    "delivery_fail_n": 1,
+    "check_pass": 0.778,
+    "check_n": 9,
+    "latency_mean_ms": 11760,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 9.176,
+     "j-sol": 9.476,
+     "j-gemini": 9.521
+    },
+    "n": 18,
+    "cost_total": 691.63,
+    "cost_mean": 38.424,
+    "judge_mean": 9.391,
+    "judge_mean_delivered": 9.391,
+    "delivery_fail_n": 0,
+    "check_pass": 0.889,
+    "check_n": 9,
+    "latency_mean_ms": 6655,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 8.865,
+     "j-gemini": 9.568,
+     "j-fable": 9.193
+    },
+    "n": 18,
+    "cost_total": 579.14,
+    "cost_mean": 32.174,
+    "judge_mean": 9.186,
+    "judge_mean_delivered": 9.186,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 9,
+    "latency_mean_ms": 6910,
+    "fail_n": 0
+   }
+  },
+  "medium": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 9.187,
+     "j-sol": 9.524,
+     "j-gemini": 9.816
+    },
+    "n": 23,
+    "cost_total": 2728.13,
+    "cost_mean": 118.614,
+    "judge_mean": 9.509,
+    "judge_mean_delivered": 9.509,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 13,
+    "latency_mean_ms": 29909,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 9.272,
+     "j-fable": 9.675,
+     "j-gemini": 9.975
+    },
+    "n": 23,
+    "cost_total": 5959.21,
+    "cost_mean": 259.096,
+    "judge_mean": 9.641,
+    "judge_mean_delivered": 9.641,
+    "delivery_fail_n": 3,
+    "check_pass": 0.769,
+    "check_n": 13,
+    "latency_mean_ms": 24382,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 9.492,
+     "j-sol": 9.189,
+     "j-gemini": 9.966
+    },
+    "n": 23,
+    "cost_total": 3104.02,
+    "cost_mean": 134.957,
+    "judge_mean": 9.549,
+    "judge_mean_delivered": 9.549,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 13,
+    "latency_mean_ms": 19734,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-fable": 9.063,
+     "j-sol": 8.784,
+     "j-gemini": 9.824
+    },
+    "n": 23,
+    "cost_total": 1930.31,
+    "cost_mean": 83.926,
+    "judge_mean": 9.224,
+    "judge_mean_delivered": 9.224,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 13,
+    "latency_mean_ms": 21391,
+    "fail_n": 0
+   }
+  },
+  "hard": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 9.181,
+     "j-sol": 9.158,
+     "j-gemini": 9.631
+    },
+    "n": 16,
+    "cost_total": 2565.56,
+    "cost_mean": 160.347,
+    "judge_mean": 9.323,
+    "judge_mean_delivered": 9.323,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 10,
+    "latency_mean_ms": 42460,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-fable": 8.525,
+     "j-sol": 7.835,
+     "j-gemini": 9.1
+    },
+    "n": 16,
+    "cost_total": 5911.81,
+    "cost_mean": 369.488,
+    "judge_mean": 8.487,
+    "judge_mean_delivered": 9.265,
+    "delivery_fail_n": 4,
+    "check_pass": 0.6,
+    "check_n": 10,
+    "latency_mean_ms": 28288,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 8.688,
+     "j-sol": 8.688,
+     "j-gemini": 9.031
+    },
+    "n": 16,
+    "cost_total": 3817.57,
+    "cost_mean": 238.598,
+    "judge_mean": 8.803,
+    "judge_mean_delivered": 8.803,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 10,
+    "latency_mean_ms": 29049,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-sol": 8.5,
+     "j-fable": 9.069,
+     "j-gemini": 9.865
+    },
+    "n": 16,
+    "cost_total": 2112.67,
+    "cost_mean": 132.042,
+    "judge_mean": 9.145,
+    "judge_mean_delivered": 9.145,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 10,
+    "latency_mean_ms": 27189,
+    "fail_n": 0
+   }
+  }
+ },
+ "by_mode": {
+  "chat": {
+   "gpt56sol": {
+    "judge_by": {
+     "j-fable": 9.129,
+     "j-sol": 9.438,
+     "j-gemini": 9.685
+    },
+    "n": 49,
+    "cost_total": 1967.22,
+    "cost_mean": 40.147,
+    "judge_mean": 9.417,
+    "judge_mean_delivered": 9.417,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 24,
+    "latency_mean_ms": 19046,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {
+     "j-sol": 8.948,
+     "j-fable": 9.326,
+     "j-gemini": 9.674
+    },
+    "n": 49,
+    "cost_total": 4985.56,
+    "cost_mean": 101.746,
+    "judge_mean": 9.316,
+    "judge_mean_delivered": 9.507,
+    "delivery_fail_n": 8,
+    "check_pass": 0.625,
+    "check_n": 24,
+    "latency_mean_ms": 17113,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {
+     "j-fable": 9.169,
+     "j-sol": 9.156,
+     "j-gemini": 9.563
+    },
+    "n": 49,
+    "cost_total": 1628.69,
+    "cost_mean": 33.239,
+    "judge_mean": 9.296,
+    "judge_mean_delivered": 9.296,
+    "delivery_fail_n": 0,
+    "check_pass": 0.958,
+    "check_n": 24,
+    "latency_mean_ms": 11706,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {
+     "j-fable": 9.106,
+     "j-sol": 8.737,
+     "j-gemini": 9.746
+    },
+    "n": 49,
+    "cost_total": 1320.89,
+    "cost_mean": 26.957,
+    "judge_mean": 9.19,
+    "judge_mean_delivered": 9.19,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 24,
+    "latency_mean_ms": 8183,
+    "fail_n": 0
+   }
+  },
+  "agentic": {
+   "gpt56sol": {
+    "judge_by": {},
+    "n": 8,
+    "cost_total": 3872.77,
+    "cost_mean": 484.097,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 8,
+    "latency_mean_ms": 73417,
+    "fail_n": 0
+   },
+   "fable5": {
+    "judge_by": {},
+    "n": 8,
+    "cost_total": 8436.09,
+    "cost_mean": 1054.511,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 8,
+    "latency_mean_ms": 48318,
+    "fail_n": 0
+   },
+   "opus48": {
+    "judge_by": {},
+    "n": 8,
+    "cost_total": 5984.53,
+    "cost_mean": 748.066,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 8,
+    "latency_mean_ms": 58108,
+    "fail_n": 0
+   },
+   "route": {
+    "judge_by": {},
+    "n": 8,
+    "cost_total": 3301.22,
+    "cost_mean": 412.653,
+    "judge_mean": null,
+    "judge_mean_delivered": null,
+    "delivery_fail_n": 0,
+    "check_pass": 1.0,
+    "check_n": 8,
+    "latency_mean_ms": 81307,
+    "fail_n": 0
+   }
+  }
+ },
+ "route_distribution": {
+  "overall": {
+   "google/gemini-3.5-flash": 59
+  },
+  "cat:business": {
+   "google/gemini-3.5-flash": 8
+  },
+  "diff:medium": {
+   "google/gemini-3.5-flash": 24
+  },
+  "diff:easy": {
+   "google/gemini-3.5-flash": 20
+  },
+  "diff:hard": {
+   "google/gemini-3.5-flash": 15
+  },
+  "cat:character": {
+   "google/gemini-3.5-flash": 12
+  },
+  "cat:coding": {
+   "google/gemini-3.5-flash": 12
+  },
+  "cat:daily": {
+   "google/gemini-3.5-flash": 8
+  },
+  "cat:extraction": {
+   "google/gemini-3.5-flash": 3
+  },
+  "cat:json-gen": {
+   "google/gemini-3.5-flash": 3
+  },
+  "cat:reasoning": {
+   "google/gemini-3.5-flash": 3
+  },
+  "cat:research": {
+   "google/gemini-3.5-flash": 4
+  },
+  "cat:summarization": {
+   "google/gemini-3.5-flash": 3
+  },
+  "cat:translation": {
+   "google/gemini-3.5-flash": 3
+  }
+ },
+ "judge_agreement": {
+  "n": 221,
+  "mean_abs_diff": 0.841,
+  "pearson": 0.873,
+  "pairwise": [
+   {
+    "judges": [
+     "j-fable",
+     "j-gemini"
+    ],
+    "n": 219,
+    "mean_abs_diff": 0.858,
+    "pearson": 0.896
+   },
+   {
+    "judges": [
+     "j-fable",
+     "j-sol"
+    ],
+    "n": 219,
+    "mean_abs_diff": 0.671,
+    "pearson": 0.898
+   },
+   {
+    "judges": [
+     "j-gemini",
+     "j-sol"
+    ],
+    "n": 221,
+    "mean_abs_diff": 0.993,
+    "pearson": 0.824
+   }
+  ]
+ },
+ "per_judge_mean": {
+  "j-fable": 8.442,
+  "j-gemini": 8.576,
+  "j-sol": 8.335
+ },
+ "flags": [
+  {
+   "task_id": "agent-bugfix-py-01",
+   "kind": "quality_gap",
+   "route_judge": 5.667,
+   "fixed_min": 8.833,
+   "routed": []
+  },
+  {
+   "task_id": "agent-refactor-py-01",
+   "kind": "quality_gap",
+   "route_judge": 1.917,
+   "fixed_min": 3.767,
+   "routed": []
+  },
+  {
+   "task_id": "daily-advice-01",
+   "kind": "quality_gap",
+   "route_judge": 7.4,
+   "fixed_min": 9.25,
+   "routed": [
+    "google/gemini-3.5-flash",
+    "google/gemini-3.5-flash"
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "task_id": "agent-bugfix-py-01",
+   "category": "agentic-coding",
+   "difficulty": "easy",
+   "language": "python",
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 327.7797,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 7.25,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.833,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 43661,
+     "in_tokens": 24,
+     "out_tokens": 1115,
+     "cache_read": 108471,
+     "n_calls": 9
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 854.6837,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 35347,
+     "in_tokens": 5475,
+     "out_tokens": 567,
+     "cache_read": 94554,
+     "n_calls": 6
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 442.5419,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.5,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 21459,
+     "in_tokens": 5637,
+     "out_tokens": 731,
+     "cache_read": 93788,
+     "n_calls": 6
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 305.6726,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.25,
+      "j-fable": 5.25,
+      "j-gemini": 3.5
+     },
+     "judge_mean": 5.667,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 38119,
+     "in_tokens": 79987,
+     "out_tokens": 796,
+     "cache_read": 129900,
+     "n_calls": 13
+    }
+   }
+  },
+  {
+   "task_id": "agent-cli-py-01",
+   "category": "agentic-coding",
+   "difficulty": "hard",
+   "language": "python",
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 329.9913,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.3,
+      "j-fable": 3.0,
+      "j-gemini": 1.3
+     },
+     "judge_mean": 1.867,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.591s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 40975,
+     "in_tokens": 15,
+     "out_tokens": 1829,
+     "cache_read": 63342,
+     "n_calls": 6
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 964.874,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.15,
+      "j-fable": 2.85,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.667,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.275s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 37869,
+     "in_tokens": 8619,
+     "out_tokens": 1461,
+     "cache_read": 71093,
+     "n_calls": 5
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 536.4511,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.3,
+      "j-fable": 3.55,
+      "j-gemini": 2.35
+     },
+     "judge_mean": 2.4,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.307s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 30403,
+     "in_tokens": 10505,
+     "out_tokens": 1632,
+     "cache_read": 93764,
+     "n_calls": 6
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 378.1328,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.15,
+      "j-fable": 1.15,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.1,
+     "check_passed": true,
+     "check_detail": "\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.293s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 57724,
+     "in_tokens": 84932,
+     "out_tokens": 1913,
+     "cache_read": 170647,
+     "n_calls": 14
+    }
+   }
+  },
+  {
+   "task_id": "agent-data-py-01",
+   "category": "agentic-coding",
+   "difficulty": "medium",
+   "language": "python",
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 363.7214,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 2.95,
+      "j-sol": 1.95,
+      "j-gemini": 1.8
+     },
+     "judge_mean": 2.233,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 52568,
+     "in_tokens": 18,
+     "out_tokens": 1592,
+     "cache_read": 77930,
+     "n_calls": 7
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 960.4559,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 5.65,
+      "j-gemini": 2.2,
+      "j-sol": 3.45
+     },
+     "judge_mean": 3.767,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 36140,
+     "in_tokens": 7580,
+     "out_tokens": 1358,
+     "cache_read": 92410,
+     "n_calls": 6
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 520.5282,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 4.45,
+      "j-sol": 6.65,
+      "j-gemini": 2.75
+     },
+     "judge_mean": 4.617,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 30845,
+     "in_tokens": 8695,
+     "out_tokens": 1849,
+     "cache_read": 91644,
+     "n_calls": 6
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 344.9983,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 2.95,
+      "j-sol": 1.95,
+      "j-gemini": 1.4
+     },
+     "judge_mean": 2.1,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 58311,
+     "in_tokens": 66766,
+     "out_tokens": 2112,
+     "cache_read": 154423,
+     "n_calls": 12
+    }
+   }
+  },
+  {
+   "task_id": "agent-feature-js-01",
+   "category": "agentic-coding",
+   "difficulty": "medium",
+   "language": "javascript",
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 297.5943,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 2.85,
+      "j-sol": 2.15,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 2.0,
+     "check_passed": true,
+     "check_detail": "✔ total sums items (0.596375ms)\n✔ total of empty cart is 0 (0.049417ms)\n✔ percent coupon discounts total (0.056708ms)\n✔ fixed coupon discounts total (0.0435ms)\n✔ fixed coupon floors at zero (0.0395ms)\n✔ percent 100 empties the bill (0.033792ms)\n✔ percent out of range throws (0.090792ms)\n✔ negative f",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 32602,
+     "in_tokens": 18,
+     "out_tokens": 1130,
+     "cache_read": 77161,
+     "n_calls": 7
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 849.078,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.7,
+      "j-fable": 5.55,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 5.417,
+     "check_passed": true,
+     "check_detail": "✔ total sums items (0.577833ms)\n✔ total of empty cart is 0 (0.043917ms)\n✔ percent coupon discounts total (0.053125ms)\n✔ fixed coupon discounts total (0.042709ms)\n✔ fixed coupon floors at zero (0.038333ms)\n✔ percent 100 empties the bill (0.032375ms)\n✔ percent out of range throws (0.088916ms)\n✔ negati",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 22503,
+     "in_tokens": 6083,
+     "out_tokens": 768,
+     "cache_read": 71093,
+     "n_calls": 5
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 447.0539,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.3,
+      "j-fable": 3.85,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 2.05,
+     "check_passed": true,
+     "check_detail": "✔ total sums items (0.595125ms)\n✔ total of empty cart is 0 (0.046334ms)\n✔ percent coupon discounts total (0.056917ms)\n✔ fixed coupon discounts total (0.040333ms)\n✔ fixed coupon floors at zero (0.036333ms)\n✔ percent 100 empties the bill (0.029875ms)\n✔ percent out of range throws (0.084542ms)\n✔ negati",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 23627,
+     "in_tokens": 6439,
+     "out_tokens": 1065,
+     "cache_read": 70323,
+     "n_calls": 5
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 291.9887,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 1.15,
+      "j-sol": 1.3,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.15,
+     "check_passed": true,
+     "check_detail": "✔ total sums items (0.57925ms)\n✔ total of empty cart is 0 (0.043458ms)\n✔ percent coupon discounts total (0.055125ms)\n✔ fixed coupon discounts total (0.039166ms)\n✔ fixed coupon floors at zero (0.03675ms)\n✔ percent 100 empties the bill (0.031625ms)\n✔ percent out of range throws (0.099959ms)\n✔ negative",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 42472,
+     "in_tokens": 67621,
+     "out_tokens": 1300,
+     "cache_read": 170453,
+     "n_calls": 14
+    }
+   }
+  },
+  {
+   "task_id": "agent-html-01",
+   "category": "agentic-artifact",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 742.9,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.0,
+      "j-fable": 1.0,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 123666,
+     "in_tokens": 21,
+     "out_tokens": 7510,
+     "cache_read": 114259,
+     "n_calls": 8
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 1201.5565,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.0,
+      "j-fable": 1.0,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 56925,
+     "in_tokens": 8823,
+     "out_tokens": 4432,
+     "cache_read": 46856,
+     "n_calls": 4
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 785.7706,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.0,
+      "j-fable": 1.0,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 87212,
+     "in_tokens": 14450,
+     "out_tokens": 7454,
+     "cache_read": 46864,
+     "n_calls": 4
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 424.5169,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 1.0,
+      "j-sol": 1.0,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 180741,
+     "in_tokens": 51999,
+     "out_tokens": 8861,
+     "cache_read": 57053,
+     "n_calls": 6
+    }
+   }
+  },
+  {
+   "task_id": "agent-pdf-01",
+   "category": "agentic-artifact",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 659.3304,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 3.7,
+      "j-sol": 7.4,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 4.033,
+     "check_passed": true,
+     "check_detail": "~3 pages",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 105532,
+     "in_tokens": 33,
+     "out_tokens": 5185,
+     "cache_read": 175251,
+     "n_calls": 12
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 1091.8084,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.0,
+      "j-fable": 2.7,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.567,
+     "check_passed": true,
+     "check_detail": "~3 pages",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 55097,
+     "in_tokens": 6845,
+     "out_tokens": 3126,
+     "cache_read": 70302,
+     "n_calls": 5
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 1132.4619,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 6.1,
+      "j-sol": 7.7,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 4.933,
+     "check_passed": true,
+     "check_detail": "~3 pages",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 100893,
+     "in_tokens": 42787,
+     "out_tokens": 6169,
+     "cache_read": 210942,
+     "n_calls": 11
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 526.7722,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 2.7,
+      "j-sol": 1.4,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.7,
+     "check_passed": true,
+     "check_detail": "~3 pages",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 104649,
+     "in_tokens": 84546,
+     "out_tokens": 6399,
+     "cache_read": 179139,
+     "n_calls": 12
+    }
+   }
+  },
+  {
+   "task_id": "agent-pptx-01",
+   "category": "agentic-artifact",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 725.173,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 3.65,
+      "j-sol": 2.65,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 2.433,
+     "check_passed": true,
+     "check_detail": "6 slides (want 6)",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 130088,
+     "in_tokens": 21,
+     "out_tokens": 6709,
+     "cache_read": 111465,
+     "n_calls": 8
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 1689.5835,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 2.0,
+      "j-fable": 4.45,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 2.483,
+     "check_passed": true,
+     "check_detail": "6 slides (want 6)",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 94605,
+     "in_tokens": 18638,
+     "out_tokens": 6888,
+     "cache_read": 93736,
+     "n_calls": 6
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 1620.5433,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 7.05,
+      "j-sol": 7.05,
+      "j-gemini": 2.0
+     },
+     "judge_mean": 5.367,
+     "check_passed": true,
+     "check_detail": "6 slides (want 6)",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 142568,
+     "in_tokens": 73954,
+     "out_tokens": 10204,
+     "cache_read": 234380,
+     "n_calls": 12
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 742.7558,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.0,
+      "j-fable": 1.4,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.133,
+     "check_passed": true,
+     "check_detail": "6 slides (want 6)",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 137276,
+     "in_tokens": 113306,
+     "out_tokens": 7444,
+     "cache_read": 341850,
+     "n_calls": 18
+    }
+   }
+  },
+  {
+   "task_id": "agent-refactor-py-01",
+   "category": "agentic-coding",
+   "difficulty": "medium",
+   "language": "python",
+   "mode": "agentic",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 426.2822,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.15,
+      "j-fable": 7.15,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 5.433,
+     "check_passed": true,
+     "check_detail": "\n....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 58248,
+     "in_tokens": 30,
+     "out_tokens": 2026,
+     "cache_read": 144637,
+     "n_calls": 11
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 824.0482,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.15,
+      "j-fable": 9.15,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 6.433,
+     "check_passed": true,
+     "check_detail": "\n....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 48058,
+     "in_tokens": 4329,
+     "out_tokens": 867,
+     "cache_read": 71102,
+     "n_calls": 5
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 499.1793,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.8,
+      "j-fable": 8.5,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 3.767,
+     "check_passed": true,
+     "check_detail": "\n....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 27859,
+     "in_tokens": 8523,
+     "out_tokens": 1359,
+     "cache_read": 93776,
+     "n_calls": 6
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": null,
+     "cost_krw": 286.3845,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 1.15,
+      "j-sol": 3.6,
+      "j-gemini": 1.0
+     },
+     "judge_mean": 1.917,
+     "check_passed": true,
+     "check_detail": "\n....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+     "routed_models": [],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 31169,
+     "in_tokens": 79812,
+     "out_tokens": 501,
+     "cache_read": 73112,
+     "n_calls": 10
+    }
+   }
+  },
+  {
+   "task_id": "biz-copy-01",
+   "category": "business",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 17.8404,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-sol": 9.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.567,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 9598,
+     "in_tokens": 147,
+     "out_tokens": 305,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 43.8386,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.25,
+      "j-fable": 9.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.567,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 10693,
+     "in_tokens": 219,
+     "out_tokens": 442,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.166,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.2,
+      "j-sol": 9.6,
+      "j-gemini": 9.6
+     },
+     "judge_mean": 9.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 5312,
+     "in_tokens": 219,
+     "out_tokens": 248,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 19.2292,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.85,
+      "j-sol": 8.05,
+      "j-gemini": 9.6
+     },
+     "judge_mean": 8.833,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 5202,
+     "in_tokens": 149,
+     "out_tokens": 181,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-email-01",
+   "category": "business",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 15.431,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.35,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.783,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 7009,
+     "in_tokens": 132,
+     "out_tokens": 263,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 39.4349,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.85,
+      "j-fable": 9.35,
+      "j-gemini": 9.65
+     },
+     "judge_mean": 9.617,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 13230,
+     "in_tokens": 205,
+     "out_tokens": 396,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 16.153,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.35,
+      "j-sol": 9.85,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.733,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6132,
+     "in_tokens": 205,
+     "out_tokens": 317,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 15.9183,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.5,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.75,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4658,
+     "in_tokens": 138,
+     "out_tokens": 215,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-finance-01",
+   "category": "business",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 30.6365,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.6,
+      "j-fable": 9.6,
+      "j-gemini": 9.6
+     },
+     "judge_mean": 9.6,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 12752,
+     "in_tokens": 173,
+     "out_tokens": 537,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 99.1918,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 16496,
+     "in_tokens": 276,
+     "out_tokens": 1044,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 40.5268,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 10421,
+     "in_tokens": 276,
+     "out_tokens": 843,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 30.9,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.6,
+      "j-fable": 9.15,
+      "j-gemini": 9.6
+     },
+     "judge_mean": 9.45,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 6919,
+     "in_tokens": 182,
+     "out_tokens": 877,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-ir-01",
+   "category": "business",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 35.6448,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.65,
+      "j-sol": 9.15,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.267,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 15056,
+     "in_tokens": 182,
+     "out_tokens": 628,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 93.4525,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.6,
+      "j-sol": 7.8,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.8,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 18374,
+     "in_tokens": 278,
+     "out_tokens": 980,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.6856,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.85,
+      "j-sol": 8.55,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.133,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 9209,
+     "in_tokens": 278,
+     "out_tokens": 558,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 24.8521,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 6.35,
+      "j-fable": 7.05,
+      "j-gemini": 9.0
+     },
+     "judge_mean": 7.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 7492,
+     "in_tokens": 192,
+     "out_tokens": 706,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-minutes-01",
+   "category": "business",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 25.5199,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 8.7,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.233,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 8962,
+     "in_tokens": 248,
+     "out_tokens": 430,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 67.0483,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.8,
+      "j-sol": 8.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.933,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 9935,
+     "in_tokens": 410,
+     "out_tokens": 661,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.5232,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.5,
+      "j-sol": 8.5,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.333,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6298,
+     "in_tokens": 410,
+     "out_tokens": 528,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 14.1045,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.4,
+      "j-sol": 7.9,
+      "j-gemini": 9.4
+     },
+     "judge_mean": 8.567,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3600,
+     "in_tokens": 266,
+     "out_tokens": 235,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-plan-01",
+   "category": "business",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 219.4637,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.2,
+      "j-sol": 8.7,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.3,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 96982,
+     "in_tokens": 176,
+     "out_tokens": 4024,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 265.9192,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.5,
+      "j-gemini": 10.0,
+      "j-sol": 8.8
+     },
+     "judge_mean": 9.433,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 42888,
+     "in_tokens": 274,
+     "out_tokens": 2892,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 94.3369,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.35,
+      "j-sol": 9.3,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.55,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 32136,
+     "in_tokens": 274,
+     "out_tokens": 2036,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 71.3537,
+     "cost_basis": "server",
+     "judge": {
+      "j-gemini": 10.0,
+      "j-sol": 7.8,
+      "j-fable": 8.85
+     },
+     "judge_mean": 8.883,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 22177,
+     "in_tokens": 179,
+     "out_tokens": 1995,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-report-01",
+   "category": "business",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.4819,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.75,
+      "j-sol": 9.05,
+      "j-gemini": 9.85
+     },
+     "judge_mean": 9.217,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 5954,
+     "in_tokens": 204,
+     "out_tokens": 215,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 40.3373,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.45,
+      "j-sol": 9.05,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.5,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 11940,
+     "in_tokens": 330,
+     "out_tokens": 381,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 15.9274,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.9,
+      "j-fable": 9.15,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.35,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4631,
+     "in_tokens": 330,
+     "out_tokens": 287,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 21.8282,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.35,
+      "j-fable": 8.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.933,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 6521,
+     "in_tokens": 209,
+     "out_tokens": 248,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "biz-strategy-01",
+   "category": "business",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 139.2854,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.15,
+      "j-fable": 9.15,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.433,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 67125,
+     "in_tokens": 201,
+     "out_tokens": 2539,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 907.2007,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.15,
+      "j-fable": 9.15,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.433,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 51003,
+     "in_tokens": 322,
+     "out_tokens": 3026,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 89.9422,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.85,
+      "j-sol": 8.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.1,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 32274,
+     "in_tokens": 322,
+     "out_tokens": 1929,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 47.0457,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 7.2,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.733,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 15117,
+     "in_tokens": 212,
+     "out_tokens": 1381,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "char-detective-01",
+   "category": "character",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 49.3884,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.3,
+      "j-fable": 8.5,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.267,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 25701,
+     "in_tokens": 1159,
+     "out_tokens": 719,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 260.938,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.4,
+      "j-gemini": 10.0,
+      "j-fable": 9.75
+     },
+     "judge_mean": 9.717,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 57619,
+     "in_tokens": 2878,
+     "out_tokens": 2316,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 80.2234,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.45,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.567,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 33973,
+     "in_tokens": 2125,
+     "out_tokens": 1353,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 53.1152,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.25,
+      "j-fable": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.417,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 20120,
+     "in_tokens": 1716,
+     "out_tokens": 1188,
+     "cache_read": 0,
+     "n_calls": 3
+    }
+   }
+  },
+  {
+   "task_id": "char-npc-01",
+   "category": "character",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 16.3605,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 11149,
+     "in_tokens": 607,
+     "out_tokens": 201,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 57.4829,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.45,
+      "j-gemini": 9.55
+     },
+     "judge_mean": 9.667,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 20811,
+     "in_tokens": 950,
+     "out_tokens": 447,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 23.697,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.7,
+      "j-fable": 8.4,
+      "j-gemini": 9.55
+     },
+     "judge_mean": 9.217,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 12815,
+     "in_tokens": 931,
+     "out_tokens": 339,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 29.2216,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.25,
+      "j-fable": 9.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.567,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 10941,
+     "in_tokens": 672,
+     "out_tokens": 256,
+     "cache_read": 0,
+     "n_calls": 3
+    }
+   }
+  },
+  {
+   "task_id": "char-sejong-01",
+   "category": "character",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 86.3958,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.45,
+      "j-sol": 7.95,
+      "j-gemini": 9.7
+     },
+     "judge_mean": 9.033,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 54422,
+     "in_tokens": 1534,
+     "out_tokens": 1340,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 293.6049,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-gemini": 10.0,
+      "j-sol": 9.55
+     },
+     "judge_mean": 9.85,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 58966,
+     "in_tokens": 2988,
+     "out_tokens": 2656,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 92.6043,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.75,
+      "j-sol": 9.55,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.767,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 40690,
+     "in_tokens": 2257,
+     "out_tokens": 1601,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 51.0794,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-gemini": 10.0,
+      "j-sol": 9.3
+     },
+     "judge_mean": 9.433,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 20429,
+     "in_tokens": 2212,
+     "out_tokens": 1576,
+     "cache_read": 0,
+     "n_calls": 3
+    }
+   }
+  },
+  {
+   "task_id": "char-teacher-01",
+   "category": "character",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 73.7351,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.0,
+      "j-gemini": 9.65
+     },
+     "judge_mean": 9.55,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 25782,
+     "in_tokens": 1679,
+     "out_tokens": 1082,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 279.4913,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 9.7,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.9,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 49359,
+     "in_tokens": 2896,
+     "out_tokens": 2518,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 128.9711,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.35,
+      "j-fable": 9.65,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 45197,
+     "in_tokens": 2862,
+     "out_tokens": 2286,
+     "cache_read": 0,
+     "n_calls": 3
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 67.2522,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 9.65
+     },
+     "judge_mean": 9.883,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 22969,
+     "in_tokens": 2222,
+     "out_tokens": 1662,
+     "cache_read": 0,
+     "n_calls": 3
+    }
+   }
+  },
+  {
+   "task_id": "code-go-med-01",
+   "category": "coding",
+   "difficulty": "medium",
+   "language": "go",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.4458,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.333,
+     "check_passed": true,
+     "check_detail": "ok  \tsrb/pool\t1.234s\n\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 4237,
+     "in_tokens": 134,
+     "out_tokens": 226,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 57.6634,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.5,
+      "j-sol": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.5,
+     "check_passed": true,
+     "check_detail": "ok  \tsrb/pool\t1.242s\n\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 8824,
+     "in_tokens": 185,
+     "out_tokens": 602,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 31.8547,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.75,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": true,
+     "check_detail": "ok  \tsrb/pool\t1.227s\n\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 8360,
+     "in_tokens": 185,
+     "out_tokens": 669,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 20.3906,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-sol": 9.0,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 9.333,
+     "check_passed": true,
+     "check_detail": "ok  \tsrb/pool\t1.339s\n\n",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 5181,
+     "in_tokens": 134,
+     "out_tokens": 343,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-js-easy-01",
+   "category": "coding",
+   "difficulty": "easy",
+   "language": "javascript",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 25.8267,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 7.0,
+      "j-sol": 7.0,
+      "j-gemini": 7.5
+     },
+     "judge_mean": 7.167,
+     "check_passed": true,
+     "check_detail": "OK\n\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 15033,
+     "in_tokens": 90,
+     "out_tokens": 462,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 2.5628,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": false,
+     "check_detail": "no js code block",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 11210,
+     "in_tokens": 127,
+     "out_tokens": 3,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 16.6673,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 8.75,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 8.5,
+     "check_passed": false,
+     "check_detail": "\nnode:assert:149\n  throw new AssertionError(obj);\n  ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [Object: null prototype] {\n- {\n    even: [\n      2,\n      4\n    ],\n    odd: [\n\n    at Object.<anonymous> (/private/var/folders/2x/_kyssb9x2cj0bjyhw",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4860,
+     "in_tokens": 127,
+     "out_tokens": 344,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.2045,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 6.75,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 7.833,
+     "check_passed": true,
+     "check_detail": "OK\n\n",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 2851,
+     "in_tokens": 88,
+     "out_tokens": 222,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-js-med-01",
+   "category": "coding",
+   "difficulty": "medium",
+   "language": "javascript",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 80.9363,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.0,
+      "j-sol": 7.5,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 8.417,
+     "check_passed": true,
+     "check_detail": "OK\n\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 35178,
+     "in_tokens": 161,
+     "out_tokens": 1468,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 4.6744,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": false,
+     "check_detail": "no js code block",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 3038,
+     "in_tokens": 234,
+     "out_tokens": 5,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 32.7932,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 6.0,
+      "j-fable": 8.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.0,
+     "check_passed": true,
+     "check_detail": "OK\n\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 7973,
+     "in_tokens": 234,
+     "out_tokens": 680,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 31.3683,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.5,
+      "j-sol": 6.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.25,
+     "check_passed": true,
+     "check_detail": "OK\n\n",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 8459,
+     "in_tokens": 169,
+     "out_tokens": 347,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-py-easy-01",
+   "category": "coding",
+   "difficulty": "easy",
+   "language": "python",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 22.6773,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.5,
+      "j-gemini": 7.75,
+      "j-fable": 8.25
+     },
+     "judge_mean": 8.5,
+     "check_passed": true,
+     "check_detail": "\ntest_hyphen (test_solution.T.test_hyphen) ... ok\ntest_multiple (test_solution.T.test_multiple) ... ok\ntest_no_match (test_solution.T.test_no_match) ... ok\ntest_no_touch_longer (test_solution.T.test_no_touch_longer) ... ok\ntest_plain (test_solution.T.test_plain) ... ok\n\n-----------------------------",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 8420,
+     "in_tokens": 197,
+     "out_tokens": 386,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 97.4051,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.5,
+      "j-fable": 8.5,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 8.917,
+     "check_passed": true,
+     "check_detail": "\ntest_hyphen (test_solution.T.test_hyphen) ... ok\ntest_multiple (test_solution.T.test_multiple) ... ok\ntest_no_match (test_solution.T.test_no_match) ... ok\ntest_no_touch_longer (test_solution.T.test_no_touch_longer) ... ok\ntest_plain (test_solution.T.test_plain) ... ok\n\n-----------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 14294,
+     "in_tokens": 272,
+     "out_tokens": 1025,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 23.7512,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 8.75,
+      "j-gemini": 8.25
+     },
+     "judge_mean": 9.0,
+     "check_passed": true,
+     "check_detail": "\ntest_hyphen (test_solution.T.test_hyphen) ... ok\ntest_multiple (test_solution.T.test_multiple) ... ok\ntest_no_match (test_solution.T.test_no_match) ... ok\ntest_no_touch_longer (test_solution.T.test_no_touch_longer) ... ok\ntest_plain (test_solution.T.test_plain) ... ok\n\n-----------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 5682,
+     "in_tokens": 272,
+     "out_tokens": 472,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.1532,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 9.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": true,
+     "check_detail": "\ntest_hyphen (test_solution.T.test_hyphen) ... ok\ntest_multiple (test_solution.T.test_multiple) ... ok\ntest_no_match (test_solution.T.test_no_match) ... ok\ntest_no_touch_longer (test_solution.T.test_no_touch_longer) ... ok\ntest_plain (test_solution.T.test_plain) ... ok\n\n-----------------------------",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 6729,
+     "in_tokens": 232,
+     "out_tokens": 207,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-py-easy-02",
+   "category": "coding",
+   "difficulty": "easy",
+   "language": "python",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.0003,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.75,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.583,
+     "check_passed": true,
+     "check_detail": "\ntest_empty (test_solution.T.test_empty) ... ok\ntest_exact (test_solution.T.test_exact) ... ok\ntest_list (test_solution.T.test_list) ... ok\ntest_string (test_solution.T.test_string) ... ok\ntest_value_error (test_solution.T.test_value_error) ... ok\n\n---------------------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 5599,
+     "in_tokens": 97,
+     "out_tokens": 187,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 44.5605,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 8.25,
+      "j-gemini": 6.75
+     },
+     "judge_mean": 8.0,
+     "check_passed": false,
+     "check_detail": "\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/__main__.py\", line 18, in <module>\n    main",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 8642,
+     "in_tokens": 134,
+     "out_tokens": 467,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 12.399,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-sol": 10.0,
+      "j-gemini": 9.25
+     },
+     "judge_mean": 9.5,
+     "check_passed": true,
+     "check_detail": "\ntest_empty (test_solution.T.test_empty) ... ok\ntest_exact (test_solution.T.test_exact) ... ok\ntest_list (test_solution.T.test_list) ... ok\ntest_string (test_solution.T.test_string) ... ok\ntest_value_error (test_solution.T.test_value_error) ... ok\n\n---------------------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4085,
+     "in_tokens": 134,
+     "out_tokens": 248,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 16.1701,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 8.5,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 8.75,
+     "check_passed": true,
+     "check_detail": "\ntest_empty (test_solution.T.test_empty) ... ok\ntest_exact (test_solution.T.test_exact) ... ok\ntest_list (test_solution.T.test_list) ... ok\ntest_string (test_solution.T.test_string) ... ok\ntest_value_error (test_solution.T.test_value_error) ... ok\n\n---------------------------------------------------",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4724,
+     "in_tokens": 93,
+     "out_tokens": 108,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-py-hard-01",
+   "category": "coding",
+   "difficulty": "hard",
+   "language": "python",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 84.3293,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.25,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.167,
+     "check_passed": true,
+     "check_detail": "\ntest_len_excludes_expired (test_solution.T.test_len_excludes_expired) ... ok\ntest_lru_evict (test_solution.T.test_lru_evict) ... ok\ntest_ttl_expiry (test_solution.T.test_ttl_expiry) ... ok\ntest_update_refreshes (test_solution.T.test_update_refreshes) ... ok\n\n----------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 40223,
+     "in_tokens": 207,
+     "out_tokens": 1523,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 166.2401,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 5.5,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.167,
+     "check_passed": true,
+     "check_detail": "\ntest_len_excludes_expired (test_solution.T.test_len_excludes_expired) ... ok\ntest_lru_evict (test_solution.T.test_lru_evict) ... ok\ntest_ttl_expiry (test_solution.T.test_ttl_expiry) ... ok\ntest_update_refreshes (test_solution.T.test_update_refreshes) ... ok\n\n----------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 19533,
+     "in_tokens": 296,
+     "out_tokens": 1783,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 37.0977,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 4.75,
+      "j-gemini": 4.5,
+      "j-sol": 6.25
+     },
+     "judge_mean": 5.167,
+     "check_passed": true,
+     "check_detail": "\ntest_len_excludes_expired (test_solution.T.test_len_excludes_expired) ... ok\ntest_lru_evict (test_solution.T.test_lru_evict) ... ok\ntest_ttl_expiry (test_solution.T.test_ttl_expiry) ... ok\ntest_update_refreshes (test_solution.T.test_update_refreshes) ... ok\n\n----------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 8447,
+     "in_tokens": 296,
+     "out_tokens": 763,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 30.3612,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.25,
+      "j-sol": 5.5,
+      "j-gemini": 9.5
+     },
+     "judge_mean": 7.75,
+     "check_passed": true,
+     "check_detail": "\ntest_len_excludes_expired (test_solution.T.test_len_excludes_expired) ... ok\ntest_lru_evict (test_solution.T.test_lru_evict) ... ok\ntest_ttl_expiry (test_solution.T.test_ttl_expiry) ... ok\ntest_update_refreshes (test_solution.T.test_update_refreshes) ... ok\n\n----------------------------------------",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 8061,
+     "in_tokens": 217,
+     "out_tokens": 463,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-py-hard-02",
+   "category": "coding",
+   "difficulty": "hard",
+   "language": "python",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 8.7894,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.75,
+      "j-sol": 10.0,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 8.833,
+     "check_passed": true,
+     "check_detail": "\ntest_basic (test_solution.T.test_basic) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_perf (test_solution.T.test_perf) ... ok\ntest_pick_one_big (test_solution.T.test_pick_one_big) ... ok\ntest_touching_ok (test_solution.T.test_touching_ok) ... ok\n\n---------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 3079,
+     "in_tokens": 122,
+     "out_tokens": 142,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 13.2111,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": false,
+     "check_detail": "no python code block",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4025,
+     "in_tokens": 197,
+     "out_tokens": 107,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 16.4417,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.75,
+     "check_passed": true,
+     "check_detail": "\ntest_basic (test_solution.T.test_basic) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_perf (test_solution.T.test_perf) ... ok\ntest_pick_one_big (test_solution.T.test_pick_one_big) ... ok\ntest_touching_ok (test_solution.T.test_touching_ok) ... ok\n\n---------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4019,
+     "in_tokens": 197,
+     "out_tokens": 325,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 28.3173,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.417,
+     "check_passed": true,
+     "check_detail": "\ntest_basic (test_solution.T.test_basic) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_perf (test_solution.T.test_perf) ... ok\ntest_pick_one_big (test_solution.T.test_pick_one_big) ... ok\ntest_touching_ok (test_solution.T.test_touching_ok) ... ok\n\n---------------------------------------",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 7355,
+     "in_tokens": 128,
+     "out_tokens": 261,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-py-med-01",
+   "category": "coding",
+   "difficulty": "medium",
+   "language": "python",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 39.2093,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.0,
+      "j-gemini": 7.5,
+      "j-fable": 7.25
+     },
+     "judge_mean": 7.917,
+     "check_passed": true,
+     "check_detail": "\ntest_by_status (test_solution.T.test_by_status) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_error_rate (test_solution.T.test_error_rate) ... ok\ntest_slowest (test_solution.T.test_slowest) ... ok\ntest_total (test_solution.T.test_total) ... ok\n\n-----------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 14062,
+     "in_tokens": 211,
+     "out_tokens": 689,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 5.6671,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": false,
+     "check_detail": "no python code block",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 3188,
+     "in_tokens": 299,
+     "out_tokens": 3,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 28.3715,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.75,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.333,
+     "check_passed": true,
+     "check_detail": "\ntest_by_status (test_solution.T.test_by_status) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_error_rate (test_solution.T.test_error_rate) ... ok\ntest_slowest (test_solution.T.test_slowest) ... ok\ntest_total (test_solution.T.test_total) ... ok\n\n-----------------------------------------",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6756,
+     "in_tokens": 299,
+     "out_tokens": 569,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 36.2657,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 7.75,
+      "j-sol": 9.25,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 8.917,
+     "check_passed": true,
+     "check_detail": "\ntest_by_status (test_solution.T.test_by_status) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_error_rate (test_solution.T.test_error_rate) ... ok\ntest_slowest (test_solution.T.test_slowest) ... ok\ntest_total (test_solution.T.test_total) ... ok\n\n-----------------------------------------",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 8969,
+     "in_tokens": 232,
+     "out_tokens": 450,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-py-med-02",
+   "category": "coding",
+   "difficulty": "medium",
+   "language": "python",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.659,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.75,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.917,
+     "check_passed": true,
+     "check_detail": "\ntest_all_smaller (test_solution.T.test_all_smaller) ... ok\ntest_basic (test_solution.T.test_basic) ... ok\ntest_between (test_solution.T.test_between) ... ok\ntest_dups (test_solution.T.test_dups) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_first (test_solution.T.test_first) ... ok\n\n--",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 4477,
+     "in_tokens": 146,
+     "out_tokens": 191,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 56.0751,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.75,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.917,
+     "check_passed": true,
+     "check_detail": "\ntest_all_smaller (test_solution.T.test_all_smaller) ... ok\ntest_basic (test_solution.T.test_basic) ... ok\ntest_between (test_solution.T.test_between) ... ok\ntest_dups (test_solution.T.test_dups) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_first (test_solution.T.test_first) ... ok\n\n--",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 12181,
+     "in_tokens": 197,
+     "out_tokens": 582,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 22.5329,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.75,
+      "j-fable": 9.75,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 9.75,
+     "check_passed": true,
+     "check_detail": "\ntest_all_smaller (test_solution.T.test_all_smaller) ... ok\ntest_basic (test_solution.T.test_basic) ... ok\ntest_between (test_solution.T.test_between) ... ok\ntest_dups (test_solution.T.test_dups) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_first (test_solution.T.test_first) ... ok\n\n--",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6509,
+     "in_tokens": 197,
+     "out_tokens": 460,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 18.9044,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.75,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.917,
+     "check_passed": true,
+     "check_detail": "\ntest_all_smaller (test_solution.T.test_all_smaller) ... ok\ntest_basic (test_solution.T.test_basic) ... ok\ntest_between (test_solution.T.test_between) ... ok\ntest_dups (test_solution.T.test_dups) ... ok\ntest_empty (test_solution.T.test_empty) ... ok\ntest_first (test_solution.T.test_first) ... ok\n\n--",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4934,
+     "in_tokens": 149,
+     "out_tokens": 248,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-rust-med-01",
+   "category": "coding",
+   "difficulty": "medium",
+   "language": "rust",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 12.9765,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.75,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.917,
+     "check_passed": true,
+     "check_detail": "\nrunning 3 tests\ntest srb_tests::tie_first ... ok\ntest srb_tests::basic ... ok\ntest srb_tests::empty ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\n",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 5532,
+     "in_tokens": 148,
+     "out_tokens": 215,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 79.3751,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.75,
+      "j-gemini": 10.0,
+      "j-fable": 9.75
+     },
+     "judge_mean": 9.833,
+     "check_passed": false,
+     "check_detail": "\nrunning 3 tests\ntest srb_tests::basic ... ok\ntest srb_tests::empty ... ok\ntest srb_tests::tie_first ... FAILED\n\nfailures:\n\n---- srb_tests::tie_first stdout ----\n\nthread 'srb_tests::tie_first' (3234615) panicked at solution.rs:22:9:\nassertion `left == right` failed\n  left: \"cc\"\n right: \"aa\"\nnote: ru",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 12678,
+     "in_tokens": 213,
+     "out_tokens": 837,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 33.2354,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.75,
+      "j-sol": 9.5,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.75,
+     "check_passed": true,
+     "check_detail": "\nrunning 3 tests\ntest srb_tests::tie_first ... ok\ntest srb_tests::basic ... ok\ntest srb_tests::empty ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\n",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 9732,
+     "in_tokens": 213,
+     "out_tokens": 694,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.6957,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.75,
+      "j-fable": 9.25,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 9.583,
+     "check_passed": true,
+     "check_detail": "\nrunning 3 tests\ntest srb_tests::empty ... ok\ntest srb_tests::basic ... ok\ntest srb_tests::tie_first ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\n",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4496,
+     "in_tokens": 163,
+     "out_tokens": 273,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-sql-easy-01",
+   "category": "coding",
+   "difficulty": "easy",
+   "language": "sql",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 4.7376,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.25,
+      "j-sol": 10.0,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 8.667,
+     "check_passed": true,
+     "check_detail": "got=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]] want=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]]",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 1843,
+     "in_tokens": 105,
+     "out_tokens": 70,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 23.0292,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.75,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": true,
+     "check_detail": "got=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]] want=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]]",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 5100,
+     "in_tokens": 181,
+     "out_tokens": 219,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.4612,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.25,
+      "j-sol": 10.0,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 8.667,
+     "check_passed": true,
+     "check_detail": "got=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]] want=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]]",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 2847,
+     "in_tokens": 181,
+     "out_tokens": 107,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 8.1433,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 7.25,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 7.5,
+     "check_passed": true,
+     "check_detail": "got=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]] want=[['2026-01', 2, 500], ['2026-02', 2, 200], ['2026-03', 1, 500]]",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 2403,
+     "in_tokens": 116,
+     "out_tokens": 86,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "code-sql-hard-01",
+   "category": "coding",
+   "difficulty": "hard",
+   "language": "sql",
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 24.0129,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 7.5,
+      "j-fable": 8.0,
+      "j-gemini": 7.75
+     },
+     "judge_mean": 7.75,
+     "check_passed": true,
+     "check_detail": "got=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]] want=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]]",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 9647,
+     "in_tokens": 129,
+     "out_tokens": 422,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 79.5917,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-sol": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.5,
+     "check_passed": true,
+     "check_detail": "got=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]] want=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]]",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 10852,
+     "in_tokens": 205,
+     "out_tokens": 841,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.4458,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 7.5,
+      "j-fable": 8.25,
+      "j-gemini": 7.25
+     },
+     "judge_mean": 7.667,
+     "check_passed": true,
+     "check_detail": "got=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]] want=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]]",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6377,
+     "in_tokens": 205,
+     "out_tokens": 257,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.2047,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.5,
+      "j-sol": 9.75,
+      "j-gemini": 9.75
+     },
+     "judge_mean": 9.667,
+     "check_passed": true,
+     "check_detail": "got=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]] want=[[1, '2026-01-01', '2026-01-15', 14], [2, '2026-03-05', None, None], [3, '2026-02-10', '2026-02-11', 1]]",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 6701,
+     "in_tokens": 143,
+     "out_tokens": 445,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "daily-advice-01",
+   "category": "daily",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 92.1079,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.4,
+      "j-fable": 8.4,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.267,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 50121,
+     "in_tokens": 733,
+     "out_tokens": 1579,
+     "cache_read": 0,
+     "n_calls": 2
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 252.6359,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.4,
+      "j-fable": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 49478,
+     "in_tokens": 1253,
+     "out_tokens": 2549,
+     "cache_read": 0,
+     "n_calls": 2
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 78.9871,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.0,
+      "j-fable": 8.75,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.25,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 30610,
+     "in_tokens": 1068,
+     "out_tokens": 1537,
+     "cache_read": 0,
+     "n_calls": 2
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 58.3862,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 6.1,
+      "j-fable": 6.7,
+      "j-gemini": 9.4
+     },
+     "judge_mean": 7.4,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 19260,
+     "in_tokens": 1293,
+     "out_tokens": 1916,
+     "cache_read": 0,
+     "n_calls": 2
+    }
+   }
+  },
+  {
+   "task_id": "daily-chat-01",
+   "category": "daily",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.0183,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.0,
+      "j-fable": 8.9,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.3,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol",
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 8002,
+     "in_tokens": 123,
+     "out_tokens": 183,
+     "cache_read": 0,
+     "n_calls": 2
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 61.2549,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.3,
+      "j-gemini": 10.0,
+      "j-sol": 9.0
+     },
+     "judge_mean": 9.433,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5",
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 17444,
+     "in_tokens": 314,
+     "out_tokens": 616,
+     "cache_read": 0,
+     "n_calls": 2
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.7616,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 7.3,
+      "j-fable": 7.9,
+      "j-gemini": 9.3
+     },
+     "judge_mean": 8.167,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8",
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 11834,
+     "in_tokens": 180,
+     "out_tokens": 269,
+     "cache_read": 0,
+     "n_calls": 2
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 23.8369,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 7.1,
+      "j-fable": 8.4,
+      "j-gemini": 9.4
+     },
+     "judge_mean": 8.3,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash",
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route",
+      "bizrouter/route"
+     ],
+     "latency_ms": 9598,
+     "in_tokens": 153,
+     "out_tokens": 387,
+     "cache_read": 0,
+     "n_calls": 2
+    }
+   }
+  },
+  {
+   "task_id": "daily-explain-01",
+   "category": "daily",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 5.6941,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.7,
+      "j-fable": 9.3,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 3539,
+     "in_tokens": 67,
+     "out_tokens": 94,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 20.8454,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.3,
+      "j-sol": 9.1,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 7018,
+     "in_tokens": 100,
+     "out_tokens": 211,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 10.152,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.3,
+      "j-sol": 9.7,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4591,
+     "in_tokens": 100,
+     "out_tokens": 205,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.7363,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.7,
+      "j-fable": 8.7,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.133,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4269,
+     "in_tokens": 70,
+     "out_tokens": 147,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "daily-recipe-01",
+   "category": "daily",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 42.0518,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.333,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 18672,
+     "in_tokens": 70,
+     "out_tokens": 765,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 126.1014,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.1,
+      "j-sol": 7.65,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.917,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 21842,
+     "in_tokens": 107,
+     "out_tokens": 1376,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 41.2577,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.65,
+      "j-gemini": 10.0,
+      "j-fable": 8.75
+     },
+     "judge_mean": 9.133,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 15871,
+     "in_tokens": 107,
+     "out_tokens": 893,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 24.7546,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.6,
+      "j-fable": 9.1,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.233,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 7824,
+     "in_tokens": 72,
+     "out_tokens": 926,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "daily-translate-01",
+   "category": "daily",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.6326,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.4,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.8,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 2874,
+     "in_tokens": 129,
+     "out_tokens": 101,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 23.9316,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.6,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.867,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 6698,
+     "in_tokens": 181,
+     "out_tokens": 229,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 10.522,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.6,
+      "j-fable": 9.4,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 3964,
+     "in_tokens": 181,
+     "out_tokens": 197,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.7168,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.2,
+      "j-fable": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.4,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4160,
+     "in_tokens": 134,
+     "out_tokens": 163,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "daily-travel-01",
+   "category": "daily",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 171.1763,
+     "cost_basis": "server",
+     "judge": {
+      "j-gemini": 10.0,
+      "j-sol": 9.25,
+      "j-fable": 9.25
+     },
+     "judge_mean": 9.5,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 98304,
+     "in_tokens": 129,
+     "out_tokens": 3140,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 279.383,
+     "cost_basis": "server",
+     "judge": {
+      "j-gemini": 10.0,
+      "j-fable": 9.65,
+      "j-sol": 8.3
+     },
+     "judge_mean": 9.317,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 46746,
+     "in_tokens": 180,
+     "out_tokens": 3060,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 78.5539,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-gemini": 10.0,
+      "j-sol": 7.9
+     },
+     "judge_mean": 8.967,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 27258,
+     "in_tokens": 180,
+     "out_tokens": 1705,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 36.4145,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.65,
+      "j-sol": 7.55,
+      "j-gemini": 9.4
+     },
+     "judge_mean": 8.533,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 12031,
+     "in_tokens": 137,
+     "out_tokens": 1159,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "ext-actions-01",
+   "category": "extraction",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.1814,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 2457,
+     "in_tokens": 193,
+     "out_tokens": 82,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.6315,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.4,
+      "j-fable": 10.0,
+      "j-gemini": 9.6
+     },
+     "judge_mean": 9.333,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 6544,
+     "in_tokens": 301,
+     "out_tokens": 246,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.8221,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 2178,
+     "in_tokens": 301,
+     "out_tokens": 91,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 15.3904,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3635,
+     "in_tokens": 213,
+     "out_tokens": 104,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "ext-invoice-01",
+   "category": "extraction",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 4.7196,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 1763,
+     "in_tokens": 217,
+     "out_tokens": 51,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 21.5313,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 9.2,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.733,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4945,
+     "in_tokens": 303,
+     "out_tokens": 178,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 5.8476,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 1638,
+     "in_tokens": 303,
+     "out_tokens": 69,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.9927,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 2166,
+     "in_tokens": 249,
+     "out_tokens": 62,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "ext-log-01",
+   "category": "extraction",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.3308,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 3191,
+     "in_tokens": 296,
+     "out_tokens": 123,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 6.8763,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": false,
+     "check_detail": "no parseable JSON in response",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 2851,
+     "in_tokens": 371,
+     "out_tokens": 2,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 18.418,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6123,
+     "in_tokens": 371,
+     "out_tokens": 334,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 17.4885,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3714,
+     "in_tokens": 388,
+     "out_tokens": 82,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "json-billing-01",
+   "category": "json-gen",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 8.7262,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 2671,
+     "in_tokens": 223,
+     "out_tokens": 124,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 36.096,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 7116,
+     "in_tokens": 315,
+     "out_tokens": 337,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 17.5517,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 5703,
+     "in_tokens": 315,
+     "out_tokens": 326,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.8061,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3152,
+     "in_tokens": 251,
+     "out_tokens": 93,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "json-config-01",
+   "category": "json-gen",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 5.1798,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 1929,
+     "in_tokens": 124,
+     "out_tokens": 75,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 14.7091,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4902,
+     "in_tokens": 175,
+     "out_tokens": 128,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.1814,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 3991,
+     "in_tokens": 175,
+     "out_tokens": 102,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.329,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 2982,
+     "in_tokens": 134,
+     "out_tokens": 93,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "json-page-01",
+   "category": "json-gen",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 4.3135,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 1945,
+     "in_tokens": 130,
+     "out_tokens": 58,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 12.6156,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4148,
+     "in_tokens": 169,
+     "out_tokens": 106,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.3308,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 3120,
+     "in_tokens": 169,
+     "out_tokens": 173,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.3696,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3095,
+     "in_tokens": 137,
+     "out_tokens": 71,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "reason-cal-01",
+   "category": "reasoning",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 5.5949,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 3541,
+     "in_tokens": 56,
+     "out_tokens": 94,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 18.4451,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4914,
+     "in_tokens": 77,
+     "out_tokens": 189,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 4.53,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 1781,
+     "in_tokens": 77,
+     "out_tokens": 85,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.2861,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 2281,
+     "in_tokens": 54,
+     "out_tokens": 135,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "reason-order-01",
+   "category": "reasoning",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.518,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 5510,
+     "in_tokens": 166,
+     "out_tokens": 222,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 27.5954,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 1.95,
+      "j-gemini": 1.0,
+      "j-fable": 1.5
+     },
+     "judge_mean": 1.483,
+     "check_passed": false,
+     "check_detail": "no answer marker found",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 5735,
+     "in_tokens": 234,
+     "out_tokens": 259,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 25.574,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 14789,
+     "in_tokens": 234,
+     "out_tokens": 520,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 18.5958,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4805,
+     "in_tokens": 173,
+     "out_tokens": 436,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "reason-price-01",
+   "category": "reasoning",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 10.0888,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 3543,
+     "in_tokens": 116,
+     "out_tokens": 167,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 30.5372,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 6094,
+     "in_tokens": 152,
+     "out_tokens": 308,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 12.1553,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-gemini": 10.0,
+      "j-fable": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 3546,
+     "in_tokens": 152,
+     "out_tokens": 239,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 10.5879,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 2927,
+     "in_tokens": 119,
+     "out_tokens": 241,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "res-compare-01",
+   "category": "research",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 88.1284,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.85,
+      "j-sol": 9.85,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.567,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 35983,
+     "in_tokens": 148,
+     "out_tokens": 1603,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 191.9405,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.5,
+      "j-sol": 8.8,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.433,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 32270,
+     "in_tokens": 240,
+     "out_tokens": 2079,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 73.681,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.35,
+      "j-sol": 8.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.267,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 24163,
+     "in_tokens": 240,
+     "out_tokens": 1585,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 51.0957,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.35,
+      "j-sol": 8.3,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.217,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 18583,
+     "in_tokens": 154,
+     "out_tokens": 1485,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "res-market-01",
+   "category": "research",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 184.7574,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-gemini": 10.0,
+      "j-sol": 9.15
+     },
+     "judge_mean": 9.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 88776,
+     "in_tokens": 128,
+     "out_tokens": 3391,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 227.3326,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-gemini": 10.0,
+      "j-sol": 7.7
+     },
+     "judge_mean": 8.983,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 33157,
+     "in_tokens": 191,
+     "out_tokens": 2481,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 74.4119,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 8.8,
+      "j-sol": 7.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.683,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 23597,
+     "in_tokens": 191,
+     "out_tokens": 1611,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 93.3388,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.25,
+      "j-gemini": 10.0,
+      "j-sol": 7.7
+     },
+     "judge_mean": 8.983,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 23861,
+     "in_tokens": 128,
+     "out_tokens": 2193,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "res-summary-01",
+   "category": "research",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 12.2185,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.2,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.733,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 7846,
+     "in_tokens": 238,
+     "out_tokens": 186,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 56.5624,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.6,
+      "j-gemini": 10.0,
+      "j-fable": 9.2
+     },
+     "judge_mean": 9.6,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 11188,
+     "in_tokens": 344,
+     "out_tokens": 558,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 21.2425,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.2,
+      "j-fable": 9.2,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 6606,
+     "in_tokens": 344,
+     "out_tokens": 402,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 22.1395,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.2,
+      "j-sol": 7.6,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.933,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 6170,
+     "in_tokens": 234,
+     "out_tokens": 374,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "res-tech-01",
+   "category": "research",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 154.1119,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.9,
+      "j-fable": 9.15,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.683,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 76791,
+     "in_tokens": 188,
+     "out_tokens": 2815,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 330.3867,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.65,
+      "j-gemini": 10.0,
+      "j-sol": 9.25
+     },
+     "judge_mean": 9.633,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 55948,
+     "in_tokens": 291,
+     "out_tokens": 3603,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 129.5485,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.25,
+      "j-fable": 9.65,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.633,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 44510,
+     "in_tokens": 291,
+     "out_tokens": 2813,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 67.0032,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 6.8,
+      "j-fable": 8.6,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 8.467,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 21074,
+     "in_tokens": 192,
+     "out_tokens": 2265,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "sum-cs-01",
+   "category": "summarization",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 8.9608,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.45,
+      "j-sol": 9.55,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.667,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 3035,
+     "in_tokens": 339,
+     "out_tokens": 109,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 9.1323,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": false,
+     "check_detail": "missing: B-77401; 18.50",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4694,
+     "in_tokens": 501,
+     "out_tokens": 1,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 12.1012,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.817,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 3482,
+     "in_tokens": 501,
+     "out_tokens": 168,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 16.1918,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.55,
+      "j-fable": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.517,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 5631,
+     "in_tokens": 383,
+     "out_tokens": 113,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "sum-earnings-01",
+   "category": "summarization",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 7.7877,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 9.8,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.933,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 2838,
+     "in_tokens": 167,
+     "out_tokens": 116,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 29.9597,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 10.0,
+      "j-sol": 9.1,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.7,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 7308,
+     "in_tokens": 250,
+     "out_tokens": 282,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.3702,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.55,
+      "j-fable": 9.8,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.783,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4292,
+     "in_tokens": 250,
+     "out_tokens": 202,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.5712,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.1,
+      "j-fable": 9.35,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.483,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4055,
+     "in_tokens": 177,
+     "out_tokens": 172,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "sum-news-01",
+   "category": "summarization",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.2045,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.55,
+      "j-fable": 9.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.517,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 4158,
+     "in_tokens": 174,
+     "out_tokens": 141,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 24.437,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.65,
+      "j-sol": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.883,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 6161,
+     "in_tokens": 269,
+     "out_tokens": 217,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 9.6015,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.65,
+      "j-sol": 9.8,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.817,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 2858,
+     "in_tokens": 269,
+     "out_tokens": 159,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.7363,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.2,
+      "j-fable": 9.65,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.617,
+     "check_passed": true,
+     "check_detail": "ok",
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3980,
+     "in_tokens": 178,
+     "out_tokens": 98,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "trans-enko-01",
+   "category": "translation",
+   "difficulty": "medium",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 8.3923,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 2580,
+     "in_tokens": 210,
+     "out_tokens": 120,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "refusal",
+     "cost_krw": 15.0159,
+     "cost_basis": "server",
+     "judge": {},
+     "judge_mean": null,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 4633,
+     "in_tokens": 352,
+     "out_tokens": 96,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 11.8395,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4141,
+     "in_tokens": 352,
+     "out_tokens": 192,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 15.3742,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 10.0,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 10.0,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 3811,
+     "in_tokens": 213,
+     "out_tokens": 120,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "trans-koen-01",
+   "category": "translation",
+   "difficulty": "easy",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 6.6958,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.65,
+      "j-fable": 9.25,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.633,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 2363,
+     "in_tokens": 124,
+     "out_tokens": 103,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 23.318,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.65,
+      "j-fable": 10.0,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.883,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 6005,
+     "in_tokens": 207,
+     "out_tokens": 217,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 10.9371,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.65,
+      "j-fable": 9.65,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.767,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4160,
+     "in_tokens": 207,
+     "out_tokens": 201,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 13.2951,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 9.2,
+      "j-fable": 9.45,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.55,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 4020,
+     "in_tokens": 135,
+     "out_tokens": 103,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  },
+  {
+   "task_id": "trans-koen-02",
+   "category": "translation",
+   "difficulty": "hard",
+   "language": null,
+   "mode": "chat",
+   "arms": {
+    "gpt56sol": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.8481,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.65,
+      "j-fable": 9.2,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.283,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "openai/gpt-5.6-sol"
+     ],
+     "latency_ms": 13048,
+     "in_tokens": 134,
+     "out_tokens": 492,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "fable5": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 39.2905,
+     "cost_basis": "server",
+     "judge": {
+      "j-fable": 9.0,
+      "j-sol": 8.65,
+      "j-gemini": 10.0
+     },
+     "judge_mean": 9.217,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-fable-5"
+     ],
+     "latency_ms": 5853,
+     "in_tokens": 207,
+     "out_tokens": 394,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "opus48": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 8.5006,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 6.1,
+      "j-fable": 5.65,
+      "j-gemini": 5.65
+     },
+     "judge_mean": 5.8,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [],
+     "server_models": [
+      "anthropic/claude-opus-4.8"
+     ],
+     "latency_ms": 4081,
+     "in_tokens": 207,
+     "out_tokens": 147,
+     "cache_read": 0,
+     "n_calls": 1
+    },
+    "route": {
+     "ok": true,
+     "error": null,
+     "delivery": "ok",
+     "cost_krw": 27.3779,
+     "cost_basis": "server",
+     "judge": {
+      "j-sol": 8.1,
+      "j-gemini": 10.0,
+      "j-fable": 9.0
+     },
+     "judge_mean": 9.033,
+     "check_passed": null,
+     "check_detail": null,
+     "routed_models": [
+      "google/gemini-3.5-flash"
+     ],
+     "server_models": [
+      "bizrouter/route"
+     ],
+     "latency_ms": 6884,
+     "in_tokens": 141,
+     "out_tokens": 94,
+     "cache_read": 0,
+     "n_calls": 1
+    }
+   }
+  }
+ ]
+}

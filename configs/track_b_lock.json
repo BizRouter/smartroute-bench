@@ -1,0 +1,226 @@
+{
+  "seed": 20260805,
+  "overlap_guard_questions_hashed": 8312,
+  "slices": {
+    "knowledge-mcq#0": {
+      "indices": {
+        "both": [
+          9501,
+          12992,
+          848,
+          7249,
+          8655,
+          10387,
+          11995,
+          8740,
+          4413,
+          11999,
+          6780,
+          8401,
+          3072,
+          2974,
+          13706,
+          13558,
+          814,
+          2791,
+          5269,
+          4459,
+          13749,
+          10979,
+          944,
+          5685,
+          13111,
+          9406,
+          10692,
+          10528,
+          2005,
+          7977,
+          10494,
+          3699,
+          10137,
+          11508,
+          8368,
+          13566,
+          12641,
+          1999,
+          4375,
+          13255
+        ]
+      },
+      "ko": {
+        "dataset": "openai/MMMLU",
+        "config": "KO_KR",
+        "split": "test"
+      },
+      "en": {
+        "dataset": "cais/mmlu",
+        "config": "all",
+        "split": "test"
+      }
+    },
+    "math#1": {
+      "indices": {
+        "both": [
+          669,
+          151,
+          106,
+          320,
+          1073,
+          933,
+          1065,
+          1248,
+          1078,
+          157,
+          61,
+          674,
+          385,
+          1138,
+          254
+        ]
+      },
+      "ko": {
+        "dataset": "kuotient/gsm8k-ko",
+        "split": "test",
+        "field": "question"
+      },
+      "en": {
+        "dataset": "kuotient/gsm8k-ko",
+        "split": "test",
+        "field": "question_en"
+      }
+    },
+    "math#2": {
+      "indices": {
+        "ko": [
+          167,
+          132,
+          72,
+          137,
+          91,
+          225,
+          291,
+          125,
+          239,
+          45
+        ],
+        "en": [
+          151,
+          130,
+          44,
+          367,
+          252,
+          68,
+          80,
+          436,
+          55,
+          118
+        ]
+      },
+      "ko": {
+        "dataset": "HAERAE-HUB/KMMLU",
+        "config": "Math",
+        "split": "test",
+        "format": "mcq"
+      },
+      "en": {
+        "dataset": "HuggingFaceH4/MATH-500",
+        "split": "test"
+      }
+    },
+    "logic-commonsense#3": {
+      "indices": {
+        "ko": [
+          41,
+          82,
+          373,
+          185,
+          258,
+          316,
+          273,
+          47,
+          389,
+          408,
+          6,
+          8,
+          425,
+          158,
+          247,
+          392,
+          481,
+          201,
+          248,
+          242
+        ],
+        "en": [
+          485,
+          375,
+          290,
+          995,
+          676,
+          939,
+          438,
+          142,
+          648,
+          281,
+          434,
+          650,
+          1017,
+          1048,
+          278,
+          1011,
+          1038,
+          815,
+          914,
+          728
+        ]
+      },
+      "ko": {
+        "dataset": "skt/kobest_v1",
+        "config": "hellaswag",
+        "split": "test"
+      },
+      "en": {
+        "dataset": "allenai/ai2_arc",
+        "config": "ARC-Challenge",
+        "split": "test"
+      }
+    },
+    "domain-pro#4": {
+      "indices": {
+        "ko": [
+          515,
+          283,
+          167,
+          695,
+          896,
+          885,
+          881,
+          813,
+          318,
+          292
+        ],
+        "en": [
+          1804,
+          2982,
+          3703,
+          1139,
+          3001,
+          696,
+          3514,
+          2714,
+          4100,
+          1971
+        ]
+      },
+      "ko": {
+        "dataset": "HAERAE-HUB/KMMLU",
+        "config": "Law",
+        "split": "test"
+      },
+      "en": {
+        "dataset": "openlifescienceai/medmcqa",
+        "split": "validation"
+      }
+    }
+  }
+}

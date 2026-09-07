@@ -1,0 +1,191 @@
+[
+  {
+    "id": "trans-enko-01",
+    "pair_id": "trans-enko-01",
+    "track": "work",
+    "block": "writing",
+    "category": "translation",
+    "subcategory": "technical-doc",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "translation",
+    "ko": {
+      "turns": [
+        "아래 영어 릴리스 노트를 한국어로 번역해줘. 개발자 대상 문서지만 딱딱한 직역투가 아니라\n한국 개발 문서에서 실제로 쓰는 자연스러운 문장으로. 제품명·API 이름은 영문 그대로 둬.\n\n---\n## v2.4.0\n\n**Breaking:** The `sessions.list` endpoint now paginates by cursor instead of\noffset. Clients relying on `page` query parameters must migrate to\n`cursor`/`limit`; offset-based requests will return HTTP 400 starting v2.6.\n\nWebhook deliveries are now retried up to 5 times with exponential backoff.\nDuplicate deliveries are possible — make your handlers idempotent.\n\nFixed a race where concurrent token refreshes could invalidate each other,\nforcing users to sign in again.\n---\n\n번역문만 출력해줘."
+      ],
+      "rubric": [
+        {
+          "name": "의미 보존",
+          "desc": "원문의 의미·뉘앙스·강조가 손실 없이 옮겨졌는가",
+          "weight": 0.45
+        },
+        {
+          "name": "자연스러움",
+          "desc": "도착어 원어민이 쓴 것 같은 문장인가 (직역투·번역투 없음)",
+          "weight": 0.35
+        },
+        {
+          "name": "톤·형식",
+          "desc": "용도(이메일·기술 문서·카피)에 맞는 격식과 형식을 유지했는가",
+          "weight": 0.2
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Translate the Spanish release notes below into English. The audience is developers, but avoid a stiff, word-for-word rendering — write the kind of natural prose you'd actually see in English developer documentation. Leave product and API names as they are.\n\n---\n## v2.4.0\n\n**Cambio incompatible:** el endpoint `sessions.list` ahora pagina por cursor en lugar de por offset. Los clientes que dependan del parámetro de consulta `page` deben migrar a `cursor`/`limit`; a partir de la v2.6, las peticiones basadas en offset devolverán HTTP 400.\n\nLas entregas de webhooks ahora se reintentan hasta 5 veces con backoff exponencial. Pueden producirse entregas duplicadas: asegúrate de que tus handlers sean idempotentes.\n\nSe corrigió una condición de carrera en la que las renovaciones concurrentes de tokens podían invalidarse entre sí, obligando a los usuarios a iniciar sesión de nuevo.\n---\n\nOutput only the translation."
+      ],
+      "rubric": [
+        {
+          "name": "Meaning preservation",
+          "desc": "Is the source's meaning, nuance, and emphasis carried over without loss?",
+          "weight": 0.45
+        },
+        {
+          "name": "Naturalness",
+          "desc": "Does it read as if written by a native speaker of the target language (no stilted, literal phrasing)?",
+          "weight": 0.35
+        },
+        {
+          "name": "Tone & format",
+          "desc": "Does it keep the register and format appropriate to the use case (email, technical doc, copy)?",
+          "weight": 0.2
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "trans-koen-01",
+    "pair_id": "trans-koen-01",
+    "track": "work",
+    "block": "writing",
+    "category": "translation",
+    "subcategory": "business-email",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "translation",
+    "ko": {
+      "turns": [
+        "아래 한국어 이메일을 영어로 번역해줘. 미국 파트너사 담당자에게 보내는 정중한 비즈니스 이메일 톤으로.\n\n---\n안녕하세요 마이클,\n\n지난주 보내주신 파트너십 제안서 잘 받았습니다. 내부 검토 결과, 전반적인 방향에는\n공감하지만 수익 배분 구조는 조정이 필요해 보입니다.\n\n다음 주 화요일이나 수요일 중 편하신 시간에 30분 정도 화상 미팅이 가능할까요?\n저희 쪽 수정 제안을 정리해서 미팅 전에 공유드리겠습니다.\n\n감사합니다.\n김서연 드림\n---\n\n번역문만 출력해줘."
+      ],
+      "rubric": [
+        {
+          "name": "의미 보존",
+          "desc": "원문의 의미·뉘앙스·강조가 손실 없이 옮겨졌는가",
+          "weight": 0.45
+        },
+        {
+          "name": "자연스러움",
+          "desc": "도착어 원어민이 쓴 것 같은 문장인가 (직역투·번역투 없음)",
+          "weight": 0.35
+        },
+        {
+          "name": "톤·형식",
+          "desc": "용도(이메일·기술 문서·카피)에 맞는 격식과 형식을 유지했는가",
+          "weight": 0.2
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Translate the email below into Spanish. It's going to a contact at a partner company in Mexico, so keep a polite, professional business-email tone.\n\n---\nHi Gabriela,\n\nThank you for the partnership proposal you sent over last week. After an internal review, we're aligned with the overall direction, but we believe the revenue-sharing structure needs some adjustment.\n\nWould you be available for a 30-minute video call next Tuesday or Wednesday, at whatever time suits you? We'll put together our proposed revisions and share them with you before the meeting.\n\nBest regards,\nSarah Kim\n---\n\nOutput only the translation."
+      ],
+      "rubric": [
+        {
+          "name": "Meaning preservation",
+          "desc": "Is the source's meaning, nuance, and emphasis carried over without loss?",
+          "weight": 0.45
+        },
+        {
+          "name": "Naturalness",
+          "desc": "Does it read as if written by a native speaker of the target language (no stilted, literal phrasing)?",
+          "weight": 0.35
+        },
+        {
+          "name": "Tone & format",
+          "desc": "Does it keep the register and format appropriate to the use case (email, technical doc, copy)?",
+          "weight": 0.2
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "trans-koen-02",
+    "pair_id": "trans-koen-02",
+    "track": "work",
+    "block": "writing",
+    "category": "translation",
+    "subcategory": "marketing-copy",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "translation",
+    "ko": {
+      "turns": [
+        "아래 한국어 마케팅 카피 5개를 영어로 번역해줘. 직역이 아니라, 영어권 SaaS 랜딩 페이지에서\n실제로 쓸 수 있는 카피 감각으로 옮겨야 해. 원문의 대구(對句)나 리듬감이 있으면 영어에서도 살려줘.\n\n1. 쓰는 만큼만 내세요. 안 쓰면 안 냅니다.\n2. 설치는 5분, 절감은 5년.\n3. 장애는 새벽 3시를 좋아합니다. 저희는 새벽 3시에 깨어 있고요.\n4. 복잡한 건 저희가 하겠습니다. 여러분은 만들기만 하세요.\n5. 청구서를 열어보는 게 무섭지 않게.\n\n번호를 붙여 번역문만 출력해줘."
+      ],
+      "rubric": [
+        {
+          "name": "의미 보존",
+          "desc": "원문의 의미·뉘앙스·강조가 손실 없이 옮겨졌는가",
+          "weight": 0.45
+        },
+        {
+          "name": "자연스러움",
+          "desc": "도착어 원어민이 쓴 것 같은 문장인가 (직역투·번역투 없음)",
+          "weight": 0.35
+        },
+        {
+          "name": "톤·형식",
+          "desc": "용도(이메일·기술 문서·카피)에 맞는 격식과 형식을 유지했는가",
+          "weight": 0.2
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Translate the five marketing taglines below into French. Don't translate literally — carry them over with the copywriting instincts of a French SaaS landing page, as lines you could actually ship. Where the original has rhythm, parallelism, or wordplay, recreate that effect in French.\n\n1. Pay for what you use. Pay nothing for what you don't.\n2. Five minutes to set up. Five years of savings.\n3. Outages love 3 a.m. Luckily, so do we.\n4. We'll handle the complicated part. You just build.\n5. Because opening your invoice shouldn't be scary.\n\nOutput only the numbered translations."
+      ],
+      "rubric": [
+        {
+          "name": "Meaning preservation",
+          "desc": "Is the source's meaning, nuance, and emphasis carried over without loss?",
+          "weight": 0.45
+        },
+        {
+          "name": "Naturalness",
+          "desc": "Does it read as if written by a native speaker of the target language (no stilted, literal phrasing)?",
+          "weight": 0.35
+        },
+        {
+          "name": "Tone & format",
+          "desc": "Does it keep the register and format appropriate to the use case (email, technical doc, copy)?",
+          "weight": 0.2
+        }
+      ],
+      "locale": "en"
+    }
+  }
+]

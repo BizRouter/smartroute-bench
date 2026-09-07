@@ -1,0 +1,384 @@
+[
+  {
+    "id": "daily-advice-01",
+    "pair_id": "daily-advice-01",
+    "track": "work",
+    "block": "writing",
+    "category": "daily-chat",
+    "subcategory": "counsel",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 3072,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "daily",
+    "ko": {
+      "turns": [
+        "회사 고민이 있어. 나는 5년차 개발자인데, 최근에 팀장이 바뀌고 나서\n내가 하던 프로젝트 리드 역할을 신입 온 지 1년 된 후배한테 넘기라고 하더라.\n이유는 '너는 더 중요한 일 시키려고'인데 그 중요한 일이 뭔지 두 달째 얘기가 없어.\n그냥 밀려난 건가 싶고, 이직해야 하나 싶기도 하고. 어떻게 생각해?",
+        "직접 물어보라는 건 알겠는데, 뭐라고 물어봐야 따지는 것처럼 안 들릴까? 실제 대화 예시로 보여줘."
+      ],
+      "rubric": [
+        {
+          "name": "공감·균형",
+          "desc": "감정을 존중하면서 성급한 결론(무조건 이직 등)을 부추기지 않음",
+          "weight": 0.35
+        },
+        {
+          "name": "실용적 조언",
+          "desc": "실행 가능한 다음 행동 제시, 2턴째 대화 예시의 현실성",
+          "weight": 0.4
+        },
+        {
+          "name": "자연스러움",
+          "desc": "상담 말투가 설교조·기계적이지 않음",
+          "weight": 0.25
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "I've got a work dilemma. I'm a developer with 5 years of experience, and after a new team lead\ncame in, he told me to hand the project-lead role I'd been holding over to a junior colleague\nwho joined barely a year ago.\nThe stated reason was 'we've got something more important for you' — but it's been two months\nand nobody has said a word about what that important thing is.\nI can't tell if I've just been quietly pushed aside, and part of me wonders if I should start\njob hunting. What do you think?",
+        "I get that I should just ask him directly, but how do I phrase it so it doesn't come across like I'm confronting him? Show me how the actual conversation could go, with example lines."
+      ],
+      "rubric": [
+        {
+          "name": "Empathy & balance",
+          "desc": "Respects the feelings involved without pushing rash conclusions (e.g., 'just quit')",
+          "weight": 0.35
+        },
+        {
+          "name": "Practical advice",
+          "desc": "Offers actionable next steps; the turn-2 dialogue example is realistic",
+          "weight": 0.4
+        },
+        {
+          "name": "Naturalness",
+          "desc": "Counseling tone that isn't preachy or robotic",
+          "weight": 0.25
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "daily-chat-01",
+    "pair_id": "daily-chat-01",
+    "track": "work",
+    "block": "writing",
+    "category": "daily-chat",
+    "subcategory": "smalltalk",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "daily",
+    "ko": {
+      "turns": [
+        "아 오늘 월요일이라 너무 피곤하다... 주말이 순삭이야",
+        "그니까. 근데 주말에 뭐 하긴 했는데 기억이 안 나는 게 더 슬퍼 ㅋㅋ 너는 주말에 쉬면 뭐가 제일 리프레시 돼?"
+      ],
+      "rubric": [
+        {
+          "name": "적절성",
+          "desc": "질문 의도에 맞는 유용한 답변인가",
+          "weight": 0.4
+        },
+        {
+          "name": "자연스러움",
+          "desc": "대화체가 자연스럽고 과하지 않은가",
+          "weight": 0.3
+        },
+        {
+          "name": "정확성",
+          "desc": "사실 오류나 위험한 조언이 없는가",
+          "weight": 0.3
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Ugh, it's Monday and I'm so tired... the weekend just evaporated",
+        "Right? And the sadder part is I actually did stuff this weekend but can barely remember any of it lol. What actually recharges you most on a day off?"
+      ],
+      "rubric": [
+        {
+          "name": "Relevance",
+          "desc": "Gives a useful answer that matches the intent of the question",
+          "weight": 0.4
+        },
+        {
+          "name": "Naturalness",
+          "desc": "Conversational tone that feels natural and not overdone",
+          "weight": 0.3
+        },
+        {
+          "name": "Accuracy",
+          "desc": "No factual errors or risky advice",
+          "weight": 0.3
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "daily-explain-01",
+    "pair_id": "daily-explain-01",
+    "track": "work",
+    "block": "writing",
+    "category": "daily-chat",
+    "subcategory": "explanation",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 1024,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "daily",
+    "ko": {
+      "turns": [
+        "초등학교 5학년 조카가 '은행 이자가 뭐야? 왜 은행에 돈 넣으면 돈이 늘어나?'\n라고 물어봤어. 조카한테 직접 말하듯이 설명해줘. 비유 하나 들어가면 좋겠고,\n'복리'까지만 살짝 맛보기로. 5문장 넘지 마."
+      ],
+      "rubric": [
+        {
+          "name": "눈높이",
+          "desc": "초5가 이해할 어휘·비유",
+          "weight": 0.4
+        },
+        {
+          "name": "정확성",
+          "desc": "단순화하되 틀리지 않은 설명",
+          "weight": 0.3
+        },
+        {
+          "name": "제약 준수",
+          "desc": "5문장 이내, 복리 맛보기 포함",
+          "weight": 0.3
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "My 10-year-old nephew asked me, 'What is bank interest? Why does money grow when you put it\nin a bank?' Explain it as if you're talking to him directly. Work in one analogy,\nand give just a tiny taste of 'compound interest'. Don't go over 5 sentences."
+      ],
+      "rubric": [
+        {
+          "name": "Age-appropriate pitch",
+          "desc": "Vocabulary and analogy a 10-year-old can understand",
+          "weight": 0.4
+        },
+        {
+          "name": "Accuracy",
+          "desc": "Simplified but not incorrect explanation",
+          "weight": 0.3
+        },
+        {
+          "name": "Constraint compliance",
+          "desc": "Within 5 sentences, includes the compound-interest teaser",
+          "weight": 0.3
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "daily-recipe-01",
+    "pair_id": "daily-recipe-01",
+    "track": "work",
+    "block": "writing",
+    "category": "daily-chat",
+    "subcategory": "practical",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "daily",
+    "ko": {
+      "turns": [
+        "냉장고에 계란 3개, 대파, 김치, 스팸 반 캔, 밥 한 공기 있어.\n15분 안에 만들 수 있는 저녁 메뉴 하나만 추천하고 만드는 법 알려줘.\n요리 초보라 불 조절 같은 것도 짚어줘."
+      ],
+      "rubric": [
+        {
+          "name": "실용성",
+          "desc": "주어진 재료·시간 제약에 맞는 현실적 레시피",
+          "weight": 0.4
+        },
+        {
+          "name": "초보 배려",
+          "desc": "불 조절·실수 포인트 등 초보 눈높이 안내",
+          "weight": 0.35
+        },
+        {
+          "name": "간결성",
+          "desc": "따라 하기 쉬운 구성, 과잉 정보 없음",
+          "weight": 0.25
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "I've got 3 eggs, some scallions, half an onion, a chunk of cheddar, and a bowl of leftover rice in the fridge.\nRecommend one dinner I can make in under 15 minutes and walk me through how to make it.\nI'm a total beginner at cooking, so cover things like heat control too."
+      ],
+      "rubric": [
+        {
+          "name": "Practicality",
+          "desc": "A realistic recipe that fits the given ingredients and time limit",
+          "weight": 0.4
+        },
+        {
+          "name": "Beginner-friendliness",
+          "desc": "Guidance pitched at a novice — heat control, common mistakes to avoid",
+          "weight": 0.35
+        },
+        {
+          "name": "Concision",
+          "desc": "Easy-to-follow structure, no information overload",
+          "weight": 0.25
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "daily-translate-01",
+    "pair_id": "daily-translate-01",
+    "track": "work",
+    "block": "writing",
+    "category": "daily-chat",
+    "subcategory": "translation",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 2048,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "daily",
+    "ko": {
+      "turns": [
+        "이 이메일을 영어로 번역해줘. 미국 거래처 담당자에게 보내는 거라\n정중하되 너무 딱딱하지 않게. 한국식 표현을 직역하지 말고 영어 비즈니스 관행에 맞게.\n\n---\n안녕하세요 마이클,\n지난주 보내주신 견적서 잘 받았습니다. 내부 검토 결과, 수량을 5,000개에서 8,000개로\n늘리는 방향으로 논의 중입니다. 이 경우 단가 조정이 가능할지 확인 부탁드립니다.\n또한 납기가 기존 6주에서 얼마나 단축될 수 있는지도 알려주시면 감사하겠습니다.\n회신 기다리겠습니다.\n김지수 드림\n---"
+      ],
+      "rubric": [
+        {
+          "name": "번역 정확성",
+          "desc": "정보 누락·왜곡 없음",
+          "weight": 0.4
+        },
+        {
+          "name": "영어 자연스러움",
+          "desc": "원어민 비즈니스 이메일다운 표현 (직역투 없음)",
+          "weight": 0.4
+        },
+        {
+          "name": "톤",
+          "desc": "정중하되 friendly한 균형",
+          "weight": 0.2
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "Turn these rough notes into an email to Michael, our contact at a US supplier.\nIt should be polite but not stiff, and read like a natural native-speaker business email\n(not like bullet points glued together).\n\n---\n- thank him for the quote he sent last week\n- after internal review, we're discussing raising the order from 5,000 units to 8,000\n- ask if the unit price can be adjusted at that volume\n- current lead time is 6 weeks — ask how much it could be shortened\n- say we look forward to his reply, sign off as Jamie Carter\n---"
+      ],
+      "rubric": [
+        {
+          "name": "Content accuracy",
+          "desc": "No information from the notes is dropped or distorted",
+          "weight": 0.4
+        },
+        {
+          "name": "Natural English",
+          "desc": "Reads like a native business email (no stilted, notes-pasted-together phrasing)",
+          "weight": 0.4
+        },
+        {
+          "name": "Tone",
+          "desc": "Balanced — courteous yet friendly",
+          "weight": 0.2
+        }
+      ],
+      "locale": "en"
+    }
+  },
+  {
+    "id": "daily-travel-01",
+    "pair_id": "daily-travel-01",
+    "track": "work",
+    "block": "writing",
+    "category": "daily-chat",
+    "subcategory": "planning",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": null,
+    "max_tokens": 4096,
+    "scoring": "judge",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "v1_category": "daily",
+    "ko": {
+      "turns": [
+        "10월 중순에 부모님(60대 후반) 모시고 2박 3일 국내 여행 가려고 해.\n서울 출발, 걷기는 하루 1만보 이내로, 부모님이 좋아하시는 건 온천·맛집·단풍.\n운전은 내가 해. 지역 추천 2곳과 그중 1곳의 상세 일정(일자별 오전/오후/저녁,\n이동시간 포함)을 짜줘. 식당은 '이런 종류의 집' 수준으로만 (특정 상호 남발 금지)."
+      ],
+      "rubric": [
+        {
+          "name": "제약 반영",
+          "desc": "연령·보행량·취향·계절(10월 단풍) 제약을 실제로 반영",
+          "weight": 0.4
+        },
+        {
+          "name": "일정 현실성",
+          "desc": "이동시간·동선이 물리적으로 말이 되는가",
+          "weight": 0.35
+        },
+        {
+          "name": "형식 준수",
+          "desc": "2곳 추천+1곳 상세, 상호 남발 금지",
+          "weight": 0.25
+        }
+      ],
+      "locale": "ko"
+    },
+    "en": {
+      "turns": [
+        "In mid-October I'm taking my parents (late 60s) on a 3-day, 2-night trip.\nWe leave from Boston, walking should stay under about 10,000 steps a day, and what they\nlove is hot springs/spas, good food, and fall foliage. I'll be doing all the driving.\nRecommend 2 regions, then build a detailed itinerary for one of them (morning/afternoon/evening\nfor each day, including drive times). For restaurants, keep it at the level of 'a place like this'\n(don't spray specific restaurant names)."
+      ],
+      "rubric": [
+        {
+          "name": "Constraint handling",
+          "desc": "Actually reflects the constraints: age, walking limit, tastes, season (October foliage)",
+          "weight": 0.4
+        },
+        {
+          "name": "Itinerary realism",
+          "desc": "Drive times and routing are physically plausible",
+          "weight": 0.35
+        },
+        {
+          "name": "Format compliance",
+          "desc": "2 regions recommended + 1 detailed itinerary, no name-dropping of specific venues",
+          "weight": 0.25
+        }
+      ],
+      "locale": "en"
+    }
+  }
+]

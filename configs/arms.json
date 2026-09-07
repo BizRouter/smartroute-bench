@@ -1,0 +1,51 @@
+{
+  "endpoint": {
+    "base_url": "https://api.bizrouter.ai/v1"
+  },
+  "arms": [
+    {
+      "id": "gpt56sol",
+      "label": "GPT-5.6 Sol (고정)",
+      "model": "openai/gpt-5.6-sol",
+      "wire": "chat"
+    },
+    {
+      "id": "opus5",
+      "label": "Claude Opus 5 (고정)",
+      "model": "anthropic/claude-opus-5",
+      "wire": "messages"
+    },
+    {
+      "id": "opus48",
+      "label": "Claude Opus 4.8 (고정)",
+      "model": "anthropic/claude-opus-4.8",
+      "wire": "messages"
+    },
+    {
+      "id": "route",
+      "label": "BizRouter 스마트 라우팅",
+      "model": "bizrouter/route",
+      "wire": "chat"
+    }
+  ],
+  "judges": [
+    {
+      "id": "j-opus5",
+      "model": "anthropic/claude-opus-5",
+      "wire": "messages",
+      "max_tokens": 8192
+    },
+    {
+      "id": "j-sol",
+      "model": "openai/gpt-5.6-sol",
+      "wire": "chat",
+      "max_tokens": 8192
+    },
+    {
+      "id": "j-gemini",
+      "model": "google/gemini-3.1-pro-preview",
+      "wire": "chat",
+      "max_tokens": 16384
+    }
+  ]
+}

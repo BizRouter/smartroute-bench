@@ -1,0 +1,344 @@
+[
+  {
+    "id": "cw-py-roman-01",
+    "pair_id": "cw-py-roman-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "algorithm",
+    "difficulty_prior": "easy",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import to_roman\n\nclass T(unittest.TestCase):\n    def test_small(self):\n        self.assertEqual(to_roman(1), \"I\")\n        self.assertEqual(to_roman(4), \"IV\")\n        self.assertEqual(to_roman(9), \"IX\")\n    def test_mid(self):\n        self.assertEqual(to_roman(58), \"LVIII\")\n        self.assertEqual(to_roman(1994), \"MCMXCIV\")\n    def test_max(self):\n        self.assertEqual(to_roman(3999), \"MMMCMXCIX\")\n    def test_range(self):\n        for bad in (0, -1, 4000):\n            with self.assertRaises(ValueError):\n                to_roman(bad)\n"
+    },
+    "ko": {
+      "turns": [
+        "정수를 로마 숫자 문자열로 바꾸는 `to_roman(n: int) -> str` 을 파이썬으로 써 줘.\n1 이상 3999 이하만 들어와. 범위를 벗어나면 `ValueError` 를 던져.\n\npython 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write `to_roman(n: int) -> str` in Python, converting an integer to a Roman\nnumeral. Input is 1 to 3999 inclusive; raise `ValueError` outside that range.\n\nReturn the whole thing as a single python code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-py-dedupe-01",
+    "pair_id": "cw-py-dedupe-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "data-rules",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import merge_customers\n\nclass T(unittest.TestCase):\n    def test_email_case(self):\n        out = merge_customers([\n            {\"name\": \"김민수\", \"email\": \"A@x.com\", \"phone\": \"\", \"orders\": 2},\n            {\"name\": \"민수\", \"email\": \"a@X.com\", \"phone\": \"\", \"orders\": 3}])\n        self.assertEqual(len(out), 1)\n        self.assertEqual(out[0][\"orders\"], 5)\n        self.assertEqual(out[0][\"email\"], \"a@x.com\")\n        self.assertEqual(out[0][\"name\"], \"김민수\")\n    def test_phone_forms(self):\n        out = merge_customers([\n            {\"name\": \"a\", \"email\": \"\", \"phone\": \"010-1234-5678\", \"orders\": 1},\n            {\"name\": \"bb\", \"email\": \"\", \"phone\": \"+82 10 1234 5678\", \"orders\": 1},\n            {\"name\": \"ccc\", \"email\": \"\", \"phone\": \"01012345678\", \"orders\": 1}])\n        self.assertEqual(len(out), 1)\n        self.assertEqual(out[0][\"orders\"], 3)\n        self.assertEqual(out[0][\"phone\"], \"01012345678\")\n        self.assertEqual(out[0][\"name\"], \"ccc\")\n    def test_same_name_is_not_same_customer(self):\n        out = merge_customers([\n            {\"name\": \"이서연\", \"email\": \"s1@x.com\", \"phone\": \"\", \"orders\": 1},\n            {\"name\": \"이서연\", \"email\": \"s2@x.com\", \"phone\": \"\", \"orders\": 1}])\n        self.assertEqual(len(out), 2)\n    def test_order_preserved(self):\n        out = merge_customers([\n            {\"name\": \"z\", \"email\": \"z@x.com\", \"phone\": \"\", \"orders\": 1},\n            {\"name\": \"y\", \"email\": \"y@x.com\", \"phone\": \"\", \"orders\": 1},\n            {\"name\": \"zz\", \"email\": \"Z@X.com\", \"phone\": \"\", \"orders\": 1}])\n        self.assertEqual([r[\"email\"] for r in out], [\"z@x.com\", \"y@x.com\"])\n    def test_empty(self):\n        self.assertEqual(merge_customers([]), [])\n"
+    },
+    "ko": {
+      "turns": [
+        "고객 레코드 목록에서 중복을 합치는 `merge_customers(rows: list[dict]) -> list[dict]` 를\n파이썬으로 써 줘. 각 레코드는 `name`·`email`·`phone`·`orders` 키를 가져 (`email`·`phone` 은 빈 문자열일 수 있어).\n\n같은 고객으로 볼지 판단하는 규칙 (위에서부터 우선):\n\n| # | 규칙 | 설명 |\n|---|---|---|\n| 1 | 이메일 | 대소문자 무시하고 같으면 같은 고객. 앞뒤 공백은 무시. |\n| 2 | 휴대폰 | 숫자만 남겼을 때 같으면 같은 고객. `010-1234-5678`·`01012345678`·`+82 10 1234 5678` 는 모두 같음(국가번호 82 는 떼고 앞에 0 을 붙여 비교). |\n| 3 | 그 외 | 이름이 같아도 다른 고객으로 본다. |\n\n병합할 때 남길 값:\n\n| 필드 | 규칙 |\n|---|---|\n| `name` | 공백을 뗀 뒤 더 긴 쪽. 길이가 같으면 먼저 나온 쪽. |\n| `email` | 소문자로 통일. 값이 있는 것 중 먼저 나온 것. |\n| `phone` | 숫자만 남긴 정규형(`01012345678`). 값이 있는 것 중 먼저 나온 것. |\n| `orders` | 두 쪽 값을 더한다. |\n\n반환은 입력에서 처음 등장한 순서를 유지한 리스트.\n\npython 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write `merge_customers(rows: list[dict]) -> list[dict]` in Python, collapsing\nduplicate customer records. Each record has `name`, `email`, `phone` and\n`orders` keys (`email` and `phone` may be empty strings).\n\nRules for deciding two records are the same customer (first match wins):\n\n| # | Rule | Detail |\n|---|---|---|\n| 1 | email | Same when compared case-insensitively, surrounding whitespace ignored. |\n| 2 | phone | Same when reduced to digits only. `010-1234-5678`, `01012345678` and `+82 10 1234 5678` are all the same number (drop country code 82 and prefix a 0 before comparing). |\n| 3 | otherwise | Matching names alone do NOT make two records the same customer. |\n\nWhat to keep when merging:\n\n| Field | Rule |\n|---|---|\n| `name` | The longer one after stripping whitespace; on a tie, the earlier record. |\n| `email` | Lower-cased. First non-empty value. |\n| `phone` | Digits-only normalised form (`01012345678`). First non-empty value. |\n| `orders` | Sum of both values. |\n\nReturn a list preserving first-appearance order from the input.\n\nReturn the whole thing as a single python code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-py-slot-01",
+    "pair_id": "cw-py-slot-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "intervals",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import first_free\n\nclass T(unittest.TestCase):\n    def test_empty_day(self):\n        self.assertEqual(first_free([], 60), 540)\n    def test_gap_after_first(self):\n        self.assertEqual(first_free([(540, 600)], 30), 600)\n    def test_unsorted_and_overlapping(self):\n        busy = [(660, 720), (540, 600), (570, 690)]\n        self.assertEqual(first_free(busy, 30), 720)\n    def test_exact_fit(self):\n        self.assertEqual(first_free([(540, 600), (630, 1080)], 30), 600)\n    def test_too_small(self):\n        self.assertIsNone(first_free([(540, 600), (620, 1080)], 30))\n    def test_none_when_full(self):\n        self.assertIsNone(first_free([(540, 1080)], 10))\n    def test_ignores_outside_hours(self):\n        self.assertEqual(first_free([(0, 540)], 60), 540)\n"
+    },
+    "ko": {
+      "turns": [
+        "회의 가능한 첫 시간대를 찾는 `first_free(busy, duration, day_start=9*60, day_end=18*60)` 를\n파이썬으로 써 줘.\n\n- `busy` 는 `(시작분, 끝분)` 튜플 리스트야. 정렬돼 있지 않고 서로 겹칠 수도 있어.\n- 분 단위 정수고, 자정 기준이야 (9시 = 540).\n- `duration` 분 이상 연속으로 빈 첫 구간의 시작 분을 돌려줘.\n- 하루 안에 그런 구간이 없으면 `None`.\n\npython 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write `first_free(busy, duration, day_start=9*60, day_end=18*60)` in Python.\n\n- `busy` is a list of `(start_min, end_min)` tuples. It is not sorted and the\n  intervals may overlap.\n- Values are integer minutes from midnight (9am = 540).\n- Return the start minute of the first gap that fits `duration` minutes.\n- Return `None` when no such gap exists inside the day.\n\nReturn the whole thing as a single python code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-js-diff-01",
+    "pair_id": "cw-js-diff-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "object-diff",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "node_tests",
+      "tests": "const assert = require(\"assert\");\nconst { diff } = require(\"./solution.js\");\nassert.deepStrictEqual(diff({a: 1}, {a: 1}), {added: {}, removed: {}, changed: {}});\nassert.deepStrictEqual(diff({a: 1}, {a: 2}), {added: {}, removed: {}, changed: {a: [1, 2]}});\nassert.deepStrictEqual(diff({}, {b: 3}), {added: {b: 3}, removed: {}, changed: {}});\nassert.deepStrictEqual(diff({c: 4}, {}), {added: {}, removed: {c: 4}, changed: {}});\n// an undefined value is still a present key, so this is \"changed\", not \"added\"\nassert.deepStrictEqual(diff({d: undefined}, {d: 1}),\n                       {added: {}, removed: {}, changed: {d: [undefined, 1]}});\n// ...and dropping to undefined is a change, not a removal\nassert.deepStrictEqual(diff({e: 1}, {e: undefined}),\n                       {added: {}, removed: {}, changed: {e: [1, undefined]}});\nconst before = {f: 1};\ndiff(before, {f: 2});\nassert.deepStrictEqual(before, {f: 1}, \"must not mutate inputs\");\nconsole.log(\"ok\");\n"
+    },
+    "ko": {
+      "turns": [
+        "두 평면 객체를 비교해 바뀐 것만 돌려주는 `diff(before, after)` 를 자바스크립트로 써 줘.\n`module.exports = { diff }` 로 내보내.\n\n반환 형태: `{ added: {키: 값}, removed: {키: 값}, changed: {키: [이전, 이후]} }`\n- `added` = after 에만 있는 키, `removed` = before 에만 있는 키\n- `changed` = 양쪽에 있고 값이 다른 키 (비교는 `===`)\n- 값이 `undefined` 인 키도 「있는」 키로 취급해\n\njavascript 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write `diff(before, after)` in JavaScript, comparing two flat objects and\nreturning only what changed. Export it with `module.exports = { diff }`.\n\nShape: `{ added: {key: value}, removed: {key: value}, changed: {key: [before, after]} }`\n- `added` = keys only in after, `removed` = keys only in before\n- `changed` = keys in both whose values differ (compare with `===`)\n- A key whose value is `undefined` still counts as present\n\nReturn the whole thing as a single javascript code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-js-currency-01",
+    "pair_id": "cw-js-currency-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "formatting",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "ko": {
+      "turns": [
+        "최소 단위 정수를 표시용 문자열로 바꾸는 `formatKRW(minor)` 를 자바스크립트로 써 줘.\n`module.exports = { formatKRW }`.\n\n- 원화는 최소 단위가 1원이야. `1234567` → `\"1,234,567원\"`\n- 음수는 앞에 마이너스: `-5000` → `\"-5,000원\"`\n- 0 은 `\"0원\"`\n- 정수가 아니거나 숫자가 아니면 `TypeError` 를 던져\n\njavascript 코드블록 하나로 전체 코드를 줘."
+      ],
+      "check": {
+        "type": "node_tests",
+        "tests": "const assert = require(\"assert\");\nconst { formatKRW } = require(\"./solution.js\");\nassert.strictEqual(formatKRW(1234567), \"1,234,567원\");\nassert.strictEqual(formatKRW(-5000), \"-5,000원\");\nassert.strictEqual(formatKRW(0), \"0원\");\nassert.strictEqual(formatKRW(999), \"999원\");\nassert.strictEqual(formatKRW(1000), \"1,000원\");\nfor (const bad of [1.5, \"100\", null, undefined, NaN]) {\n  assert.throws(() => formatKRW(bad), TypeError, `should reject ${String(bad)}`);\n}\nconsole.log(\"ok\");\n"
+      }
+    },
+    "en": {
+      "turns": [
+        "Write `formatUSD(minorUnits)` in JavaScript, turning an integer number of\ncents into a display string. Export with `module.exports = { formatUSD }`.\n\n- `1234567` → `\"$12,345.67\"`\n- Negatives keep the sign outside the symbol: `-5000` → `\"-$50.00\"`\n- `0` → `\"$0.00\"`\n- Throw `TypeError` for anything that is not an integer\n\nReturn the whole thing as a single javascript code block."
+      ],
+      "check": {
+        "type": "node_tests",
+        "tests": "const assert = require(\"assert\");\nconst { formatUSD } = require(\"./solution.js\");\nassert.strictEqual(formatUSD(1234567), \"$12,345.67\");\nassert.strictEqual(formatUSD(-5000), \"-$50.00\");\nassert.strictEqual(formatUSD(0), \"$0.00\");\nassert.strictEqual(formatUSD(99), \"$0.99\");\nassert.strictEqual(formatUSD(100000), \"$1,000.00\");\nfor (const bad of [1.5, \"100\", null, undefined, NaN]) {\n  assert.throws(() => formatUSD(bad), TypeError, `should reject ${String(bad)}`);\n}\nconsole.log(\"ok\");\n"
+      }
+    }
+  },
+  {
+    "id": "cw-sql-topn-01",
+    "pair_id": "cw-sql-topn-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "window-function",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "sql",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "sql_result",
+      "setup": "CREATE TABLE sales (region TEXT, rep TEXT, amount INTEGER);INSERT INTO sales VALUES ('east','ann',400),('east','bob',500),('east','cho',400),('west','dee',900),('west','eli',100),('west','fay',900),('north','gus',50);",
+      "expected": [
+        [
+          "east",
+          "bob",
+          500
+        ],
+        [
+          "east",
+          "ann",
+          400
+        ],
+        [
+          "north",
+          "gus",
+          50
+        ],
+        [
+          "west",
+          "dee",
+          900
+        ],
+        [
+          "west",
+          "fay",
+          900
+        ]
+      ]
+    },
+    "ko": {
+      "turns": [
+        "`sales(region, rep, amount)` 테이블에서 **지역별 매출 상위 2명**을 뽑는 SQLite 쿼리를 써 줘.\n\n- 컬럼 순서: `region`, `rep`, `amount`\n- 같은 금액이면 `rep` 이름 오름차순으로 순위를 매기고, 동점이라도 지역별로 2행까지만.\n- 정렬: `region` 오름차순, 그 안에서 `amount` 내림차순, 그 다음 `rep` 오름차순.\n\nsql 코드블록 하나로 쿼리만 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write a SQLite query over `sales(region, rep, amount)` returning the **top 2\nreps by amount within each region**.\n\n- Column order: `region`, `rep`, `amount`\n- Break ties on `amount` by `rep` ascending, and keep at most 2 rows per\n  region even when tied.\n- Order by `region` ascending, then `amount` descending, then `rep` ascending.\n\nReturn just the query as a single sql code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-sql-gap-01",
+    "pair_id": "cw-sql-gap-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "gaps",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "sql",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "sql_result",
+      "setup": "CREATE TABLE invoices (seq INTEGER);INSERT INTO invoices VALUES (1),(2),(3),(7),(8),(12),(12),(13);",
+      "expected": [
+        [
+          4,
+          6
+        ],
+        [
+          9,
+          11
+        ]
+      ]
+    },
+    "ko": {
+      "turns": [
+        "`invoices(seq)` 에 발행된 번호가 들어 있어. 중간에 **빠진 구간**을 찾는 SQLite 쿼리를 써 줘.\n\n- 컬럼 순서: `gap_start`, `gap_end` (빠진 첫 번호와 마지막 번호, 둘 다 포함)\n- 중복된 번호가 있을 수 있어. 앞뒤로 번호가 없는 구간은 세지 않아 (있는 번호들 사이만).\n- `gap_start` 오름차순 정렬.\n- 위 데이터라면 4~6 과 9~11 두 구간이 나와야 해.\n\nsql 코드블록 하나로 쿼리만 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "`invoices(seq)` holds issued invoice numbers. Write a SQLite query that finds\nthe **missing ranges**.\n\n- Column order: `gap_start`, `gap_end` (first and last missing number, both\n  inclusive)\n- Duplicates may exist. Only count gaps between numbers that are present, not\n  before the first or after the last.\n- Order by `gap_start` ascending.\n- On the data above the answer is 4-6 and 9-11.\n\nReturn just the query as a single sql code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-go-pool-01",
+    "pair_id": "cw-go-pool-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "concurrency",
+    "difficulty_prior": "hard",
+    "mode": "chat",
+    "language": "go",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "go_tests",
+      "package": "main",
+      "tests": "package main\n\nimport (\n\t\"sync/atomic\"\n\t\"testing\"\n)\n\nfunc TestOrder(t *testing.T) {\n\tin := []int{1, 2, 3, 4, 5, 6, 7, 8}\n\tgot := MapConcurrent(in, 3, func(x int) int { return x * 10 })\n\tfor i, v := range in {\n\t\tif got[i] != v*10 {\n\t\t\tt.Fatalf(\"index %d: got %d want %d\", i, got[i], v*10)\n\t\t}\n\t}\n}\n\nfunc TestLimitRespected(t *testing.T) {\n\tvar cur, max int64\n\tf := func(x int) int {\n\t\tn := atomic.AddInt64(&cur, 1)\n\t\tfor {\n\t\t\tm := atomic.LoadInt64(&max)\n\t\t\tif n <= m || atomic.CompareAndSwapInt64(&max, m, n) {\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tfor i := 0; i < 200000; i++ {\n\t\t\t_ = i\n\t\t}\n\t\tatomic.AddInt64(&cur, -1)\n\t\treturn x\n\t}\n\tMapConcurrent(make([]int, 50), 4, f)\n\tif atomic.LoadInt64(&max) > 4 {\n\t\tt.Fatalf(\"concurrency %d exceeded limit 4\", max)\n\t}\n}\n\nfunc TestZeroLimit(t *testing.T) {\n\tgot := MapConcurrent([]int{1, 2}, 0, func(x int) int { return x })\n\tif len(got) != 2 {\n\t\tt.Fatalf(\"got %v\", got)\n\t}\n}\n\nfunc TestEmpty(t *testing.T) {\n\tif got := MapConcurrent(nil, 2, func(x int) int { return x }); len(got) != 0 {\n\t\tt.Fatalf(\"got %v\", got)\n\t}\n}\n"
+    },
+    "ko": {
+      "turns": [
+        "Go 로 `MapConcurrent(in []int, limit int, f func(int) int) []int` 을 써 줘.\n\n- 최대 `limit` 개만 동시에 돌려. `limit` 이 0 이하면 1 로 취급.\n- 반환 슬라이스는 **입력 순서를 그대로** 유지해야 해.\n- 패키지는 `main`, 파일 하나로.\n\ngo 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write `MapConcurrent(in []int, limit int, f func(int) int) []int` in Go.\n\n- Run at most `limit` calls concurrently; treat `limit <= 0` as 1.\n- The returned slice must preserve **input order**.\n- Package `main`, single file.\n\nReturn the whole thing as a single go code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-py-retry-01",
+    "pair_id": "cw-py-retry-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "error-handling",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "python",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "python_tests",
+      "tests": "import unittest\nfrom solution import retry\n\nclass T(unittest.TestCase):\n    def test_success_first_try(self):\n        slept = []\n        self.assertEqual(retry(lambda: 7, sleep=slept.append), 7)\n        self.assertEqual(slept, [])\n    def test_succeeds_after_failures(self):\n        calls, slept = [], []\n        def fn():\n            calls.append(1)\n            if len(calls) < 3:\n                raise RuntimeError(\"nope\")\n            return \"ok\"\n        self.assertEqual(retry(fn, attempts=3, base=0.5, sleep=slept.append), \"ok\")\n        self.assertEqual(slept, [0.5, 1.0])\n    def test_reraises_last(self):\n        slept = []\n        def fn():\n            raise KeyError(\"last\")\n        with self.assertRaises(KeyError):\n            retry(fn, attempts=2, base=1.0, sleep=slept.append)\n        # one sleep only: none after the final attempt\n        self.assertEqual(slept, [1.0])\n    def test_bad_attempts(self):\n        with self.assertRaises(ValueError):\n            retry(lambda: 1, attempts=0)\n"
+    },
+    "ko": {
+      "turns": [
+        "재시도 헬퍼 `retry(fn, attempts=3, base=0.5, sleep=time.sleep)` 를 파이썬으로 써 줘.\n\n- `fn()` 을 부르고 성공하면 결과를 그대로 돌려줘.\n- 예외가 나면 `sleep(대기시간)` 뒤에 다시 시도해. 대기시간은 `base * 2**(시도횟수-1)`\n  (첫 실패 뒤 `base`, 두 번째 실패 뒤 `base*2`, …).\n- `attempts` 번 모두 실패하면 **마지막 예외를 그대로 다시 던져**.\n- 마지막 시도 뒤에는 잠들지 마 (기다려도 소용없으니까).\n- `attempts` 가 1 미만이면 `ValueError`.\n\npython 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write a retry helper `retry(fn, attempts=3, base=0.5, sleep=time.sleep)` in Python.\n\n- Call `fn()`; on success return its result unchanged.\n- On an exception, call `sleep(delay)` and try again. Delay is\n  `base * 2**(attempt_number - 1)` — `base` after the first failure,\n  `base*2` after the second, and so on.\n- If every one of `attempts` tries fails, **re-raise the last exception**.\n- Do not sleep after the final attempt — there is nothing left to wait for.\n- Raise `ValueError` when `attempts` is less than 1.\n\nReturn the whole thing as a single python code block."
+      ]
+    }
+  },
+  {
+    "id": "cw-js-cursor-01",
+    "pair_id": "cw-js-cursor-01",
+    "track": "work",
+    "block": "code",
+    "category": "code-write",
+    "subcategory": "pagination",
+    "difficulty_prior": "medium",
+    "mode": "chat",
+    "language": "javascript",
+    "max_tokens": 4096,
+    "scoring": "deterministic",
+    "split": "dev",
+    "source": "authored",
+    "length_band": "short",
+    "check": {
+      "type": "node_tests",
+      "tests": "const assert = require(\"assert\");\nconst { page } = require(\"./solution.js\");\nconst rows = [1,2,3,4,5].map(id => ({id, v: `v${id}`}));\nlet r = page(rows, null, 2);\nassert.deepStrictEqual(r.items.map(x => x.id), [1,2]);\nassert.strictEqual(r.nextCursor, 2);\nr = page(rows, 2, 2);\nassert.deepStrictEqual(r.items.map(x => x.id), [3,4]);\nassert.strictEqual(r.nextCursor, 4);\nr = page(rows, 4, 2);\nassert.deepStrictEqual(r.items.map(x => x.id), [5]);\nassert.strictEqual(r.nextCursor, null, \"last page has no next cursor\");\nr = page(rows, 5, 2);\nassert.deepStrictEqual(r.items, []);\nassert.strictEqual(r.nextCursor, null);\nr = page(rows, 99, 2);\nassert.deepStrictEqual(r.items, []);\nassert.strictEqual(r.nextCursor, null);\nassert.throws(() => page(rows, null, 0), RangeError);\nconsole.log(\"ok\");\n"
+    },
+    "ko": {
+      "turns": [
+        "커서 기반 페이지네이션 헬퍼 `page(rows, cursor, size)` 를 자바스크립트로 써 줘.\n`module.exports = { page }`.\n\n- `rows` 는 `{id, ...}` 배열이고 `id` 로 오름차순 정렬돼 있어.\n- `cursor` 가 `null` 이면 처음부터, 아니면 **그 id 다음**부터.\n- 반환: `{ items, nextCursor }`. 더 없으면 `nextCursor` 는 `null`.\n- `size` 가 1 미만이면 `RangeError`.\n- 커서가 목록에 없는 id 면 `{ items: [], nextCursor: null }`.\n\njavascript 코드블록 하나로 전체 코드를 줘."
+      ]
+    },
+    "en": {
+      "turns": [
+        "Write a cursor pagination helper `page(rows, cursor, size)` in JavaScript.\nExport with `module.exports = { page }`.\n\n- `rows` is an array of `{id, ...}` sorted ascending by `id`.\n- A `null` cursor starts from the beginning; otherwise start **after** that id.\n- Return `{ items, nextCursor }`; `nextCursor` is `null` when nothing follows.\n- Throw `RangeError` when `size` is less than 1.\n- A cursor id that is not in the list yields `{ items: [], nextCursor: null }`.\n\nReturn the whole thing as a single javascript code block."
+      ]
+    }
+  }
+]
