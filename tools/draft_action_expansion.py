@@ -21,8 +21,8 @@ EN_MULTI = ("You are a tool-calling agent. Output exactly one JSON object and no
             "repeated calls to one tool follow the order the user mentioned them. No prose, greeting, or code fence.")
 KO_NONE = "요청을 처리할 도구가 없으면 {\"tool\": null, \"arguments\": {}} 를 출력해."
 EN_NONE = "If no tool can serve the request, output {\"tool\": null, \"arguments\": {}}."
-KO_TODAY = "오늘은 2026-10-05(월)이다. 날짜는 YYYY-MM-DD, 시각은 24시간제 HH:MM으로 쓴다."
-EN_TODAY = "Today is 2026-10-05 (Monday). Write dates as YYYY-MM-DD and times as 24-hour HH:MM."
+KO_TODAY = "오늘은 2026-10-05(월)이다. 연도가 없는 날짜는 오늘 이후 가장 가까운 날짜로 해석한다. 날짜는 YYYY-MM-DD, 시각은 24시간제 HH:MM으로 쓴다."
+EN_TODAY = "Today is 2026-10-05 (Monday). A date without a year means its next occurrence on or after today. Write dates as YYYY-MM-DD and times as 24-hour HH:MM."
 KO_NEXT = "지금 실행할 다음 도구 하나만 출력해. 목표가 이미 달성됐으면 {\"tool\": null, \"arguments\": {}} 를 출력해."
 EN_NEXT = "Output only the next tool to run now. If the goal is already met, output {\"tool\": null, \"arguments\": {}}."
 
