@@ -15,7 +15,7 @@
   "source": "authored",
   "ko": {
    "turns": [
-    "어제 14:00~16:30 결제 장애로 주문이 실패한 고객에게 보낼 사과 안내문을 써 줘. 원인은 결제대행사 연동 서버 장애였고 지금은 복구됐어. 보상으로 10,000원 쿠폰을 지급하고, 쿠폰 유효기간은 11월 30일까지야. 600자 이내로 써."
+    "어제 14:00~16:30 결제 장애로 주문이 실패한 고객에게 보낼 사과 안내문을 써 줘. 원인은 결제대행사 연동 서버 장애였고 지금은 복구됐어. 보상으로 10,000원 쿠폰을 지급하고, 쿠폰 유효기간은 2026년 11월 30일까지야. 600자 이하로 써."
    ],
    "rubric": [
     {
@@ -53,7 +53,7 @@
   },
   "en": {
    "turns": [
-    "Write an apology notice to customers whose orders failed during yesterday's payment outage from 14:00 to 16:30. The cause was an outage at the payment gateway's integration server, and service is restored. As compensation each customer gets a 10,000 won coupon, valid until November 30. Keep it under 1,200 characters."
+    "Write an apology notice to customers whose orders failed during yesterday's payment outage from 14:00 to 16:30. The cause was an outage at the payment gateway's integration server, and service is restored. As compensation each customer gets a 10,000 won coupon, valid until November 30, 2026. Keep it to 1,200 characters or fewer."
    ],
    "rubric": [
     {
@@ -394,7 +394,7 @@
   "source": "authored",
   "ko": {
    "turns": [
-    "사내 CLI 도구 'bz-sync'의 README 설치·사용 절을 써 줘. macOS(Homebrew)와 Linux(.deb) 설치, 최초 로그인(bz-sync login), 폴더 동기화(bz-sync push <폴더>), 자주 나는 오류 2개(권한 거부, 토큰 만료)와 해결법을 넣어."
+    "사내 CLI 도구 'bz-sync'의 README 설치·사용 절을 써 줘. macOS(Homebrew: `brew install bizcorp/tools/bz-sync`)와 Linux(.deb: 사내 저장소 https://pkg.bizcorp.internal/bz-sync_1.4.0_amd64.deb) 설치, 최초 로그인(bz-sync login), 폴더 동기화(bz-sync push <폴더>), 자주 나는 오류 2개(동기화할 폴더에 읽기 권한이 없을 때의 권한 거부, 로그인 토큰 만료)와 해결법을 넣어."
    ],
    "rubric": [
     {
@@ -416,7 +416,7 @@
   },
   "en": {
    "turns": [
-    "Write the install and usage sections of the README for an internal CLI tool, 'bz-sync'. Cover macOS (Homebrew) and Linux (.deb) installation, first login (bz-sync login), syncing a folder (bz-sync push <folder>), and two common errors (permission denied, expired token) with fixes."
+    "Write the install and usage sections of the README for an internal CLI tool, 'bz-sync'. Cover macOS (Homebrew: `brew install bizcorp/tools/bz-sync`) and Linux (.deb from the internal repository https://pkg.bizcorp.internal/bz-sync_1.4.0_amd64.deb) installation, first login (bz-sync login), syncing a folder (bz-sync push <folder>), and two common errors (permission denied when the folder to sync is not readable, and an expired login token) with fixes."
    ],
    "rubric": [
     {
@@ -634,19 +634,24 @@
    ],
    "rubric": [
     {
+     "name": "요구 충족",
+     "desc": "고양이가 주인공이고 나눔의 교훈이 담겼는가",
+     "weight": 0.2
+    },
+    {
      "name": "창의성",
      "desc": "아이가 흥미를 느낄 만한 이야기인가",
-     "weight": 0.4
+     "weight": 0.35
     },
     {
      "name": "교훈",
      "desc": "교훈이 설교조 없이 자연스러운가",
-     "weight": 0.35
+     "weight": 0.25
     },
     {
      "name": "눈높이",
      "desc": "다섯 살에게 맞는 어휘·문장인가",
-     "weight": 0.25
+     "weight": 0.2
     }
    ],
    "check": {
@@ -661,23 +666,28 @@
   },
   "en": {
    "turns": [
-    "Write a short fairy tale with a cat as the hero, to read to a five-year-old, with a natural lesson about sharing. Under 900 characters."
+    "Write a short fairy tale with a cat as the hero, to read to a five-year-old, with a natural lesson about sharing. At most 900 characters."
    ],
    "rubric": [
     {
+     "name": "Requirements",
+     "desc": "The cat is the hero and the story carries a lesson about sharing",
+     "weight": 0.2
+    },
+    {
      "name": "Creativity",
      "desc": "A story a child would enjoy",
-     "weight": 0.4
+     "weight": 0.35
     },
     {
      "name": "Lesson",
      "desc": "The lesson lands without preaching",
-     "weight": 0.35
+     "weight": 0.25
     },
     {
      "name": "Level",
      "desc": "Vocabulary and sentences fit a five-year-old",
-     "weight": 0.25
+     "weight": 0.2
     }
    ],
    "check": {

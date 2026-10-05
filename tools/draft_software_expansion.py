@@ -69,8 +69,8 @@ def run_snippet(snippet):
 
 # ---- debugging (fix the given code) -------------------------------------------------------------
 code_item("swx-debug-01", "debug", "medium",
-    "아래 페이지네이션 함수는 1페이지부터 세는데, 1페이지를 요청하면 두 번째 묶음이 나온다. 원인을 짚고 고친 전체 코드를 줘.\n\n```python\ndef paginate(items, page, size):\n    \"\"\"page는 1부터 센다. 범위를 벗어나면 빈 리스트.\"\"\"\n    start = page * size\n    return items[start:start + size]\n```",
-    "This pagination function counts pages from 1, but asking for page 1 returns the second batch. Identify the cause and give the complete fixed code.\n\n```python\ndef paginate(items, page, size):\n    \"\"\"page counts from 1. Out of range returns an empty list.\"\"\"\n    start = page * size\n    return items[start:start + size]\n```",
+    "아래 페이지네이션 함수는 1페이지부터 센다(page와 size는 정수, size는 1 이상, page가 1보다 작으면 빈 리스트). 그런데 1페이지를 요청하면 두 번째 묶음이 나온다. 원인을 짚고 고친 전체 코드를 줘.\n\n```python\ndef paginate(items, page, size):\n    \"\"\"page는 1부터 센다. 범위를 벗어나면 빈 리스트.\"\"\"\n    start = page * size\n    return items[start:start + size]\n```",
+    "This pagination function counts pages from 1 (page and size are integers, size is at least 1, and a page below 1 returns an empty list), but asking for page 1 returns the second batch. Identify the cause and give the complete fixed code.\n\n```python\ndef paginate(items, page, size):\n    \"\"\"page counts from 1. Out of range returns an empty list.\"\"\"\n    start = page * size\n    return items[start:start + size]\n```",
     """
     import unittest
     from solution import paginate
@@ -78,12 +78,13 @@ code_item("swx-debug-01", "debug", "medium",
         def test_first(self): self.assertEqual(paginate(list(range(10)), 1, 3), [0, 1, 2])
         def test_last(self): self.assertEqual(paginate(list(range(10)), 4, 3), [9])
         def test_out(self): self.assertEqual(paginate(list(range(10)), 5, 3), [])
+        def test_below_one(self): self.assertEqual(paginate(list(range(10)), 0, 3), [])
     """,
-    "def paginate(items, page, size):\n    start = (page - 1) * size\n    return items[start:start + size]\n",
+    "def paginate(items, page, size):\n    if page < 1:\n        return []\n    start = (page - 1) * size\n    return items[start:start + size]\n",
     "def paginate(items, page, size):\n    start = page * size\n    return items[start:start + size]\n")
 code_item("swx-debug-02", "debug", "medium",
-    "태그를 붙이는 함수인데, 서로 다른 글에 붙인 태그가 다음 호출에 섞여 나온다. 원인을 짚고 고친 전체 코드를 줘.\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```",
-    "This tagging helper leaks tags between calls for different posts. Identify the cause and give the complete fixed code.\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```",
+    "태그를 붙이는 함수인데, 서로 다른 글에 붙인 태그가 다음 호출에 섞여 나온다. tags를 생략하면 호출마다 새 빈 리스트를 쓰고, tags를 넘기면 그 리스트에 붙여 돌려줘야 한다. 원인은 코드 주석으로 짧게 쓰고 고친 전체 코드를 줘.\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```",
+    "This tagging helper leaks tags between calls for different posts. When tags is omitted, each call must use a new empty list; when a list is passed, append to it and return it. State the cause in a short code comment and give the complete fixed code.\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```",
     """
     import unittest
     from solution import add_tag
@@ -175,8 +176,8 @@ code_item("swx-impl-01", "implement", "hard",
     """,
     "def merge_labeled(intervals):\n    out = []\n    for s, e, l in sorted(intervals):\n        if out and s <= out[-1][1]:\n            ps, pe, pl = out[-1]\n            out[-1] = (ps, max(pe, e), pl | {l})\n        else:\n            out.append((s, e, {l}))\n    return [(s, e, sorted(l)) for s, e, l in out]\n")
 code_item("swx-impl-02", "implement", "hard",
-    "한국어 금액 표기를 정수로 바꾸는 `parse_krw(text)`를 써 줘. 예: \"1억 2천3백만 5천원\" → 123005000, \"3만원\" → 30000, \"12,500원\" → 12500, \"1억원\" → 100000000. 단위는 천·백·십(만 아래)과 만·억이다. 공백과 쉼표는 무시하고, 끝의 \"원\"은 있어도 없어도 된다. 해석할 수 없는 입력은 ValueError를 던져.",
-    "Write `parse_krw(text)` that turns a Korean won amount into an integer. Examples: \"1억 2천3백만 5천원\" → 123005000, \"3만원\" → 30000, \"12,500원\" → 12500, \"1억원\" → 100000000. Units are 천/백/십 (below 만) and 만/억. Ignore spaces and commas; a trailing \"원\" is optional. Raise ValueError for input that cannot be parsed.",
+    "한국어 금액 표기를 정수로 바꾸는 `parse_krw(text)`를 써 줘. 예: \"1억 2천3백만 5천원\" → 123005000, \"3만원\" → 30000, \"12,500원\" → 12500, \"1억원\" → 100000000. 숫자는 아라비아 숫자만 쓴다. 공백과 쉼표를 지우고 끝의 \"원\" 하나를 뗀 뒤, 억 묶음 → 만 묶음 → 나머지 순서로 각 묶음이 많아야 한 번 나온다. 각 묶음은 숫자 또는 천·백·십 단위의 조합(천→백→십 순서, 숫자 생략 시 1)으로 쓴다. 이 형식이 아니면 ValueError를 던져.",
+    "Write `parse_krw(text)` that turns a Korean won amount into an integer. Examples: \"1억 2천3백만 5천원\" → 123005000, \"3만원\" → 30000, \"12,500원\" → 12500, \"1억원\" → 100000000. Digits are ASCII only. After removing spaces and commas and one trailing \"원\", the 억 group, then the 만 group, then the rest each appear at most once, in that order. Each group is digits or a combination of 천/백/십 units (in 천→백→십 order; an omitted coefficient means 1). Raise ValueError for anything else.",
     """
     import unittest
     from solution import parse_krw
@@ -269,14 +270,14 @@ choice_item("swx-review-02", "review", "medium",
     ["An unsalted fast hash (MD5) makes leaked passwords easy to recover", "It is vulnerable to SQL injection", "No encoding is given, so non-ASCII passwords break", "It should use INSERT instead of UPDATE"],
     "A")
 choice_item("swx-review-03", "review", "hard",
-    "여러 요청이 동시에 처리되는 출금 핸들러야. 가장 심각한 문제를 골라 줘.\n\n```python\ndef withdraw(db, account_id, amount):\n    balance = db.get_balance(account_id)\n    if balance < amount:\n        raise ValueError(\"insufficient\")\n    db.set_balance(account_id, balance - amount)\n```",
-    "This withdrawal handler serves many requests concurrently. Pick the most serious problem.\n\n```python\ndef withdraw(db, account_id, amount):\n    balance = db.get_balance(account_id)\n    if balance < amount:\n        raise ValueError(\"insufficient\")\n    db.set_balance(account_id, balance - amount)\n```",
+    "여러 요청이 동시에 처리되는 출금 핸들러야. 동시 요청 때문에 생기는 문제를 골라 줘.\n\n```python\ndef withdraw(db, account_id, amount):\n    balance = db.get_balance(account_id)\n    if balance < amount:\n        raise ValueError(\"insufficient\")\n    db.set_balance(account_id, balance - amount)\n```",
+    "This withdrawal handler serves many requests concurrently. Pick the problem caused by concurrent requests.\n\n```python\ndef withdraw(db, account_id, amount):\n    balance = db.get_balance(account_id)\n    if balance < amount:\n        raise ValueError(\"insufficient\")\n    db.set_balance(account_id, balance - amount)\n```",
     ["음수 금액을 검사하지 않는다", "잔액 확인과 갱신 사이에 다른 요청이 끼어들어 이중 출금이 될 수 있다", "예외 메시지가 사용자에게 불친절하다", "함수 이름이 동사로 시작하지 않는다"],
     ["It does not reject negative amounts", "Another request can slip in between the balance check and the update, allowing a double withdrawal", "The exception message is unfriendly", "The function name is not a verb"],
     "B")
 choice_item("swx-review-04", "review", "hard",
-    "로그 파일 수천 개를 처리하는 코드야. 장시간 돌리면 결국 실패한다. 가장 가능성 높은 원인을 골라 줘.\n\n```python\ndef count_errors(paths):\n    total = 0\n    for p in paths:\n        f = open(p, encoding=\"utf-8\")\n        for line in f:\n            if \"ERROR\" in line:\n                total += 1\n    return total\n```",
-    "This processes thousands of log files and eventually fails on long runs. Pick the most likely cause.\n\n```python\ndef count_errors(paths):\n    total = 0\n    for p in paths:\n        f = open(p, encoding=\"utf-8\")\n        for line in f:\n            if \"ERROR\" in line:\n                total += 1\n    return total\n```",
+    "로그 파일 수천 개를 처리하는 코드야. 이 코드의 자원 관리 결함을 지적한 항목을 골라 줘.\n\n```python\ndef count_errors(paths):\n    total = 0\n    for p in paths:\n        f = open(p, encoding=\"utf-8\")\n        for line in f:\n            if \"ERROR\" in line:\n                total += 1\n    return total\n```",
+    "This processes thousands of log files. Pick the option that identifies the resource-management defect in this code.\n\n```python\ndef count_errors(paths):\n    total = 0\n    for p in paths:\n        f = open(p, encoding=\"utf-8\")\n        for line in f:\n            if \"ERROR\" in line:\n                total += 1\n    return total\n```",
     ["대소문자를 구분해 error를 놓친다", "파일을 닫지 않아 파일 디스크립터가 고갈될 수 있다", "utf-8이 아닌 파일에서 느려진다", "total이 정수 범위를 넘는다"],
     ["It is case-sensitive and misses 'error'", "Files are never closed, so file descriptors can run out", "It slows down on non-UTF-8 files", "total overflows the integer range"],
     "B")
@@ -317,8 +318,8 @@ dopts = [[], [1], [1, 1, 1], [3, 1, 3, 2]]
 catching = [chr(65 + i) for i, a in enumerate(dopts) if dedupe(a) != dedupe_buggy(a)]
 assert catching == ["D"]
 choice_item("swx-test-03", "test", "hard",
-    "중복을 지우되 처음 나온 순서를 지켜야 하는 함수가 아래처럼 구현됐다(CPython 3). 아래 테스트 중 이 버그를 잡아내는 것은 어느 것?\n\n```python\ndef dedupe(xs):\n    return list(set(xs))\n```",
-    "A function must remove duplicates while keeping first-occurrence order; it is implemented as below (CPython 3). Which of these tests catches the bug?\n\n```python\ndef dedupe(xs):\n    return list(set(xs))\n```",
+    "중복을 지우되 처음 나온 순서를 지켜야 하는 함수가 아래처럼 구현됐다. 이 런타임에서 list(set([3, 1, 3, 2]))는 [1, 2, 3]이다. 아래 테스트 중 이 버그를 잡아내는 것은 어느 것?\n\n```python\ndef dedupe(xs):\n    return list(set(xs))\n```",
+    "A function must remove duplicates while keeping first-occurrence order; it is implemented as below. On this runtime list(set([3, 1, 3, 2])) evaluates to [1, 2, 3]. Which of these tests catches the bug?\n\n```python\ndef dedupe(xs):\n    return list(set(xs))\n```",
     [f"dedupe({a}) == {dedupe(a)}" for a in dopts], [f"dedupe({a}) == {dedupe(a)}" for a in dopts], catching[0])
 
 

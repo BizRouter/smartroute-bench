@@ -17,7 +17,7 @@
    "turns": [
     "팀 워크숍 아이디어 좀 같이 생각해 줘. 12명이고 반나절이야.",
     "좋네. 근데 몸 쓰는 건 싫다는 사람이 좀 있어. 그리고 예산은 1인 3만 원.",
-    "그중 두 개만 골라서 시간표로 짜 줄래?"
+    "네가 낸 아이디어 중 조건에 맞는 두 개를 골라서 시간표로 짜 줄래?"
    ],
    "rubric": [
     {
@@ -41,7 +41,7 @@
    "turns": [
     "Help me brainstorm a team workshop. 12 people, half a day.",
     "Nice. Some people don't want anything physical, though. And the budget is 30,000 won per person.",
-    "Pick just two of those and lay them out as a schedule?"
+    "From your ideas, pick two that fit those conditions and lay them out as a schedule?"
    ],
    "rubric": [
     {
@@ -80,7 +80,7 @@
    "turns": [
     "동네 카페 겨울 신메뉴 아이디어 내 줘.",
     "비건 손님이 늘었어. 비건 메뉴로 다시 생각해 줄래?",
-    "원가는 잔당 1,500원 안쪽이어야 해. 가능한 것만 남겨 줘."
+    "재료 원가가 잔당 1,500원 안쪽이어야 해. 가능한 것만 남겨 줘."
    ],
    "rubric": [
     {
@@ -104,7 +104,7 @@
    "turns": [
     "Give me winter menu ideas for a neighborhood café.",
     "We're getting more vegan customers. Can you rethink it as vegan options?",
-    "Cost has to stay under 1,500 won a cup. Keep only the ones that work."
+    "Ingredient cost has to stay under 1,500 won a cup. Keep only the ones that work."
    ],
    "rubric": [
     {
@@ -147,17 +147,17 @@
    "rubric": [
     {
      "name": "맥락 적응",
-     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "desc": "직장인 대상으로 좁힌 조건을 반영했는가",
      "weight": 0.4
     },
     {
      "name": "유용성",
-     "desc": "구체적이고 실제로 도움이 되는가",
+     "desc": "클릭하고 싶고 세무사 전문성이 드러나는 제목인가",
      "weight": 0.35
     },
     {
-     "name": "대화성",
-     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "name": "형식 준수",
+     "desc": "마지막 답은 설명 없이 제목 4개인가",
      "weight": 0.25
     }
    ]
@@ -170,17 +170,17 @@
    "rubric": [
     {
      "name": "Context",
-     "desc": "Builds on earlier turns and the user's new conditions",
+     "desc": "Reflects the narrowed office-worker audience",
      "weight": 0.4
     },
     {
      "name": "Usefulness",
-     "desc": "Concrete and genuinely helpful",
+     "desc": "Clickable titles that show tax expertise",
      "weight": 0.35
     },
     {
-     "name": "Conversational",
-     "desc": "Natural back-and-forth rather than a monologue",
+     "name": "Format",
+     "desc": "The final answer is exactly four titles without explanation",
      "weight": 0.25
     }
    ]

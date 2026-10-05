@@ -50,10 +50,10 @@ def std_rubric(lang, weights=(0.35, 0.45, 0.2)):
 
 # ==== create ===========================================================================================
 item("create", "crx-biz-01", "business-writing", "apology-notice", "hard", "writing", "both",
-     side("어제 14:00~16:30 결제 장애로 주문이 실패한 고객에게 보낼 사과 안내문을 써 줘. 원인은 결제대행사 연동 서버 장애였고 지금은 복구됐어. 보상으로 10,000원 쿠폰을 지급하고, 쿠폰 유효기간은 11월 30일까지야. 600자 이내로 써.",
+     side("어제 14:00~16:30 결제 장애로 주문이 실패한 고객에게 보낼 사과 안내문을 써 줘. 원인은 결제대행사 연동 서버 장애였고 지금은 복구됐어. 보상으로 10,000원 쿠폰을 지급하고, 쿠폰 유효기간은 2026년 11월 30일까지야. 600자 이하로 써.",
           rubric(("사실 전달", "장애 시간·원인·복구 사실·보상 조건을 정확히 담았는가", 0.4), ("어조", "책임을 회피하지 않고 진정성 있는 사과인가", 0.35), ("명료성", "고객이 할 일(쿠폰 사용)이 분명한가", 0.25)),
           constraints({"kind": "max_chars", "n": 600}, {"kind": "require", "values": ["10,000원", "11월 30일"]})),
-     side("Write an apology notice to customers whose orders failed during yesterday's payment outage from 14:00 to 16:30. The cause was an outage at the payment gateway's integration server, and service is restored. As compensation each customer gets a 10,000 won coupon, valid until November 30. Keep it under 1,200 characters.",
+     side("Write an apology notice to customers whose orders failed during yesterday's payment outage from 14:00 to 16:30. The cause was an outage at the payment gateway's integration server, and service is restored. As compensation each customer gets a 10,000 won coupon, valid until November 30, 2026. Keep it to 1,200 characters or fewer.",
           rubric(("Facts", "States the outage window, cause, restoration and coupon terms accurately", 0.4), ("Tone", "A sincere apology that does not deflect responsibility", 0.35), ("Clarity", "Makes clear what the customer should do (use the coupon)", 0.25)),
           constraints({"kind": "max_chars", "n": 1200}, {"kind": "require", "values": ["10,000 won", "November 30"]})))
 item("create", "crx-biz-02", "business-writing", "price-negotiation", "hard", "writing", "both",
@@ -77,8 +77,8 @@ item("create", "crx-tech-03", "technical-writing", "onboarding-guide", "easy", "
      side("Git을 처음 쓰는 신입 개발자를 위한 사내 위키 글을 써 줘. 우리 팀은 main 보호, feature 브랜치, PR 리뷰 1명 이상 승인, squash merge를 쓴다. 하루 작업 흐름을 순서대로 보여 줘.", std_rubric("ko")),
      side("Write an internal wiki page for a new developer who has never used Git. Our team protects main, works on feature branches, needs at least one PR approval, and squash-merges. Show a day's workflow step by step.", std_rubric("en")))
 item("create", "crx-tech-04", "technical-writing", "readme", "medium", "writing", "judge",
-     side("사내 CLI 도구 'bz-sync'의 README 설치·사용 절을 써 줘. macOS(Homebrew)와 Linux(.deb) 설치, 최초 로그인(bz-sync login), 폴더 동기화(bz-sync push <폴더>), 자주 나는 오류 2개(권한 거부, 토큰 만료)와 해결법을 넣어.", std_rubric("ko")),
-     side("Write the install and usage sections of the README for an internal CLI tool, 'bz-sync'. Cover macOS (Homebrew) and Linux (.deb) installation, first login (bz-sync login), syncing a folder (bz-sync push <folder>), and two common errors (permission denied, expired token) with fixes.", std_rubric("en")))
+     side("사내 CLI 도구 'bz-sync'의 README 설치·사용 절을 써 줘. macOS(Homebrew: `brew install bizcorp/tools/bz-sync`)와 Linux(.deb: 사내 저장소 https://pkg.bizcorp.internal/bz-sync_1.4.0_amd64.deb) 설치, 최초 로그인(bz-sync login), 폴더 동기화(bz-sync push <폴더>), 자주 나는 오류 2개(동기화할 폴더에 읽기 권한이 없을 때의 권한 거부, 로그인 토큰 만료)와 해결법을 넣어.", std_rubric("ko")),
+     side("Write the install and usage sections of the README for an internal CLI tool, 'bz-sync'. Cover macOS (Homebrew: `brew install bizcorp/tools/bz-sync`) and Linux (.deb from the internal repository https://pkg.bizcorp.internal/bz-sync_1.4.0_amd64.deb) installation, first login (bz-sync login), syncing a folder (bz-sync push <folder>), and two common errors (permission denied when the folder to sync is not readable, and an expired login token) with fixes.", std_rubric("en")))
 item("create", "crx-design-01", "design", "db-schema", "hard", "writing", "judge",
      side("병원 진료 예약 시스템의 DB 스키마를 설계해 줘. 요구: 의사는 여러 진료과에 속할 수 있다, 예약은 30분 단위 슬롯, 같은 의사의 같은 슬롯은 중복 예약 불가, 환자는 예약을 취소할 수 있고 취소 이력이 남아야 한다. 테이블·주요 컬럼·키·제약 조건을 정리하고 설계 이유를 짧게 써 줘.",
           rubric(("정확성", "다대다 관계·슬롯 중복 방지 제약·취소 이력 요구를 정확히 반영했는가", 0.5), ("설계 품질", "정규화·키·인덱스 선택이 합리적인가", 0.3), ("설명", "설계 이유가 분명한가", 0.2))),
@@ -92,10 +92,10 @@ item("create", "crx-design-03", "design", "information-architecture", "medium", 
      side("Design the information architecture of a neighborhood clinic's mobile app. Main features: booking, queue number, prescriptions, clinic notices, my page. Show the bottom-tab layout and each tab's sub-screens as a hierarchy, plus three design principles for older users.", std_rubric("en")))
 item("create", "crx-creative-01", "creative-writing", "short-story", "easy", "writing", "both",
      side("고양이가 주인공인 짧은 동화를 써 줘. 다섯 살 아이에게 읽어 줄 거고, '나눔'에 대한 교훈이 자연스럽게 들어가야 해. 450자 이내.",
-          rubric(("창의성", "아이가 흥미를 느낄 만한 이야기인가", 0.4), ("교훈", "교훈이 설교조 없이 자연스러운가", 0.35), ("눈높이", "다섯 살에게 맞는 어휘·문장인가", 0.25)),
+          rubric(("요구 충족", "고양이가 주인공이고 나눔의 교훈이 담겼는가", 0.2), ("창의성", "아이가 흥미를 느낄 만한 이야기인가", 0.35), ("교훈", "교훈이 설교조 없이 자연스러운가", 0.25), ("눈높이", "다섯 살에게 맞는 어휘·문장인가", 0.2)),
           constraints({"kind": "max_chars", "n": 450})),
-     side("Write a short fairy tale with a cat as the hero, to read to a five-year-old, with a natural lesson about sharing. Under 900 characters.",
-          rubric(("Creativity", "A story a child would enjoy", 0.4), ("Lesson", "The lesson lands without preaching", 0.35), ("Level", "Vocabulary and sentences fit a five-year-old", 0.25)),
+     side("Write a short fairy tale with a cat as the hero, to read to a five-year-old, with a natural lesson about sharing. At most 900 characters.",
+          rubric(("Requirements", "The cat is the hero and the story carries a lesson about sharing", 0.2), ("Creativity", "A story a child would enjoy", 0.35), ("Lesson", "The lesson lands without preaching", 0.25), ("Level", "Vocabulary and sentences fit a five-year-old", 0.2)),
           constraints({"kind": "max_chars", "n": 900})))
 item("create", "crx-creative-02", "creative-writing", "slogan", "easy", "writing", "both",
      side("수제 그래놀라 브랜드 '아침숲'의 슬로건을 5개 써 줘. 한 줄에 하나씩, 번호나 설명 없이 슬로건만 5줄로.",
@@ -125,14 +125,16 @@ def dialogue(id_, sub, prior, ko_turns, en_turns, social=False):
 
 
 dialogue("dlx-brainstorm-01", "brainstorm", "medium",
-         ["팀 워크숍 아이디어 좀 같이 생각해 줘. 12명이고 반나절이야.", "좋네. 근데 몸 쓰는 건 싫다는 사람이 좀 있어. 그리고 예산은 1인 3만 원.", "그중 두 개만 골라서 시간표로 짜 줄래?"],
-         ["Help me brainstorm a team workshop. 12 people, half a day.", "Nice. Some people don't want anything physical, though. And the budget is 30,000 won per person.", "Pick just two of those and lay them out as a schedule?"])
+         ["팀 워크숍 아이디어 좀 같이 생각해 줘. 12명이고 반나절이야.", "좋네. 근데 몸 쓰는 건 싫다는 사람이 좀 있어. 그리고 예산은 1인 3만 원.", "네가 낸 아이디어 중 조건에 맞는 두 개를 골라서 시간표로 짜 줄래?"],
+         ["Help me brainstorm a team workshop. 12 people, half a day.", "Nice. Some people don't want anything physical, though. And the budget is 30,000 won per person.", "From your ideas, pick two that fit those conditions and lay them out as a schedule?"])
 dialogue("dlx-brainstorm-02", "brainstorm", "medium",
-         ["동네 카페 겨울 신메뉴 아이디어 내 줘.", "비건 손님이 늘었어. 비건 메뉴로 다시 생각해 줄래?", "원가는 잔당 1,500원 안쪽이어야 해. 가능한 것만 남겨 줘."],
-         ["Give me winter menu ideas for a neighborhood café.", "We're getting more vegan customers. Can you rethink it as vegan options?", "Cost has to stay under 1,500 won a cup. Keep only the ones that work."])
-dialogue("dlx-brainstorm-03", "brainstorm", "easy",
-         ["세무사인데 유튜브를 시작하려고 해. 어떤 콘텐츠가 좋을까?", "직장인 대상이 더 좋을 것 같아. 첫 달에 올릴 영상 4개 제목만 뽑아 줘."],
-         ["I'm a tax accountant starting a YouTube channel. What content would work?", "I think targeting office workers is better. Give me just the titles of four videos for the first month."])
+         ["동네 카페 겨울 신메뉴 아이디어 내 줘.", "비건 손님이 늘었어. 비건 메뉴로 다시 생각해 줄래?", "재료 원가가 잔당 1,500원 안쪽이어야 해. 가능한 것만 남겨 줘."],
+         ["Give me winter menu ideas for a neighborhood café.", "We're getting more vegan customers. Can you rethink it as vegan options?", "Ingredient cost has to stay under 1,500 won a cup. Keep only the ones that work."])
+item("dialogue", "dlx-brainstorm-03", "dialogue", "brainstorm", "easy", "writing", "judge",
+     side(["세무사인데 유튜브를 시작하려고 해. 어떤 콘텐츠가 좋을까?", "직장인 대상이 더 좋을 것 같아. 첫 달에 올릴 영상 4개 제목만 뽑아 줘."],
+          rubric(("맥락 적응", "직장인 대상으로 좁힌 조건을 반영했는가", 0.4), ("유용성", "클릭하고 싶고 세무사 전문성이 드러나는 제목인가", 0.35), ("형식 준수", "마지막 답은 설명 없이 제목 4개인가", 0.25))),
+     side(["I'm a tax accountant starting a YouTube channel. What content would work?", "I think targeting office workers is better. Give me just the titles of four videos for the first month."],
+          rubric(("Context", "Reflects the narrowed office-worker audience", 0.4), ("Usefulness", "Clickable titles that show tax expertise", 0.35), ("Format", "The final answer is exactly four titles without explanation", 0.25))))
 dialogue("dlx-brainstorm-04", "brainstorm", "medium",
          ["사내 해커톤 주제를 정해야 해. 아이디어 좀 줘.", "우리 회사는 물류 회사야. 그리고 이틀 안에 데모가 나와야 해.", "제일 현실적인 걸 하나 골라서 이유를 말해 줘."],
          ["We need a theme for our internal hackathon. Any ideas?", "We're a logistics company, and teams must have a demo in two days.", "Pick the most realistic one and tell me why."])
@@ -175,8 +177,8 @@ det_json("trx-classify-01", "classify", "easy",
          "Classify the customer messages. Categories: delivery, refund, payment, other. Output {\"1\": category, …}.\n1. My parcel hasn't arrived yet\n2. My card was charged twice\n3. The size is wrong and I want my money back\n4. What are your store hours?\n5. I can't look up my tracking number\n6. Which account do I pay to by bank transfer?" + JSON_EN,
          {"1": "delivery", "2": "payment", "3": "refund", "4": "other", "5": "delivery", "6": "payment"})
 det_json("trx-classify-02", "classify", "medium",
-         "상품 리뷰의 감성을 positive, negative, neutral 중 하나로 분류해. 장점과 단점이 함께 있으면 마지막 문장의 평가를 따른다. 결과는 {\"1\": 감성, …} 형식이다.\n1. 배송 빠르고 포장도 꼼꼼해요.\n2. 색은 예쁜데 한 번 빨았더니 늘어났어요. 다시는 안 살래요.\n3. 사진이랑 같아요.\n4. 가격이 좀 비싸지만 품질 생각하면 만족해요.\n5. 생각보다 작아요." + JSON_KO,
-         "Classify each review's sentiment as positive, negative or neutral. When a review has both pros and cons, follow the judgement in its last sentence. Output {\"1\": sentiment, …}.\n1. Fast shipping and careful packaging.\n2. Nice color, but it stretched after one wash. I won't buy again.\n3. Same as the photo.\n4. A bit pricey, but I'm happy given the quality.\n5. Smaller than I expected." + JSON_EN,
+         "상품 리뷰의 감성을 positive, negative, neutral 중 하나로 분류해. 장점과 단점이 함께 있으면 마지막 문장의 평가를 따른다. 결과는 {\"1\": 감성, …} 형식이다.\n1. 배송 빠르고 포장도 꼼꼼해요.\n2. 색은 예쁜데 한 번 빨았더니 늘어났어요. 다시는 안 살래요.\n3. 사진이랑 같아요. 좋지도 나쁘지도 않아요.\n4. 가격이 좀 비싸지만 품질 생각하면 만족해요.\n5. 생각보다 작아요." + JSON_KO,
+         "Classify each review's sentiment as positive, negative or neutral. When a review has both pros and cons, follow the judgement in its last sentence. Output {\"1\": sentiment, …}.\n1. Fast shipping and careful packaging.\n2. Nice color, but it stretched after one wash. I won't buy again.\n3. Same as the photo. Neither good nor bad.\n4. A bit pricey, but I'm happy given the quality.\n5. Smaller than I expected." + JSON_EN,
          {"1": "positive", "2": "negative", "3": "neutral", "4": "positive", "5": "negative"})
 det_json("trx-classify-03", "classify", "hard",
          "장애 티켓에 우선순위를 매겨. 규칙: 결제나 로그인이 안 되면 P1. 그 밖에 고객 다수에게 보이는 기능 오류면 P2. 내부 도구 문제나 일부 고객의 화면 깨짐은 P3. 결과는 {\"T1\": 등급, …} 형식이다.\nT1: 안드로이드 일부 기기에서 배너 이미지가 잘림\nT2: 전체 사용자 로그인 실패\nT3: 상품 검색 결과가 모든 사용자에게 비어 나옴\nT4: 사내 정산 대시보드 느림\nT5: 카카오페이 결제 승인 실패" + JSON_KO,
@@ -201,7 +203,7 @@ item("transform", "trx-edit-02", "transform", "edit", "hard", "writing", "both",
      side("아래 공지를 핵심만 남겨 300자 이내로 다듬어 줘. 날짜·시간·대상·해야 할 일은 빠뜨리지 마.\n\n\"안녕하세요, 총무팀입니다. 다름이 아니오라 이번에 건물 관리사무소로부터 연락을 받았는데요, 10월 17일 금요일 저녁 8시부터 다음 날인 10월 18일 토요일 오전 6시까지 건물 전체 전기 설비 점검이 있을 예정이라고 합니다. 이에 따라 해당 시간 동안에는 엘리베이터 운행이 중단되며 사무실 전원도 차단됩니다. 그러므로 3층과 4층을 사용하시는 모든 임직원께서는 17일 금요일 퇴근 전에 반드시 개인 PC를 종료해 주시고, 냉장고에 보관 중인 음식물은 미리 가져가 주시기 바랍니다. 협조해 주셔서 감사합니다.\"",
           rubric(("정보 보존", "일시·대상·할 일을 빠짐없이 담았는가", 0.5), ("간결성", "불필요한 말이 없는가", 0.3), ("가독성", "한눈에 읽히는가", 0.2)),
           constraints({"kind": "max_chars", "n": 300}, {"kind": "require", "values": ["10월 17일", "10월 18일", "PC"]})),
-     side("Trim the notice below to its essentials in under 500 characters. Keep the dates, times, who is affected and what to do.\n\n\"Hello, this is General Affairs. We were recently contacted by the building management office, and we've been told that there will be a building-wide electrical inspection from 8 pm on Friday, October 17 until 6 am the following day, Saturday, October 18. As a result, the elevators will be out of service and power to the offices will be cut during that time. Therefore, all staff on the 3rd and 4th floors are kindly asked to make sure to shut down their personal PCs before leaving on Friday the 17th, and to take home any food stored in the refrigerator in advance. Thank you for your cooperation.\"",
+     side("Trim the notice below to its essentials in 500 characters or fewer. Keep the dates, times, who is affected and what to do.\n\n\"Hello, this is General Affairs. We were recently contacted by the building management office, and we've been told that there will be a building-wide electrical inspection from 8 pm on Friday, October 17 until 6 am the following day, Saturday, October 18. As a result, the elevators will be out of service and power to the offices will be cut during that time. Therefore, all staff on the 3rd and 4th floors are kindly asked to make sure to shut down their personal PCs before leaving on Friday the 17th, and to take home any food stored in the refrigerator in advance. Thank you for your cooperation.\"",
           rubric(("Information kept", "Keeps the times, who is affected and the actions", 0.5), ("Brevity", "No filler", 0.3), ("Readability", "Readable at a glance", 0.2)),
           constraints({"kind": "max_chars", "n": 500}, {"kind": "require", "values": ["October 17", "October 18", "PC"]})))
 item("transform", "trx-translate-01", "transform", "translate", "hard", "writing", "judge",

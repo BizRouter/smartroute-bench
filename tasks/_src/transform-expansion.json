@@ -62,7 +62,7 @@
   "source": "authored",
   "ko": {
    "turns": [
-    "상품 리뷰의 감성을 positive, negative, neutral 중 하나로 분류해. 장점과 단점이 함께 있으면 마지막 문장의 평가를 따른다. 결과는 {\"1\": 감성, …} 형식이다.\n1. 배송 빠르고 포장도 꼼꼼해요.\n2. 색은 예쁜데 한 번 빨았더니 늘어났어요. 다시는 안 살래요.\n3. 사진이랑 같아요.\n4. 가격이 좀 비싸지만 품질 생각하면 만족해요.\n5. 생각보다 작아요.\n\nJSON 객체 하나만 출력해. 설명·코드블록 표시 금지."
+    "상품 리뷰의 감성을 positive, negative, neutral 중 하나로 분류해. 장점과 단점이 함께 있으면 마지막 문장의 평가를 따른다. 결과는 {\"1\": 감성, …} 형식이다.\n1. 배송 빠르고 포장도 꼼꼼해요.\n2. 색은 예쁜데 한 번 빨았더니 늘어났어요. 다시는 안 살래요.\n3. 사진이랑 같아요. 좋지도 나쁘지도 않아요.\n4. 가격이 좀 비싸지만 품질 생각하면 만족해요.\n5. 생각보다 작아요.\n\nJSON 객체 하나만 출력해. 설명·코드블록 표시 금지."
    ],
    "check": {
     "type": "json_match",
@@ -77,7 +77,7 @@
   },
   "en": {
    "turns": [
-    "Classify each review's sentiment as positive, negative or neutral. When a review has both pros and cons, follow the judgement in its last sentence. Output {\"1\": sentiment, …}.\n1. Fast shipping and careful packaging.\n2. Nice color, but it stretched after one wash. I won't buy again.\n3. Same as the photo.\n4. A bit pricey, but I'm happy given the quality.\n5. Smaller than I expected.\n\nOutput exactly one JSON object and nothing else. No prose or code fence."
+    "Classify each review's sentiment as positive, negative or neutral. When a review has both pros and cons, follow the judgement in its last sentence. Output {\"1\": sentiment, …}.\n1. Fast shipping and careful packaging.\n2. Nice color, but it stretched after one wash. I won't buy again.\n3. Same as the photo. Neither good nor bad.\n4. A bit pricey, but I'm happy given the quality.\n5. Smaller than I expected.\n\nOutput exactly one JSON object and nothing else. No prose or code fence."
    ],
    "check": {
     "type": "json_match",
@@ -404,7 +404,7 @@
   },
   "en": {
    "turns": [
-    "Trim the notice below to its essentials in under 500 characters. Keep the dates, times, who is affected and what to do.\n\n\"Hello, this is General Affairs. We were recently contacted by the building management office, and we've been told that there will be a building-wide electrical inspection from 8 pm on Friday, October 17 until 6 am the following day, Saturday, October 18. As a result, the elevators will be out of service and power to the offices will be cut during that time. Therefore, all staff on the 3rd and 4th floors are kindly asked to make sure to shut down their personal PCs before leaving on Friday the 17th, and to take home any food stored in the refrigerator in advance. Thank you for your cooperation.\""
+    "Trim the notice below to its essentials in 500 characters or fewer. Keep the dates, times, who is affected and what to do.\n\n\"Hello, this is General Affairs. We were recently contacted by the building management office, and we've been told that there will be a building-wide electrical inspection from 8 pm on Friday, October 17 until 6 am the following day, Saturday, October 18. As a result, the elevators will be out of service and power to the offices will be cut during that time. Therefore, all staff on the 3rd and 4th floors are kindly asked to make sure to shut down their personal PCs before leaving on Friday the 17th, and to take home any food stored in the refrigerator in advance. Thank you for your cooperation.\""
    ],
    "rubric": [
     {
