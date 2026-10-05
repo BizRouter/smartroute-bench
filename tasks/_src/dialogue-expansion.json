@@ -1,0 +1,750 @@
+[
+ {
+  "id": "dlx-brainstorm-01",
+  "pair_id": "dlx-brainstorm-01",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "brainstorm",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "팀 워크숍 아이디어 좀 같이 생각해 줘. 12명이고 반나절이야.",
+    "좋네. 근데 몸 쓰는 건 싫다는 사람이 좀 있어. 그리고 예산은 1인 3만 원.",
+    "그중 두 개만 골라서 시간표로 짜 줄래?"
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "Help me brainstorm a team workshop. 12 people, half a day.",
+    "Nice. Some people don't want anything physical, though. And the budget is 30,000 won per person.",
+    "Pick just two of those and lay them out as a schedule?"
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-brainstorm-02",
+  "pair_id": "dlx-brainstorm-02",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "brainstorm",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "동네 카페 겨울 신메뉴 아이디어 내 줘.",
+    "비건 손님이 늘었어. 비건 메뉴로 다시 생각해 줄래?",
+    "원가는 잔당 1,500원 안쪽이어야 해. 가능한 것만 남겨 줘."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "Give me winter menu ideas for a neighborhood café.",
+    "We're getting more vegan customers. Can you rethink it as vegan options?",
+    "Cost has to stay under 1,500 won a cup. Keep only the ones that work."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-brainstorm-03",
+  "pair_id": "dlx-brainstorm-03",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "brainstorm",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "세무사인데 유튜브를 시작하려고 해. 어떤 콘텐츠가 좋을까?",
+    "직장인 대상이 더 좋을 것 같아. 첫 달에 올릴 영상 4개 제목만 뽑아 줘."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "I'm a tax accountant starting a YouTube channel. What content would work?",
+    "I think targeting office workers is better. Give me just the titles of four videos for the first month."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-brainstorm-04",
+  "pair_id": "dlx-brainstorm-04",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "brainstorm",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "사내 해커톤 주제를 정해야 해. 아이디어 좀 줘.",
+    "우리 회사는 물류 회사야. 그리고 이틀 안에 데모가 나와야 해.",
+    "제일 현실적인 걸 하나 골라서 이유를 말해 줘."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "We need a theme for our internal hackathon. Any ideas?",
+    "We're a logistics company, and teams must have a demo in two days.",
+    "Pick the most realistic one and tell me why."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-guide-01",
+  "pair_id": "dlx-guide-01",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "guide",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "엑셀에서 다른 시트의 단가를 상품코드로 찾아오고 싶어. 어떻게 해?",
+    "알려 준 대로 했는데 #N/A가 떠.",
+    "상품코드가 한쪽은 숫자고 한쪽은 텍스트인 것 같아. 어떻게 맞춰?"
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "In Excel I want to pull the unit price from another sheet by product code. How?",
+    "I did what you said but I get #N/A.",
+    "I think the codes are numbers on one side and text on the other. How do I make them match?"
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-guide-02",
+  "pair_id": "dlx-guide-02",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "guide",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "새 공유기 와이파이 이름이랑 비밀번호를 바꾸고 싶어.",
+    "192.168.0.1 들어가 봤는데 페이지가 안 열려.",
+    "공유기 뒤에 192.168.1.1이라고 적혀 있네."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "I want to change the Wi-Fi name and password on my new router.",
+    "I tried 192.168.0.1 but the page won't open.",
+    "The label on the back of the router says 192.168.1.1."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-guide-03",
+  "pair_id": "dlx-guide-03",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "guide",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "연말정산 간소화 서비스 처음 써 보는데 뭐부터 하면 돼?",
+    "부양가족 의료비가 안 보여. 엄마 병원비를 내가 냈거든.",
+    "엄마가 자료 제공 동의를 해야 한다는 거지? 엄마는 스마트폰을 잘 못 써."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "I'm using the year-end tax settlement simplified service for the first time. Where do I start?",
+    "My dependent's medical expenses don't show up. I paid my mom's hospital bills.",
+    "So my mom has to consent to share her records? She isn't good with smartphones."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-guide-04",
+  "pair_id": "dlx-guide-04",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "guide",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "윈도우에 파이썬 처음 설치하려고 해. 순서대로 알려 줘.",
+    "설치는 됐는데 명령 프롬프트에 python 치면 마이크로소프트 스토어가 열려.",
+    "그 설정을 껐는데 이제는 'python'은 내부 또는 외부 명령이 아니래."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "I'm installing Python on Windows for the first time. Walk me through it.",
+    "It installed, but typing python in Command Prompt opens the Microsoft Store.",
+    "I turned that setting off, and now it says 'python' is not recognized as a command."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-guide-05",
+  "pair_id": "dlx-guide-05",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "guide",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "주 3회 집에서 할 근력 운동 루틴 짜 줘. 초보야.",
+    "아 맞다, 무릎이 안 좋아서 쪼그려 앉는 건 아파.",
+    "기구는 덤벨 한 쌍만 있어. 첫 주 계획으로 정리해 줘."
+   ],
+   "rubric": [
+    {
+     "name": "맥락 적응",
+     "desc": "앞 턴의 정보와 사용자의 새 조건을 반영해 대화를 이어 가는가",
+     "weight": 0.4
+    },
+    {
+     "name": "유용성",
+     "desc": "구체적이고 실제로 도움이 되는가",
+     "weight": 0.35
+    },
+    {
+     "name": "대화성",
+     "desc": "일방적인 장문 대신 자연스럽게 주고받는가",
+     "weight": 0.25
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "Make me a beginner strength routine for three days a week at home.",
+    "Oh, right, my knees are bad, so squatting hurts.",
+    "All I have is one pair of dumbbells. Lay it out as a first-week plan."
+   ],
+   "rubric": [
+    {
+     "name": "Context",
+     "desc": "Builds on earlier turns and the user's new conditions",
+     "weight": 0.4
+    },
+    {
+     "name": "Usefulness",
+     "desc": "Concrete and genuinely helpful",
+     "weight": 0.35
+    },
+    {
+     "name": "Conversational",
+     "desc": "Natural back-and-forth rather than a monologue",
+     "weight": 0.25
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-social-01",
+  "pair_id": "dlx-social-01",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "social-chat",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "아 오늘 진짜 길었다. 퇴근길 지하철도 꽉 찼어.",
+    "그치. 그래도 내일은 금요일이라 좀 버틸 만해."
+   ],
+   "rubric": [
+    {
+     "name": "공감",
+     "desc": "상대의 감정에 맞게 반응하는가",
+     "weight": 0.45
+    },
+    {
+     "name": "자연스러움",
+     "desc": "사람처럼 편안하고 과하지 않은가",
+     "weight": 0.35
+    },
+    {
+     "name": "연결",
+     "desc": "대화를 이어 갈 계기를 주는가",
+     "weight": 0.2
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "Ugh, today was so long. The subway home was packed too.",
+    "Right. At least tomorrow's Friday, so it's bearable."
+   ],
+   "rubric": [
+    {
+     "name": "Empathy",
+     "desc": "Responds to the person's feelings",
+     "weight": 0.45
+    },
+    {
+     "name": "Naturalness",
+     "desc": "Relaxed and not overdone",
+     "weight": 0.35
+    },
+    {
+     "name": "Connection",
+     "desc": "Gives the conversation somewhere to go",
+     "weight": 0.2
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-social-02",
+  "pair_id": "dlx-social-02",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "social-chat",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "나 드디어 정보처리기사 합격했어!",
+    "세 번째 도전이었거든. 이번엔 진짜 포기할까 했었어."
+   ],
+   "rubric": [
+    {
+     "name": "공감",
+     "desc": "상대의 감정에 맞게 반응하는가",
+     "weight": 0.45
+    },
+    {
+     "name": "자연스러움",
+     "desc": "사람처럼 편안하고 과하지 않은가",
+     "weight": 0.35
+    },
+    {
+     "name": "연결",
+     "desc": "대화를 이어 갈 계기를 주는가",
+     "weight": 0.2
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "I finally passed the Engineer Information Processing exam!",
+    "It was my third try. I almost gave up this time."
+   ],
+   "rubric": [
+    {
+     "name": "Empathy",
+     "desc": "Responds to the person's feelings",
+     "weight": 0.45
+    },
+    {
+     "name": "Naturalness",
+     "desc": "Relaxed and not overdone",
+     "weight": 0.35
+    },
+    {
+     "name": "Connection",
+     "desc": "Gives the conversation somewhere to go",
+     "weight": 0.2
+    }
+   ]
+  }
+ },
+ {
+  "id": "dlx-social-03",
+  "pair_id": "dlx-social-03",
+  "track": "work",
+  "block": "writing",
+  "category": "dialogue",
+  "subcategory": "social-chat",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "우리 강아지가 오늘 처음으로 '손' 했어 ㅎㅎ",
+    "두 달 동안 간식으로 연습했거든. 다음엔 뭘 가르쳐 볼까?"
+   ],
+   "rubric": [
+    {
+     "name": "공감",
+     "desc": "상대의 감정에 맞게 반응하는가",
+     "weight": 0.45
+    },
+    {
+     "name": "자연스러움",
+     "desc": "사람처럼 편안하고 과하지 않은가",
+     "weight": 0.35
+    },
+    {
+     "name": "연결",
+     "desc": "대화를 이어 갈 계기를 주는가",
+     "weight": 0.2
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "My puppy gave me a paw for the first time today, haha.",
+    "We practiced with treats for two months. What should I teach next?"
+   ],
+   "rubric": [
+    {
+     "name": "Empathy",
+     "desc": "Responds to the person's feelings",
+     "weight": 0.45
+    },
+    {
+     "name": "Naturalness",
+     "desc": "Relaxed and not overdone",
+     "weight": 0.35
+    },
+    {
+     "name": "Connection",
+     "desc": "Gives the conversation somewhere to go",
+     "weight": 0.2
+    }
+   ]
+  }
+ }
+]
