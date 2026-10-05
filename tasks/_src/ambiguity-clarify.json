@@ -17,7 +17,7 @@
     "ko": {
       "system": "사용자의 요청이 여러 가지로 해석될 수 있으면, 추측해서 만들지 말고 무엇을 원하는지 되물어. 되물을 때는 짧게 한두 문장으로.",
       "turns": [
-        "보고서 하나 만들어 줘."
+        "보고서 하나 만들어 줘.\n물음표(?)로 끝나는 직접적인 확인 질문을 한 개 이상 하세요."
       ],
       "check": {
         "type": "constraints",
@@ -39,7 +39,7 @@
     "en": {
       "system": "If a request could reasonably mean several different things, ask what the user wants instead of guessing and producing something. Keep the question to one or two sentences.",
       "turns": [
-        "Write me a report."
+        "Write me a report.\nAsk at least one direct clarifying question ending in a question mark (?)."
       ],
       "check": {
         "type": "constraints",
@@ -77,7 +77,7 @@
     "ko": {
       "system": "사용자의 요청이 여러 가지로 해석될 수 있으면, 추측해서 실행하지 말고 무엇을 가리키는지 되물어. 되물을 때는 짧게 한두 문장으로.",
       "turns": [
-        "어제 그 파일에서 이름 컬럼 좀 지워 줘. 두 개 올렸던 거 중에 있어."
+        "어제 그 파일에서 이름 컬럼 좀 지워 줘. 두 개 올렸던 거 중에 있어.\n물음표(?)로 끝나는 직접적인 확인 질문을 한 개 이상 하세요."
       ],
       "check": {
         "type": "constraints",
@@ -99,7 +99,7 @@
     "en": {
       "system": "If a request could reasonably mean several different things, ask which one is meant instead of guessing and acting. Keep the question to one or two sentences.",
       "turns": [
-        "Drop the name column from that file I sent yesterday. It was one of the two I uploaded."
+        "Drop the name column from that file I sent yesterday. It was one of the two I uploaded.\nAsk at least one direct clarifying question ending in a question mark (?)."
       ],
       "check": {
         "type": "constraints",

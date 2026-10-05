@@ -426,7 +426,12 @@ def meeting_actions(spec: dict, lang: str) -> dict:
     body = "\n".join(lines)
 
     if lang == "ko":
+        # BizRouter review 2026-09-11 (release-e-bizrouter-reviewed-2026-09-11-v2):
+        # a repeated topic or a cancellation naming one owner was read two ways.
         prompt = (
+            "주제 이름이 같아도 담당자·마감일이 다른 배정은 별개의 액션 아이템입니다. "
+            "취소 문장에 담당자가 명시되어 있으면 그 담당자의 해당 주제 배정만 "
+            "취소하며, 다른 담당자의 배정은 유지합니다.\n\n"
             "아래 회의록에서 **확정된 액션 아이템만** 뽑아 JSON 으로 줘.\n\n"
             "규칙:\n"
             "- 담당자와 마감일이 **둘 다** 분명한 것만 액션 아이템이야.\n"
@@ -438,6 +443,10 @@ def meeting_actions(spec: dict, lang: str) -> dict:
             f"--- 회의록 ---\n{body}\n--- 끝 ---")
     else:
         prompt = (
+            "Each owner/deadline assignment is a separate action item, even when "
+            "the topic name repeats. A cancellation naming an owner cancels only "
+            "that owner's assignment for that topic; other owners' assignments "
+            "remain active.\n\n"
             "Extract **only the confirmed action items** from the meeting notes "
             "below, as JSON.\n\n"
             "Rules:\n"
