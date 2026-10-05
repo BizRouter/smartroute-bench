@@ -1,0 +1,612 @@
+[
+ {
+  "id": "anax-calc-01",
+  "pair_id": "anax-calc-01",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "calculate",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "공급가액이 1,250,000원인 거래의 부가가치세(10%)를 포함한 합계 금액은 얼마야? (원 단위)\n\n풀이를 보여 주고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <숫자만>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "expected": [
+     "1375000"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "A sale has a supply value of 1,250,000 won. What is the total including 10% VAT, in won?\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "1375000"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-calc-02",
+  "pair_id": "anax-calc-02",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "calculate",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "정가 80,000원 상품에 20% 할인을 먼저 적용하고, 그 금액에서 5,000원 쿠폰을 뺀다. 결제 후 결제 금액의 10%가 적립금으로 쌓인다. 고객이 실제로 결제하는 금액은 얼마야? (원 단위)\n\n풀이를 보여 주고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <숫자만>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "expected": [
+     "59000"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "A product lists at 80,000 won. A 20% discount applies first, then a 5,000 won coupon comes off that amount. After payment, 10% of the amount paid is credited as points. How much does the customer actually pay, in won?\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "59000"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-calc-03",
+  "pair_id": "anax-calc-03",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "calculate",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "원금 1,000,000원을 월 1% 복리로 3개월 맡기면 3개월 뒤 잔액은 얼마야? (원 미만은 버리고 원 단위로)\n\n풀이를 보여 주고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <숫자만>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "expected": [
+     "1030301"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "1,000,000 won is deposited at 1% interest compounded monthly for 3 months. What is the balance after 3 months, in won (drop fractions of a won)?\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "1030301"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-calc-04",
+  "pair_id": "anax-calc-04",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "calculate",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "월 고정비가 6,000,000원이고, 제품 1개 판매가는 25,000원, 1개당 변동비는 13,000원이야. 한 달에 최소 몇 개를 팔아야 손해를 보지 않아?\n\n풀이를 보여 주고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <숫자만>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "expected": [
+     "500"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "Monthly fixed costs are 6,000,000 won. Each unit sells for 25,000 won and has a variable cost of 13,000 won. What is the minimum number of units per month to avoid a loss?\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "500"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-calc-05",
+  "pair_id": "anax-calc-05",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "calculate",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "만족도 조사 결과야. A 지역 응답자 200명 평균 4.2점, B 지역 300명 평균 3.8점, C 지역 500명 평균 4.0점. 전체 응답자 평균 만족도는? (소수점 둘째 자리까지)\n\n풀이를 보여 주고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <숫자만>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "expected": [
+     "3.98"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "Survey results: region A, 200 respondents, mean 4.2; region B, 300 respondents, mean 3.8; region C, 500 respondents, mean 4.0. What is the overall mean satisfaction? (two decimal places)\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "format": "numeric",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "3.98"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-diag-01",
+  "pair_id": "anax-diag-01",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "diagnose",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "[관측] 새 버전을 배포한 직후부터 API 응답 p99 지연만 3배로 늘었다. 에러율은 그대로이고, DB CPU와 쿼리 수도 배포 전과 같다. 이번 배포에서 캐시 키에 사용자 ID가 새로 들어갔고, 캐시 서버의 메모리 사용량은 거의 변하지 않았는데 조회 대비 미적중(miss) 비율이 5%에서 70%로 올랐다.\n\n가장 가능성이 높은 원인은?\n\nA) DB 인덱스 누락\nB) 네트워크 패킷 손실\nC) 캐시 적중률 급락으로 원본 처리 경로가 늘어남\nD) 애플리케이션 메모리 누수\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "C"
+   }
+  },
+  "en": {
+   "turns": [
+    "[Observations] Right after a new release, only the API's p99 latency tripled. The error rate is unchanged, and DB CPU and query count match pre-release levels. The release added the user ID to the cache key; cache memory use barely moved, but the miss ratio rose from 5% to 70% of lookups.\n\nWhat is the most likely cause?\n\nA) A missing DB index\nB) Network packet loss\nC) A collapsed cache hit rate sending more requests down the origin path\nD) An application memory leak\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "C"
+   }
+  }
+ },
+ {
+  "id": "anax-diag-02",
+  "pair_id": "anax-diag-02",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "diagnose",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "[관측] 지난주 수요일부터 주문 생성 건수는 평소와 같은데 결제 완료율이 92%에서 61%로 떨어졌다. 실패는 모두 한 카드사(K카드) 결제에서만 났고, 다른 카드사·계좌이체·간편결제는 정상이다. 같은 날 사이트 전체 트래픽과 서버 자원 사용량은 평소 수준이었다.\n\n가장 가능성이 높은 원인은?\n\nA) 서버 과부하\nB) K카드와의 결제대행(PG) 연동 장애\nC) 상품 가격 표시 오류\nD) 마케팅 효과 감소\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "B"
+   }
+  },
+  "en": {
+   "turns": [
+    "[Observations] Since last Wednesday, orders created are at normal levels but the payment completion rate fell from 92% to 61%. Every failure is a payment with one card issuer (K Card); other issuers, bank transfer and easy-pay wallets are fine. Site traffic and server resource use were normal that day.\n\nWhat is the most likely cause?\n\nA) Server overload\nB) A payment-gateway integration failure with K Card\nC) A product price display error\nD) Weaker marketing\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "B"
+   }
+  }
+ },
+ {
+  "id": "anax-diag-03",
+  "pair_id": "anax-diag-03",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "diagnose",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "[관측] 냉장 배송 트럭 12대 중 7번 트럭만 운행 중 적재함 온도가 기준(5℃)을 넘었다. 같은 경로·같은 시간대의 다른 트럭은 정상이었다. 7번 트럭의 문 개폐 기록은 평소와 같고, 도착 후 휴대용 온도계로 잰 적재함 온도도 9℃였다. 냉동기 컴프레서의 운전 전류가 평소의 40% 수준으로 기록됐다.\n\n가장 가능성이 높은 원인은?\n\nA) 운전기사의 잦은 문 개폐\nB) 온도 센서 고장\nC) 외부 기온 상승\nD) 냉동기(컴프레서) 고장\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "D"
+   }
+  },
+  "en": {
+   "turns": [
+    "[Observations] Of 12 refrigerated trucks, only truck 7 had its cargo temperature exceed the 5°C limit en route. Other trucks on the same route and time were fine. Truck 7's door-opening log is normal, and a handheld thermometer also read 9°C in the cargo bay on arrival. The refrigeration compressor's running current was logged at about 40% of normal.\n\nWhat is the most likely cause?\n\nA) Frequent door opening by the driver\nB) A faulty temperature sensor\nC) Higher outside temperature\nD) A failing refrigeration compressor\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "D"
+   }
+  }
+ },
+ {
+  "id": "anax-plan-01",
+  "pair_id": "anax-plan-01",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "plan-ordering",
+  "difficulty_prior": "easy",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1024,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "이사 준비 작업 다섯 개야. P: 견적 받기, Q: 업체 계약, R: 짐 싸기, S: 이사, T: 전입신고.\n조건: Q는 P를 마친 뒤에만 할 수 있다. R은 Q 다음에 한다. S는 R이 끝나야 한다. T는 S 다음에 한다.\n\n작업 순서를 정해 줘.\n\n마지막 줄에 정확히 이 형식으로, 쉼표로 구분해 답해:\n정답: <기호,기호,…>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "P,Q,R,S,T"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "Five moving tasks. P: get quotes, Q: sign the mover, R: pack, S: move, T: register the new address.\nConstraints: Q only after P is done. R comes after Q. S needs R finished. T comes after S.\n\nGive the task order.\n\nEnd with exactly this line, comma-separated:\nAnswer: <letter,letter,…>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "P,Q,R,S,T"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-plan-02",
+  "pair_id": "anax-plan-02",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "plan-ordering",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1024,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "DB 이전 작업 여섯 개야. A: 새 DB 생성, B: 데이터 복제 시작, C: 앱 읽기 전용 전환, D: 최종 동기화 확인, E: 트래픽 전환, F: 구 DB 백업 후 삭제.\n조건(순서 없이 나열): F는 E보다 뒤다. C는 B가 시작된 뒤이면서 D보다 앞이다. A가 맨 먼저다. E는 D 바로 다음에 한다.\n\n작업 순서를 정해 줘.\n\n마지막 줄에 정확히 이 형식으로, 쉼표로 구분해 답해:\n정답: <기호,기호,…>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "A,B,C,D,E,F"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "Six DB migration tasks. A: create the new DB, B: start replication, C: switch the app to read-only, D: confirm the final sync, E: cut traffic over, F: back up and delete the old DB.\nConstraints (in no particular order): F is after E. C is after B has started and before D. A comes first. E comes immediately after D.\n\nGive the task order.\n\nEnd with exactly this line, comma-separated:\nAnswer: <letter,letter,…>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "A,B,C,D,E,F"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-plan-03",
+  "pair_id": "anax-plan-03",
+  "track": "work",
+  "block": "structured",
+  "category": "business-analysis",
+  "subcategory": "plan-ordering",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1024,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "행사 준비 작업 다섯 개야. V: 장소 대관, S: 연사 섭외, I: 초청장 발송, P: 홍보 페이지 공개, R: 리허설.\n조건(순서 없이 나열): 리허설은 맨 마지막이다. 초청장은 홍보 페이지를 연 다음에 보낸다. 연사는 장소가 확정돼야 섭외할 수 있다. 홍보 페이지에는 연사가 정해진 뒤에 공개한다.\n\n작업 순서를 정해 줘.\n\n마지막 줄에 정확히 이 형식으로, 쉼표로 구분해 답해:\n정답: <기호,기호,…>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "V,S,P,I,R"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "Five event tasks. V: book the venue, S: secure the speaker, I: send invitations, P: publish the promo page, R: rehearse.\nConstraints (in no particular order): the rehearsal is last. Invitations go out after the promo page is live. The speaker can be secured only once the venue is fixed. The promo page goes live after the speaker is confirmed.\n\nGive the task order.\n\nEnd with exactly this line, comma-separated:\nAnswer: <letter,letter,…>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "V,S,P,I,R"
+    ]
+   }
+  }
+ },
+ {
+  "id": "anax-compare-01",
+  "pair_id": "anax-compare-01",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "compare",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "한 달 데이터 사용량이 14GB인 사람에게 가장 싼 요금제는?\n- A: 기본 9,900원 + 1GB당 1,100원\n- B: 기본 19,900원(10GB 포함), 초과 1GB당 2,000원\n- C: 29,900원 무제한\n- D: 기본 15,000원 + 1GB당 800원\n\nA) A\nB) B\nC) C\nD) D\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "A"
+   }
+  },
+  "en": {
+   "turns": [
+    "Which plan is cheapest for someone who uses 14 GB of data a month?\n- A: 9,900 won base + 1,100 won per GB\n- B: 19,900 won base (10 GB included), 2,000 won per extra GB\n- C: 29,900 won unlimited\n- D: 15,000 won base + 800 won per GB\n\nA) A\nB) B\nC) C\nD) D\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "A"
+   }
+  }
+ },
+ {
+  "id": "anax-compare-02",
+  "pair_id": "anax-compare-02",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "compare",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "채용 후보 셋이야. 평가는 기술 50%, 커뮤니케이션 30%, 경력 20%로 가중 합산하고, 커뮤니케이션 점수가 75점 미만이면 점수와 상관없이 탈락이다.\n- 후보 A: 기술 80, 커뮤니케이션 90, 경력 70\n- 후보 B: 기술 90, 커뮤니케이션 70, 경력 80\n- 후보 C: 기술 85, 커뮤니케이션 85, 경력 60\n\n최종 선발할 후보는? (D는 '선발할 후보 없음')\n\nA) 후보 A\nB) 후보 B\nC) 후보 C\nD) 선발할 후보 없음\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "A"
+   }
+  },
+  "en": {
+   "turns": [
+    "Three candidates. Scores are weighted skills 50%, communication 30%, experience 20%; anyone below 75 in communication is out regardless of score.\n- Candidate A: skills 80, communication 90, experience 70\n- Candidate B: skills 90, communication 70, experience 80\n- Candidate C: skills 85, communication 85, experience 60\n\nWhom do you hire? (D means 'no one')\n\nA) Candidate A\nB) Candidate B\nC) Candidate C\nD) No one\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "A"
+   }
+  }
+ },
+ {
+  "id": "anax-assess-01",
+  "pair_id": "anax-assess-01",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "assess",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 2048,
+  "scoring": "judge",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "다음 사업 계획 요약을 평가해 줘. 가장 큰 위험 세 가지를 근거와 함께 짚고, 각 위험에 대한 보완책을 하나씩 제안해.\n\n\"동네 카페 대상 구독형 원두 배송. 월 29,000원, 첫 달 50% 할인. 첫해 목표 구독자 2,000곳. 원두 원가는 월 1곳당 18,000원, 배송비 4,000원. 마케팅은 인스타그램 광고만 활용. 이탈률 가정은 월 2%.\""
+   ],
+   "rubric": [
+    {
+     "name": "위험 식별",
+     "desc": "마진 구조·이탈률 가정·채널 의존 등 핵심 위험을 근거 숫자와 함께 짚었는가",
+     "weight": 0.45
+    },
+    {
+     "name": "보완책",
+     "desc": "보완책이 구체적이고 실행 가능한가",
+     "weight": 0.35
+    },
+    {
+     "name": "명료성",
+     "desc": "구조적이고 간결한가",
+     "weight": 0.2
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "Assess this business plan summary. Point out the three biggest risks with reasons, and propose one mitigation for each.\n\n\"Subscription coffee-bean delivery for neighborhood cafés. 29,000 won a month, 50% off the first month. Year-one target: 2,000 cafés. Bean cost 18,000 won per café per month, delivery 4,000 won. Marketing: Instagram ads only. Assumed churn: 2% a month.\""
+   ],
+   "rubric": [
+    {
+     "name": "Risk identification",
+     "desc": "Names the key risks (margin structure, churn assumption, channel dependence) with supporting numbers",
+     "weight": 0.45
+    },
+    {
+     "name": "Mitigations",
+     "desc": "Mitigations are concrete and actionable",
+     "weight": 0.35
+    },
+    {
+     "name": "Clarity",
+     "desc": "Structured and concise",
+     "weight": 0.2
+    }
+   ]
+  }
+ },
+ {
+  "id": "anax-prove-01",
+  "pair_id": "anax-prove-01",
+  "track": "work",
+  "block": "judgment",
+  "category": "business-analysis",
+  "subcategory": "prove",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": null,
+  "max_tokens": 1536,
+  "scoring": "both",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "명제: \"정수 n이 홀수이면 n²−1은 8의 배수다.\" 참인지 거짓인지 판정하고 증명해. 마지막 줄에 정확히 이 형식으로 답해:\n정답: 참 또는 거짓"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "참"
+    ]
+   },
+   "rubric": [
+    {
+     "name": "판정",
+     "desc": "참으로 올바르게 판정했는가",
+     "weight": 0.3
+    },
+    {
+     "name": "증명",
+     "desc": "n=2k+1 대입 후 4k(k+1)과 연속 정수 곱의 짝수성으로 8의 배수를 보이는 등 증명이 완결적인가",
+     "weight": 0.55
+    },
+    {
+     "name": "명료성",
+     "desc": "단계가 분명한가",
+     "weight": 0.15
+    }
+   ]
+  },
+  "en": {
+   "turns": [
+    "Claim: \"If an integer n is odd, then n²−1 is a multiple of 8.\" Decide whether it is true or false and prove it. End with exactly this line:\nAnswer: true or false"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "true"
+    ]
+   },
+   "rubric": [
+    {
+     "name": "Verdict",
+     "desc": "Correctly decides true",
+     "weight": 0.3
+    },
+    {
+     "name": "Proof",
+     "desc": "Complete proof, e.g. n=2k+1 gives 4k(k+1) and k(k+1) is even",
+     "weight": 0.55
+    },
+    {
+     "name": "Clarity",
+     "desc": "Clear steps",
+     "weight": 0.15
+    }
+   ]
+  }
+ }
+]
