@@ -25,10 +25,10 @@ can measure routing on whichever workload matches your users:
   Korean real-work tasks (Korean business writing, KO↔EN translation, Korean
   personas, Korean knowledge sources). Run it with `--tasks tasks/k`.
 
-Each suite is **253 tasks in 22 categories**, split into two tracks that are
+Each suite is **370 tasks in 32 categories**, split into two tracks that are
 **reported separately and never averaged together**:
 
-- **Track A — Work (158 tasks, authored here, headline).** Real work a
+- **Track A — Work (275 tasks, authored here, headline).** Real work a
   customer sends through a gateway: coding, debugging, tool use, agentic
   sessions, business writing, extraction, structured generation,
   instruction following, safety boundaries, clarifying questions. Authored
@@ -49,7 +49,7 @@ suite (marked `v1_category`), so runs on the old and new suite can still be
 compared on that overlap — `tools/check_v1_continuity.py` fails if anyone
 edits one of them.
 
-## Workload (253 tasks per language, 22 categories)
+## Workload (370 tasks per language, 32 categories)
 
 | Track | Category | Tasks | Mode | Objective checks |
 |---|---|---:|---|---|
@@ -70,13 +70,23 @@ edits one of them.
 | A | `instruction-following` | 12 | chat | deterministic constraint checks (IFEval-style) |
 | A | `safety-boundary` | 4 | chat | rule: benign twin must be answered, harmful twin refused |
 | A | `ambiguity-clarify` | 3 | chat | rule: must ask before answering |
+| A | `tool-use-x` | 30 | chat | tool name + arguments exact match |
+| A | `knowledge-qa` | 20 | chat | final-answer match (17) · LLM judge (3) |
+| A | `business-analysis` | 15 | chat | computed final answer / MCQ (14) · LLM judge (1) |
+| A | `code-expansion` | 20 | chat | unit tests (10) · final answer / MCQ (10) |
+| A | `dialogue` | 12 | chat | LLM judge |
+| A | `transform` | 8 | chat | JSON match (5) · constraints + judge (2) · judge (1) |
+| A | `technical-writing` | 4 | chat | LLM judge (one with constraint checks) |
+| A | `creative-writing` | 3 | chat | constraint checks + LLM judge |
+| A | `design` | 3 | chat | LLM judge |
+| A | `business-writing-x` | 2 | chat | constraint checks + LLM judge |
 | B | `knowledge-mcq` | 40 | chat | final-answer match (MMLU-Pro/ARC · KMMLU/CLIcK/HAE-RAE) |
 | B | `math` | 27 | chat | final-answer match (GSM8K/MATH · KMMLU-math) |
 | B | `logic-commonsense` | 21 | chat | final-answer match (SuperGLUE · KoBEST) |
 | B | `domain-pro` | 10 | chat | final-answer match (MedMCQA/FinQA/law · KMMLU) |
 | B | `longcontext-qa` | 10 | chat | exact answer over a generated long document |
 
-228 of the 253 tasks carry a deterministic check; the rest are judged against
+322 of the 370 tasks carry a deterministic check; the rest are judged against
 weighted rubrics. Tasks span difficulty (easy/medium/hard — an authored prior
 that the score matrix re-labels empirically, see below) and input length
 bands (short/mid/long). Multi-turn tasks feed each arm its **own** previous
@@ -94,6 +104,33 @@ from the bilingual source `tasks/_src/*.json` by `tools/author_tasks.py`.
 Long-context tasks are produced by deterministic generators
 (`tools/generators.py`) from a compact seed rather than committed as raw text.
 Agentic tasks ship with seed repositories under each suite's `fixtures/`.
+
+## Expansion tasks — why 117 tasks were added on 2026-10-05
+
+BizRouter routes on a request-analysis label (a parent task such as `action`,
+`qa`, `analysis`, `software`, `create`, `dialogue` or `transform`, a leaf task,
+and a difficulty), and a model's profile is the score it earned on the tasks
+carrying each label. Several of those cells had too few tasks to tell models
+apart, so 117 bilingual pairs were added in ten new categories (table above):
+tool calls, factual and analytical questions with one computable answer,
+debugging, implementation and review, writing, dialogue and format transforms.
+
+- **Separate categories.** The new tasks live in their own files; no existing
+  task file changed because of them.
+- **Deterministic first.** 94 of the 117 tasks per language carry an automatic
+  check. Answers are computed by the generators (`tools/draft_*_expansion.py`)
+  rather than typed, and every unit-test task was run against a reference
+  solution (must pass) and a buggy one (must fail).
+- **Cross-reviewed.** Every pair was reviewed by two models from vendors other
+  than the author (GPT-5.6 Sol and Gemini 3.7 Flash) for a unique answer,
+  ambiguous wording and KO/EN mismatch; every flagged issue was fixed or
+  recorded as a false positive before emission.
+
+The same release folds in 24 prompt clarifications (12 pairs:
+`amb-referent-01`, `amb-scope-01`, `ext-meet-01`…`09` via the
+`meeting_actions` generator, `tool-firststep-01-g1`) that BizRouter had applied
+to its registered copy of this suite; the repository now matches that copy.
+None of them is a v1-overlap task.
 
 ## Evolved tasks — why 35 tasks were added on 2026-09-07
 
