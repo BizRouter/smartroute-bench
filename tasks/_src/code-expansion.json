@@ -1,0 +1,637 @@
+[
+ {
+  "id": "swx-debug-01",
+  "pair_id": "swx-debug-01",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "debug",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import paginate\nclass T(unittest.TestCase):\n    def test_first(self): self.assertEqual(paginate(list(range(10)), 1, 3), [0, 1, 2])\n    def test_last(self): self.assertEqual(paginate(list(range(10)), 4, 3), [9])\n    def test_out(self): self.assertEqual(paginate(list(range(10)), 5, 3), [])\n"
+  },
+  "ko": {
+   "turns": [
+    "아래 페이지네이션 함수는 1페이지부터 세는데, 1페이지를 요청하면 두 번째 묶음이 나온다. 원인을 짚고 고친 전체 코드를 줘.\n\n```python\ndef paginate(items, page, size):\n    \"\"\"page는 1부터 센다. 범위를 벗어나면 빈 리스트.\"\"\"\n    start = page * size\n    return items[start:start + size]\n```\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "This pagination function counts pages from 1, but asking for page 1 returns the second batch. Identify the cause and give the complete fixed code.\n\n```python\ndef paginate(items, page, size):\n    \"\"\"page counts from 1. Out of range returns an empty list.\"\"\"\n    start = page * size\n    return items[start:start + size]\n```\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-debug-02",
+  "pair_id": "swx-debug-02",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "debug",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import add_tag\nclass T(unittest.TestCase):\n    def test_independent(self):\n        self.assertEqual(add_tag(\"a\"), [\"a\"])\n        self.assertEqual(add_tag(\"b\"), [\"b\"])\n    def test_given_list(self):\n        base = [\"x\"]\n        self.assertEqual(add_tag(\"y\", base), [\"x\", \"y\"])\n"
+  },
+  "ko": {
+   "turns": [
+    "태그를 붙이는 함수인데, 서로 다른 글에 붙인 태그가 다음 호출에 섞여 나온다. 원인을 짚고 고친 전체 코드를 줘.\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "This tagging helper leaks tags between calls for different posts. Identify the cause and give the complete fixed code.\n\n```python\ndef add_tag(tag, tags=[]):\n    tags.append(tag)\n    return tags\n```\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-debug-03",
+  "pair_id": "swx-debug-03",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "debug",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import days_between\nclass T(unittest.TestCase):\n    def test_basic(self): self.assertEqual(days_between(\"2026-01-30\", \"2026-02-02\"), 3)\n    def test_leap(self): self.assertEqual(days_between(\"2028-02-28\", \"2028-03-01\"), 2)\n    def test_negative(self): self.assertEqual(days_between(\"2026-10-05\", \"2026-10-01\"), -4)\n"
+  },
+  "ko": {
+   "turns": [
+    "두 날짜 문자열(YYYY-MM-DD) 사이의 일수를 구하는 함수가 어떤 입력에서는 틀린 값을 내고 어떤 입력에서는 ValueError를 낸다. 원인을 짚고 고친 전체 코드를 줘. 결과는 b가 a보다 이르면 음수다.\n\n```python\nfrom datetime import datetime\n\ndef days_between(a, b):\n    fmt = \"%Y-%d-%m\"\n    return (datetime.strptime(b, fmt) - datetime.strptime(a, fmt)).days\n```\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "A function that counts days between two YYYY-MM-DD strings gives wrong values for some inputs and raises ValueError for others. Identify the cause and give the complete fixed code. The result is negative when b is earlier than a.\n\n```python\nfrom datetime import datetime\n\ndef days_between(a, b):\n    fmt = \"%Y-%d-%m\"\n    return (datetime.strptime(b, fmt) - datetime.strptime(a, fmt)).days\n```\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-debug-04",
+  "pair_id": "swx-debug-04",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "debug",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import split_bill\nclass T(unittest.TestCase):\n    def test_even(self): self.assertEqual(split_bill(30000, 3), [10000, 10000, 10000])\n    def test_remainder(self): self.assertEqual(split_bill(10000, 3), [3334, 3333, 3333])\n    def test_two_extra(self): self.assertEqual(split_bill(10001, 3), [3334, 3334, 3333])\n    def test_sum(self):\n        for total, n in ((99999, 7), (5, 3), (12345, 4)):\n            self.assertEqual(sum(split_bill(total, n)), total)\n"
+  },
+  "ko": {
+   "turns": [
+    "더치페이 금액을 나누는 함수인데, 나눈 금액의 합이 총액과 안 맞을 때가 있다. 요구사항: 원 단위 정수로 나누고, 나머지는 앞사람부터 1원씩 더 낸다. 합은 반드시 총액과 같아야 한다. 고친 전체 코드를 줘.\n\n```python\ndef split_bill(total_krw, people):\n    share = round(total_krw / people)\n    return [share] * people\n```\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "This bill-splitting function sometimes returns shares that do not add up to the total. Requirements: whole-won integers; the remainder is paid 1 won extra each by the first people in order; the sum must equal the total. Give the complete fixed code.\n\n```python\ndef split_bill(total_krw, people):\n    share = round(total_krw / people)\n    return [share] * people\n```\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-debug-05",
+  "pair_id": "swx-debug-05",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "debug",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import remove_expired\nclass T(unittest.TestCase):\n    def test_in_place(self):\n        s = {\"a\": 5, \"b\": 20, \"c\": 10}\n        self.assertEqual(remove_expired(s, 10), 2)\n        self.assertEqual(s, {\"b\": 20})\n    def test_none(self):\n        s = {\"a\": 50}\n        self.assertEqual(remove_expired(s, 10), 0)\n        self.assertEqual(s, {\"a\": 50})\n"
+  },
+  "ko": {
+   "turns": [
+    "만료된 세션을 지우는 함수가 실행 중에 `RuntimeError: dictionary changed size during iteration`을 낸다. 고친 전체 코드를 줘. 입력 딕셔너리를 제자리에서 수정하고, 지운 세션 수를 돌려준다.\n\n```python\ndef remove_expired(sessions, now):\n    removed = 0\n    for sid, expires_at in sessions.items():\n        if expires_at <= now:\n            del sessions[sid]\n            removed += 1\n    return removed\n```\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "A function that removes expired sessions raises `RuntimeError: dictionary changed size during iteration`. Give the complete fixed code. It must modify the dict in place and return the number of sessions removed.\n\n```python\ndef remove_expired(sessions, now):\n    removed = 0\n    for sid, expires_at in sessions.items():\n        if expires_at <= now:\n            del sessions[sid]\n            removed += 1\n    return removed\n```\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-debug-06",
+  "pair_id": "swx-debug-06",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "debug",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import count_paths\nclass T(unittest.TestCase):\n    def test_open(self): self.assertEqual(count_paths([[0, 0, 0], [0, 0, 0], [0, 0, 0]]), 6)\n    def test_blocked(self): self.assertEqual(count_paths([[0, 0, 0], [0, 1, 0], [0, 0, 0]]), 2)\n    def test_start_blocked(self): self.assertEqual(count_paths([[1, 0], [0, 0]]), 0)\n"
+  },
+  "ko": {
+   "turns": [
+    "격자에서 오른쪽·아래로만 움직여 왼쪽 위에서 오른쪽 아래까지 가는 경로 수를 세는 함수야(1은 막힌 칸). 메모이제이션을 넣은 뒤로 결과가 틀린다. 원인을 짚고 고친 전체 코드를 줘.\n\n```python\ndef count_paths(grid):\n    rows, cols = len(grid), len(grid[0])\n    memo = {}\n    def go(r, c):\n        if r >= rows or c >= cols or grid[r][c] == 1:\n            return 0\n        if (r, c) == (rows - 1, cols - 1):\n            return 1\n        if r in memo:\n            return memo[r]\n        memo[r] = go(r + 1, c) + go(r, c + 1)\n        return memo[r]\n    return go(0, 0)\n```\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "This function counts paths from the top-left to the bottom-right of a grid moving only right or down (1 marks a blocked cell). It went wrong after memoization was added. Identify the cause and give the complete fixed code.\n\n```python\ndef count_paths(grid):\n    rows, cols = len(grid), len(grid[0])\n    memo = {}\n    def go(r, c):\n        if r >= rows or c >= cols or grid[r][c] == 1:\n            return 0\n        if (r, c) == (rows - 1, cols - 1):\n            return 1\n        if r in memo:\n            return memo[r]\n        memo[r] = go(r + 1, c) + go(r, c + 1)\n        return memo[r]\n    return go(0, 0)\n```\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-impl-01",
+  "pair_id": "swx-impl-01",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "implement",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import merge_labeled\nclass T(unittest.TestCase):\n    def test_merge(self):\n        self.assertEqual(merge_labeled([(1, 3, \"b\"), (2, 5, \"a\"), (7, 8, \"c\")]), [(1, 5, [\"a\", \"b\"]), (7, 8, [\"c\"])])\n    def test_touching(self):\n        self.assertEqual(merge_labeled([(5, 6, \"x\"), (1, 5, \"x\")]), [(1, 6, [\"x\"])])\n    def test_empty(self):\n        self.assertEqual(merge_labeled([]), [])\n"
+  },
+  "ko": {
+   "turns": [
+    "`merge_labeled(intervals)`를 써 줘. 입력은 (start, end, label) 튜플 리스트이고 구간은 닫힌 구간 [start, end]다. 겹치거나 끝점이 맞닿는 구간을 합치고, 합친 구간마다 라벨 집합을 정렬된 리스트로 붙여 (start, end, labels) 튜플을 시작점 순서로 돌려줘.\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "Write `merge_labeled(intervals)`. The input is a list of (start, end, label) tuples; intervals are closed [start, end]. Merge intervals that overlap or touch at an endpoint, attach the union of labels as a sorted list, and return (start, end, labels) tuples ordered by start.\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-impl-02",
+  "pair_id": "swx-impl-02",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "implement",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import parse_krw\nclass T(unittest.TestCase):\n    def test_examples(self):\n        self.assertEqual(parse_krw(\"1억 2천3백만 5천원\"), 123005000)\n        self.assertEqual(parse_krw(\"3만원\"), 30000)\n        self.assertEqual(parse_krw(\"12,500원\"), 12500)\n        self.assertEqual(parse_krw(\"1억원\"), 100000000)\n    def test_mixed(self):\n        self.assertEqual(parse_krw(\"2억 50만\"), 200500000)\n        self.assertEqual(parse_krw(\"7천\"), 7000)\n    def test_bad(self):\n        with self.assertRaises(ValueError):\n            parse_krw(\"abc\")\n"
+  },
+  "ko": {
+   "turns": [
+    "한국어 금액 표기를 정수로 바꾸는 `parse_krw(text)`를 써 줘. 예: \"1억 2천3백만 5천원\" → 123005000, \"3만원\" → 30000, \"12,500원\" → 12500, \"1억원\" → 100000000. 단위는 천·백·십(만 아래)과 만·억이다. 공백과 쉼표는 무시하고, 끝의 \"원\"은 있어도 없어도 된다. 해석할 수 없는 입력은 ValueError를 던져.\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "Write `parse_krw(text)` that turns a Korean won amount into an integer. Examples: \"1억 2천3백만 5천원\" → 123005000, \"3만원\" → 30000, \"12,500원\" → 12500, \"1억원\" → 100000000. Units are 천/백/십 (below 만) and 만/억. Ignore spaces and commas; a trailing \"원\" is optional. Raise ValueError for input that cannot be parsed.\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-impl-03",
+  "pair_id": "swx-impl-03",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "implement",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import allow_requests\nclass T(unittest.TestCase):\n    def test_basic(self):\n        self.assertEqual(allow_requests([0, 1, 2, 3], 2, 10), [True, True, False, False])\n    def test_window_slides(self):\n        self.assertEqual(allow_requests([0, 5, 10, 11, 15], 2, 10), [True, True, True, False, True])\n    def test_rejected_do_not_count(self):\n        self.assertEqual(allow_requests([0, 0, 0, 10], 1, 10), [True, False, False, True])\n"
+  },
+  "ko": {
+   "turns": [
+    "슬라이딩 윈도 레이트 리미터 `allow_requests(timestamps, limit, window)`를 써 줘. timestamps는 오름차순 초 단위 정수 리스트다. 각 요청 시각 t에서 (t - window, t] 구간에 이미 허용된 요청이 limit개 미만이면 허용한다. 거부된 요청은 개수에 넣지 않는다. 요청마다 허용 여부(bool) 리스트를 돌려줘.\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "Write a sliding-window rate limiter `allow_requests(timestamps, limit, window)`. timestamps is an ascending list of integer seconds. A request at time t is allowed if fewer than limit already-allowed requests fall in (t - window, t]. Rejected requests do not count. Return a list of booleans, one per request.\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-impl-04",
+  "pair_id": "swx-impl-04",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "implement",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 4096,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "check": {
+   "type": "python_tests",
+   "tests": "import unittest\nfrom solution import business_days\nclass T(unittest.TestCase):\n    def test_week(self): self.assertEqual(business_days(\"2026-10-05\", \"2026-10-12\", set()), 5)\n    def test_holiday(self): self.assertEqual(business_days(\"2026-10-05\", \"2026-10-12\", {\"2026-10-09\"}), 4)\n    def test_weekend_holiday(self): self.assertEqual(business_days(\"2026-10-05\", \"2026-10-12\", {\"2026-10-10\"}), 5)\n    def test_empty(self): self.assertEqual(business_days(\"2026-10-12\", \"2026-10-05\", set()), 0)\n"
+  },
+  "ko": {
+   "turns": [
+    "`business_days(start, end, holidays)`를 써 줘. start와 end는 YYYY-MM-DD 문자열, holidays는 같은 형식 문자열 집합이다. start 이상 end 미만인 날 중 토·일과 holidays를 뺀 영업일 수를 돌려줘. end가 start보다 같거나 이르면 0.\n\npython 코드블록 하나로 전체 코드를 줘."
+   ]
+  },
+  "en": {
+   "turns": [
+    "Write `business_days(start, end, holidays)`. start and end are YYYY-MM-DD strings; holidays is a set of strings in the same format. Return the number of business days from start (inclusive) to end (exclusive), excluding Saturdays, Sundays and holidays. Return 0 when end is not after start.\n\nReturn the complete code in a single python code block."
+   ]
+  }
+ },
+ {
+  "id": "swx-review-01",
+  "pair_id": "swx-review-01",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "review",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "다음 코드를 검토해서 가장 심각한 문제를 골라 줘.\n\n```python\ndef find_user(conn, email):\n    cur = conn.cursor()\n    cur.execute(f\"SELECT id, name FROM users WHERE email = '{email}'\")\n    return cur.fetchone()\n```\n\nA) 커서를 닫지 않아 성능이 떨어진다\nB) email에 인덱스가 없을 수 있다\nC) 사용자 입력을 문자열로 이어 붙여 SQL 인젝션에 취약하다\nD) 결과가 여러 줄일 수 있는데 하나만 돌려준다\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "C"
+   }
+  },
+  "en": {
+   "turns": [
+    "Review this code and pick the most serious problem.\n\n```python\ndef find_user(conn, email):\n    cur = conn.cursor()\n    cur.execute(f\"SELECT id, name FROM users WHERE email = '{email}'\")\n    return cur.fetchone()\n```\n\nA) The cursor is never closed, which hurts performance\nB) email may not be indexed\nC) User input is interpolated into the SQL string, allowing SQL injection\nD) There may be several rows but only one is returned\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "C"
+   }
+  }
+ },
+ {
+  "id": "swx-review-02",
+  "pair_id": "swx-review-02",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "review",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "회원가입 코드야. 가장 심각한 문제를 골라 줘.\n\n```python\nimport hashlib\n\ndef store_password(db, user_id, password):\n    digest = hashlib.md5(password.encode()).hexdigest()\n    db.execute(\"UPDATE users SET pw = ? WHERE id = ?\", (digest, user_id))\n```\n\nA) 솔트 없는 빠른 해시(MD5)라 유출 시 비밀번호가 쉽게 복원된다\nB) SQL 인젝션에 취약하다\nC) 인코딩을 지정하지 않아 한글 비밀번호가 깨진다\nD) UPDATE 대신 INSERT를 써야 한다\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "A"
+   }
+  },
+  "en": {
+   "turns": [
+    "This is sign-up code. Pick the most serious problem.\n\n```python\nimport hashlib\n\ndef store_password(db, user_id, password):\n    digest = hashlib.md5(password.encode()).hexdigest()\n    db.execute(\"UPDATE users SET pw = ? WHERE id = ?\", (digest, user_id))\n```\n\nA) An unsalted fast hash (MD5) makes leaked passwords easy to recover\nB) It is vulnerable to SQL injection\nC) No encoding is given, so non-ASCII passwords break\nD) It should use INSERT instead of UPDATE\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "A"
+   }
+  }
+ },
+ {
+  "id": "swx-review-03",
+  "pair_id": "swx-review-03",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "review",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "여러 요청이 동시에 처리되는 출금 핸들러야. 가장 심각한 문제를 골라 줘.\n\n```python\ndef withdraw(db, account_id, amount):\n    balance = db.get_balance(account_id)\n    if balance < amount:\n        raise ValueError(\"insufficient\")\n    db.set_balance(account_id, balance - amount)\n```\n\nA) 음수 금액을 검사하지 않는다\nB) 잔액 확인과 갱신 사이에 다른 요청이 끼어들어 이중 출금이 될 수 있다\nC) 예외 메시지가 사용자에게 불친절하다\nD) 함수 이름이 동사로 시작하지 않는다\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "B"
+   }
+  },
+  "en": {
+   "turns": [
+    "This withdrawal handler serves many requests concurrently. Pick the most serious problem.\n\n```python\ndef withdraw(db, account_id, amount):\n    balance = db.get_balance(account_id)\n    if balance < amount:\n        raise ValueError(\"insufficient\")\n    db.set_balance(account_id, balance - amount)\n```\n\nA) It does not reject negative amounts\nB) Another request can slip in between the balance check and the update, allowing a double withdrawal\nC) The exception message is unfriendly\nD) The function name is not a verb\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "B"
+   }
+  }
+ },
+ {
+  "id": "swx-review-04",
+  "pair_id": "swx-review-04",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "review",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "로그 파일 수천 개를 처리하는 코드야. 장시간 돌리면 결국 실패한다. 가장 가능성 높은 원인을 골라 줘.\n\n```python\ndef count_errors(paths):\n    total = 0\n    for p in paths:\n        f = open(p, encoding=\"utf-8\")\n        for line in f:\n            if \"ERROR\" in line:\n                total += 1\n    return total\n```\n\nA) 대소문자를 구분해 error를 놓친다\nB) 파일을 닫지 않아 파일 디스크립터가 고갈될 수 있다\nC) utf-8이 아닌 파일에서 느려진다\nD) total이 정수 범위를 넘는다\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "B"
+   }
+  },
+  "en": {
+   "turns": [
+    "This processes thousands of log files and eventually fails on long runs. Pick the most likely cause.\n\n```python\ndef count_errors(paths):\n    total = 0\n    for p in paths:\n        f = open(p, encoding=\"utf-8\")\n        for line in f:\n            if \"ERROR\" in line:\n                total += 1\n    return total\n```\n\nA) It is case-sensitive and misses 'error'\nB) Files are never closed, so file descriptors can run out\nC) It slows down on non-UTF-8 files\nD) total overflows the integer range\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "B"
+   }
+  }
+ },
+ {
+  "id": "swx-explain-01",
+  "pair_id": "swx-explain-01",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "explain-output",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "이 코드는 무엇을 출력해?\n\n```python\nfs = [lambda: i for i in range(3)]\nprint([f() for f in fs])\n```\n\n이유를 짧게 설명하고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <출력 그대로>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "[2, 2, 2]"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "What does this code print?\n\n```python\nfs = [lambda: i for i in range(3)]\nprint([f() for f in fs])\n```\n\nExplain briefly, then end with exactly this line:\nAnswer: <the exact output>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "[2, 2, 2]"
+    ]
+   }
+  }
+ },
+ {
+  "id": "swx-explain-02",
+  "pair_id": "swx-explain-02",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "explain-output",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "이 코드는 무엇을 출력해? (정렬은 안정 정렬이다)\n\n```python\nscores = {\"kim\": 82, \"lee\": 95, \"park\": 88, \"choi\": 95}\nprint(sorted(scores, key=scores.get, reverse=True)[:2])\n```\n\n이유를 짧게 설명하고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <출력 그대로>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "['lee', 'choi']"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "What does this code print? (the sort is stable)\n\n```python\nscores = {\"kim\": 82, \"lee\": 95, \"park\": 88, \"choi\": 95}\nprint(sorted(scores, key=scores.get, reverse=True)[:2])\n```\n\nExplain briefly, then end with exactly this line:\nAnswer: <the exact output>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "['lee', 'choi']"
+    ]
+   }
+  }
+ },
+ {
+  "id": "swx-explain-03",
+  "pair_id": "swx-explain-03",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "explain-output",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "파이썬 3에서 이 코드는 무엇을 출력해?\n\n```python\nprint(round(2.5), round(3.5), -7 // 2, -7 % 3)\n```\n\n이유를 짧게 설명하고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <출력 그대로>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "expected": [
+     "2 4 -4 2"
+    ]
+   }
+  },
+  "en": {
+   "turns": [
+    "What does this print in Python 3?\n\n```python\nprint(round(2.5), round(3.5), -7 // 2, -7 % 3)\n```\n\nExplain briefly, then end with exactly this line:\nAnswer: <the exact output>"
+   ],
+   "check": {
+    "type": "answer_match",
+    "pattern": "Answer\\s*[::]\\s*(.+)",
+    "expected": [
+     "2 4 -4 2"
+    ]
+   }
+  }
+ },
+ {
+  "id": "swx-test-01",
+  "pair_id": "swx-test-01",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "test",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "윤년 판정 함수가 아래처럼 구현돼 있다. 이 구현의 버그를 드러내는 테스트 입력은 어느 것?\n\n```python\ndef is_leap(y):\n    return y % 4 == 0 and y % 100 != 0\n```\n\nA) is_leap(2024)\nB) is_leap(1900)\nC) is_leap(2000)\nD) is_leap(2023)\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "C"
+   }
+  },
+  "en": {
+   "turns": [
+    "A leap-year function is implemented as below. Which test input exposes its bug?\n\n```python\ndef is_leap(y):\n    return y % 4 == 0 and y % 100 != 0\n```\n\nA) is_leap(2024)\nB) is_leap(1900)\nC) is_leap(2000)\nD) is_leap(2023)\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "C"
+   }
+  }
+ },
+ {
+  "id": "swx-test-02",
+  "pair_id": "swx-test-02",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "test",
+  "difficulty_prior": "medium",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "x를 [lo, hi] 범위로 자르는 함수가 아래처럼 잘못 구현됐다. 아래 테스트 중 이 버그를 잡아내는 것은 하나뿐이다. 어느 것?\n\n```python\ndef clamp(x, lo, hi):\n    return max(min(x, lo), hi)\n```\n\nA) clamp(0, 0, 0) == 0\nB) clamp(10, 0, 10) == 10\nC) clamp(5, 5, 5) == 5\nD) clamp(3, 0, 10) == 3\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "D"
+   }
+  },
+  "en": {
+   "turns": [
+    "A function meant to clamp x into [lo, hi] is implemented incorrectly as below. Exactly one of these tests catches the bug. Which one?\n\n```python\ndef clamp(x, lo, hi):\n    return max(min(x, lo), hi)\n```\n\nA) clamp(0, 0, 0) == 0\nB) clamp(10, 0, 10) == 10\nC) clamp(5, 5, 5) == 5\nD) clamp(3, 0, 10) == 3\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "D"
+   }
+  }
+ },
+ {
+  "id": "swx-test-03",
+  "pair_id": "swx-test-03",
+  "track": "work",
+  "block": "code",
+  "category": "code-expansion",
+  "subcategory": "test",
+  "difficulty_prior": "hard",
+  "mode": "chat",
+  "language": "python",
+  "max_tokens": 1536,
+  "scoring": "deterministic",
+  "split": "dev",
+  "source": "authored",
+  "ko": {
+   "turns": [
+    "중복을 지우되 처음 나온 순서를 지켜야 하는 함수가 아래처럼 구현됐다(CPython 3). 아래 테스트 중 이 버그를 잡아내는 것은 어느 것?\n\n```python\ndef dedupe(xs):\n    return list(set(xs))\n```\n\nA) dedupe([]) == []\nB) dedupe([1]) == [1]\nC) dedupe([1, 1, 1]) == [1]\nD) dedupe([3, 1, 3, 2]) == [3, 1, 2]\n\n근거를 짧게 쓰고, 마지막 줄에 정확히 이 형식으로 답해:\n정답: <A~D 중 하나>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "D"
+   }
+  },
+  "en": {
+   "turns": [
+    "A function must remove duplicates while keeping first-occurrence order; it is implemented as below (CPython 3). Which of these tests catches the bug?\n\n```python\ndef dedupe(xs):\n    return list(set(xs))\n```\n\nA) dedupe([]) == []\nB) dedupe([1]) == [1]\nC) dedupe([1, 1, 1]) == [1]\nD) dedupe([3, 1, 3, 2]) == [3, 1, 2]\n\nGive brief reasons, then end with exactly this line:\nAnswer: <one of A-D>"
+   ],
+   "check": {
+    "type": "mcq",
+    "expected": "D"
+   }
+  }
+ }
+]
