@@ -49,14 +49,14 @@ def std_rubric(lang, weights=(0.35, 0.45, 0.2)):
 
 
 # ==== create ===========================================================================================
-item("create", "crx-biz-01", "business-writing", "apology-notice", "hard", "writing", "both",
+item("create", "crx-biz-01", "business-writing-x", "apology-notice", "hard", "writing", "both",
      side("어제 14:00~16:30 결제 장애로 주문이 실패한 고객에게 보낼 사과 안내문을 써 줘. 원인은 결제대행사 연동 서버 장애였고 지금은 복구됐어. 보상으로 10,000원 쿠폰을 지급하고, 쿠폰 유효기간은 2026년 11월 30일까지야. 600자 이하로 써.",
           rubric(("사실 전달", "장애 시간·원인·복구 사실·보상 조건을 정확히 담았는가", 0.4), ("어조", "책임을 회피하지 않고 진정성 있는 사과인가", 0.35), ("명료성", "고객이 할 일(쿠폰 사용)이 분명한가", 0.25)),
           constraints({"kind": "max_chars", "n": 600}, {"kind": "require", "values": ["10,000원", "11월 30일"]})),
      side("Write an apology notice to customers whose orders failed during yesterday's payment outage from 14:00 to 16:30. The cause was an outage at the payment gateway's integration server, and service is restored. As compensation each customer gets a 10,000 won coupon, valid until November 30, 2026. Keep it to 1,200 characters or fewer.",
           rubric(("Facts", "States the outage window, cause, restoration and coupon terms accurately", 0.4), ("Tone", "A sincere apology that does not deflect responsibility", 0.35), ("Clarity", "Makes clear what the customer should do (use the coupon)", 0.25)),
           constraints({"kind": "max_chars", "n": 1200}, {"kind": "require", "values": ["10,000 won", "November 30"]})))
-item("create", "crx-biz-02", "business-writing", "price-negotiation", "hard", "writing", "both",
+item("create", "crx-biz-02", "business-writing-x", "price-negotiation", "hard", "writing", "both",
      side("거래처(주식회사 한빛상사) 구매팀장에게 보낼 단가 인상 요청 메일을 써 줘. 내년 1월 1일부터 단가 6% 인상. 근거는 원자재가 상승, 물류비 상승, 최저임금 인상 세 가지. 거래 관계를 해치지 않도록 정중하게, 협의 일정 제안도 넣어 줘.",
           rubric(("요구 충족", "인상률·적용일·근거 3가지·협의 제안을 모두 담았는가", 0.35), ("설득력", "근거가 구체적이고 상대 입장을 배려하는가", 0.4), ("격식", "업무 메일 형식과 존댓말이 적절한가", 0.25)),
           constraints({"kind": "require", "values": ["6%", "1월 1일"]})),

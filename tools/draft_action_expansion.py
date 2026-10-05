@@ -62,7 +62,7 @@ def add(id_, subcategory, prior, systems, turns, expected, subset=False, length=
     ko_exp, en_exp = expected if isinstance(expected, tuple) else (expected, expected)
     check = lambda e: {"type": "json_match", "expected": e, **({"subset": True} if subset else {})}
     ITEMS.append({
-        "id": id_, "pair_id": id_, "track": "work", "block": "code", "category": "tool-use",
+        "id": id_, "pair_id": id_, "track": "work", "block": "code", "category": "tool-use-x",
         "subcategory": subcategory, "difficulty_prior": prior, "mode": "chat", "language": None,
         "max_tokens": 1024, "scoring": "deterministic", "split": "dev", "source": "authored",
         "length_band": length,
