@@ -46,7 +46,7 @@ def rubric(lang, *rows):
 
 # ---- grounded answers ---------------------------------------------------------------------
 det("qax-grounded-01", "grounded-lookup", "easy",
-    "[출장비 규정 제4조] 1박 숙박비 한도: 서울 120,000원, 광역시 100,000원, 그 밖의 지역 80,000원.\n\n질문: 대전 출장 1박 숙박비 한도는 얼마야? (원 단위)\n\n" + KO_NUM,
+    "[출장비 규정 제4조] 1박 숙박비 한도: 서울 120,000원, 광역시 100,000원, 그 밖의 지역 80,000원. 대전은 광역시다.\n\n질문: 대전 출장 1박 숙박비 한도는 얼마야? (원 단위)\n\n" + KO_NUM,
     "[Travel policy, Art. 4] Nightly lodging cap: Seoul 120,000 won, metropolitan cities 100,000 won, elsewhere 80,000 won. Daejeon is a metropolitan city.\n\nQuestion: What is the nightly lodging cap for a trip to Daejeon, in won?\n\n" + EN_NUM,
     ["100000"], ["100000"], numeric=True)
 det("qax-grounded-02", "grounded-lookup", "easy",
@@ -131,7 +131,7 @@ det("qax-fact-01", "fact-recall", "easy",
 det("qax-fact-02", "fact-recall", "easy",
     "국제단위계(SI)에서 전류의 기본 단위 이름은 뭐야? 마지막 줄에 정확히 이 형식으로 답해:\n정답: <단위 이름>",
     "In the International System of Units (SI), what is the name of the base unit of electric current? End with exactly this line:\nAnswer: <unit name>",
-    ["암페어", "ampere", "A"], ["ampere", "amperes", "A"], block="judgment")
+    ["암페어", "ampere"], ["ampere", "amperes"], block="judgment")
 det("qax-fact-03", "fact-recall", "easy",
     "HTTP 상태 코드 404의 표준 이름(영문 reason phrase)은 뭐야? 마지막 줄에 정확히 이 형식으로 답해:\n정답: <영문 이름>",
     "What is the standard reason phrase of HTTP status code 404? End with exactly this line:\nAnswer: <reason phrase>",
@@ -148,7 +148,7 @@ judged("qax-concept-01", "concept-explanation", "medium",
 judged("qax-concept-02", "concept-explanation", "medium",
        "부가가치세의 '매입세액 공제'가 무엇이고 왜 이런 제도가 있는지, 소규모 사업자 입장에서 예를 들어 설명해 줘.",
        "Explain what input VAT credit (deducting VAT paid on purchases) is and why the system has it, with an example from a small business's point of view.",
-       rubric("ko", ("정확성", "매출세액에서 매입세액을 빼서 납부한다는 구조와 이중과세 방지 취지를 정확히 설명했는가", 0.5),
+       rubric("ko", ("정확성", "매출세액에서 매입세액을 빼서 납부한다는 구조와 거래 단계별 누적과세 방지(부가가치에만 과세) 취지를 정확히 설명했는가", 0.5),
               ("예시", "금액이 있는 예시로 계산 구조를 보여 주는가", 0.3), ("명료성", "사업자가 이해하기 쉬운 표현인가", 0.2)),
        rubric("en", ("Accuracy", "Correctly explains paying output VAT minus input VAT and the aim of avoiding cascading tax", 0.5),
               ("Example", "Shows the computation with a numeric example", 0.3), ("Clarity", "Easy for a business owner to follow", 0.2)))

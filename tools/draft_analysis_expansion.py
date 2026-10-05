@@ -156,10 +156,10 @@ mcq("anax-compare-02", "compare", "hard",
 # ---- assess and prove ---------------------------------------------------------------------------
 item = base("anax-assess-01", "assess", "medium", "judge", "judgment", 2048)
 item["ko"] = {"turns": ["다음 사업 계획 요약을 평가해 줘. 가장 큰 위험 세 가지를 근거와 함께 짚고, 각 위험에 대한 보완책을 하나씩 제안해.\n\n\"동네 카페 대상 구독형 원두 배송. 월 29,000원, 첫 달 50% 할인. 첫해 목표 구독자 2,000곳. 원두 원가는 월 1곳당 18,000원, 배송비 4,000원. 마케팅은 인스타그램 광고만 활용. 이탈률 가정은 월 2%.\""],
-              "rubric": rubric(("위험 식별", "마진 구조·이탈률 가정·채널 의존 등 핵심 위험을 근거 숫자와 함께 짚었는가", 0.45),
+              "rubric": rubric(("위험 식별", "제시된 숫자(가격·할인·원가·배송비·이탈률·채널 등)에 근거해 실질적인 위험 세 가지를 고르고, 왜 그것이 가장 큰지 우선순위 근거를 댔는가. 특정 위험을 정답으로 고정하지 않는다", 0.45),
                                ("보완책", "보완책이 구체적이고 실행 가능한가", 0.35), ("명료성", "구조적이고 간결한가", 0.2))}
 item["en"] = {"turns": ["Assess this business plan summary. Point out the three biggest risks with reasons, and propose one mitigation for each.\n\n\"Subscription coffee-bean delivery for neighborhood cafés. 29,000 won a month, 50% off the first month. Year-one target: 2,000 cafés. Bean cost 18,000 won per café per month, delivery 4,000 won. Marketing: Instagram ads only. Assumed churn: 2% a month.\""],
-              "rubric": rubric(("Risk identification", "Names the key risks (margin structure, churn assumption, channel dependence) with supporting numbers", 0.45),
+              "rubric": rubric(("Risk identification", "Picks three substantive risks grounded in the given numbers (price, discount, cost, delivery, churn, channel) and justifies why they rank highest; no single set of risks is required", 0.45),
                                ("Mitigations", "Mitigations are concrete and actionable", 0.35), ("Clarity", "Structured and concise", 0.2))}
 ITEMS.append(item)
 item = base("anax-prove-01", "prove", "medium", "both", "judgment", 1536)

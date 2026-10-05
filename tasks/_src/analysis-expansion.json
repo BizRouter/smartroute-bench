@@ -499,7 +499,7 @@
    "rubric": [
     {
      "name": "위험 식별",
-     "desc": "마진 구조·이탈률 가정·채널 의존 등 핵심 위험을 근거 숫자와 함께 짚었는가",
+     "desc": "제시된 숫자(가격·할인·원가·배송비·이탈률·채널 등)에 근거해 실질적인 위험 세 가지를 고르고, 왜 그것이 가장 큰지 우선순위 근거를 댔는가. 특정 위험을 정답으로 고정하지 않는다",
      "weight": 0.45
     },
     {
@@ -521,7 +521,7 @@
    "rubric": [
     {
      "name": "Risk identification",
-     "desc": "Names the key risks (margin structure, churn assumption, channel dependence) with supporting numbers",
+     "desc": "Picks three substantive risks grounded in the given numbers (price, discount, cost, delivery, churn, channel) and justifies why they rank highest; no single set of risks is required",
      "weight": 0.45
     },
     {
