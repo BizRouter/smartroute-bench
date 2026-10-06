@@ -8,3 +8,6 @@ sandbox/
 # (configs/track_b_manifest.json + track_b_lock.json) and the adapter, never
 # the rows — rebuild with tools/fetch_track_b.py.
 tasks/*/capability/
+
+# Held-out (split=test) tasks emitted by tools/author_tasks.py; never published.
+internal/
