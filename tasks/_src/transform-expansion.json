@@ -336,10 +336,13 @@
      {
       "kind": "require",
       "values": [
-       "23,400 won",
-       "Oct",
+       "23,400",
        "Kookmin"
       ]
+     },
+     {
+      "kind": "regex",
+      "pattern": "(?i)\\boct(ober)?\\.?\\s*8(th)?\\b"
      },
      {
       "kind": "max_chars",
@@ -433,10 +436,20 @@
      {
       "kind": "require",
       "values": [
-       "October 17",
-       "October 18",
        "PC"
       ]
+     },
+     {
+      "kind": "regex",
+      "pattern": "(?i)\\boct(ober)?\\b"
+     },
+     {
+      "kind": "regex",
+      "pattern": "\\b17(th)?\\b"
+     },
+     {
+      "kind": "regex",
+      "pattern": "\\b18(th)?\\b"
      }
     ]
    }

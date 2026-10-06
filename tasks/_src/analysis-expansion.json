@@ -107,7 +107,7 @@
   },
   "en": {
    "turns": [
-    "1,000,000 won is deposited at 1% interest compounded monthly for 3 months. What is the balance after 3 months, in won (drop fractions of a won)?\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
+    "1,000,000 won is deposited at 1% interest per month, compounded monthly, for 3 months. What is the balance after 3 months, in won (drop fractions of a won)?\n\nShow your work, then end with exactly this line:\nAnswer: <number only>"
    ],
    "check": {
     "type": "answer_match",
